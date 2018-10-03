@@ -1,0 +1,11 @@
+// all sections should extend this default
+
+%section-default {
+
+	display: flex;
+
+}
+
+section {
+	@extend %section-default;
+}

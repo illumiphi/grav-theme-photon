@@ -1,0 +1,19 @@
+{% extends 'article.html.twig' %}
+{% block template %}
+{{ parent() }}
+<!-- user/themes/photon/templates/home.html.twig -->
+{% endblock template %}
+
+{% block body_template_classes %}{{ parent() }} home{% endblock body_template_classes %}
+
+{% block showcase %}
+  {% include '_sections/showcase.html.twig'  %}
+{% endblock showcase %}
+
+{% block featured %}
+  {% include '_sections/featured.html.twig'  %}
+{% endblock featured %}
+
+{% block content %}
+  {{ parent() }}
+{% endblock content %}

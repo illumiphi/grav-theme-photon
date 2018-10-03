@@ -1,0 +1,21 @@
+
+:root {
+	--table-border-color: var(--color-fg);
+}
+
+table {
+	max-width: 100%;
+}
+
+th,
+td {
+	
+	padding: calc( var(--fitz) / 2 );
+}
+
+th {
+	font-weight: 700;
+	// font-family: $font-display;
+	// border-bottom: 2px solid var(--table-border-color);
+	text-align: right;
+}

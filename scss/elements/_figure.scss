@@ -1,0 +1,58 @@
+
+
+:root {
+  --figcaption-bg:  var(--color-fg);
+  --figcaption-color: var(--color-bg);
+}
+
+img {
+  border-style: none;
+
+  display: block;
+}
+
+figure {
+
+  position: relative;
+  height: auto;
+
+  display: block;
+
+  img {
+
+    max-width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+  }
+
+  figcaption {
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+
+    padding: .75em 1em;
+
+    z-index: 2;
+
+    color: var(--figcaption-color);
+    background: var(--figcaption-bg);
+
+    // see hover
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+
+  }
+
+  &:hover > {
+
+    figcaption {
+      opacity: 1;
+    }
+
+  }
+}

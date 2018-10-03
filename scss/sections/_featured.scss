@@ -1,0 +1,27 @@
+.featured {
+
+  @extend %section-default;
+
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: repeat( auto-fit, minmax( var(--col), 1fr ) );
+
+  overflow: auto;
+
+  > h1 {
+    grid-column: 1 / -1;
+
+    padding-top: var(--fitz-2);
+
+    letter-spacing: .25em;
+    padding-left: .25em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  > article {
+
+    @include article-card;
+
+  }
+}

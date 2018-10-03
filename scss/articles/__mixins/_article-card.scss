@@ -1,0 +1,48 @@
+@mixin article-card() {
+  /* article-card */
+
+  display: flex;
+
+  > figure {
+    height: 10em;
+  }
+
+  > header {
+    text-align: center;
+    > * {
+      text-align: center;
+    }
+  }
+
+  > main {
+    align-content: flex-start;
+
+    .more {
+      margin: 0 auto;
+      text-align: center;
+      display: block;
+    }
+  }
+
+  > footer {
+
+    flex-flow: column nowrap;
+
+    > aside {
+      padding: 0;
+      > h1 {
+        display: none;
+      }
+      ul, li {
+        display: inline;
+      }
+    }
+
+    > nav {
+      text-align: right;
+      padding: 0;
+      align-self: flex-end;
+      justify-content: right;
+    }
+  }
+}

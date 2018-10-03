@@ -1,0 +1,16 @@
+{% extends 'article.html.twig' %}
+{% block template %}
+{{ parent() }}
+<!-- user/themes/photon/templates/form.html.twig -->
+{% endblock template %}
+
+{% block body_template_classes %}{{ parent() }} form{% endblock body_template_classes %}
+
+{# TODO: determine load order of templates - this should live in the forms plugin #}
+
+{% block content %}
+  {{ parent() }}
+  <section class="form">
+    {% include "forms/form.html.twig" %}
+  </section>
+{% endblock %}

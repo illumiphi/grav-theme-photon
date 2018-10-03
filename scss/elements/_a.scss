@@ -1,0 +1,56 @@
+// default anchor tag styling
+
+:root{
+  --a-color: #{$color-key};
+  --a-hover-color: white;
+  --a-hover-bg: #{$color-1-light};
+
+  --a-active-color: #{$color-2-dark};
+  --a-active-bullet: '✴'
+}
+
+
+a {
+
+  background: none;
+  color: var(--a-color);
+
+  text-decoration: none;
+
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+
+  &:link {
+    color: var(--a-color);
+  }
+
+  &:visited {
+    color: var(--a-color);
+  }
+
+  &:hover {
+    color: var(--a-hover-color);
+    background: var(--a-hover-bg);
+  }
+
+  &:active {
+    color: var(--a-active-color);
+  }
+
+  &.active {
+
+    font-weight: 700;
+
+    &::before, &::after {
+      content: var(--a-active-bullet);
+      // margin: 0;
+      padding: 0 var(--fitz);
+    }
+  }
+
+  @include media-bp(3) {
+    flex-flow: column;
+  }
+
+}

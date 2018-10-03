@@ -1,0 +1,20 @@
+  {# reverse  -#}
+  {% set prevPage = article.nextSibling %}
+  {% set nextPage = article.prevSibling %}
+  {% if nextPage.url or prevPage.url %}
+        <nav class="sibling">
+
+          {% if prevPage.url %}
+           <a href="{{ prevPage.url }}" class="prev"
+             data-tooltip="{{ prevPage.title }}"
+             title="{{ prevPage.title }}" >Prev</a>
+          {% endif %}
+
+          {% if nextPage.url %}
+            <a href="{{ nextPage.url }}" class="next"
+              data-tooltip="{{ nextPage.title }}"
+              title="{{ nextPage.title }}" >Next</a>
+          {% endif %}
+
+        </nav>
+  {% endif %}

@@ -1,0 +1,9 @@
+footer {
+
+  @extend %section-default;
+
+  padding: 1em;
+
+  flex-direction: column;
+
+}

@@ -1,0 +1,13 @@
+//default - mobile first
+
+body.article {
+
+  > main {
+    > article:first-child {
+      figure {
+        max-height: 50vh;
+      }
+    }
+  }
+
+}

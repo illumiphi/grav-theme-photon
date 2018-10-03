@@ -1,0 +1,29 @@
+{% extends 'default.html.twig' %}
+{% block template %}
+{{ parent() }}
+<!-- user/themes/photon/templates/article.html.twig -->
+{% endblock template %}
+
+{% block body_template_classes %}{{ parent() }} article{% endblock body_template_classes %}
+
+{% block content %}
+
+  {{ parent() }}
+
+  {% block collection %}
+
+    {% if page.collection.count %}
+      <section class="collection">
+        <h1>pages: <span class="count">{{ page.collection.count() }}</span></h1>
+
+        {% for article in page.collection %}
+          {% if not (article.url == page.url)  %}
+            {% include ["_articles/#{ article.template }-excerpt.html.twig", "_articles/article-excerpt.html.twig"] with { 'article': article } %}
+          {% endif %}
+        {% endfor %}
+
+        {% include '_sections/pagination.html.twig'   %}
+      </section>
+    {% endif %}
+  {% endblock collection %}
+{% endblock content %}

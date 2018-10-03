@@ -1,0 +1,41 @@
+.showcase {
+
+  @extend %section-default;
+
+  position: relative;
+  display: block;
+
+  > article {
+    //pin to showcase boundary
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    opacity: 0;
+
+    cursor: pointer;
+
+    display: flex;
+    flex-flow: column;
+
+    > figure {
+
+      > figcaption {
+        display: none;
+      }
+    }
+
+    > header {
+    }
+
+    > main {
+    }
+
+    > footer {
+    }
+
+  }
+
+}

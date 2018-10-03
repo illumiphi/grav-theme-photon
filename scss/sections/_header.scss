@@ -1,0 +1,177 @@
+:root {
+  --header-block: 10em;
+}
+
+header {
+
+  @extend %section-default;
+
+  align-items: center;
+  justify-content: space-around;
+
+  .logo {
+    // width: calc( var(--header-block) / 2 );
+
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    a {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+
+      padding: var(--fitz);
+
+      img {
+        // width: calc( ( var(--header-block) / 2 ) - 2em );
+        // height: auto;
+        height: 3em;
+
+        margin: 0 auto;
+      }
+
+      h1 {
+        font-size: 1.2em;
+        letter-spacing: .1em;
+        padding-left: .5em;
+        text-align: center;
+      }
+
+    }
+
+  }
+
+
+  nav {
+    display: none;
+  }
+
+  .contact {
+
+    width: var(--header-block);
+    width: 20em;
+    height: var(--header-block);
+
+    padding: var(--fitz);
+
+
+    // display: flex;
+    justify-content: center;
+
+    display: none;
+
+    p {
+      font-size: .8em;
+      text-align: center;
+    }
+
+  }
+
+  .toggle {
+
+    width: 2.5em;
+    height: 2.5em;
+
+    // padding: var(--fitz);
+
+    font-size: 2em;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  &.expand {
+
+    flex-flow: row wrap;
+    height: calc(100vh - calc( var(--fitz-2) * 2 ));
+
+    .logo {
+      order: 1;
+      width: 70%;
+    }
+
+    .toggle {
+      order: 2;
+    }
+
+    nav {
+      display: flex;
+      flex-flow: column;
+      order: 3;
+      width: 100%;
+    }
+
+    .contact {
+      display: flex;
+      order: 4;
+    }
+
+
+  }
+
+
+  @include media-bp(1) {
+    .logo {
+      img {
+        height: 5em;
+      }
+
+      > a > h1 {
+        font-size: 2em;
+      }
+    }
+  }
+
+  @include media-bp(2) {
+
+    .logo {
+      width: auto; //var(--header-block);
+      height: auto; //var(--header-block);
+
+      flex-flow: column;
+
+      padding: var(--fitz);
+
+      a {
+        flex-direction: column;
+
+        img {
+          width: auto; //calc( var(--header-block) - 2em);
+          height: 5em;
+
+        }
+
+        h1 {
+          font-size: 1em;
+          letter-spacing: .1em;
+          padding-left: .1em;
+          text-align: center;
+        }
+
+      }
+
+    }
+
+    .toggle {
+      display: none;
+    }
+
+    .contact {
+      display: flex;
+      width: auto; //var(--header-block);
+      height: auto; //var(--header-block);
+
+    }
+
+    nav {
+      display: flex;
+    }
+
+  }
+}

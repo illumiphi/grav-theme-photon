@@ -1,0 +1,53 @@
+
+:root {
+  --blockquote-bg: #{$color-neutral-darker};
+}
+
+blockquote {
+
+  margin: var(--fitz-2) auto;
+
+  font-size: 1.2em;
+
+  display: block;
+
+  // left vertical rule
+  &::before {
+    content: '';
+
+    height: 100%;
+    width: .1em;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    background: var(--blockquote-bg);
+
+    display: block;
+  }
+
+  //nested blockquote
+  > blockquote {
+
+    margin: 0;
+    padding-bottom: 0;
+    font-style: italic;
+
+    &::before {
+      content: var(--a-active-bullet);
+      padding-top: var(--fitz-2);
+
+      background: inherit;
+
+      display: inline;
+    }
+  }
+
+  p {
+
+    margin-bottom: 0;
+    position: relative;
+    overflow: visible;
+  }
+}

@@ -1,0 +1,40 @@
+{# itarate properties of an object into table #}
+{#  looks like first level data items cannot be retrieved from
+    key value in header - page.header[ 'person' ]  #}
+
+{% macro printData( dataKey, dataObj ) %}
+  {% import _self as this %}
+
+
+    <table>
+      {% for key, val in dataObj %}
+      {% if key != "@type" %}
+        <tr>
+          <th>{{ t('PHOTON.' ~ dataKey ~ '.' ~ key) }}</th>
+          <td>
+            {% if val is iterable %}
+              {{ val.count }}
+              {{ this.printData( dataKey ~ '.' ~ key, val ) }}
+            {% else %}
+              {{ val }}
+            {% endif %}
+          </td>
+        </tr>
+      {% endif %}
+      {% endfor %}
+    </table>
+{% endmacro printData %}
+
+{% import _self as this %}
+
+{% if page.header.data[ article.template ] %}
+  <div class="data">
+    <h1>{{ t('PHOTON.' ~ article.template) }}</h1>
+    {{ dump( article.template ) }}
+    {{ dump( page.header.data[ article.template ] ) }}
+
+    {{ this.printData( article.template, page.header.data[ article.template ] ) }}
+
+
+  </div>
+{% endif %}
