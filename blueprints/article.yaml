@@ -28,9 +28,8 @@ form:
 
                     header.subtitle:
                       type: text
-                      autofocus: true
                       style: vertical
-                      label: PLUGIN_ADMIN.TITLE
+                      label: Subtitle
 
                     content:
                         type: markdown
