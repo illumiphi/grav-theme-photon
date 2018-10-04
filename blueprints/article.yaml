@@ -26,6 +26,12 @@ form:
                       style: vertical
                       label: PLUGIN_ADMIN.TITLE
 
+                    header.subtitle:
+                      type: text
+                      autofocus: true
+                      style: vertical
+                      label: PLUGIN_ADMIN.TITLE
+
                     content:
                         type: markdown
                         validate:
