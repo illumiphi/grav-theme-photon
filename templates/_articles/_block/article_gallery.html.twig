@@ -1,5 +1,5 @@
 {% if article.header.show_gallery == 1 %}
-    <div class="article-gallery">
+    <div class="gallery">
       {% for image in article.media.images -%}
         <figure>
           {{ image.lightbox(1920).cropZoom(400,400).html('Sample Image') }}

@@ -2,7 +2,7 @@
 
 
 %heading-default {
-  --font: $font-display;
+--font: #{$font-display};
 
   font-family: var(--font);
   font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
