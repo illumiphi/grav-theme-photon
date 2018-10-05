@@ -1,13 +1,10 @@
 // Headings. OpenType ligatures, discretionary ligatures and lining figures enabled if available.
 
-// default heading style
-:root {
-  --font-display: $font-display;
-}
 
 %heading-default {
+  --font: $font-display;
 
-  font-family: var(--font-display);
+  font-family: var(--font);
   font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
   font-weight: 400;
 

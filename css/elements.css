@@ -24,26 +24,24 @@
   border-radius: 0; }
 
 /* elements/html *****************************/
-:root {
-  --html-color: var(--color-fg);
-  --html-bg: var(--color-bg); }
-
 html {
+  --color: var(--color-fg);
+  --bg: var(--color-bg);
+  --font: "Lato", sans-serif;
+  --bullett: '✴';
   height: 100%;
   max-width: 100%;
-  color: var(--html-color);
-  background: var(--html-bg);
-  font-family: "Lato", sans-serif;
+  color: var(--color);
+  background: var(--bg);
+  font-family: var(--font);
   font-weight: 400;
   line-height: 1.35;
   text-align: left; }
 
 /* elements/headings *****************************/
-:root {
-  --font-display: "Bree Serif", serif; }
-
 h1, h2, h3, h4 {
-  font-family: var(--font-display);
+  --font: "Bree Serif", serif;
+  font-family: var(--font);
   font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
   font-weight: 400;
   line-height: 1.5;
@@ -82,10 +80,8 @@ li {
   font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1; }
 
 /* elements/blockquotes *****************************/
-:root {
-  --blockquote-bg: #36463d; }
-
 blockquote {
+  --bg: #36463d;
   margin: var(--fitz-2) auto;
   font-size: 1.2em;
   display: block; }
@@ -96,14 +92,14 @@ blockquote {
     position: absolute;
     left: 0;
     top: 0;
-    background: var(--blockquote-bg);
+    background: var(--bg);
     display: block; }
   blockquote > blockquote {
     margin: 0;
     padding-bottom: 0;
     font-style: italic; }
     blockquote > blockquote::before {
-      content: var(--a-active-bullet);
+      content: var(--bullet);
       padding-top: var(--fitz-2);
       background: inherit;
       display: inline; }
@@ -113,17 +109,15 @@ blockquote {
     overflow: visible; }
 
 /* elements/code *****************************/
-:root {
-  --code-color: var(--color-bg);
-  --code-bg: var(--color-fg); }
-
 pre,
 code,
 kbd,
 samp {
+  --color: var(--color-bg);
+  --bg: var(--color-fg);
   padding: .1em .25em;
-  color: var(--code-color);
-  background: var(--code-bg);
+  color: var(--color);
+  background: var(--bg);
   font-family: monospace, monospace;
   font-size: 1em;
   line-height: 1.5;
@@ -139,27 +133,24 @@ pre {
   display: block; }
 
 /* elements/a *****************************/
-:root {
-  --a-color: #a69159;
-  --a-hover-color: white;
-  --a-hover-bg: #9cc9ae;
-  --a-active-color: #393663;
-  --a-active-bullet: "✴"; }
-
 a {
-  background: none;
-  color: var(--a-color);
+  --color: var(--color-key);
+  --bg: none;
+  --a-active-color: #393663;
+  --a-active-bullet: '✴';
+  color: var(--color);
+  background: var(--bg);
   text-decoration: none;
   display: flex;
   flex-flow: row;
   justify-content: center; }
   a:link {
-    color: var(--a-color); }
+    color: var(--color); }
   a:visited {
-    color: var(--a-color); }
+    color: var(--color); }
   a:hover {
-    color: var(--a-hover-color);
-    background: var(--a-hover-bg); }
+    --color: white;
+    --bg: #9cc9ae; }
   a:active {
     color: var(--a-active-color); }
   a.active {
@@ -172,9 +163,6 @@ a {
       flex-flow: column; } }
 
 /* elements/inline *****************************/
-:root {
-  --mark-bg: #a69159; }
-
 b,
 strong {
   font-weight: inherit;
@@ -188,7 +176,8 @@ cite {
   font-style: italic; }
 
 mark {
-  background: var(--mark-bg); }
+  --bg: var(--color-key);
+  background: var(--bg); }
 
 abbr[title] {
   border-bottom: 0;
@@ -213,10 +202,6 @@ sup {
   top: -.5em; }
 
 /* elements/figure *****************************/
-:root {
-  --figcaption-bg: var(--color-fg);
-  --figcaption-color: var(--color-bg); }
-
 img {
   border-style: none;
   display: block; }
@@ -230,24 +215,24 @@ figure {
     height: 100%;
     object-fit: cover; }
   figure figcaption {
+    --color: var(--color-bg);
+    --bg: var(--color-fg);
     position: absolute;
     left: 0;
     bottom: 0;
     width: 100%;
     padding: .75em 1em;
     z-index: 2;
-    color: var(--figcaption-color);
-    background: var(--figcaption-bg);
+    color: var(--color);
+    background: var(--bg);
     opacity: 0;
     transition: opacity .3s ease-in-out; }
   figure:hover > figcaption {
     opacity: 1; }
 
 /* elements/tables *****************************/
-:root {
-  --table-border-color: var(--color-fg); }
-
 table {
+  --border-color: var(--color-fg);
   max-width: 100%; }
 
 th,
@@ -264,7 +249,7 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: "Lato", sans-serif;
+  font-family: var(--font);
   font-size: 100%;
   line-height: 1.15; }
 
@@ -313,13 +298,14 @@ input[type=password],
 input[type=search],
 input[type=text],
 textarea {
+  --bg: #ede9de;
   display: block;
   padding: .4em;
   outline: 0 none;
-  border: 1px solid var(--color-fg);
+  border: 1px solid var(--color);
   text-align: left;
-  color: var(--color-fg);
-  background: #ede9de;
+  color: var(--color);
+  background: var(--bg);
   appearance: none;
   width: 100%;
   max-width: 100%; }
@@ -329,14 +315,14 @@ textarea {
   input[type=search]:focus,
   input[type=text]:focus,
   textarea:focus {
-    color: var(--color-fg); }
+    color: var(--color); }
   input[type=email]::placeholder,
   input[type=number]::placeholder,
   input[type=password]::placeholder,
   input[type=search]::placeholder,
   input[type=text]::placeholder,
   textarea::placeholder {
-    color: #635736; }
+    --color: #635736; }
 
 input[type=submit] {
   cursor: pointer;
@@ -356,14 +342,14 @@ select {
   padding: 0.575em 2em 0.575em 1.125em;
   display: block;
   width: 100%;
-  color: var(--color-fg);
-  border: 2px solid var(--color-fg); }
+  color: var(--color);
+  border: 2px solid var(--color); }
 
 label {
   display: block;
   font-weight: bold;
   margin-top: 1em;
-  font-family: "Lato", sans-serif; }
+  font-family: var(--font); }
 
 button {
   border: 0 none;

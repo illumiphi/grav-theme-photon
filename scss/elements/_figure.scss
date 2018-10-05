@@ -1,8 +1,6 @@
 
 
 :root {
-  --figcaption-bg:  var(--color-fg);
-  --figcaption-color: var(--color-bg);
 }
 
 img {
@@ -28,6 +26,9 @@ figure {
   }
 
   figcaption {
+    
+    --color: var(--color-bg);
+    --bg:  var(--color-fg);
 
     position: absolute;
     left: 0;
@@ -39,8 +40,8 @@ figure {
 
     z-index: 2;
 
-    color: var(--figcaption-color);
-    background: var(--figcaption-bg);
+    color: var(--color);
+    background: var(--bg);
 
     // see hover
     opacity: 0;

@@ -1,19 +1,15 @@
-// default anchor tag styling
-
-:root{
-  --a-color: #{$color-key};
-  --a-hover-color: white;
-  --a-hover-bg: #{$color-1-light};
-
-  --a-active-color: #{$color-2-dark};
-  --a-active-bullet: '✴'
-}
-
+// default anchor tag
 
 a {
 
-  background: none;
-  color: var(--a-color);
+  --color: var(--color-key);
+  --bg: none;
+
+  --a-active-color: #{$color-2-dark};
+  --a-active-bullet: '✴';
+
+  color: var(--color);
+  background: var(--bg);
 
   text-decoration: none;
 
@@ -22,16 +18,16 @@ a {
   justify-content: center;
 
   &:link {
-    color: var(--a-color);
+    color: var(--color);
   }
 
   &:visited {
-    color: var(--a-color);
+    color: var(--color);
   }
 
   &:hover {
-    color: var(--a-hover-color);
-    background: var(--a-hover-bg);
+    --color: white;
+    --bg: #{$color-1-light};
   }
 
   &:active {

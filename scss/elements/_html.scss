@@ -1,19 +1,21 @@
 // define all defaults within the HTML element
 
-:root{
-  --html-color: var(--color-fg);
-  --html-bg: var(--color-bg);
-}
-
 html {
+
+  --color: var(--color-fg);
+  --bg: var(--color-bg);
+
+  --font: $font-root;
+
+  --bullett: '✴';
 
   height: 100%;
   max-width: 100%;
 
-  color: var(--html-color);
-  background: var(--html-bg);
+  color: var(--color);
+  background: var(--bg);
 
-  font-family: $font-root;
+  font-family: var(--font);
   font-weight: 400;
   line-height: 1.35;
   text-align: left;
