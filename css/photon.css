@@ -5,9 +5,7 @@
 /* Lato */
 @import url("https://fonts.googleapis.com/css?family=Lato:100,400,400i,700,900");
 @font-face { font-family: 'photon-social'; src: url("../fonts/photon-social.eot?20845125"); src: url("../fonts/photon-social.eot?20845125#iefix") format("embedded-opentype"), url("../fonts/photon-social.woff?20845125") format("woff"), url("../fonts/photon-social.ttf?20845125") format("truetype"), url("../fonts/photon-social.svg?20845125#photon-social") format("svg"); font-weight: normal; font-style: normal; }
-:root { --color-fg: #36463d; --color-bg: white; --color-key: #a69159; }
-
-:root { --fitz: .5em; --fitz-2: calc(var(--fitz) * 2); --col: 18em; --col-2: calc( var(--col) * 2 ); --col-3: calc( var(--col) * 3 ); --col-4: calc( var(--col) * 4 ); --col-5: calc( var(--col) * 5 ); --col-6: calc( var(--col) * 6 ); }
+:root { --color-fg: #36463d; --color-bg: white; --color-key: #a69159; --fitz: .5em; --fitz-2: calc(var(--fitz) * 2); --col: 18em; --col-2: calc( var(--col) * 2 ); --col-3: calc( var(--col) * 3 ); --col-4: calc( var(--col) * 4 ); --col-5: calc( var(--col) * 5 ); --col-6: calc( var(--col) * 6 ); --header-height: 9em; }
 
 /* base elements *****************************/
 /* photon ✴ Theme Elements*/
@@ -56,10 +54,10 @@ pre code { padding: 1em; display: block; }
 pre { display: block; }
 
 /* elements/a *****************************/
-a { --color: var(--color-key); --bg: none; --a-active-color: #393663; --a-active-bullet: '✴'; color: var(--color); background: var(--bg); text-decoration: none; display: flex; flex-flow: row; justify-content: center; }
+a { --color: var(--color-key); --bg: none; --a-active-color: #393663; --a-active-bullet: '✴'; --hover-color: var(--color-bg); --hover-bg: var(--color-key); color: var(--color); background: var(--bg); text-decoration: none; display: flex; flex-flow: row; justify-content: center; }
 a:link { color: var(--color); }
 a:visited { color: var(--color); }
-a:hover { --color: white; --bg: #9cc9ae; }
+a:hover { --color: var(--hover-color); --bg: var(--hover-bg); }
 a:active { color: var(--a-active-color); }
 a.active { font-weight: 700; }
 a.active::before, a.active::after { content: var(--a-active-bullet); padding: 0 var(--fitz); }
@@ -230,15 +228,13 @@ section, .asides, .featured, footer, header, main, nav, .showcase { display: fle
 footer { padding: 1em; flex-direction: column; }
 
 /* sections/header *****************************/
-:root { --header-block: 10em; }
-
-header { align-items: center; justify-content: space-around; }
+header { align-items: center; }
 header .logo { display: flex; justify-content: center; align-content: center; }
 header .logo a { display: flex; flex-flow: row nowrap; justify-content: center; align-items: center; padding: var(--fitz); }
 header .logo a img { height: 3em; margin: 0 auto; }
 header .logo a h1 { font-size: 1.2em; letter-spacing: .1em; padding-left: .5em; text-align: center; }
-header nav { display: none; }
-header .contact { width: var(--header-block); width: 20em; height: var(--header-block); padding: var(--fitz); justify-content: center; display: none; }
+header nav.main { display: none; }
+header .contact { width: var(--header-height); height: var(--header-height); padding: var(--fitz); justify-content: center; display: none; }
 header .contact p { font-size: .8em; text-align: center; }
 header .toggle { width: 2.5em; height: 2.5em; font-size: 2em; display: flex; flex-flow: row nowrap; justify-content: center; align-items: center; }
 header.expand { flex-flow: row wrap; height: calc(100vh - calc( var(--fitz-2) * 2 )); }
@@ -254,7 +250,7 @@ header.expand .contact { display: flex; order: 4; }
   header .logo a h1 { font-size: 1em; letter-spacing: .1em; padding-left: .1em; text-align: center; }
   header .toggle { display: none; }
   header .contact { display: flex; width: auto; height: auto; }
-  header nav { display: flex; } }
+  header nav.main { display: flex; } }
 
 /* on/main *****************************/
 main { flex-flow: column nowrap; }
@@ -268,11 +264,12 @@ nav.breadcrumbs { width: auto; }
 .showcase { position: relative; display: block; }
 .showcase > article { position: absolute; top: 0; bottom: 0; right: 0; left: 0; opacity: 0; cursor: pointer; display: flex; flex-flow: column; }
 .showcase > article > figure > figcaption { display: none; }
+.showcase > article > footer .article-share, .showcase > article > footer .article-tags, .showcase > article > footer .sibling { display: none; }
 
 /* templates/_default *****************************/
 body { --bg: #6e8e7c; --body-footer-bg: var(--color-bg); --body-asides-bg: var(--color-bg); --body-form-bg: var(--color-bg); background: var(--bg); padding: var(--fitz); display: flex; flex-flow: column; align-content: center; justify-content: flex-start; }
 body > header, body > main, body > .asides, body > footer, body.home > .showcase, body.home > .welcome, body.home > .featured { margin: var(--fitz); }
-body > header { --bg: var(--color-bg); --header-height: 10em; height: var(--header-height); padding: var(--fitz-2); background: var(--bg); overflow: hidden; }
+body > header { --bg: var(--color-bg); height: var(--header-height); padding: var(--fitz-2); background: var(--bg); overflow: hidden; justify-content: space-around; }
 body > main { margin: 0; display: flex; flex-flow: column; }
 body > main > * { margin: var(--fitz); padding: var(--fitz); }
 body > main > .collection { width: 100%; flex-flow: column; padding: 0; margin: 0; }
@@ -322,7 +319,7 @@ body > footer { background: var(--body-footer-bg); }
 @media (min-width: 126em) and (min-width: 54em) { @supports (display: grid) { body > main > .collection > .excerpt { display: grid; grid-template-areas: ' figure header ' ' figure main ' ' figure footer'; grid-template-columns: 10em 1fr; grid-template-rows: auto 1fr auto; } } }
 
 /* templates/home *****************************/
-body.home > .showcase { padding: 0; height: calc(100vh - var(--body-header-height) - (var(--fitz-2) * 3)); }
+body.home > .showcase { padding: 0; height: calc(100vh - var(--header-height) - (var(--fitz-2) * 3)); }
 @media (min-width: 72em) { @supports (display: grid) { body.home { display: grid; grid-template-areas: "  header   showcase " "  featured featured " "  asides   main   " "  footer   footer   "; grid-template-rows: calc(100vh - var(--fitz-2)); }
     body.home > .showcase { grid-area: showcase; height: calc(100vh - 2em); }
     body.home > .featured { grid-area: featured; } } }

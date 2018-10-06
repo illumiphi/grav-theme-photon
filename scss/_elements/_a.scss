@@ -8,6 +8,9 @@ a {
   --a-active-color: #{$color-2-dark};
   --a-active-bullet: '✴';
 
+  --hover-color: var(--color-bg);
+  --hover-bg: var(--color-key);
+
   color: var(--color);
   background: var(--bg);
 
@@ -26,8 +29,8 @@ a {
   }
 
   &:hover {
-    --color: white;
-    --bg: #{$color-1-light};
+    --color: var(--hover-color);
+    --bg: var(--hover-bg);
   }
 
   &:active {

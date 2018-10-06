@@ -6,11 +6,9 @@ body {
 
   --bg: #{$color-neutral};
 
-
   --body-footer-bg: var(--color-bg);
   --body-asides-bg: var(--color-bg);
   --body-form-bg: var(--color-bg);
-
 
   background: var(--bg);
   padding: var(--fitz);
@@ -29,15 +27,17 @@ body {
     @extend %body-section-default;
     --bg: var(--color-bg);
 
-    --header-height: 10em;
+
 
     height: var(--header-height);
-
     padding: var(--fitz-2);
 
     background: var(--bg);
 
     overflow: hidden;
+
+    justify-content: space-around;
+    
 
   }
 
@@ -128,14 +128,12 @@ body {
     @supports (display: grid) {
 
       display: grid;
-      // grid-gap: 0;
       grid-template-areas:
         " header main "
         " asides main "
         " footer footer ";
       grid-template-columns: var(--col)   1fr;
       grid-template-rows: auto 1fr auto;
-      // grid-template-rows: min-content min-content 1fr;
 
       > header {
         grid-area: header;
@@ -179,14 +177,8 @@ body {
     > main {
       flex-flow: row;
       > article {
-        // width: 50%;
-        // max-width: var(--col-4);
-
       }
       > .collection {
-        // width: var(--col-3);
-        // width: 50%;
-        // flex-grow: 1;
         > .excerpt {
           @include article-banner;
         }
@@ -197,7 +189,6 @@ body {
   @include media-bp(5) {
     > main {
       > .collection {
-        // width: var(--col-4);
       }
     }
   }

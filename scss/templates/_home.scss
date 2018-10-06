@@ -11,7 +11,7 @@ body.home {
     padding: 0; //each article has padding
 
     // set to height of the screen - header and margins
-    height: calc(100vh - var(--body-header-height) - (var(--fitz-2) * 3));
+    height: calc(100vh - var(--header-height) - (var(--fitz-2) * 3));
 
   }
 
