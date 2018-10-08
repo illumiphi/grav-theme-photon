@@ -17,7 +17,7 @@
         <h1>pages: <span class="count">{{ page.collection.count() }}</span></h1>
 
         {% for article in page.collection %}
-          {% if not (article.url == page.url)  %}
+          {% if not (article.url == page.url) and article.routable == true %}
             {% include ["_articles/#{ article.template }-excerpt.html.twig", "_articles/article-excerpt.html.twig"] with { 'article': article } %}
           {% endif %}
         {% endfor %}

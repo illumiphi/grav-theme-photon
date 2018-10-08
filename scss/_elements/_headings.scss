@@ -2,16 +2,14 @@
 
 
 %heading-default {
---font: #{$font-display};
 
-  font-family: var(--font);
+  font-family: var(--font-display);
   font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
   font-weight: 400;
 
   line-height: 1.5;
 
   display: block;
-
 }
 
 h1 {

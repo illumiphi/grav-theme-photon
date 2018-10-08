@@ -1,0 +1,16 @@
+// FONTS
+@import '_fonts/_Bree-Serif';
+@import '_fonts/_Lato';
+@import '_fonts/_photon-social';
+// @import '_fonts/_Lato';
+
+
+:root {
+  --font: #{$font-Lato};
+  --font-display: #{$font-Bree-Serif};
+  --font-form: var(--font);
+  --font-social: #{$font-photon-social};
+
+  --bullett: '✴';
+
+}

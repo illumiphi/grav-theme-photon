@@ -49,9 +49,8 @@
         ' figure main '
         ' figure footer';
 
-      grid-template-columns:  10em 1fr;
+      grid-template-columns:  calc(var(--col) / 2) 1fr;
       grid-template-rows:  auto 1fr auto;
-      // grid-gap: 1em;
 
       > footer {
         // flex-flow: column;

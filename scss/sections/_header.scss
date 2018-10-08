@@ -6,6 +6,9 @@ header {
 
   align-items: center;
 
+  align-content: flex-start;
+  justify-content: space-around;
+
   .logo {
 
     display: flex;
@@ -64,12 +67,12 @@ header {
 
   .toggle {
 
-    width: 2.5em;
-    height: 2.5em;
+    width: 3.5em;
+    height: 3em;
 
     // padding: var(--fitz);
 
-    font-size: 2em;
+    font-size: 2.5em;
 
     display: flex;
     flex-flow: row nowrap;
@@ -80,12 +83,13 @@ header {
 
   &.expand {
 
-    flex-flow: row wrap;
     height: calc(100vh - calc( var(--fitz-2) * 2 ));
+
+    flex-flow: row wrap;
 
     .logo {
       order: 1;
-      width: 70%;
+      // width: 70%;
     }
 
     .toggle {

@@ -37,13 +37,13 @@ body {
     overflow: hidden;
 
     justify-content: space-around;
-    
+
 
   }
 
   > main {
     @extend %body-section-default;
-
+    width: 100%;
     margin: 0;
 
     display: flex;
@@ -52,7 +52,6 @@ body {
     > * {
       margin: var(--fitz);
       padding: var(--fitz);
-
     }
 
     > header {
@@ -175,8 +174,9 @@ body {
 
   @include media-bp(4) {
     > main {
-      flex-flow: row;
+      flex-flow: column wrap;
       > article {
+        height: 100%;
       }
       > .collection {
         > .excerpt {
