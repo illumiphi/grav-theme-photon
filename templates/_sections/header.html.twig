@@ -3,7 +3,9 @@
 
       <div class="logo">
           <a href="{{ home_url }}" >
-            <img src="/images/logo.jpg" alt="">
+            {% if config.site.logo %}
+            <img src="/images/{{ config.site.logo }}" alt="logo">
+            {% endif %}
             <h1>
               {{ site.title }}
             </h1>
