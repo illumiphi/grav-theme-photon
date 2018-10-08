@@ -26,5 +26,15 @@ nav {
     width: auto;
   }
 
+  &.tree {
+    background: var(--color-bg);
+    ul {
+      text-align: left;
+      a {
+        text-align: left;
+        display: block;
+      }
+    }
+  }
 
 }
