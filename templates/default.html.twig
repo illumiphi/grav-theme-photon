@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- {{ test() }} -->
 <html lang="en">
 {% block template %}
 <!-- user/themes/photon/templates/default.html.twig -->
@@ -8,6 +9,7 @@
 
   <body class="{% block body_template_classes %}{% endblock body_template_classes %}{% if page.header.body_classes %} {{ page.header.body_classes }}{% endif %}">
     {% block header %}
+
     {% include '_sections/header.html.twig' %}
     {% endblock header %}
 
@@ -17,6 +19,7 @@
 
     {% block main %}
       <main>
+
         {% block content %}
         {% include ["_articles/#{ page.template }.html.twig", "_articles/article.html.twig"] with { 'article': page } %}
         {% endblock content %}

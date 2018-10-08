@@ -1,9 +1,8 @@
 
-:root {
-  --blockquote-bg: #{$color-neutral-darker};
-}
 
 blockquote {
+
+  --bg: #{$color-neutral-darker};
 
   margin: var(--fitz-2) auto;
 
@@ -22,7 +21,7 @@ blockquote {
     left: 0;
     top: 0;
 
-    background: var(--blockquote-bg);
+    background: var(--bg);
 
     display: block;
   }
@@ -35,7 +34,7 @@ blockquote {
     font-style: italic;
 
     &::before {
-      content: var(--a-active-bullet);
+      content: var(--bullet);
       padding-top: var(--fitz-2);
 
       background: inherit;

@@ -1,17 +1,15 @@
-:root {
-  --header-block: 10em;
-}
 
 header {
 
   @extend %section-default;
 
+
   align-items: center;
+
+  align-content: flex-start;
   justify-content: space-around;
 
   .logo {
-    // width: calc( var(--header-block) / 2 );
-
 
     display: flex;
     justify-content: center;
@@ -26,8 +24,6 @@ header {
       padding: var(--fitz);
 
       img {
-        // width: calc( ( var(--header-block) / 2 ) - 2em );
-        // height: auto;
         height: 3em;
 
         margin: 0 auto;
@@ -45,15 +41,14 @@ header {
   }
 
 
-  nav {
+  nav.main {
     display: none;
   }
 
   .contact {
 
-    width: var(--header-block);
-    width: 20em;
-    height: var(--header-block);
+    width: var(--header-height);
+    height: var(--header-height);
 
     padding: var(--fitz);
 
@@ -72,12 +67,12 @@ header {
 
   .toggle {
 
-    width: 2.5em;
-    height: 2.5em;
+    width: 3.5em;
+    height: 3em;
 
     // padding: var(--fitz);
 
-    font-size: 2em;
+    font-size: 2.5em;
 
     display: flex;
     flex-flow: row nowrap;
@@ -88,12 +83,13 @@ header {
 
   &.expand {
 
-    flex-flow: row wrap;
     height: calc(100vh - calc( var(--fitz-2) * 2 ));
+
+    flex-flow: row wrap;
 
     .logo {
       order: 1;
-      width: 70%;
+      // width: 70%;
     }
 
     .toggle {
@@ -131,8 +127,8 @@ header {
   @include media-bp(2) {
 
     .logo {
-      width: auto; //var(--header-block);
-      height: auto; //var(--header-block);
+      width: auto; //var(--header-height);
+      height: auto; //var(--header-height);
 
       flex-flow: column;
 
@@ -142,7 +138,7 @@ header {
         flex-direction: column;
 
         img {
-          width: auto; //calc( var(--header-block) - 2em);
+          width: auto; //calc( var(--header-height) - 2em);
           height: 5em;
 
         }
@@ -164,12 +160,12 @@ header {
 
     .contact {
       display: flex;
-      width: auto; //var(--header-block);
-      height: auto; //var(--header-block);
+      width: auto; //var(--header-height);
+      height: auto; //var(--header-height);
 
     }
 
-    nav {
+    nav.main {
       display: flex;
     }
 

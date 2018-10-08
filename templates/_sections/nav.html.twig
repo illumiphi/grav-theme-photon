@@ -1,5 +1,5 @@
 {% block navbar %}
-    <nav>
+    <nav class="main">
       {% for p in pages.children %}
         {%- if p.visible %}
           {%- set active_class = (p.active or p.activeChild) ? ' class="active"' : '' %}

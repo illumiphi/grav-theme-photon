@@ -1,30 +1,30 @@
 /* photon ✴ Theme Elements*/
-@import '_config';
+// @import '_config';
 // set defaults from simplest to most complex
 
 
 /* elements/_index *****************************/
-@import 'elements/_index';
+@import '_elements/_index';
 /* elements/html *****************************/
-@import 'elements/html';
+@import '_elements/html';
 /* elements/headings *****************************/
-@import 'elements/headings';
+@import '_elements/headings';
 /* elements/blocks *****************************/
-@import 'elements/blocks';
+@import '_elements/blocks';
 /* elements/lists *****************************/
-@import 'elements/lists';
+@import '_elements/lists';
 /* elements/blockquotes *****************************/
-@import 'elements/blockquotes';
+@import '_elements/blockquotes';
 /* elements/code *****************************/
-@import 'elements/code';
+@import '_elements/code';
 /* elements/a *****************************/
-@import 'elements/a';
-// @import 'elements/a-tooltip';
+@import '_elements/a';
+// @import '_elements/a-tooltip';
 /* elements/inline *****************************/
-@import 'elements/inline';
+@import '_elements/inline';
 /* elements/figure *****************************/
-@import 'elements/figure';
+@import '_elements/figure';
 /* elements/tables *****************************/
-@import 'elements/tables';
+@import '_elements/tables';
 /* elements/forms *****************************/
-@import 'elements/forms';
+@import '_elements/forms';

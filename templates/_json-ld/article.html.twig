@@ -1,30 +1,29 @@
-
-    <script type="application/ld+json">
-      {
-        "@context": "http://schema.org",
-        "@type": "Article",
-        "mainEntityOfPage": {
-          "@type": "WebPage",
-          "@id": "{{ page.url }}"
-        },
-        "headline": "{{ page_title }}",
-        "image": [
-          "{{ featured_image }}"
-         ],
-        "datePublished": "{{ page.date|date("Y-m-d") }}",
-        "dateModified": "{{ page.modified|date("Y-m-d") }}",
-        "author": {
-          "@type": "Organization",
-          "name": "illumiphi"
-        },
-        "publisher": {
-          "@type": "Organization",
-          "name": "{{ site.title }}",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "{{ base_url_absolute ~ "/images/logo.png" }}"
-          }
-        },
-        "description": "{{ page_description }}"
-      }
-    </script>
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ page.url }}"
+      },
+      "headline": "{{ page_title }}",
+      "image": [
+        "{{ featured_image }}"
+       ],
+      "datePublished": "{{ page.date|date("Y-m-d") }}",
+      "dateModified": "{{ page.modified|date("Y-m-d") }}",
+      "author": {
+        "@type": "Organization",
+        "name": "illumiphi"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "{{ site.title }}",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "{{ base_url_absolute ~ "/images/logo.png" }}"
+        }
+      },
+      "description": "{{ page_description }}"
+    }
+  </script>

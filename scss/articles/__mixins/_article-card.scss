@@ -17,11 +17,6 @@
   > main {
     align-content: flex-start;
 
-    .more {
-      margin: 0 auto;
-      text-align: center;
-      display: block;
-    }
   }
 
   > footer {
@@ -44,5 +39,12 @@
       align-self: flex-end;
       justify-content: right;
     }
+
+    .more {
+      margin: 0 auto;
+      text-align: center;
+      display: block;
+    }
+
   }
 }

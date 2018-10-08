@@ -1,31 +1,16 @@
 // default body
 // defaults for top level blocks top level sections
 
-:root {
-  --body-bg: #{$color-neutral};
 
-  --body-header-bg: var(--color-bg);
-  --body-header-height: 10em;
+body {
+
+  --bg: #{$color-neutral};
 
   --body-footer-bg: var(--color-bg);
   --body-asides-bg: var(--color-bg);
   --body-form-bg: var(--color-bg);
 
-  --fitz: .5em;
-  --fitz-2: calc(var(--fitz) * 2);
-
-  --col: 18em;
-  --col-2: calc( var(--col) * 2 );
-  --col-3: calc( var(--col) * 3 );
-  --col-4: calc( var(--col) * 4 );
-  --col-5: calc( var(--col) * 5 );
-  --col-6: calc( var(--col) * 6 );
-
-}
-
-body {
-
-  background: var(--body-bg);
+  background: var(--bg);
   padding: var(--fitz);
 
   display: flex;
@@ -40,20 +25,25 @@ body {
   // default sections
   > header {
     @extend %body-section-default;
+    --bg: var(--color-bg);
 
-    height: var(--body-header-height);
 
+
+    height: var(--header-height);
     padding: var(--fitz-2);
 
-    background: var(--body-header-bg);
+    background: var(--bg);
 
     overflow: hidden;
+
+    justify-content: space-around;
+
 
   }
 
   > main {
     @extend %body-section-default;
-
+    width: 100%;
     margin: 0;
 
     display: flex;
@@ -62,7 +52,6 @@ body {
     > * {
       margin: var(--fitz);
       padding: var(--fitz);
-
     }
 
     > header {
@@ -138,14 +127,12 @@ body {
     @supports (display: grid) {
 
       display: grid;
-      // grid-gap: 0;
       grid-template-areas:
         " header main "
         " asides main "
         " footer footer ";
       grid-template-columns: var(--col)   1fr;
       grid-template-rows: auto 1fr auto;
-      // grid-template-rows: min-content min-content 1fr;
 
       > header {
         grid-area: header;
@@ -187,16 +174,11 @@ body {
 
   @include media-bp(4) {
     > main {
-      flex-flow: row;
+      flex-flow: column wrap;
       > article {
-        // width: 50%;
-        // max-width: var(--col-4);
-
+        height: 100%;
       }
       > .collection {
-        // width: var(--col-3);
-        // width: 50%;
-        // flex-grow: 1;
         > .excerpt {
           @include article-banner;
         }
@@ -207,7 +189,6 @@ body {
   @include media-bp(5) {
     > main {
       > .collection {
-        // width: var(--col-4);
       }
     }
   }
