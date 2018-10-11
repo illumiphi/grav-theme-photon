@@ -15,13 +15,24 @@ license: MIT
 form:
   validation: loose
   fields:
-    dropdown.enabled:
-        type: toggle
-        label: Dropdown in Menu
-        highlight: 1
-        default: 1
-        options:
-          1: PLUGIN_ADMIN.ENABLED
-          0: PLUGIN_ADMIN.DISABLED
-        validate:
-          type: bool
+
+    # dropdown.enabled:
+    #     type: toggle
+    #     label: Dropdown in Menu
+    #     highlight: 1
+    #     default: 1
+    #     options:
+    #       1: PLUGIN_ADMIN.ENABLED
+    #       0: PLUGIN_ADMIN.DISABLED
+    #     validate:
+    #       type: bool
+
+    color.key:
+      type: colorpicker
+      label: Key Color
+    color.complement1:
+      type: color
+      label: Complement 1 Color
+    color.complement2:
+      type: color
+      label: Complement 2 Color

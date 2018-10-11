@@ -4,9 +4,9 @@
 {% block head %}
 
 <head>
-
+<!-- {{ theme.color.key }} -->
 <title>{{ page_title }}</title>
-
+<!-- test -->
 <!-- meta -->
 {% block meta %}
   <meta charset="utf-8">
@@ -54,6 +54,8 @@
 
 <!-- CSS photon -->
 {{ assets.css('photon') }}
+<!-- CSS photon-plugins -->
+{{ assets.css('photon-plugins') }}
 <!-- CSS  -->
 {{ assets.css() }}
 
@@ -78,6 +80,8 @@
 {{ assets.js() }}
 <!-- JS photon -->
 {{ assets.js('photon') }}
+<!-- JS photon-plugins -->
+{{ assets.js('photon-plugins') }}
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://uicdn.toast.com/tui.code-snippet/latest/tui-code-snippet.min.js"></script>

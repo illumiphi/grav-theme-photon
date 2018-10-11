@@ -1,17 +1,18 @@
 @charset "UTF-8";
 /* photon ✴ Theme Components and Templates */
+/* fonts *****************************/
+/* Bree Serif - 400 */
 @import url("https://fonts.googleapis.com/css?family=Bree+Serif");
+/* Lato */
 @import url("https://fonts.googleapis.com/css?family=Lato:100,400,400i,700,900");
-:root { --fitz: .5em; --fitz-2: calc(var(--fitz) * 2); --col: 18em; --col-2: calc( var(--col) * 2 ); --col-3: calc( var(--col) * 3 ); --col-4: calc( var(--col) * 4 ); --col-5: calc( var(--col) * 5 ); --col-6: calc( var(--col) * 6 ); --header-height: 9em; }
+@font-face { font-family: 'photon-social'; src: url("../fonts/photon-social.eot?20845125"); src: url("../fonts/photon-social.eot?20845125#iefix") format("embedded-opentype"), url("../fonts/photon-social.woff?20845125") format("woff"), url("../fonts/photon-social.ttf?20845125") format("truetype"), url("../fonts/photon-social.svg?20845125#photon-social") format("svg"); font-weight: normal; font-style: normal; }
+:root { --font: Lato, sans-serif; --font-display: Bree Serif, serif; --font-form: var(--font); --font-social: photon-social, sans-serif; --bullett: '✴'; }
 
 /* color *****************************/
 :root { --color-fg: #36463d; --color-bg: white; --color-key: #a69159; --color: var(--color-fg); --bg: var(--color-bg); }
 
-/* fonts *****************************/
-/* Bree Serif - 400 */
-/* Lato */
-@font-face { font-family: 'photon-social'; src: url("../fonts/photon-social.eot?20845125"); src: url("../fonts/photon-social.eot?20845125#iefix") format("embedded-opentype"), url("../fonts/photon-social.woff?20845125") format("woff"), url("../fonts/photon-social.ttf?20845125") format("truetype"), url("../fonts/photon-social.svg?20845125#photon-social") format("svg"); font-weight: normal; font-style: normal; }
-:root { --font: Lato, sans-serif; --font-display: Bree Serif, serif; --font-form: var(--font); --font-social: photon-social, sans-serif; --bullett: '✴'; }
+/* media *****************************/
+:root { --fitz: .5em; --fitz-2: calc(var(--fitz) * 2); --fitz-half: calc(var(--fitz) / 2); --col: 18em; --col-2: calc( var(--col) * 2 ); --col-3: calc( var(--col) * 3 ); --col-4: calc( var(--col) * 4 ); --col-5: calc( var(--col) * 5 ); --col-6: calc( var(--col) * 6 ); --header-height: 9em; }
 
 /* base elements *****************************/
 /* photon ✴ Theme Elements*/
