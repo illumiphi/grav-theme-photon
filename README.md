@@ -1,7 +1,7 @@
-# Order Theme
+# photon ✴ THEME
 
-The **Order** Theme is for [Grav CMS](http://github.com/getgrav/grav).  This README.md file should be modified to describe the features, installation, configuration, and general usage of this theme.
+Core photon theme for the [Grav CMS](http://github.com/getgrav/grav).
 
 ## Description
 
-A theme to bring ORDER to the Structure, Logic and Style of your content
+A theme to bring Structure, Logic and Style to your content
