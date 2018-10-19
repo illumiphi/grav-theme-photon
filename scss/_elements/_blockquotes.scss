@@ -2,7 +2,7 @@
 
 blockquote {
 
-  --bg: #{$color-neutral-darker};
+  --bg: var(--color-fg);
 
   margin: var(--fitz-2) auto;
 

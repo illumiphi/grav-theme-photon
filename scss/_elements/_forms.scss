@@ -87,7 +87,7 @@ input[type=password],
 input[type=search],
 input[type=text],
 textarea {
-  --bg: #{$color-key-lighter};
+  --bg: var(--color-key-lighter);
 
   display: block;
   padding: .4em;
@@ -111,7 +111,7 @@ textarea {
   }
   // Placeholder text
   &::placeholder {
-  --color: #{$color-key-dark};
+  --color: var(--color-key-dark);
   }
 }
 // Form submit.
@@ -122,8 +122,8 @@ input[type=submit] {
   border: 0 none;
   border-radius: .5em;
 
-  color: $color-key-lighter;
-  background: $color-key;
+  color: var(--color-key-lighter);
+  background: var(--color-key);
   padding: .5em;
   margin: .5em 0;
   text-decoration: none;
@@ -156,14 +156,14 @@ button {
   border: 0 none;
   border-radius: .5em;
 
-  color: $color-key-lighter;
-  background: $color-key;
+  color: var(--color-key-lighter);
+  background: var(--color-key);
   padding: .5em;
   margin: .5em;
   text-decoration: none;
 
   &:hover {
-    background: $color-key-light;
+    background: var(--color-key-light);
     text-decoration: none;
   }
 

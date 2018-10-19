@@ -5,7 +5,7 @@ a {
   --color: var(--color-key);
   --bg: none;
 
-  --a-active-color: #{$color-2-dark};
+  --a-active-color: var(--color-2-dark);
   --a-active-bullet: '✴';
 
   --hover-color: var(--color-bg);

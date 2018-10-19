@@ -59,6 +59,69 @@
 <!-- CSS  -->
 {{ assets.css() }}
 
+<!-- CSS fonts -->
+{% block css_fonts %}
+<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,400i,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700" rel="stylesheet">
+<style>
+:root {
+  --font: Lato, sans-serif;
+  --font-display: Montserrat, sans-serif;
+  --font-form: var(--font);
+  /* --font-social: #{$font-photon-social}; */
+
+  --bullett: '✴';
+}
+</style>
+{% endblock css_fonts %}
+
+<!-- CSS vars -->
+{% block css_vars %}
+<style>
+:root {
+  --fitz: .5em;
+  --col: 18em;
+  --header-height: 9em;
+}
+:root {
+  --hue-key: 44;
+  --hue-1: 144;
+  --hue-2: 244;
+
+  --sat: 30%;
+
+  --color-key-lighter: hsl( var(--hue-key), var(--sat), 90%);
+  --color-key-light:   hsl( var(--hue-key), var(--sat), 70%);
+  --color-key:         hsl( var(--hue-key), var(--sat), 50%);
+  --color-key-dark:    hsl( var(--hue-key), var(--sat), 30%);
+  --color-key-darker:  hsl( var(--hue-key), var(--sat), 20%);
+
+  --color-1-lighter:   hsl(var(--hue-1), var(--sat), 90%);
+  --color-1-light:     hsl(var(--hue-1), var(--sat), 70%);
+  --color-1:           hsl(var(--hue-1), var(--sat), 50%);
+  --color-1-dark:      hsl(var(--hue-1), var(--sat), 30%);
+  --color-1-darker:    hsl(var(--hue-1), var(--sat), 20%);
+
+  --color-2-lighter:   hsl(var(--hue-2), var(--sat), 90%);
+  --color-2-light:     hsl(var(--hue-2), var(--sat), 70%);
+  --color-2:           hsl(var(--hue-2), var(--sat), 50%);
+  --color-2-dark:      hsl(var(--hue-2), var(--sat), 30%);
+  --color-2-darker:    hsl(var(--hue-2), var(--sat), 20%);
+
+}
+
+:root {
+  --color-fg: #333;
+  --color-bg: #EEE;
+
+  --color: var(--color-fg);
+  --bg: var(--color-bg);
+
+}
+
+</style>
+{% endblock css_vars %}
+
 {% block javascripts %}
 {%- do assets.add( 'https://code.jquery.com/jquery-3.2.1.slim.min.js',
   {'priority':1001} ) %}

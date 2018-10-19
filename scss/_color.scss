@@ -1,22 +1,2 @@
 // COLOR
-$color-key-hue: 44;
-$color-1-hue: 144;
-$color-2-hue: 244;
-
-$saturation: 30;
-
-// this generates the color pallete
-@import '_color/_default';
-@import '_color/_social';
-
-
-:root {
-
-  --color-fg: #{$color-neutral-darker};
-  --color-bg: #{$color-neutral-lighter};
-  --color-key: #{$color-key};
-
-  --color: var(--color-fg);
-  --bg: var(--color-bg);
-
-}
+// @import '_color/_social';

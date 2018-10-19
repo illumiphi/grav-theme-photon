@@ -4,7 +4,7 @@
 
 body {
 
-  --bg: #{$color-neutral};
+  --bg: var(--color-key-dark);
 
   --body-footer-bg: var(--color-bg);
   --body-asides-bg: var(--color-bg);
