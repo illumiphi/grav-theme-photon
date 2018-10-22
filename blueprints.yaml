@@ -16,23 +16,38 @@ form:
   validation: loose
   fields:
 
-    # dropdown.enabled:
-    #     type: toggle
-    #     label: Dropdown in Menu
-    #     highlight: 1
-    #     default: 1
-    #     options:
-    #       1: PLUGIN_ADMIN.ENABLED
-    #       0: PLUGIN_ADMIN.DISABLED
-    #     validate:
-    #       type: bool
+    color.key.hue:
+      type: range
+      label: Key Hue
+      help: 0 - 359
+      default: 44
+      validate:
+        min: 0
+        max: 359
 
-    color.key:
-      type: colorpicker
-      label: Key Color
-    color.complement1:
-      type: color
-      label: Complement 1 Color
-    color.complement2:
-      type: color
-      label: Complement 2 Color
+    color.1.hueOffset:
+      type: range
+      label: Color 1 Hue offset
+      help: degree offset from key color
+      default: -150
+      validate:
+        min: -359
+        max: 359
+
+    color.2.hueOffset:
+      type: range
+      label: Color 2 Hue offset
+      help: degree offset from key color
+      default: 120
+      validate:
+        min: -359
+        max: 359
+
+    color.saturation:
+      type: range
+      label: initial color saturation in percent
+      help: 0 - 100
+      default: 30
+      validate:
+        min: 0
+        max: 100
