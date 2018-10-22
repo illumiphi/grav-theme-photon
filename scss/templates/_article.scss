@@ -11,7 +11,7 @@ body.article {
     > article {
 
       &:only-child {
-        width: 100%;
+        width: calc(100% - var(--fitz-2));
         figure {
           // max-height: 50vh;
         }
