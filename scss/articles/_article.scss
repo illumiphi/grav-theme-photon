@@ -28,7 +28,8 @@ article {
     padding:0;
     height: 100%;
 
-    background: var(--color-key);
+    // background: var(--color-key);
+    background: radial-gradient(ellipse at bottom, var(--color-2-dark) 0%, var(--color-2-darker) 100%);
 
     overflow: hidden;
     text-align: center;

@@ -137,7 +137,7 @@ button:hover { background: var(--color-key-light); text-decoration: none; }
 /* articles/article *****************************/
 article { --color: var(--color-fg); --bg: var(--color-bg); padding: var(--fitz); color: var(--color); background: var(--bg); display: flex; flex-flow: column; align-content: flex-start; justify-content: flex-start; }
 article > * { margin: var(--fitz); padding: var(--fitz); }
-article > figure { grid-area: figure; padding: 0; height: 100%; background: var(--color-key); overflow: hidden; text-align: center; }
+article > figure { grid-area: figure; padding: 0; height: 100%; background: radial-gradient(ellipse at bottom, var(--color-2-dark) 0%, var(--color-2-darker) 100%); overflow: hidden; text-align: center; }
 article > figure > img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
 article > figure > figcaption { text-align: center; }
 article > header { grid-area: header; display: flex; flex-flow: column; align-items: flex-start; }
@@ -273,7 +273,7 @@ nav.tree ul a { text-align: left; display: block; }
 .showcase > article > footer .article-share, .showcase > article > footer .article-tags, .showcase > article > footer .sibling { display: none; }
 
 /* templates/_default *****************************/
-body { --bg: var(--color-key-dark); --body-footer-bg: var(--color-bg); --body-asides-bg: var(--color-bg); --body-form-bg: var(--color-bg); background: var(--bg); padding: var(--fitz); display: flex; flex-flow: column; align-content: center; justify-content: flex-start; }
+body { --bg: var(--color-2-darker); --body-footer-bg: var(--color-bg); --body-asides-bg: var(--color-bg); --body-form-bg: var(--color-bg); background: var(--bg); padding: var(--fitz); display: flex; flex-flow: column; align-content: center; justify-content: flex-start; }
 body > header, body > main, body > .asides, body > footer, body.home > .showcase, body.home > .welcome { margin: var(--fitz); }
 body > header { --bg: var(--color-bg); height: var(--header-height); padding: var(--fitz-2); background: var(--bg); overflow: hidden; justify-content: space-around; }
 body > main { width: 100%; margin: 0; display: flex; flex-flow: column; }
