@@ -3,9 +3,18 @@
 body.article {
 
   > main {
-    > article:first-child {
-      figure {
-        // max-height: 50vh;
+
+    [data-collection="0"] {
+
+    }
+
+    > article {
+
+      &:only-child {
+        width: 100%;
+        figure {
+          // max-height: 50vh;
+        }
       }
     }
   }

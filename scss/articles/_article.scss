@@ -109,6 +109,10 @@ article {
         margin-bottom: 0;
       }
     }
+
+    a {
+      display: inline;
+    }
   }
 
   > footer {
@@ -263,7 +267,8 @@ article {
   &.showcase {
     cursor: pointer;
 
-    transition: box-shadow .5s;
+    transition: box-shadow .5s,
+      background .5s;
 
     .article-share {
       display: none;
@@ -271,7 +276,7 @@ article {
 
     &:hover {
       // --color: var(--color-bg);
-      // --bg: var(--color-2);
+      --bg: white;
 
       box-shadow: .5em .5em .7em rgba(0,0,0,.4);
       .more {

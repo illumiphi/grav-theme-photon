@@ -6,24 +6,27 @@
 
 {% block body_template_classes %}{{ parent() }} article{% endblock body_template_classes %}
 
-{% block content %}
+{% block main %}
+  <main data-collection="{{ page.collection.count }}">
+    {% block content %}
+      {% include ["_articles/#{ page.template }.html.twig", "_articles/article.html.twig"] with { 'article': page } %}
+      {% block collection %}
 
-  {{ parent() }}
+        {% if page.collection.count %}
+          <section class="collection">
+            <h1>pages: <span class="count">{{ page.collection.count() }}</span></h1>
 
-  {% block collection %}
+            {% for article in page.collection %}
+              {% if not (article.url == page.url) and article.routable == true %}
+                {% include ["_articles/#{ article.template }-excerpt.html.twig", "_articles/article-excerpt.html.twig"] with { 'article': article } %}
+              {% endif %}
+            {% endfor %}
 
-    {% if page.collection.count %}
-      <section class="collection">
-        <h1>pages: <span class="count">{{ page.collection.count() }}</span></h1>
+            {% include '_sections/pagination.html.twig'   %}
+          </section>
+        {% endif %}]
 
-        {% for article in page.collection %}
-          {% if not (article.url == page.url) and article.routable == true %}
-            {% include ["_articles/#{ article.template }-excerpt.html.twig", "_articles/article-excerpt.html.twig"] with { 'article': article } %}
-          {% endif %}
-        {% endfor %}
-
-        {% include '_sections/pagination.html.twig'   %}
-      </section>
-    {% endif %}
-  {% endblock collection %}
-{% endblock content %}
+      {% endblock collection %}
+    {% endblock content %}
+</main>
+{% endblock main %}
