@@ -12,7 +12,7 @@
   --font-display: sans-serif;
   --font-form: var(--font);
   --font-social: photon-social, sans-serif;
-  --bullett: '✴'; }
+  --bullet: '✴'; }
 
 /* color *****************************/
 :root {
@@ -161,7 +161,6 @@ a {
   --color: var(--color-key);
   --bg: none;
   --a-active-color: var(--color-2-dark);
-  --a-active-bullet: '✴';
   --hover-color: var(--color-bg);
   --hover-bg: var(--color-key);
   color: var(--color);
@@ -182,7 +181,7 @@ a {
   a.active {
     font-weight: 700; }
     a.active::before, a.active::after {
-      content: var(--a-active-bullet);
+      content: var(--bullet);
       padding: 0 var(--fitz); }
   @media (min-width: 72em) {
     a {

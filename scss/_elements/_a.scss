@@ -6,7 +6,7 @@ a {
   --bg: none;
 
   --a-active-color: var(--color-2-dark);
-  --a-active-bullet: '✴';
+  // --a-active-bullet: '✴';
 
   --hover-color: var(--color-bg);
   --hover-bg: var(--color-key);
@@ -42,7 +42,7 @@ a {
     font-weight: 700;
 
     &::before, &::after {
-      content: var(--a-active-bullet);
+      content: var(--bullet);
       // margin: 0;
       padding: 0 var(--fitz);
     }
