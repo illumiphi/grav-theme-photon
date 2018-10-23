@@ -87,6 +87,7 @@ body {
       .excerpt {
 
         @include article-banner;
+        /* extends article.banner */
       }
     }
 

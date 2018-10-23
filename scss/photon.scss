@@ -1,6 +1,5 @@
 /* photon ✴ Theme Components and Templates */
 
-
 /* fonts *****************************/
 @import 'fonts';
 
@@ -13,19 +12,17 @@
 :root {
 
   --fitz: .5em;
+  --col: 18em;
+  --header-height: 9em;
 
   --fitz-2: calc(var(--fitz) * 2);
   --fitz-half: calc(var(--fitz) / 2);
 
-  --col: 18em;
-
   --col-2: calc( var(--col) * 2 );
   --col-3: calc( var(--col) * 3 );
-  --col-4: calc( var(--col) * 4 );
-  --col-5: calc( var(--col) * 5 );
-  --col-6: calc( var(--col) * 6 );
-
-  --header-height: 9em;
+  // --col-4: calc( var(--col) * 4 );
+  // --col-5: calc( var(--col) * 5 );
+  // --col-6: calc( var(--col) * 6 );
 }
 
 // set defaults from simplest to most complex
@@ -34,9 +31,7 @@
 @import 'elements';
 
 /* articles/article *****************************/
-@import 'articles/__mixins/_mixins';
-@import 'articles/article';
-
+@import 'articles';
 
 /* asides/aside *****************************/
 @import 'asides/aside';
@@ -71,7 +66,6 @@
 
 //* diagrams *****************************/
 //@import 'diagrams';
-
 
 
 /* Print *****************************/
