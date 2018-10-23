@@ -1,7 +1,7 @@
 article.excerpt,
 article.showcase {
-  cursor: pointer;
 
+  cursor: pointer;
   transition: box-shadow .5s,
     background .5s;
 
@@ -10,18 +10,13 @@ article.showcase {
   }
 
   &:hover {
-    // --color: var(--color-bg);
-    --bg: white;
+    --color-bg: var(--color-key-lighter);
 
     box-shadow: .5em .5em .7em rgba(0,0,0,.4);
     .more {
-      // color: var(--color-bg);
-      // background: var(--color-key);
     }
 
     a:hover {
-      // color: var(--color-bg);
-      // background: var(--color-key);
     }
   }
 

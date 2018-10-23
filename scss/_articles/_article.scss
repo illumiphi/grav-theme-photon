@@ -4,13 +4,10 @@
 
 article {
 
-  --color: var(--color-fg);
-  --bg: var(--color-bg);
-
   padding: var(--fitz);
 
-  color: var(--color);
-  background: var(--bg);
+  color: var(--color-fg);
+  background: var(--color-bg);
 
   display: flex;
   flex-flow: column;
@@ -28,7 +25,6 @@ article {
     padding:0;
     height: 100%;
 
-    // background: var(--color-key);
     background: radial-gradient(ellipse at bottom, var(--color-2-dark) 0%, var(--color-2-darker) 100%);
 
     overflow: hidden;

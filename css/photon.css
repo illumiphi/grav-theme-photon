@@ -10,6 +10,7 @@
 :root {
   --font: serif;
   --font-display: sans-serif;
+  --font-code: monospace;
   --font-form: var(--font);
   --font-social: photon-social, sans-serif;
   --bullet: '✴'; }
@@ -105,7 +106,6 @@ li {
 
 /* elements/blockquotes *****************************/
 blockquote {
-  --bg: var(--color-fg);
   margin: var(--fitz-2) auto;
   font-size: 1.2em;
   display: block; }
@@ -116,7 +116,7 @@ blockquote {
     position: absolute;
     left: 0;
     top: 0;
-    background: var(--bg);
+    background: var(--color-key-dark);
     display: block; }
   blockquote > blockquote {
     margin: 0;
@@ -137,12 +137,10 @@ pre,
 code,
 kbd,
 samp {
-  --color: var(--color-bg);
-  --bg: var(--color-fg);
   padding: .1em .25em;
-  color: var(--color);
-  background: var(--bg);
-  font-family: monospace, monospace;
+  color: var(--color-bg);
+  background: var(--color-fg);
+  font-family: var(--font-code);
   font-size: 1em;
   line-height: 1.5;
   border-radius: 0; }
@@ -240,16 +238,14 @@ figure {
     height: 100%;
     object-fit: cover; }
   figure figcaption {
-    --color: var(--color-bg);
-    --bg: var(--color-fg);
     position: absolute;
     left: 0;
     bottom: 0;
     width: 100%;
     padding: .75em 1em;
     z-index: 2;
-    color: var(--color);
-    background: var(--bg);
+    color: var(--color-bg);
+    background: var(--color-fg);
     opacity: 0;
     transition: opacity .3s ease-in-out; }
   figure:hover > figcaption {
@@ -390,11 +386,9 @@ button {
 
 /* articles/article *****************************/
 article {
-  --color: var(--color-fg);
-  --bg: var(--color-bg);
   padding: var(--fitz);
-  color: var(--color);
-  background: var(--bg);
+  color: var(--color-fg);
+  background: var(--color-bg);
   display: flex;
   flex-flow: column;
   align-content: flex-start;
@@ -551,7 +545,7 @@ article.showcase {
     display: none; }
   article.excerpt:hover,
   article.showcase:hover {
-    --bg: white;
+    --color-bg: var(--color-key-lighter);
     box-shadow: 0.5em 0.5em 0.7em rgba(0, 0, 0, 0.4); }
   article.excerpt .more,
   article.showcase .more {

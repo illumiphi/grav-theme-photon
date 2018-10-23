@@ -8,15 +8,12 @@ code,
 kbd,
 samp {
 
-  --color: var(--color-bg);
-  --bg: var(--color-fg);
-
   padding: .1em .25em;
 
-  color: var(--color);
-  background: var(--bg);
+  color:  var(--color-bg);
+  background: var(--color-fg);
 
-  font-family: monospace, monospace;
+  font-family: var(--font-code);
   font-size: 1em;
   line-height: 1.5;
 

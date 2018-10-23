@@ -2,8 +2,6 @@
 
 blockquote {
 
-  --bg: var(--color-fg);
-
   margin: var(--fitz-2) auto;
 
   font-size: 1.2em;
@@ -21,7 +19,7 @@ blockquote {
     left: 0;
     top: 0;
 
-    background: var(--bg);
+    background: var(--color-key-dark);
 
     display: block;
   }

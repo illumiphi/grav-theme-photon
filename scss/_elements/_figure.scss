@@ -26,9 +26,6 @@ figure {
   }
 
   figcaption {
-    
-    --color: var(--color-bg);
-    --bg:  var(--color-fg);
 
     position: absolute;
     left: 0;
@@ -40,8 +37,8 @@ figure {
 
     z-index: 2;
 
-    color: var(--color);
-    background: var(--bg);
+    color: var(--color-bg);
+    background: var(--color-fg);
 
     // see hover
     opacity: 0;

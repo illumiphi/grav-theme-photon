@@ -6,21 +6,9 @@
 <head>
 
 <title>{{ page_title }}</title>
-<!-- test -->
+
 <!-- meta -->
-{% block meta %}
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  {% if page.summary %}
-  <meta name="description" content="{{ page_description }}">
-  {% else %}
-  <meta name="description" content="{{ site.description }}">
-  {% endif %}
-  {% if header.robots %}
-  <meta name="robots" content="{{ header.robots }}">
-  {% endif %}
-{% endblock meta %}
+{% include '_site/meta.html.twig'  %}
 
 <!-- favicon -->
 {% block favicon %}
@@ -60,37 +48,25 @@
 {{ assets.css() }}
 
 <!-- CSS fonts -->
-{% block css_fonts %}
-<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,400i,700" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700" rel="stylesheet">
-<style>
-:root {
-  --font: Lato, sans-serif;
-  --font-display: Montserrat, sans-serif;
-  --font-form: var(--font);
-  /* --font-social: #{$font-photon-social}; */
-
-  --bullet: '✴';
-}
-</style>
-{% endblock css_fonts %}
+{% include '_site/fonts.html.twig'  %}
 
 <!-- CSS vars -->
 {% block css_vars %}
 <!--  -->
 <style>
+
 :root {
   --fitz: .5em;
   --col: 18em;
   --header-height: 9em;
 }
+
 :root {
-  --hue-key: {{ theme.color.key.hue }};
-  --hue-1: {{ theme.color.key.hue + theme.color.1.hueOffset }};
-  --hue-2: {{ theme.color.key.hue + theme.color.2.hueOffset }};
+  --hue-key: {{ config.style.color.key.hue }};
+  --hue-1: {{ config.style.color.key.hue + config.style.color.1.hueOffset }};
+  --hue-2: {{ config.style.color.key.hue + config.style.color.2.hueOffset }};
 
-  --sat: {{ theme.color.saturation }}%;
-
+  --sat: {{ config.style.color.saturation }}%;
 }
 
 :root {
