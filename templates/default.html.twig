@@ -18,20 +18,20 @@
     {% block featured %}{% endblock featured %}
 
     {% block main %}
-      <main>
+    <main>
 
-        {% block content %}
-        {% include ["_articles/#{ page.template }.html.twig", "_articles/article.html.twig"] with { 'article': page } %}
-        {% endblock content %}
-      </main>
+      {% block content %}
+      {% include ["_articles/#{ page.template }.html.twig", "_articles/article.html.twig"] with { 'article': page } %}
+      {% endblock content %}
+    </main>
     {% endblock main %}
 
     {% block asides %}
-      {% include '_sections/asides.html.twig' %}
+    {% include '_sections/asides.html.twig' %}
     {% endblock asides %}
 
     {% block footer %}
-      {% include '_sections/footer.html.twig' %}
+    {% include '_sections/footer.html.twig' %}
     {% endblock footer %}
 
 

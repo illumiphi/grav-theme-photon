@@ -5,6 +5,15 @@ article.showcase {
   transition: box-shadow .5s,
     background .5s;
 
+  > * {
+    padding:0;  
+  }
+
+  > header > h1 {
+    line-height: 1.25;
+    margin-top: -.25em;
+  }
+
   .article-share {
     display: none;
   }
