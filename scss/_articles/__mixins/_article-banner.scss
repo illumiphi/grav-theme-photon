@@ -12,8 +12,8 @@
   }
 
   > header,
-  > main,
-  > main > div {
+  > .content,
+  > .content > div {
     text-align: left;
   }
 
@@ -46,7 +46,7 @@
 
       grid-template-areas:
         ' figure header '
-        ' figure main '
+        ' figure content '
         ' figure footer';
 
       grid-template-columns:  calc(var(--col) / 2) 1fr;
@@ -56,14 +56,6 @@
         // flex-flow: column;
       }
       &:nth-child(even) {
-        // grid-template-areas:
-        //   ' header figure'
-        //   ' main   figure '
-        //   ' footer figure ';
-        //
-        // > header, > main, > main > div {
-        //   text-align: right;
-        // }
       }
     }
   }
