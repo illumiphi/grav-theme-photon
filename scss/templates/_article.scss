@@ -4,10 +4,6 @@ body.article {
 
   > main {
 
-    [data-collection="0"] {
-
-    }
-
     > article {
 
       &:only-child {
@@ -17,6 +13,14 @@ body.article {
         }
       }
     }
+
+    &[data-collection="0"] {
+      > .collection {
+        width: calc(50% - var(--fitz-2));
+
+      }
+    }
+
   }
 
 }

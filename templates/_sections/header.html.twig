@@ -2,17 +2,15 @@
     <header>
 
       <div class="logo">
-          <a href="{{ home_url }}" >
-            {% if config.site.logo %}
-            <img src="/images/{{ config.site.logo }}" alt="logo">
-            {% endif %}
-            <h1>
-              {{ site.title }}
-            </h1>
-            {% if theme.subtitle  %}
-              <h2>{{ theme.subtitle }}</h2>
-            {% endif %}
-          </a>
+        <a href="{{ home_url }}" >
+          {% if config.site.logo -%}
+          <img src="/images/{{ config.site.logo }}" alt="logo">
+          {% endif -%}
+          <h1>{{ site.title }}</h1>
+          {%- if theme.subtitle  %}
+          <h2>{{ theme.subtitle }}</h2>
+          {% endif -%}
+        </a>
       </div>
 
       {% include '_sections/nav.html.twig' %}

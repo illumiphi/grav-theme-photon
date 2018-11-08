@@ -79,8 +79,8 @@ article {
     }
   }
 
-  > main {
-    grid-area: main;
+  > .content {
+    grid-area: content;
     display: block;
 
     text-align: left;
@@ -265,7 +265,7 @@ article {
       grid-template-areas:
         ' figure figure '
         ' header footer'
-        ' main footer'
+        ' content footer'
         ' gallery   data';
       grid-template-columns: 1fr var(--col);
 

@@ -1,13 +1,13 @@
   {% set featured_image = article.header.featured_image %}
-    <figure>
-      {% if featured_image %}
-        {% set header_image_media = article.media.images[featured_image] %}
-      {% else %}
-        {% set header_image_media = article.media.images | first %}
-      {% endif %}
-      {% if excerpt == true %}
-        {{ header_image_media.derivatives([300]).sizes('10em').html('Title', 'Alt', 'excerpt') }}
-      {% else %}
-        {{ header_image_media.derivatives([600, 1200, 1920]).html('Title', 'Alt', '') }}
-      {% endif %}
-    </figure>
+  <figure>
+    {% if featured_image %}
+      {% set header_image_media = article.media.images[featured_image] %}
+    {% else %}
+      {% set header_image_media = article.media.images | first %}
+    {% endif %}
+    {%- if excerpt == true %}
+      {{ header_image_media.derivatives([300]).sizes('10em').html('Title', 'Alt', 'excerpt') }}
+    {%- else %}
+      {{ header_image_media.derivatives([600, 1200, 1920]).html('Title', 'Alt', '') }}
+    {% endif %}
+  </figure>

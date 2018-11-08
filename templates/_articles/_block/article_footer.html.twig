@@ -7,10 +7,11 @@
     {% include '_articles/_block/article_footer/aside_categories.html.twig' %}
     {% include '_articles/_block/article_footer/aside_tags.html.twig' %}
     {% include '_articles/_block/article_footer/aside_members.html.twig' %}
-    {% include '_articles/_block/article_footer/aside_share.html.twig' %}
     {% if excerpt or showcase %}
       <nav class="more">
         <a  href="{{ article.url }}">More ></a>
       </nav>
+    {% else %}
+      {% include '_articles/_block/article_footer/aside_share.html.twig' %}
     {% endif %}
   </footer>

@@ -16,6 +16,9 @@
   <link rel="icon"  href="/images/favicon.png">
 {% endblock favicon %}
 
+
+<meta name="google-site-verification" content="{{ config.site.google_search }}" />
+
 <!-- rss -->
 {% block rss %}
   <link rel="alternate" href="{{ page.url ~ '.rss' }}" title="{{ page_title }}" type="application/atom+xml">
@@ -24,7 +27,6 @@
 <!-- schema -->
 {% block schema %}
 {% include '_json-ld/article.html.twig'  %}
-{% include "_json-ld/#{ page.template }.html.twig" ignore missing %}
 {% endblock schema %}
 
 <!-- opengraph -->
