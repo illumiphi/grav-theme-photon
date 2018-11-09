@@ -1,6 +1,6 @@
-  <main>
+  <div class="content">
     <div>
       {{ article.summary }}
     </div>
     {{ article.content | slice(article.summary | length) }}
-  </main>
+  </div>
