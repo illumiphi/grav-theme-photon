@@ -58,18 +58,12 @@ body {
     }
 
     > article {
-      // width: 50%;
-      // min-width: var(--col-3);
-
       > figure {
-        // max-height: var(--col);
+        max-height: 40vh;
       }
-
     }
 
     > .collection {
-
-      width: calc(50% - var(--fitz-2));
 
       flex-flow: column;
       padding: 0;
@@ -164,6 +158,8 @@ body {
       }
       > .asides {
         grid-area: asides;
+        justify-content: flex-start;
+
 
       }
       > footer {
