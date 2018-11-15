@@ -115,14 +115,13 @@ form:
                           type: text
                           label: Collection
                           default: '@self.children'
-                          toggleable: true
+                          # toggleable: true
 
                         header.child_type:
                           type: select
                           label: PLUGIN_ADMIN.DEFAULT_CHILD_TYPE
-                          default: article
-                          toggleable: true
-                          placeholder: PLUGIN_ADMIN.USE_GLOBAL
+                          default: Article
+                          # toggleable: true
                           data-options@: '\Grav\Common\Page\Pages::types'
 
                     _figures:
