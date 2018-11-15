@@ -9,9 +9,15 @@ article.showcase {
     // padding:0;
   }
 
-  > header > h1 {
-    line-height: 1.25;
-    margin-top: -.25em;
+  > header {
+
+    > h1 {
+      // line-height: 1.25;
+      // margin-top: -.25em;
+
+      text-align: left;
+    }
+
   }
 
   .article-share {

@@ -16,7 +16,7 @@ article {
 
   > * {
     margin: var(--fitz);
-    padding: var(--fitz);
+    // padding: var(--fitz);
 
   }
 
@@ -25,7 +25,7 @@ article {
     // padding:0;
     height: 100%;
     padding: 0;
-    
+
     background: radial-gradient(ellipse at bottom, var(--color-2-dark) 0%, var(--color-2-darker) 100%);
 
     overflow: hidden;
@@ -53,6 +53,12 @@ article {
 
     > h1 {
       text-align: left;
+      line-height: 1;
+    }
+
+    > h2 {
+      font-variant: small-caps;
+      font-weight: 400;
     }
 
     > nav {

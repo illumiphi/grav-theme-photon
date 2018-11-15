@@ -136,12 +136,13 @@ button:hover { background: var(--color-key-light); text-decoration: none; }
 
 /* articles/article *****************************/
 article { padding: var(--fitz); color: var(--color-fg); background: var(--color-bg); display: flex; flex-flow: column; align-content: flex-start; justify-content: flex-start; }
-article > * { margin: var(--fitz); padding: var(--fitz); }
+article > * { margin: var(--fitz); }
 article > figure { grid-area: figure; height: 100%; padding: 0; background: radial-gradient(ellipse at bottom, var(--color-2-dark) 0%, var(--color-2-darker) 100%); overflow: hidden; text-align: center; }
 article > figure > img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
 article > figure > figcaption { text-align: center; }
 article > header { grid-area: header; display: flex; flex-flow: column; align-items: flex-start; }
-article > header > h1 { text-align: left; }
+article > header > h1 { text-align: left; line-height: 1; }
+article > header > h2 { font-variant: small-caps; font-weight: 400; }
 article > header > nav { flex-flow: row wrap; justify-content: flex-start; padding: 0; text-align: left; }
 article > header > nav a { padding: 0; }
 article > header > nav a::after { content: ">"; padding: 0 .25em; }
@@ -179,7 +180,7 @@ article .breadcrumbs a { flex-flow: row; }
     article > footer { flex-flow: column; } } }
 
 article.excerpt, article.showcase { cursor: pointer; transition: box-shadow .5s, background .5s; }
-article.excerpt > header > h1, article.showcase > header > h1 { line-height: 1.25; margin-top: -.25em; }
+article.excerpt > header > h1, article.showcase > header > h1 { text-align: left; }
 article.excerpt .article-share, article.showcase .article-share { display: none; }
 article.excerpt:hover, article.showcase:hover { --color-bg: var(--color-key-lighter); box-shadow: 0.5em 0.5em 0.7em rgba(0, 0, 0, 0.4); }
 article.excerpt .more, article.showcase .more { align-self: flex-end; }
@@ -236,7 +237,7 @@ footer { padding: 1em; flex-direction: column; }
 header { align-items: center; align-content: flex-start; justify-content: space-around; }
 header .logo { display: flex; justify-content: center; align-content: center; }
 header .logo a { display: flex; flex-flow: row nowrap; justify-content: center; align-items: center; padding: var(--fitz); }
-header .logo a img { height: 3em; margin: 0 auto; }
+header .logo a img { height: 3em; margin: .5em; }
 header .logo a h1 { font-size: 1.2em; letter-spacing: .1em; padding-left: .5em; text-align: center; }
 header nav.main { display: none; }
 header .contact { width: var(--header-height); height: var(--header-height); padding: var(--fitz); justify-content: center; display: none; }

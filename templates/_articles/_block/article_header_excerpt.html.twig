@@ -1,14 +1,14 @@
 
   <header>
-    <h2>
+    <h1>
       {%- if article.active %}
         {{ article.title }}
       {%- else %}
         <a href="{{ article.url }}">{{ article.title }}</a>
       {%- endif %}
-    </h2>
+    </h1>
     {% if article.header.subtitle %}
-    <h3>{{ article.header.subtitle }}</h3>
+    <h2>{{ article.header.subtitle }}</h2>
     {% endif %}
     <time title="{{ article.date|date("Y-m-d") }}"
       datetime="{{ article.date|date("Y-m-d") }}">{{ article.date|date("M d Y") }}</time>
