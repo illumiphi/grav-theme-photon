@@ -22,9 +22,10 @@ article {
 
   > figure {
     grid-area: figure;
-    padding:0;
+    // padding:0;
     height: 100%;
-
+    padding: 0;
+    
     background: radial-gradient(ellipse at bottom, var(--color-2-dark) 0%, var(--color-2-darker) 100%);
 
     overflow: hidden;
@@ -178,7 +179,6 @@ article {
   > .gallery {
     grid-area: gallery;
 
-    padding:0;
 
     display: flex;
     flex-flow: row wrap;
@@ -188,6 +188,7 @@ article {
     grid-auto-flow: row;
 
     > figure {
+      padding:var(--fitz);
 
       overflow: hidden;
       text-align: center;

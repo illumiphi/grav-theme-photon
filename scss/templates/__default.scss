@@ -27,8 +27,6 @@ body {
     @extend %body-section-default;
     --bg: var(--color-bg);
 
-
-
     height: var(--header-height);
     padding: var(--fitz-2);
 
@@ -37,7 +35,6 @@ body {
     overflow: hidden;
 
     justify-content: space-around;
-
 
   }
 
