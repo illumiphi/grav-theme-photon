@@ -306,17 +306,18 @@ body > footer { background: var(--body-footer-bg); }
     body > main { grid-area: main; }
     body > .asides { grid-area: asides; justify-content: flex-start; }
     body > footer { grid-area: footer; } } }
-@media (min-width: 90em) { body > main { flex-flow: column wrap; }
-  body > main > article { height: 100%; }
-  body > main > .collection > .excerpt { /* article-banner */ }
-  body > main > .collection > .excerpt > figure { max-height: 9em; }
-  body > main > .collection > .excerpt > figure > img { height: 100%; object-fit: cover; object-position: center; }
-  body > main > .collection > .excerpt > header, body > main > .collection > .excerpt > .content, body > main > .collection > .excerpt > .content > div { text-align: left; }
-  body > main > .collection > .excerpt > footer { flex-flow: row wrap; justify-content: space-between; }
-  body > main > .collection > .excerpt > footer > aside { padding: 0; }
-  body > main > .collection > .excerpt > footer > aside > h1 { display: none; }
-  body > main > .collection > .excerpt > footer > nav { padding: 0; justify-content: flex-end; } }
-@media (min-width: 90em) and (min-width: 54em) { @supports (display: grid) { body > main > .collection > .excerpt { display: grid; grid-template-areas: ' figure header ' ' figure content ' ' figure footer'; grid-template-columns: calc(var(--col) / 2) 1fr; grid-template-rows: auto 1fr auto; } } }
+@media (min-width: 90em) { @supports (display: grid) { body > main { display: grid; grid-template-areas: " article collection "; grid-template-columns: var(--col-4) 1fr; }
+    body > main > article { grid-area: article; height: 100%; }
+    body > main > .collection { grid-area: collection; }
+    body > main > .collection > .excerpt { /* article-banner */ }
+    body > main > .collection > .excerpt > figure { max-height: 9em; }
+    body > main > .collection > .excerpt > figure > img { height: 100%; object-fit: cover; object-position: center; }
+    body > main > .collection > .excerpt > header, body > main > .collection > .excerpt > .content, body > main > .collection > .excerpt > .content > div { text-align: left; }
+    body > main > .collection > .excerpt > footer { flex-flow: row wrap; justify-content: space-between; }
+    body > main > .collection > .excerpt > footer > aside { padding: 0; }
+    body > main > .collection > .excerpt > footer > aside > h1 { display: none; }
+    body > main > .collection > .excerpt > footer > nav { padding: 0; justify-content: flex-end; }
+    @media (min-width: 54em) { @supports (display: grid) { body > main > .collection > .excerpt { display: grid; grid-template-areas: ' figure header ' ' figure content ' ' figure footer'; grid-template-columns: calc(var(--col) / 2) 1fr; grid-template-rows: auto 1fr auto; } } } } }
 
 /* templates/home *****************************/
 body.home > .showcase { padding: 0; height: calc(100vh - var(--header-height) - (var(--fitz-2) * 3)); }
