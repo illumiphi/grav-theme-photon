@@ -138,6 +138,7 @@ body {
             height:8em;
           }
         }
+
         > nav {
 
           padding: 1em 0;
@@ -150,15 +151,16 @@ body {
           }
         }
       }
+
       > main {
         grid-area: main;
       }
+
       > .asides {
         grid-area: asides;
         justify-content: flex-start;
-
-
       }
+
       > footer {
         grid-area: footer;
       }
@@ -167,14 +169,28 @@ body {
   }
 
   @include media-bp(4) {
-    > main {
-      flex-flow: column wrap;
-      > article {
-        height: 100%;
-      }
-      > .collection {
-        > .excerpt {
-          @include article-banner;
+
+    @supports (display: grid) {
+
+      > main {
+        display: grid;
+        grid-template-areas:
+          " article collection "
+          ;
+        grid-template-columns: var(--col-4)   1fr;
+
+        > article {
+          grid-area: article;
+
+          height: 100%;
+        }
+
+        > .collection {
+          grid-area: collection;
+          
+          > .excerpt {
+            @include article-banner;
+          }
         }
       }
     }
