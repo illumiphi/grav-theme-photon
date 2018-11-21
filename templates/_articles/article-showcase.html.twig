@@ -1,16 +1,7 @@
 {% set showcase = true %}
   <article class="{{ article.template }} showcase" data-url="{{ article.url }}">
     {% include "_articles/_block/article_figure.html.twig" with { 'article': article } %}
-    <header>
-      <h1>
-        {% if article.active %}
-          {{ article.title }}
-        {% else %}
-          <a href="{{ article.url }}">{{ article.title }}</a>
-        {% endif %}
-      </h1>
-      {% include '_articles/_block/breadcrumbs.html.twig' with { 'article': article } %}
-    </header>
+    {% include "_articles/_block/article_header_excerpt.html.twig" with { 'article': article } %}
     {% include "_articles/_block/article_main_excerpt.html.twig" with { 'article': article } %}
     {% include "_articles/_block/article_footer.html.twig" with { 'article': article } %}
 
