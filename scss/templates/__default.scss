@@ -177,17 +177,17 @@ body {
         grid-template-areas:
           " article collection "
           ;
-        grid-template-columns: var(--col-4)   1fr;
+        grid-template-columns: 54em   1fr;
 
         > article {
           grid-area: article;
 
-          height: 100%;
+          // height: 100%;
         }
 
         > .collection {
           grid-area: collection;
-          
+
           > .excerpt {
             @include article-banner;
           }

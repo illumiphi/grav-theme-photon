@@ -306,8 +306,8 @@ body > footer { background: var(--body-footer-bg); }
     body > main { grid-area: main; }
     body > .asides { grid-area: asides; justify-content: flex-start; }
     body > footer { grid-area: footer; } } }
-@media (min-width: 90em) { @supports (display: grid) { body > main { display: grid; grid-template-areas: " article collection "; grid-template-columns: var(--col-4) 1fr; }
-    body > main > article { grid-area: article; height: 100%; }
+@media (min-width: 90em) { @supports (display: grid) { body > main { display: grid; grid-template-areas: " article collection "; grid-template-columns: 54em   1fr; }
+    body > main > article { grid-area: article; }
     body > main > .collection { grid-area: collection; }
     body > main > .collection > .excerpt { /* article-banner */ }
     body > main > .collection > .excerpt > figure { max-height: 9em; }
