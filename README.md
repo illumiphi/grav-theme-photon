@@ -3,7 +3,7 @@
 </a>
 # photon ✴ THEME
 
-![GitHub release](https://img.shields.io/github/release/qubyte/rubidium.svg)
+![GitHub release](https://img.shields.io/github/release/photon-platform/grav-theme-photon.svg)
 
 `photon ✴ THEME` is a foundational theme for the [Grav CMS](http://github.com/getgrav/grav).
 
