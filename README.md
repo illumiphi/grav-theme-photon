@@ -1,9 +1,12 @@
-# photon ✴ THEME
+<a href="https://photon-platform.net/">
+    <img src="http://photon-platform.net/images/logo.png" alt="photon" title="photon" align="right" height="60" />
+</a>
+# `photon ✴ THEME` ![GitHub release](https://img.shields.io/github/release/qubyte/rubidium.svg)
 
-Core photon theme for the [Grav CMS](http://github.com/getgrav/grav).
+`photon ✴ THEME` is a foundational theme for the [Grav CMS](http://github.com/getgrav/grav).
 
-## Description
+The best way to start with photon
 
-A theme to bring Structure, Logic and Style to your content
+current version
 
-
+## Getting Started
