@@ -23,7 +23,7 @@ article {
   > figure {
     grid-area: figure;
     // padding:0;
-    height: 40vh;
+    height: 60vh;
     padding: 0;
 
     background: radial-gradient(ellipse at bottom, var(--color-2-dark) 0%, var(--color-2-darker) 100%);
@@ -267,7 +267,8 @@ article {
   }
 
 
-  @include media-bp(2) {
+  @include media-bp(6) {
+    
 
     @supports (display: grid) {
 
@@ -278,7 +279,7 @@ article {
         ' content footer'
         ' gallery   data';
       grid-template-columns: 1fr var(--col);
-      grid-template-rows: 40vh;
+      grid-template-rows: 60vh;
 
       > * {
         // margin: 0;

@@ -56,7 +56,7 @@ body {
 
     > article {
       > figure {
-        max-height: 40vh;
+        max-height: 60vh;
       }
     }
 
@@ -177,7 +177,7 @@ body {
         grid-template-areas:
           " article collection "
           ;
-        grid-template-columns: 54em   1fr;
+        grid-template-columns: 48em   1fr;
 
         > article {
           grid-area: article;
@@ -196,12 +196,6 @@ body {
     }
   }
 
-  @include media-bp(5) {
-    > main {
-      > .collection {
-      }
-    }
-  }
 
   @include media-bp(6) {
     > main {
