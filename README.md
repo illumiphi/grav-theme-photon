@@ -13,3 +13,11 @@ The best way to start with photon
 current version
 
 ## Getting Started
+
+Right now 
+
+
+
+## License
+
+See [LICENSE](LICENSE.txt)
