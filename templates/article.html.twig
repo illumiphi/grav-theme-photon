@@ -1,10 +1,12 @@
 {% extends 'default.html.twig' %}
+{% set type = "article" %}
+{% set types = "articles" %}
 {% block template %}
 {{ parent() }}
 <!-- user/themes/photon/templates/article.html.twig -->
 {% endblock template %}
 
-{% block body_template_classes %}{{ parent() }} article{% endblock body_template_classes %}
+{% block body_template_classes %}{{ parent() }} {{ type }}{% endblock body_template_classes %}
 
 {% block main %}
   <main data-collection="{{ page.collection.count }}">
@@ -14,7 +16,7 @@
 
         {% if page.collection.count %}
           <section class="collection">
-            <h1>pages: <span class="count">{{ page.collection.count() }}</span></h1>
+            <h1>{{ types }}: <span class="count">{{ page.collection.count() }}</span></h1>
 
             {% for article in page.collection %}
               {% if not (article.url == page.url) and article.routable == true %}
