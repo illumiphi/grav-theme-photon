@@ -8,7 +8,7 @@
 :root { --hue-key: 0; --hue-1: 44; --hue-2: 244; --sat: 20%; --lighter: 90%; --light: 70%; --mid: 50%; --dark: 30%; --darker: 10%; --color-key-lighter: hsl( var(--hue-key), var(--sat), var(--lighter) ); --color-key-light: hsl( var(--hue-key), var(--sat), var(--light) ); --color-key: hsl( var(--hue-key), var(--sat), var(--mid) ); --color-key-dark: hsl( var(--hue-key), var(--sat), var(--dark) ); --color-key-darker: hsl( var(--hue-key), var(--sat), var(--darker) ); --color-1-lighter: hsl( var(--hue-1), var(--sat), var(--lighter) ); --color-1-light: hsl( var(--hue-1), var(--sat), var(--light) ); --color-1: hsl( var(--hue-1), var(--sat), var(--mid) ); --color-1-dark: hsl( var(--hue-1), var(--sat), var(--dark) ); --color-1-darker: hsl( var(--hue-1), var(--sat), var(--darker) ); --color-2-lighter: hsl( var(--hue-2), var(--sat), var(--lighter) ); --color-2-light: hsl( var(--hue-2), var(--sat), var(--light) ); --color-2: hsl( var(--hue-2), var(--sat), var(--mid) ); --color-2-dark: hsl( var(--hue-2), var(--sat), var(--dark) ); --color-2-darker: hsl( var(--hue-2), var(--sat), var(--darker) ); }
 
 /* media *****************************/
-:root { --fitz: .5em; --col: 18em; --header-height: 9em; --fitz-2: calc(var(--fitz) * 2); --fitz-half: calc(var(--fitz) / 2); --col-2: calc( var(--col) * 2 ); --col-3: calc( var(--col) * 3 ); }
+:root { --fitz: .5em; --col: 18em; --header-height: 6em; --fitz-2: calc(var(--fitz) * 2); --fitz-half: calc(var(--fitz) / 2); --col-2: calc( var(--col) * 2 ); --col-3: calc( var(--col) * 3 ); }
 
 /* base elements *****************************/
 /* photon ✴ Theme Elements*/
@@ -282,18 +282,21 @@ body > header { --bg: var(--color-bg); height: var(--header-height); padding: va
 body > main { width: 100%; margin: 0; display: flex; flex-flow: column; }
 body > main > * { margin: var(--fitz); padding: var(--fitz); }
 body > main > article > figure { max-height: 60vh; }
-body > main > .collection { flex-flow: column; padding: 0; margin: 0; }
-body > main > .collection > * { margin: var(--fitz); padding: var(--fitz-2); }
-body > main > .collection > h1 { padding: 0; color: var(--color-bg); }
-body > main > .collection .excerpt { /* article-banner */ /* extends article.banner */ }
-body > main > .collection .excerpt > figure { max-height: 9em; }
-body > main > .collection .excerpt > figure > img { height: 100%; object-fit: cover; object-position: center; }
-body > main > .collection .excerpt > header, body > main > .collection .excerpt > .content, body > main > .collection .excerpt > .content > div { text-align: left; }
-body > main > .collection .excerpt > footer { flex-flow: row wrap; justify-content: space-between; }
+body > main > .collection { flex-flow: column; display: grid; grid-template-columns: repeat(auto-fit, minmax(var(--col), 1fr)); padding: 0; margin: 0; }
+body > main > .collection > * { margin: var(--fitz); padding: var(--fitz); }
+body > main > .collection > h1 { color: var(--color-fg); padding: 0; color: var(--color-bg); grid-column: 1 / -1; }
+body > main > .collection .excerpt { /* article-card */ display: flex; /* extends article.banner */ }
+body > main > .collection .excerpt > figure { height: 10em; }
+body > main > .collection .excerpt > header { text-align: center; }
+body > main > .collection .excerpt > header > * { text-align: center; }
+body > main > .collection .excerpt > .content { align-content: flex-start; }
+body > main > .collection .excerpt > footer { flex-flow: column nowrap; }
 body > main > .collection .excerpt > footer > aside { padding: 0; }
 body > main > .collection .excerpt > footer > aside > h1 { display: none; }
-body > main > .collection .excerpt > footer > nav { padding: 0; justify-content: flex-end; }
-@media (min-width: 54em) { @supports (display: grid) { body > main > .collection .excerpt { display: grid; grid-template-areas: ' figure header ' ' figure content ' ' figure footer'; grid-template-columns: calc(var(--col) / 2) 1fr; grid-template-rows: auto 1fr auto; } } }
+body > main > .collection .excerpt > footer > aside ul, body > main > .collection .excerpt > footer > aside li { display: inline; }
+body > main > .collection .excerpt > footer > nav { text-align: right; padding: 0; align-self: flex-end; justify-content: right; }
+body > main > .collection .excerpt > footer .more { margin: 0 auto; text-align: center; display: block; }
+body > main > .collection .excerpt > figure { background: none; }
 body > main > section.form { background: var(--body-form-bg); flex-flow: column; }
 body > main > section.form form { width: 100%; }
 body > .asides { background: var(--body-asides-bg); }
@@ -308,16 +311,7 @@ body > footer { background: var(--body-footer-bg); }
     body > footer { grid-area: footer; } } }
 @media (min-width: 90em) { @supports (display: grid) { body > main { display: grid; grid-template-areas: " article collection "; grid-template-columns: 48em   1fr; }
     body > main > article { grid-area: article; }
-    body > main > .collection { grid-area: collection; }
-    body > main > .collection > .excerpt { /* article-banner */ }
-    body > main > .collection > .excerpt > figure { max-height: 9em; }
-    body > main > .collection > .excerpt > figure > img { height: 100%; object-fit: cover; object-position: center; }
-    body > main > .collection > .excerpt > header, body > main > .collection > .excerpt > .content, body > main > .collection > .excerpt > .content > div { text-align: left; }
-    body > main > .collection > .excerpt > footer { flex-flow: row wrap; justify-content: space-between; }
-    body > main > .collection > .excerpt > footer > aside { padding: 0; }
-    body > main > .collection > .excerpt > footer > aside > h1 { display: none; }
-    body > main > .collection > .excerpt > footer > nav { padding: 0; justify-content: flex-end; }
-    @media (min-width: 54em) { @supports (display: grid) { body > main > .collection > .excerpt { display: grid; grid-template-areas: ' figure header ' ' figure content ' ' figure footer'; grid-template-columns: calc(var(--col) / 2) 1fr; grid-template-rows: auto 1fr auto; } } } } }
+    body > main > .collection { grid-area: collection; } } }
 
 /* templates/home *****************************/
 body.home > .showcase { padding: 0; height: calc(100vh - var(--header-height) - (var(--fitz-2) * 3)); }

@@ -63,22 +63,31 @@ body {
     > .collection {
 
       flex-flow: column;
+
+      display: grid;
+      grid-template-columns: repeat( auto-fit, minmax( var(--col), 1fr ) );
+
       padding: 0;
       margin: 0;
 
       > * {
         margin: var(--fitz);
-        padding: var(--fitz-2);
+        padding: var(--fitz);
       }
 
       > h1 {
+        color: var(--color-fg);
         padding: 0;
         color: var(--color-bg);
+        grid-column: 1 / -1;
       }
       .excerpt {
 
-        @include article-banner;
+        @include article-card;
         /* extends article.banner */
+        > figure {
+          background: none;
+        }
       }
     }
 
@@ -189,7 +198,7 @@ body {
           grid-area: collection;
 
           > .excerpt {
-            @include article-banner;
+            // @include article-banner;
           }
         }
       }
