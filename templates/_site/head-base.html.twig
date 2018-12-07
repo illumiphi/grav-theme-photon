@@ -51,43 +51,13 @@
 {{ assets.css() }}
 
 <!-- CSS fonts -->
+{% block css_fonts %}
 {% include '_site/fonts.html.twig'  %}
+{% endblock css_fonts %}
 
 <!-- CSS vars -->
 {% block css_vars %}
-<!--  -->
-<style>
-
-:root {
-  --fitz: {{ config.style.fitz }};
-  --col: {{ config.style.col }};
-  --header-height: {{ config.style.header_height }};
-}
-
-:root {
-  --hue-key: {{ config.style.color.key.hue }};
-  --hue-1: {{ config.style.color.key.hue + config.style.color.1.hueOffset }};
-  --hue-2: {{ config.style.color.key.hue + config.style.color.2.hueOffset }};
-
-  --sat: {{ config.style.color.saturation }}%;
-
-  --lighter: {{ config.style.color.lightness.lighter }}%;
-  --light: {{ config.style.color.lightness.light }}%;
-  --mid: {{ config.style.color.lightness.mid }}%;
-  --dark: {{ config.style.color.lightness.dark }}%;
-  --darker: {{ config.style.color.lightness.darker }}%;
-}
-
-:root {
-  --color-fg: #333;
-  --color-bg: #EEE;
-
-  --color: var(--color-fg);
-  --bg: var(--color-bg);
-
-}
-
-</style>
+{% include '_site/css_vars.html.twig'   %}
 {% endblock css_vars %}
 
 {% block javascripts %}

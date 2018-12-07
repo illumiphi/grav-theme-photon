@@ -4,7 +4,10 @@
   display: flex;
 
   > figure {
-    height: 10em;
+    height: 100%;
+    > img {
+      object-fit: contain;
+    }
   }
 
   > header {
