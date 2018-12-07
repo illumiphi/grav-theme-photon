@@ -90,10 +90,13 @@ header {
     .logo {
       order: 1;
       // width: 70%;
+      height: calc(var(--header-height)-var(--fitz-2));
     }
 
     .toggle {
       order: 2;
+      height: calc(var(--header-height)-var(--fitz-2));
+
     }
 
     nav {
