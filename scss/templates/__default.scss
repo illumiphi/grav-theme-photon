@@ -95,7 +95,7 @@ body {
         .article-tags {
           display: none;
         }
-        
+
       }
     }
 
@@ -146,7 +146,7 @@ body {
       > header {
         grid-area: header;
 
-        // height: auto; //remove initial fixed height
+        height: auto; //remove initial fixed height
 
         flex-direction: column;
 
@@ -212,7 +212,6 @@ body {
       }
     }
   }
-
 
   @include media-bp(6) {
     > main {

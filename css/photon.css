@@ -315,7 +315,7 @@ body > main > section.form form { width: 100%; }
 body > .asides { background: var(--body-asides-bg); }
 body > footer { background: var(--body-footer-bg); }
 @media (min-width: 72em) { @supports (display: grid) { body { display: grid; grid-template-areas: " header main " " asides main " " footer footer "; grid-template-columns: var(--col) 1fr; grid-template-rows: auto 1fr auto; }
-    body > header { grid-area: header; flex-direction: column; }
+    body > header { grid-area: header; height: auto; flex-direction: column; }
     body > header > .logo img { height: 8em; }
     body > header > nav { padding: 1em 0; flex-flow: column nowrap; justify-content: center; }
     body > header > nav a { text-align: center; }
