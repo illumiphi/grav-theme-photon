@@ -6,9 +6,6 @@ body {
 
   --bg: var(--color-2-darker);
 
-  --body-footer-bg: var(--color-bg);
-  --body-asides-bg: var(--color-bg);
-  --body-form-bg: var(--color-bg);
 
   background: var(--bg);
   padding: var(--fitz);
@@ -25,12 +22,13 @@ body {
   // default sections
   > header {
     @extend %body-section-default;
-    --bg: var(--color-bg);
+
+    color: var(--color-fg);
+  	background: var(--color-bg);
 
     height: var(--header-height);
     padding: var(--fitz-2);
 
-    background: var(--bg);
 
     overflow: hidden;
 
@@ -101,7 +99,7 @@ body {
 
     > section.form {
 
-      background: var(--body-form-bg);
+      background: var(--color-bg);
 
       flex-flow: column;
 
@@ -114,14 +112,16 @@ body {
   > .asides {
     @extend %body-section-default;
 
-    background: var(--body-asides-bg);
+    color: var(--color-fg);
+  	background: var(--color-bg);
 
   }
 
   > footer {
     @extend %body-section-default;
 
-    background: var(--body-footer-bg);
+    color: var(--color-fg);
+  	background: var(--color-bg);
 
   }
 

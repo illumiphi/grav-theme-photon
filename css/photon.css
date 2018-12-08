@@ -288,9 +288,9 @@ nav.tree ul a { text-align: left; display: block; }
 .showcase > article > footer .article-share, .showcase > article > footer .article-tags, .showcase > article > footer .sibling { display: none; }
 
 /* templates/_default *****************************/
-body { --bg: var(--color-2-darker); --body-footer-bg: var(--color-bg); --body-asides-bg: var(--color-bg); --body-form-bg: var(--color-bg); background: var(--bg); padding: var(--fitz); display: flex; flex-flow: column; align-content: center; justify-content: flex-start; }
+body { --bg: var(--color-2-darker); background: var(--bg); padding: var(--fitz); display: flex; flex-flow: column; align-content: center; justify-content: flex-start; }
 body > header, body > main, body > .asides, body > footer, body.home > .showcase, body.home > .welcome { margin: var(--fitz); }
-body > header { --bg: var(--color-bg); height: var(--header-height); padding: var(--fitz-2); background: var(--bg); overflow: hidden; justify-content: space-around; }
+body > header { color: var(--color-fg); background: var(--color-bg); height: var(--header-height); padding: var(--fitz-2); overflow: hidden; justify-content: space-around; }
 body > main { width: 100%; margin: 0; display: flex; flex-flow: column; }
 body > main > * { margin: var(--fitz); padding: var(--fitz); }
 body > main > .collection { flex-flow: column; display: grid; grid-template-columns: repeat(auto-fit, minmax(var(--col), 1fr)); padding: 0; margin: 0; justify-content: center; }
@@ -310,10 +310,10 @@ body > main > .collection .excerpt > footer > nav { text-align: right; padding: 
 body > main > .collection .excerpt > footer .more { margin: 0 auto; text-align: center; display: block; }
 body > main > .collection .excerpt > figure { background: none; }
 body > main > .collection .excerpt .article-tags { display: none; }
-body > main > section.form { background: var(--body-form-bg); flex-flow: column; }
+body > main > section.form { background: var(--color-bg); flex-flow: column; }
 body > main > section.form form { width: 100%; }
-body > .asides { background: var(--body-asides-bg); }
-body > footer { background: var(--body-footer-bg); }
+body > .asides { color: var(--color-fg); background: var(--color-bg); }
+body > footer { color: var(--color-fg); background: var(--color-bg); }
 @media (min-width: 72em) { @supports (display: grid) { body { display: grid; grid-template-areas: " header main " " asides main " " footer footer "; grid-template-columns: var(--col) 1fr; grid-template-rows: auto 1fr auto; }
     body > header { grid-area: header; height: auto; flex-direction: column; }
     body > header > .logo img { height: 8em; }
