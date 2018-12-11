@@ -62,7 +62,7 @@ article {
     > * {
       margin: var(--fitz);
     }
-    
+
     > h1 {
       text-align: left;
       line-height: 1;
@@ -105,9 +105,10 @@ article {
     grid-area: content;
     display: block;
 
-    width: 100%;
+    // width: 100%;
     max-width: var(--col-3);
-    margin: var(--fitz) auto;
+    margin-left: auto;
+    margin-right: auto;
 
     text-align: left;
 
@@ -115,7 +116,7 @@ article {
     orphans: 2;
 
     > * {
-      margin-bottom: 1em;
+      margin: var(--fitz);
 
       widows: 2;
       orphans: 2;
@@ -126,8 +127,8 @@ article {
     }
 
     > div {
-      width: 100%;
-      column-span: all;
+      // width: 100%;
+      // column-span: all;
     }
 
     a {
