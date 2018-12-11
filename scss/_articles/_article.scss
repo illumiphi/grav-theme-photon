@@ -59,6 +59,10 @@ article {
     flex-flow: column;
     align-items: center;
 
+    > * {
+      margin: var(--fitz);
+    }
+    
     > h1 {
       text-align: left;
       line-height: 1;
@@ -100,6 +104,10 @@ article {
   > .content {
     grid-area: content;
     display: block;
+
+    width: 100%;
+    max-width: var(--col-3);
+    margin: var(--fitz) auto;
 
     text-align: left;
 
