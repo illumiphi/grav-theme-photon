@@ -261,7 +261,7 @@ header.expand .toggle { order: 2; height: calc(var(--header-height)-var(--fitz-2
 header.expand nav { display: flex; flex-flow: column; order: 3; width: 100%; }
 header.expand .contact { display: flex; order: 4; }
 @media (min-width: 36em) { header .logo img { height: 5em; }
-  header .logo > a > h1 { font-size: 2em; } }
+  header .logo > a > h1 { font-size: 1em; } }
 @media (min-width: 54em) { header .logo { width: auto; height: auto; flex-flow: column; padding: var(--fitz); }
   header .logo a { flex-direction: column; }
   header .logo a img { width: auto; height: 5em; }
