@@ -139,7 +139,7 @@ body {
       grid-template-areas:
         " header main "
         " asides main "
-        " footer footer ";
+        " asides footer ";
       grid-template-columns: var(--col)   1fr;
       grid-template-rows: auto 1fr auto;
 
