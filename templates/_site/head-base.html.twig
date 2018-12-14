@@ -27,7 +27,9 @@
 <!-- schema -->
 {% block schema %}
 {% include '_json-ld/article.html.twig'  %}
+{% if page.template != "article" %}
 {% include "_json-ld/#{ page.template }.html.twig" ignore missing %}
+{% endif %}
 {% endblock schema %}
 
 <!-- opengraph -->
