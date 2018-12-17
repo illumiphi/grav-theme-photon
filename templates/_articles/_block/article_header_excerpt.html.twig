@@ -1,5 +1,8 @@
 
   <header>
+    {% if not excerpt %}
+    {% include '_articles/_block/breadcrumbs.html.twig' with { 'article': article } %}
+    {% endif %}
     <h1>
       {%- if article.active %}
         {{ article.title }}
@@ -12,7 +15,4 @@
     {% endif %}
     <time title="{{ article.date|date("Y-m-d") }}"
       datetime="{{ article.date|date("Y-m-d") }}">{{ article.date|date("M d Y") }}</time>
-    {% if not excerpt %}
-    {% include '_articles/_block/breadcrumbs.html.twig' with { 'article': article } %}
-    {% endif %}
   </header>
