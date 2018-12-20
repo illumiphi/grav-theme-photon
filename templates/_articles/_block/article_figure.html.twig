@@ -1,13 +1,24 @@
-  {% set featured_image = article.header.featured_image %}
+  {% set figure = article.header.figure %}
   <figure>
-    {% if featured_image %}
-      {% set header_image_media = article.media.images[featured_image] %}
+    {% if figure.image %}
+      {% set fig_img = article.media.images[figure.image] %}
     {% else %}
-      {% set header_image_media = article.media.images | first %}
+      {% set fig_img = article.media.images | first %}
     {% endif %}
     {%- if excerpt == true %}
-      {{ header_image_media.derivatives([300]).sizes('10em').html('Title', 'Alt', 'excerpt') }}
+      {{ fig_img.derivatives([300]).sizes('10em').html(figure.title, figure.alt, 'excerpt') }}
     {%- else %}
-      {{ header_image_media.derivatives([600, 1200, 1920]).html('Title', 'Alt', '') }}
+      {% if figure.youtube and showcase != 1 %}
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ figure.youtube }}"
+      frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
+      {% else %}
+      {{ fig_img.derivatives([600, 1200, 1920]).html(figure.title, figure.alt, '') }}
+      {% endif %}
+      {% if figure.caption %}
+        <figcaption>
+          {{ figure.caption|markdown }}
+        </figcaption>
+      {% endif %}
     {% endif %}
   </figure>

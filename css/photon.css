@@ -331,7 +331,7 @@ body > footer { color: var(--color-fg); background: var(--color-bg); }
     body > main > .collection { grid-area: collection; } } }
 
 /* templates/home *****************************/
-body.home > .showcase { padding: 0; height: calc(100vh - var(--header-height) - (var(--fitz-2) * 3)); }
+body.home > .showcase { padding: 0; min-height: calc(100vh - var(--header-height) - (var(--fitz-2) * 3)); }
 @media (min-width: 72em) { @supports (display: grid) { body.home { display: grid; grid-template-areas: "  header   showcase " "  featured featured " "  welcome welcome " "  asides   main   " "  asides   footer   "; grid-template-rows: calc(100vh - var(--fitz-2)); }
     body.home > .showcase { grid-area: showcase; height: calc(100vh - 2em); }
     body.home > .featured { grid-area: featured; } } }

@@ -1,4 +1,4 @@
-{% if article.header.show_gallery == 1 %}
+{% if article.header.gallery.show == 1 %}
     <div class="gallery">
       {% for image in article.media.images -%}
         <figure>

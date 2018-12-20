@@ -74,7 +74,7 @@ form:
                     _main:
                       type: fieldset
                       title: ✴ Main
-                      help: main figure and gallery images
+                      help: page attributes
                       info: general info on this page
                       # text: use meta data to help organize your info. use `featured` and `showcase` tags
                       # icon: asterisk
@@ -124,10 +124,10 @@ form:
                           # toggleable: true
                           data-options@: '\Grav\Common\Page\Pages::types'
 
-                    _figures:
+                    _figure:
                       type: fieldset
-                      title: ✴ Figures
-                      help: main figure and gallery images
+                      title: ✴ Figure
+                      help: main figure of the article
                       info: main figure and gallery images
                       # text: use meta data to help organize your info. use `featured` and `showcase` tags
                       # icon: asterisk
@@ -135,19 +135,7 @@ form:
                       collapsible: true    # Whether one can expand the fieldset or not
                       fields:
 
-                        # header.featured:
-                        #   type: toggle
-                        #   label: Featured Page
-                        #   help: select this page to be featured in home pages and banners
-                        #   highlight: 1
-                        #   options:
-                        #     1: yes
-                        #     0: no
-                        #   default: 0
-                        #   validate:
-                        #     type: bool
-
-                        header.featured_image:
+                        header.figure.image:
                           type: filepicker
                           label: Featured Image
                           help: Select of featured image from the items in the folder
@@ -159,11 +147,45 @@ form:
                             - .gif
                             - .svg
 
+                        header.figure.title:
+                          type: text
+                          label: Image Title
+                          help: used in title attribute of image tag
 
-                        header.show_gallery:
+                        header.figure.alt:
+                          type: text
+                          label: Image Alt Text
+                          help: used in alt attribute of image tag for screen readers - describes the image
+
+                        header.figure.caption:
+                          type: markdown
+                          validate:
+                            type: textarea
+                          label: Image Caption
+                          help: can contain full text markdown
+
+                        header.figure.youtube:
+                          type: text
+                          label: link to Youtube Video
+                          help: input just the video code
+
+
+                    _gallery:
+                      type: fieldset
+                      title: ✴ Gallery
+                      help: collection of images at end of article
+                      info: image collection
+                      # text: use meta data to help organize your info. use `featured` and `showcase` tags
+                      # icon: asterisk
+                      collapsed: true     # Initial state of fieldset (see collapsible option)
+                      collapsible: true    # Whether one can expand the fieldset or not
+                      fields:
+
+                        header.gallery.show:
                           type: toggle
+                          toggleable: true
                           label: Show Gallery
-                          help: show all available images in the folder in the gallery panel
+                          help: show the gallery panel
                           highlight: 1
                           options:
                             1: yes
@@ -171,6 +193,29 @@ form:
                           default: 1
                           validate:
                             type: bool
+
+                        header.gallery.images:
+                          type: list
+                          style: vertical
+                          label: gallery collection
+                          fields:
+
+                            .image:
+                              type: filepicker
+                              label: Image
+                              help: select image
+                              folder: 'self@'
+                              preview_images: true
+                              acccept:
+                                - .png
+                                - .jpg
+                                - .gif
+                                - .svg
+
+                            .title:
+                              type: text
+                              label: title
+
 
 
                     _attachments:
@@ -180,7 +225,7 @@ form:
                       info: select files
                       # text: use meta data to help organize your info. use `featured` and `showcase` tags
                       # icon: asterisk
-                      collapsed: false     # Initial state of fieldset (see collapsible option)
+                      collapsed: true     # Initial state of fieldset (see collapsible option)
                       collapsible: true    # Whether one can expand the fieldset or not
                       fields:
 
