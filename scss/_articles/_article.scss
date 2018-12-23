@@ -43,6 +43,15 @@ article {
       object-position: center;
     }
 
+    .svg {
+      object-fit: contain;
+      object-position: center;
+      fill: red;
+      path {
+
+      }
+    }
+
     > figcaption {
       text-align: center;
     }

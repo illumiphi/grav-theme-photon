@@ -1,24 +1,36 @@
   {% set figure = article.header.figure %}
   <figure>
-    {% if figure.image %}
-      {% set fig_img = article.media.images[figure.image] %}
+    {% set fig_img = figure.image %}
+    {% if not fig_img %}
+      {% set img = article.media.images | first %}
+      {% set fig_img = img.url %}
+    {% endif %}
+
+    {% if '.svg' in fig_img %}
+      {% set img = article.media.files[fig_img] %}
+       {{ img.html(figure.title, figure.alt, 'svg') }}
+      <!-- <object type="image/svg+xml" data="{{ img.url }}" title="{{ figure.title }}" alt="{{ figure.alt }}">
+        {{ figure.title }}
+      </object> -->
     {% else %}
-      {% set fig_img = article.media.images | first %}
-    {% endif %}
-    {%- if excerpt == true %}
-      {{ fig_img.derivatives([300]).sizes('10em').html(figure.title, figure.alt, 'excerpt') }}
-    {%- else %}
-      {% if figure.youtube and showcase != 1 %}
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ figure.youtube }}"
-      frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen></iframe>
-      {% else %}
-      {{ fig_img.derivatives([600, 1200, 1920]).html(figure.title, figure.alt, '') }}
+      {% set img = article.media.images[fig_img] %}
+      {%- if excerpt == true %}
+        {{ img.derivatives([300]).sizes('10em').html(figure.title, figure.alt, 'excerpt') }}
+      {%- else %}
+        {% if figure.youtube and showcase != 1 %}
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ figure.youtube }}"
+          frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+        {% else %}
+          {{ img.derivatives([600, 1200, 1920]).html(figure.title, figure.alt, '') }}
+        {% endif %}
+        {% if figure.caption %}
+          <figcaption>
+            {{ figure.caption|markdown }}
+          </figcaption>
+        {% endif %}
       {% endif %}
-      {% if figure.caption %}
-        <figcaption>
-          {{ figure.caption|markdown }}
-        </figcaption>
-      {% endif %}
     {% endif %}
+
+
   </figure>
