@@ -1,5 +1,5 @@
 <a href="https://photon-platform.net/">
-    <img src="http://photon-platform.net/images/logo.png" alt="photon" title="photon" align="right" height="120" />
+    <img src="https://photon-platform.net/images/photon-logo-bg.png" alt="photon" title="photon" align="right" height="120" />
 </a>
 
 # photon ✴ THEME
@@ -14,7 +14,7 @@ current version
 
 ## Getting Started
 
-Right now 
+Right now
 
 
 
