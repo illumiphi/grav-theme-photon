@@ -1,0 +1,18 @@
+{% extends 'article.html.twig' %}
+{% block template %}
+{{ parent() }}
+<!-- user/themes/photon/templates/form.html.twig -->
+{% endblock template %}
+
+{% block body_template_classes %}{{ parent() }} error{% endblock body_template_classes %}
+
+{# TODO: determine load order of templates - this should live in the forms plugin #}
+
+{% block content %}
+<article class="error">
+  <h1>{{ 'PLUGIN_ERROR.ERROR'|t }} {{ header.http_response_code }}</h1>
+
+  <p>{{ page.content|raw }}</p>
+  
+</article>
+{% endblock %}
