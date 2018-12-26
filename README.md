@@ -17,6 +17,14 @@ current version
 Right now
 
 
+## Templates
+
+[templates](templates/README.md)
+
+## Styles
+
+[templates](scss/README.md)
+
 
 ## License
 
