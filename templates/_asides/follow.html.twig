@@ -2,23 +2,23 @@
     <h2>Follow</h2>
     <ul>
       {% if config.organization.facebook %}
-      <li><a target="_blank" title="facebook" href="https://www.facebook.com/{{ config.organization.facebook }}" >f</a></li>
+      <li><a target="_blank" title="follow on facebook" href="https://www.facebook.com/{{ config.organization.facebook }}" >f</a></li>
       {% endif %}
 
       {% if config.organization.twitter %}
-      <li><a target="_blank" title="twitter" href="https://twitter.com/intent/follow?screen_name={{ config.organization.twitter }}" >t</a></li>
+      <li><a target="_blank" title="follow on twitter" href="https://twitter.com/intent/follow?screen_name={{ config.organization.twitter }}" >t</a></li>
       {% endif %}
 
       {% if config.organization.linkedin %}
-      <li><a target="_blank" title="linkedin" href="https://www.linkedin.com/in/{{ config.organization.linkedin }}" >i</a></li>
+      <li><a target="_blank" title="follow on linkedin" href="https://www.linkedin.com/in/{{ config.organization.linkedin }}" >i</a></li>
       {% endif %}
 
       {% if config.organization.youtube %}
-      <li><a target="_blank" title-"youtube" href="https://www.youtube.com/channel/{{ config.organization.youtube }}" >y</a></li>
+      <li><a target="_blank" title-"follow on youtube" href="https://www.youtube.com/channel/{{ config.organization.youtube }}" >y</a></li>
       {% endif %}
 
       {% if config.organization.github %}
-      <li><a target="_blank" title="github" href="https://github.com/{{ config.organization.github }}" >g</a></li>
+      <li><a target="_blank" title="follow on github" href="https://github.com/{{ config.organization.github }}" >g</a></li>
       {% endif %}
 
       <li><a target="_blank" title="rss" href="{{ page.url ~ '.rss' }}" >r</a></li>
