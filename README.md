@@ -12,6 +12,19 @@ The best way to start with photon
 
 current version
 
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
+
+* [photon ✴ THEME](#photon-theme)
+	* [Getting Started](#getting-started)
+	* [Templates](#templates)
+	* [Styles](#styles)
+	* [License](#license)
+
+<!-- /code_chunk_output -->
+
+
 ## Getting Started
 
 Right now
@@ -19,7 +32,7 @@ Right now
 
 ## Templates
 
-- [templates](templates/README.md)
+- [templates](templates)
 
 ## Styles
 
