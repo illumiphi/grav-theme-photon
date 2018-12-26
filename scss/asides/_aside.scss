@@ -55,13 +55,13 @@ aside {
   }
 
   // *****************************************
-  &.article-share {
+  &.article-share, &.follow {
     // padding: 0;
     h1 {
       // display: none;
     }
     ul {
-      font-family: $font-photon-social;
+      font-family: var(--font-icon);
       list-style: none;
       display: flex;
       flex-flow: row nowrap;

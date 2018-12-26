@@ -1,0 +1,22 @@
+  <aside class="follow">
+    <h2>Follow</h2>
+    <ul>
+      {% if config.organization.facebook %}
+      <li><a target="_blank" title="facebook" href="https://www.facebook.com/{{ config.organization.facebook }}" >f</a></li>
+      {% endif %}
+
+      {% if config.organization.twitter %}
+      <li><a target="_blank" title="twitter" href="https://twitter.com/intent/follow?screen_name={{ config.organization.twitter }}" >t</a></li>
+      {% endif %}
+
+      {% if config.organization.linkedin %}
+      <li><a target="_blank" href="https://www.linkedin.com/in/{{ config.organization.linkedin }}" >i</a></li>
+      {% endif %}
+
+      {% if config.organization.youtube %}
+      <li><a target="_blank" href="https://www.youtube.com/channel/{{ config.organization.youtube }}" >y</a></li>
+      {% endif %}
+
+      <li><a target="_blank" href="{{ page.url ~ '.rss' }}" >r</a></li>
+    </ul>
+  </aside>

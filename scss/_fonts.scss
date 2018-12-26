@@ -1,8 +1,5 @@
 // FONTS
-// @import '_fonts/_Bree-Serif';
-// @import '_fonts/_Lato';
-@import '_fonts/_photon-social';
-// @import '_fonts/_Lato';
+@import '_fonts/_photon-icon';
 
 
 :root {
@@ -10,7 +7,7 @@
   --font-display: sans-serif;
   --font-code: monospace;
   --font-form: var(--font);
-  --font-social: #{$font-photon-social};
+  --font-icon: 'photon-icon';
 
   --bullet: '✴';
 

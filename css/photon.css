@@ -1,8 +1,64 @@
 @charset "UTF-8";
 /* photon ✴ Theme Components and Templates */
 /* fonts *****************************/
-@font-face { font-family: 'photon-social'; src: url("../fonts/photon-social.eot?20845125"); src: url("../fonts/photon-social.eot?20845125#iefix") format("embedded-opentype"), url("../fonts/photon-social.woff?20845125") format("woff"), url("../fonts/photon-social.ttf?20845125") format("truetype"), url("../fonts/photon-social.svg?20845125#photon-social") format("svg"); font-weight: normal; font-style: normal; }
-:root { --font: serif; --font-display: sans-serif; --font-code: monospace; --font-form: var(--font); --font-social: photon-social, sans-serif; --bullet: '✴'; }
+@font-face { font-family: 'photon-icon'; src: url("../font/photon-icon.eot?72950484"); src: url("../font/photon-icon.eot?72950484#iefix") format("embedded-opentype"), url("../font/photon-icon.woff2?72950484") format("woff2"), url("../font/photon-icon.woff?72950484") format("woff"), url("../font/photon-icon.ttf?72950484") format("truetype"), url("../font/photon-icon.svg?72950484#photon-icon") format("svg"); font-weight: normal; font-style: normal; }
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) { @font-face { font-family: 'photon-icon'; src: url('../font/photon-icon.svg?72950484#photon-icon') format('svg'); }
+}
+*/
+[class^="photon-"]:before, [class*=" photon-"]:before { font-family: "photon-icon"; font-style: normal; font-weight: normal; speak: none; display: inline-block; text-decoration: inherit; width: 1em; margin-right: .2em; text-align: center; /* opacity: .8; */ /* For safety - reset parent styles, that can break glyph codes*/ font-variant: normal; text-transform: none; /* fix buttons height, for twitter bootstrap */ line-height: 1em; /* Animation center compensation - margins should be symmetric */ /* remove if not needed */ margin-left: .2em; /* you can be more comfortable with increased icons size */ /* font-size: 120%; */ /* Font smoothing. That was taken from TWBS */ -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; /* Uncomment for 3D effect */ /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
+
+.photon-chevron-left:before { content: '\3c'; }
+
+/* '&lt;' */
+.photon-chevron-right:before { content: '\3e'; }
+
+/* '&gt;' */
+.photon-search:before { content: '\3f'; }
+
+/* '?' */
+.photon-chevron-up:before { content: '\5e'; }
+
+/* '^' */
+.photon-mail:before { content: '\65'; }
+
+/* 'e' */
+.photon-facebook:before { content: '\66'; }
+
+/* 'f' */
+.photon-github:before { content: '\67'; }
+
+/* 'g' */
+.photon-export:before { content: '\68'; }
+
+/* 'h' */
+.photon-linkedin:before { content: '\69'; }
+
+/* 'i' */
+.photon-pinterest:before { content: '\6e'; }
+
+/* 'n' */
+.photon-phone:before { content: '\70'; }
+
+/* 'p' */
+.photon-rss:before { content: '\72'; }
+
+/* 'r' */
+.photon-skype:before { content: '\73'; }
+
+/* 's' */
+.photon-twitter:before { content: '\74'; }
+
+/* 't' */
+.photon-chevron-down:before { content: '\76'; }
+
+/* 'v' */
+.photon-youtube:before { content: '\79'; }
+
+/* 'y' */
+:root { --font: serif; --font-display: sans-serif; --font-code: monospace; --font-form: var(--font); --font-icon: 'photon-icon'; --bullet: '✴'; }
 
 /* color *****************************/
 :root { --color-key-lighter: hsl( var(--hue-key), var(--sat), var(--lighter) ); --color-key-light: hsl( var(--hue-key), var(--sat), var(--light) ); --color-key: hsl( var(--hue-key), var(--sat), var(--mid) ); --color-key-dark: hsl( var(--hue-key), var(--sat), var(--dark) ); --color-key-darker: hsl( var(--hue-key), var(--sat), var(--darker) ); --color-1-lighter: hsl( var(--hue-1), var(--sat), var(--lighter) ); --color-1-light: hsl( var(--hue-1), var(--sat), var(--light) ); --color-1: hsl( var(--hue-1), var(--sat), var(--mid) ); --color-1-dark: hsl( var(--hue-1), var(--sat), var(--dark) ); --color-1-darker: hsl( var(--hue-1), var(--sat), var(--darker) ); --color-2-lighter: hsl( var(--hue-2), var(--sat), var(--lighter) ); --color-2-light: hsl( var(--hue-2), var(--sat), var(--light) ); --color-2: hsl( var(--hue-2), var(--sat), var(--mid) ); --color-2-dark: hsl( var(--hue-2), var(--sat), var(--dark) ); --color-2-darker: hsl( var(--hue-2), var(--sat), var(--darker) ); }
@@ -209,8 +265,8 @@ aside ul > li > span { font-size: .75em; font-weight: bold; padding: 0.25em; mar
 aside p { padding-bottom: .2em; }
 aside > a { display: list-item; list-style: none; }
 aside.org { font-size: .7em; text-align: center; }
-aside.article-share ul { font-family: "photon-social", sans-serif; list-style: none; display: flex; flex-flow: row nowrap; align-content: space-between; }
-aside.article-share ul a { text-transform: inherit; padding: .3em; font-size: 1.1em; }
+aside.article-share ul, aside.follow ul { font-family: var(--font-icon); list-style: none; display: flex; flex-flow: row nowrap; align-content: space-between; }
+aside.article-share ul a, aside.follow ul a { text-transform: inherit; padding: .3em; font-size: 1.1em; }
 
 /* asides/search *****************************/
 aside.search > section { flex-flow: column nowrap; }
