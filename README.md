@@ -2,7 +2,7 @@
     <img src="https://photon-platform.net/images/photon-logo-bg.png" alt="photon" title="photon" align="right" height="120" />
 </a>
 
-# photon ✴ THEME
+# `photon ✴ THEME`
 
 ![GitHub release](https://img.shields.io/github/release-pre/photon-platform/grav-theme-photon.svg)
 
@@ -13,21 +13,24 @@ The best way to start with photon
 current version
 
 
-<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+**TOC**
+<!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
 <!-- code_chunk_output -->
 
-* [photon ✴ THEME](#photon-theme)
-	* [Getting Started](#getting-started)
-	* [Templates](#templates)
-	* [Styles](#styles)
-	* [License](#license)
+* [Getting Started](#getting-started)
+* [Aligning Templates and Styles](#aligning-templates-and-styles)
+* [Templates](#templates)
+* [Styles](#styles)
+* [License](#license)
 
 <!-- /code_chunk_output -->
 
 
 ## Getting Started
 
-Right now
+
+
+## Aligning Templates and Styles
 
 
 ## Templates
