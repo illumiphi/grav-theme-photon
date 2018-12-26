@@ -10,13 +10,17 @@
       {% endif %}
 
       {% if config.organization.linkedin %}
-      <li><a target="_blank" href="https://www.linkedin.com/in/{{ config.organization.linkedin }}" >i</a></li>
+      <li><a target="_blank" title="linkedin" href="https://www.linkedin.com/in/{{ config.organization.linkedin }}" >i</a></li>
       {% endif %}
 
       {% if config.organization.youtube %}
-      <li><a target="_blank" href="https://www.youtube.com/channel/{{ config.organization.youtube }}" >y</a></li>
+      <li><a target="_blank" title-"youtube" href="https://www.youtube.com/channel/{{ config.organization.youtube }}" >y</a></li>
       {% endif %}
 
-      <li><a target="_blank" href="{{ page.url ~ '.rss' }}" >r</a></li>
+      {% if config.organization.github %}
+      <li><a target="_blank" title="github" href="https://github.com/{{ config.organization.github }}" >g</a></li>
+      {% endif %}
+
+      <li><a target="_blank" title="rss" href="{{ page.url ~ '.rss' }}" >r</a></li>
     </ul>
   </aside>
