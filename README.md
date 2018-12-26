@@ -19,11 +19,11 @@ Right now
 
 ## Templates
 
-[templates](templates/README.md)
+- [templates](templates/README.md)
 
 ## Styles
 
-[templates](scss/README.md)
+- [scss](scss/README.md)
 
 
 ## License
