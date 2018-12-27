@@ -265,7 +265,8 @@ aside ul > li > span { font-size: .75em; font-weight: bold; padding: 0.25em; mar
 aside p { padding-bottom: .2em; }
 aside > a { display: list-item; list-style: none; }
 aside.org { font-size: .7em; text-align: center; }
-aside.article-share ul, aside.follow ul { font-family: var(--font-icon); list-style: none; display: flex; flex-flow: row nowrap; align-content: space-between; }
+aside.article-share ul, aside.follow ul { font-family: var(--font-icon); list-style: none; display: flex; flex-flow: row nowrap; align-content: center; justify-content: center; }
+aside.article-share ul li, aside.follow ul li { width: auto; }
 aside.article-share ul a, aside.follow ul a { text-transform: inherit; padding: .3em; font-size: 1.1em; }
 
 /* asides/search *****************************/

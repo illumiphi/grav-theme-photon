@@ -65,7 +65,11 @@ aside {
       list-style: none;
       display: flex;
       flex-flow: row nowrap;
-      align-content: space-between;
+      align-content: center;
+      justify-content: center;
+      li {
+        width: auto;
+      }
       a {
         text-transform: inherit;
         padding: .3em;

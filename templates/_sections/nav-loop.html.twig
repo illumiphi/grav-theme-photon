@@ -3,7 +3,7 @@
 {% macro loop(collection) %}
   {% import _self as macros %}
   {% for p in collection %}
-      {% if p.routable %}
+      {% if p.routable  %}
       <li>
           <a href="{{ p.url }}">{{ p.menu }} - {{ p.children.count }}</a>
           {% if p.children.count > 0 %}
