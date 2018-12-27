@@ -6,7 +6,7 @@
 
 ![GitHub release](https://img.shields.io/github/release-pre/photon-platform/grav-theme-photon.svg)
 
-`photon ✴ THEME` is a foundational theme for the [Grav CMS](http://github.com/getgrav/grav).
+Foundation theme for the photon ✴ PLATFORM - within [Grav CMS](http://github.com/getgrav/grav).
 
 
 
@@ -20,7 +20,7 @@
 * [Styles](#styles)
 * [License](#license)
 
-<!-- /code_chunk_output -->  
+<!-- /code_chunk_output -->
 
 ![](screenshot.jpg)
 
