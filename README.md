@@ -8,9 +8,6 @@
 
 `photon ✴ THEME` is a foundational theme for the [Grav CMS](http://github.com/getgrav/grav).
 
-The best way to start with photon
-
-current version
 
 
 **TOC**
@@ -18,29 +15,50 @@ current version
 <!-- code_chunk_output -->
 
 * [Getting Started](#getting-started)
-* [Aligning Templates and Styles](#aligning-templates-and-styles)
+* [Pages vs Articles](#pages-vs-articles)
 * [Templates](#templates)
 * [Styles](#styles)
+* [Aligning Templates and Styles at each level](#aligning-templates-and-styles-at-each-level)
 * [License](#license)
 
 <!-- /code_chunk_output -->
 
 
 ## Getting Started
+The best way to start with photon THEME is with a photon STARTER project.
+
+https://github.com/photon-platform/photon
+
+current version of this theme has some dependencies on some site level configuration. THis will be resolved in a future version.
+
+see the theme configuration section for more on the starter project:
+https://github.com/photon-platform/photon#theme-configuration
 
 
 
-## Aligning Templates and Styles
+## Pages vs Articles
 
 
 ## Templates
 
-- [templates](templates)
+
+- [`templates`](templates)
+  root folder contains the page level templates
+  - [_site](templates/_site)
+    partials for the head section of the templates
+  -
+
+topics for future:
+- underscores on folder names
 
 ## Styles
 
-- [scss](scss/README.md)
+[`scss`](scss)
 
+
+## Aligning Templates and Styles at each level
+
+-
 
 ## License
 
