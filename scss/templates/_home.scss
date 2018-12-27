@@ -38,8 +38,8 @@ body.home {
       display: grid;
       grid-template-areas:
         "  header   showcase "
-        "  featured featured "
-        "  welcome welcome "
+        "  asides   featured "
+        "  asides   welcome "
         "  asides   main   "
         "  asides   footer   ";
       grid-template-rows:  calc(100vh - var(--fitz-2)) ;
@@ -63,7 +63,7 @@ body.home {
       display: grid;
       grid-template-areas:
         "  header   showcase featured"
-        "  welcome welcome welcome"
+        "  asides   welcome welcome"
         "  asides   main   main"
         "  asides   footer   footer";
       grid-template-rows:  calc(100vh - var(--fitz-2)) ;
@@ -75,16 +75,17 @@ body.home {
         > .collection {
           width: 100%;
           display: grid;
+          grid-template-columns: repeat( auto-fit, minmax( 38em, 1fr ) );
 
           > h1 {
             grid-column: 1 / -1;
+            color: var(--color-2-light);
           }
 
           > .excerpt {
-            @include article-card;
+            @include article-banner;
           }
         }
-
       }
 
       > .featured {
