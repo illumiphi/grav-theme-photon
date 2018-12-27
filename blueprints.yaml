@@ -1,6 +1,6 @@
-name: photon ✴
+name: photon ✴ THEME
 version: 0.1.1
-description: A theme to bring order to the structure, logic and style of your content
+description: Foundation theme for the photon PLATFORM within Grav CMS
 icon: asterisk
 author:
   name: phi ARCHITECT

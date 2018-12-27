@@ -3,3 +3,24 @@
 </a>
 
 # photon ✴ THEME: templates
+
+photon templates are created in TWIG - a templating language for Grav / Symfony / PHP platform.
+
+There is great documentation on the TWIG website
+https://twig.symfony.com/
+
+
+## Files and Folders
+
+- [`templates`]()
+  root folder contains the page level templates
+  - [`_site`](templates/_site)
+    partials for the head section of the templates
+  - [`json-ld`](templates/json-ld)
+    partials for including JSOM Linked Data in head of template
+  - [`_sections`](templates/_sections)
+    partials for the body sections of the templates
+  - [`_articles`](templates/_articles)
+    partials for the structuring article content - full and excerpt
+  - [`_asides`](templates/_asides)
+    partials for sidebar components

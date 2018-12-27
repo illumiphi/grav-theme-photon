@@ -26,6 +26,7 @@ plugins have their own source files
 * [SCSS](#scss)
 	* [master doc `photon.scss`](#master-doc-photonscss)
 * [generating SCSS](#generating-scss)
+* [Aligning Templates and Styles at each level](#aligning-templates-and-styles-at-each-level)
 
 <!-- /code_chunk_output -->
 
@@ -37,6 +38,10 @@ component based styling
 imports smaller compoenents
 
 
-## generating SCSS
+## Generating SCSS
 
 photon projects can use the `swatch` alias to call `scss --watch` on all the scss source files
+
+## Aligning Templates and Styles at each level
+
+-

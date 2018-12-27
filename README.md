@@ -15,51 +15,56 @@
 <!-- code_chunk_output -->
 
 * [Getting Started](#getting-started)
-* [Pages vs Articles](#pages-vs-articles)
+* [Articles in Pages](#articles-in-pages)
 * [Templates](#templates)
 * [Styles](#styles)
-* [Aligning Templates and Styles at each level](#aligning-templates-and-styles-at-each-level)
 * [License](#license)
 
 <!-- /code_chunk_output -->
 
+![](screenshot.jpg)
 
 ## Getting Started
-The best way to start with photon THEME is with a photon STARTER project.
+The best way to start with photon THEME is with a photon STARTER project. Checkout the repo here:
 
 https://github.com/photon-platform/photon
 
-current version of this theme has some dependencies on some site level configuration. THis will be resolved in a future version.
+Current version of this theme has some dependencies on  site level configurations. This will be resolved in a future version.
 
-see the theme configuration section for more on the starter project:
+See the theme configuration section for more on the STARTER project:
 https://github.com/photon-platform/photon#theme-configuration
 
+I highly recommend reviewing the excellent material on GRAV Documentation site:
+https://learn.getgrav.org/themes
 
 
-## Pages vs Articles
+## Articles in Pages
+
+Photon takes a content first approach to development.
+
+We develop our content as a set of hierarchical data.
+
+An **Article** is a node in our dataset.
+
+A **Page** is the template document that structures the content of one or more articles along with components to provide context and navigation.
+
+
+
 
 
 ## Templates
+see README in templates folder for more about the concpets for the TWIG template files:
 
+[`templates`](templates)
 
-- [`templates`](templates)
-  root folder contains the page level templates
-  - [_site](templates/_site)
-    partials for the head section of the templates
-  -
-
-topics for future:
-- underscores on folder names
 
 ## Styles
+see README in scss folder for more on the stylesheet development:
 
 [`scss`](scss)
 
 
-## Aligning Templates and Styles at each level
-
--
 
 ## License
 
-See [LICENSE](LICENSE.txt)
+See [LICENSE](LICENSE)
