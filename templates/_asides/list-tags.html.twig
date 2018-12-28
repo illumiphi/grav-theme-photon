@@ -8,7 +8,7 @@
             {% set active = uri.param(taxonomy) == tax
               ? ' active'
               : '' %}
-              <a class="{{ active }}" href="/search/{{ taxonomy }}{{ config.system.param_sep }}{{ tax|e('url') }}">{{ tax }}</a>
+              <a class="{{ active }}" href="/search/taxonomy/{{ taxonomy }}{{ config.system.param_sep }}{{ tax|e('url') }}">{{ tax }}</a>
           {% endfor %}
         {% endif %}
 

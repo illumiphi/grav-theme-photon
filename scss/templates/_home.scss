@@ -23,6 +23,10 @@ body.home {
   }
 
   > main {
+    > .collection {
+      color: var(--color-2-light);
+
+    }
   }
 
   @include media-bp(1) {
@@ -72,14 +76,17 @@ body.home {
       > main {
         flex-flow: column;
 
+        > article {
+          padding-bottom: 1em;
+        }
+
         > .collection {
           width: 100%;
           display: grid;
-          grid-template-columns: repeat( auto-fit, minmax( 38em, 1fr ) );
+          grid-template-columns: repeat( auto-fit, minmax( 36em, 1fr ) );
 
           > h1 {
             grid-column: 1 / -1;
-            color: var(--color-2-light);
           }
 
           > .excerpt {

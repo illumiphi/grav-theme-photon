@@ -1,9 +1,9 @@
-{% extends 'default.html.twig' %}
-{% set type = "article" %}
-{% set types = "articles" %}
+{% extends 'article.html.twig' %}
+{% set type = "taxonomy" %}
+{% set types = "taxonomies" %}
 {% block template %}
 {{ parent() }}
-<!-- user/themes/photon/templates/article.html.twig -->
+<!-- user/themes/photon/templates/taxonomy.html.twig -->
 {% endblock template %}
 
 {% block body_template_classes %}{{ parent() }} {{ type }}{% endblock body_template_classes %}

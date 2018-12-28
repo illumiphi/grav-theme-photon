@@ -265,7 +265,8 @@ aside ul > li > span { font-size: .75em; font-weight: bold; padding: 0.25em; mar
 aside p { padding-bottom: .2em; }
 aside > a { display: list-item; list-style: none; }
 aside.org { font-size: .7em; text-align: center; }
-aside.article-share ul, aside.follow ul { font-family: var(--font-icon); list-style: none; display: flex; flex-flow: row nowrap; align-content: space-between; }
+aside.article-share ul, aside.follow ul { font-family: var(--font-icon); list-style: none; display: flex; flex-flow: row nowrap; align-content: center; justify-content: center; }
+aside.article-share ul li, aside.follow ul li { width: auto; }
 aside.article-share ul a, aside.follow ul a { text-transform: inherit; padding: .3em; font-size: 1.1em; }
 
 /* asides/search *****************************/
@@ -290,10 +291,10 @@ section, .asides, .featured, footer, header, main, nav, .showcase { display: fle
 .featured > * { margin: var(--fitz); padding: var(--fitz); }
 .featured > h1 { grid-column: 1 / -1; letter-spacing: .25em; padding-left: .25em; text-align: center; text-transform: uppercase; }
 .featured > article { /* article-banner */ }
-.featured > article > figure { max-height: 9em; }
+.featured > article > figure { max-height: 9em; padding: var(--fitz); }
 .featured > article > figure > img { height: 100%; object-position: center; }
 .featured > article > header { text-align: left; display: block; }
-.featured > article > header > * { text-align: left; }
+.featured > article > header > * { text-align: left; margin-left: 0; }
 .featured > article > .content { text-align: left; margin: 0; }
 .featured > article > .content .summary { text-align: left; }
 .featured > article > .content .summary > ul { list-style: disc; text-align: left; margin: 0; margin-left: 1em; padding: 0; }
@@ -389,18 +390,20 @@ body > footer { color: var(--color-fg); background: var(--color-bg); }
 
 /* templates/home *****************************/
 body.home > .showcase { padding: 0; min-height: calc(100vh - var(--header-height) - (var(--fitz-2) * 3)); }
+body.home > main > .collection { color: var(--color-2-light); }
 @media (min-width: 72em) { @supports (display: grid) { body.home { display: grid; grid-template-areas: "  header   showcase " "  asides   featured " "  asides   welcome " "  asides   main   " "  asides   footer   "; grid-template-rows: calc(100vh - var(--fitz-2)); }
     body.home > .showcase { grid-area: showcase; height: calc(100vh - 2em); }
     body.home > .featured { grid-area: featured; } } }
 @media (min-width: 90em) { @supports (display: grid) { body.home { display: grid; grid-template-areas: "  header   showcase featured" "  asides   welcome welcome" "  asides   main   main" "  asides   footer   footer"; grid-template-rows: calc(100vh - var(--fitz-2)); grid-template-columns: var(--col) 2fr 1fr; }
     body.home > main { flex-flow: column; }
-    body.home > main > .collection { width: 100%; display: grid; grid-template-columns: repeat(auto-fit, minmax(38em, 1fr)); }
-    body.home > main > .collection > h1 { grid-column: 1 / -1; color: var(--color-2-light); }
+    body.home > main > article { padding-bottom: 1em; }
+    body.home > main > .collection { width: 100%; display: grid; grid-template-columns: repeat(auto-fit, minmax(36em, 1fr)); }
+    body.home > main > .collection > h1 { grid-column: 1 / -1; }
     body.home > main > .collection > .excerpt { /* article-banner */ }
-    body.home > main > .collection > .excerpt > figure { max-height: 9em; }
+    body.home > main > .collection > .excerpt > figure { max-height: 9em; padding: var(--fitz); }
     body.home > main > .collection > .excerpt > figure > img { height: 100%; object-position: center; }
     body.home > main > .collection > .excerpt > header { text-align: left; display: block; }
-    body.home > main > .collection > .excerpt > header > * { text-align: left; }
+    body.home > main > .collection > .excerpt > header > * { text-align: left; margin-left: 0; }
     body.home > main > .collection > .excerpt > .content { text-align: left; margin: 0; }
     body.home > main > .collection > .excerpt > .content .summary { text-align: left; }
     body.home > main > .collection > .excerpt > .content .summary > ul { list-style: disc; text-align: left; margin: 0; margin-left: 1em; padding: 0; }

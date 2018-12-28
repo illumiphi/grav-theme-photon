@@ -10,6 +10,6 @@
       <li><a target="_blank" title="share on twitter" href="https://twitter.com/intent/tweet?url={{ share_url }}&text={{ article.title|url_encode }}" >t</a></li>
       <li><a target="_blank" title="share on linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url={{ share_url }}&title={{ article.title|url_encode }}" >i</a></li>
       <li><a target="_blank" title="share on pinterest" href="https://pinterest.com/pin/create/button/?url={{ share_url }}&media={{ share_image }}&description={{ share_description|striptags|url_encode }}" >n</a></li>
-      <li><a target="_blank" title="share on facebook" href="{{ article.url ~ '.rss' }}" >r</a></li>
+      <li><a target="_blank" title="RSS feed" href="{{ article.url ~ '.rss' }}" >r</a></li>
     </ul>
   </aside>
