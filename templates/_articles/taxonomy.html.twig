@@ -57,6 +57,20 @@
                     {% endfor %}
                     </ul>
             {% endif %}
+        {% elseif taxname == 'action' %}
+            {% if taxval %}
+                <section class="topiclist">
+                    <h1>Tag: {{ taxval }}</h1>
+                    {% include '_articles/_block/topiclist.html.twig' with {'articles': taxonomy.findTaxonomy({(taxname): taxval})} %}
+                </section>
+            {% else %}
+                <section>
+                    <ul>
+                    {% for action in taxonomy.taxonomy["action"]|keys|sort %}
+                        <li><a href="{{ base_url }}/search/taxonomy?name=action&amp;val={{ action|url_encode }}">{{ action }}</a></li>
+                    {% endfor %}
+                    </ul>
+            {% endif %}
         {% endif %}
     {% else %}
         <section>
@@ -64,6 +78,7 @@
             <ul>
                 <li><a href="{{ page.url }}?name=category">Categories</a></li>
                 <li><a href="{{ page.url }}?name=tag">Tags</a></li>
+                <li><a href="{{ page.url }}?name=action">Actions</a></li>
             </ul>
         </section>
     {% endif %}
