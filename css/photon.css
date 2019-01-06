@@ -208,7 +208,7 @@ article > header > time { font-size: .6em; padding-top: .5em; }
 article > .content { grid-area: content; display: block; max-width: var(--col-3); margin-left: auto; margin-right: auto; text-align: left; widows: 2; orphans: 2; }
 article > .content > * { margin: var(--fitz); widows: 2; orphans: 2; }
 article > .content > *:last-child { margin-bottom: 0; }
-article > .content > .summary { background: var(--color-2-light); padding: var(--fitz); }
+article > .content > .summary { background: var(--color-2-light); color: var(--color-bg); padding: var(--fitz); }
 article > .content a { display: inline; }
 article > .content > ul { margin: 2em; }
 article > .content blockquote { padding: var(--fitz-2); border-left: var(--fitz-2) solid var(--color-1-light); line-height: 1.7; }
