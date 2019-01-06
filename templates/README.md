@@ -14,13 +14,13 @@ https://twig.symfony.com/
 
 - [`templates`]()
   root folder contains the page level templates
-  - [`_site`](templates/_site)
+  - [`_site`](_site)
     partials for the head section of the templates
-  - [`json-ld`](templates/json-ld)
+  - [`json-ld`](json-ld)
     partials for including JSOM Linked Data in head of template
-  - [`_sections`](templates/_sections)
+  - [`_sections`](_sections)
     partials for the body sections of the templates
-  - [`_articles`](templates/_articles)
+  - [`_articles`](_articles)
     partials for the structuring article content - full and excerpt
-  - [`_asides`](templates/_asides)
+  - [`_asides`](_asides)
     partials for sidebar components
