@@ -19,7 +19,7 @@
             <header>
               <h1>{{ types }}: <span class="count">{{ page.collection.count() }}</span></h1>
               <nav>
-                <a id="category-client" href="{{ page.url }}/category:client">client</a>
+                <a id="category-client" href="{{ page.url }}{{ page.url ends with '/' ? '' : '/' }}category:client">client</a>
                 <a id="modal" href="javascript:toggleModal();">[ ]</a>
               </nav>
             </header>
