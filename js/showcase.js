@@ -21,30 +21,35 @@ if ( slides ) {
   btn.appendChild(t);
 
   // slideContainer.insertAdjacentElement('beforeend', btn);
+
+  // show first slide
+  showSlide(currentSlide);
 }
 
 
 function showSlide(num) {
+  console.log("showSlide: " + num)
   slides[currentSlide].classList.remove("show");
   currentSlide = num;
   slides[currentSlide].classList.add("show");
 }
 
-// show first slide
-showSlide(currentSlide);
 
 function prev() {
-  var num = ((currentSlide - 1) % slideCount);
+  var num = ((currentSlide - 1) % slides.length);
+  if (num < 0) {
+    num = slides.length - 1;
+  }
   showSlide(num);
 }
 
 function next() {
-  var num = ((currentSlide + 1) % slideCount);
+  var num = ((currentSlide + 1) % slides.length);
   showSlide(num);
 }
 
 
-setTimeout(autoNext, 5000)
+// setTimeout(autoNext, 5000)
 function autoNext() {
   next()
   setTimeout(autoNext, 5000)
