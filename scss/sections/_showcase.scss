@@ -5,6 +5,7 @@
   position: relative;
   display: block;
 
+
   > article {
     //pin to showcase boundary
     position: absolute;
@@ -19,6 +20,12 @@
 
     // display: flex;
     // flex-flow: column;
+    transition: opacity .5s;
+
+  
+    &.show {
+      opacity: 1;
+    }
 
     > figure {
 

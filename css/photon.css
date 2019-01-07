@@ -346,7 +346,8 @@ nav.tree ul a { text-align: left; display: block; }
 
 /* sections/showcase *****************************/
 .showcase { position: relative; display: block; }
-.showcase > article { position: absolute; top: 0; bottom: 0; right: 0; left: 0; opacity: 0; }
+.showcase > article { position: absolute; top: 0; bottom: 0; right: 0; left: 0; opacity: 0; transition: opacity .5s; }
+.showcase > article.show { opacity: 1; }
 .showcase > article > figure > figcaption { display: none; }
 .showcase > article > footer .article-share, .showcase > article > footer .article-tags, .showcase > article > footer .sibling { display: none; }
 
@@ -354,11 +355,12 @@ nav.tree ul a { text-align: left; display: block; }
 body { --bg: var(--color-2-darker); background: var(--bg); padding: var(--fitz); display: flex; flex-flow: column; align-content: center; justify-content: flex-start; }
 body > header, body > main, body > .asides, body > footer, body.home > .showcase, body.home > .welcome { margin: var(--fitz); }
 body > header { color: var(--color-fg); background: var(--color-bg); height: var(--header-height); padding: var(--fitz-2); overflow: hidden; justify-content: space-around; }
-body > main { width: 100%; margin: 0; display: flex; flex-flow: column; }
+body > main { width: 100%; margin: 0; display: flex; flex-flow: column; position: relative; }
 body > main > * { margin: var(--fitz); padding: var(--fitz); }
-body > main > .collection { flex-flow: row; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(22em, 1fr)); justify-content: center; }
+body > main > .collection { flex-flow: row; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(22em, 1fr)); justify-content: center; transition: position .5s; }
+body > main > .collection.modal { position: fixed; background: black; z-index: 10; top: 0; left: 0; right: 0; bottom: 0; }
 body > main > .collection > * { margin: var(--fitz); padding: var(--fitz); }
-body > main > .collection > h1 { color: var(--color-fg); padding: 0; text-align: center; grid-column: 1 / -1; }
+body > main > .collection > header { color: var(--color-fg); background: var(--color-bg); padding: 0; text-align: center; grid-column: 1 / -1; }
 body > main > .collection .excerpt { /* article-card */ display: flex; /* extends article.banner */ }
 body > main > .collection .excerpt > figure > img { width: 100%; height: 100%; height: calc(var(--col) - 2em); }
 body > main > .collection .excerpt > header { text-align: center; }

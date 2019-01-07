@@ -16,3 +16,8 @@ function toggleMenu() {
     var header = document.querySelector("body > header");
     header.classList.toggle("expand");
 }
+
+var collection = document.querySelector(".collection")
+function toggleModal() {
+  collection.classList.toggle("modal");
+}

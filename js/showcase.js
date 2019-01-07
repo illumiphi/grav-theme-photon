@@ -1,26 +1,12 @@
 let currentSlide = 0
 
-const slideContainer = document.querySelector('.showcase')
+const slides = Array.from(document.querySelectorAll('.showcase > article'));
 let slideCount;
 
-if ( slideContainer ) {
-  slideCount = slideContainer.childElementCount
-  console.log("slideCount: " + slideCount)
 
-  TweenMax.to(`.showcase > article`, 1, {
-    autoAlpha: 0
-  })
+if ( slides ) {
 
-  TweenMax.to(`.showcase > article:nth-child(${ currentSlide + 1 })`, 1, {
-    autoAlpha: 1
-  })
-
-  // var color = window.getComputedStyle(
-  // 	slideContainer, ':before'
-  // ).getPropertyValue('color')
-  // console.log(color);
-
-  var btn = document.createElement('BUTTON');
+  var btn = document.createElement('button');
   var t = document.createTextNode('<');
   btn.classList.add("prev");
   _addEventListener('click', btn, prev);
@@ -28,7 +14,7 @@ if ( slideContainer ) {
 
   // slideContainer.insertAdjacentElement('afterbegin', btn);
 
-  var btn = document.createElement('BUTTON');
+  var btn = document.createElement('button');
   var t = document.createTextNode('>');
   btn.classList.add("next");
   _addEventListener('click', btn, next);
@@ -37,6 +23,35 @@ if ( slideContainer ) {
   // slideContainer.insertAdjacentElement('beforeend', btn);
 }
 
+
+function showSlide(num) {
+  slides[currentSlide].classList.remove("show");
+  currentSlide = num;
+  slides[currentSlide].classList.add("show");
+}
+
+// show first slide
+showSlide(currentSlide);
+
+function prev() {
+  var num = ((currentSlide - 1) % slideCount);
+  showSlide(num);
+}
+
+function next() {
+  var num = ((currentSlide + 1) % slideCount);
+  showSlide(num);
+}
+
+
+setTimeout(autoNext, 5000)
+function autoNext() {
+  next()
+  setTimeout(autoNext, 5000)
+}
+
+
+//////////////////////////////////////////////////////////////////////////////
 
 var Key = {
   LEFT: 37,
@@ -77,41 +92,3 @@ function _addEventListener(evt, element, fn) {
 }
 
 _addEventListener('keydown', document, handleKeyboardEvent);
-
-function prev() {
-
-  TweenMax.to(`.showcase > article:nth-child(${ currentSlide + 1 })`, 1, {
-    autoAlpha: 0
-  })
-
-  currentSlide = ((currentSlide - 1) % slideCount) ;
-
-  TweenMax.to(`.showcase > article:nth-child(${ currentSlide + 1 })`, 1, {
-    autoAlpha: 1
-  })
-
-  console.log(currentSlide)
-
-}
-
-function next() {
-
-  TweenMax.to(`.showcase > article:nth-child(${ currentSlide + 1 })`, 1, {
-    autoAlpha: 0
-  })
-
-  currentSlide = ((currentSlide + 1) % slideCount) ;
-
-  TweenMax.to(`.showcase > article:nth-child(${ currentSlide + 1 })`, 1, {
-    autoAlpha: 1
-  })
-
-  console.log(currentSlide)
-
-}
-
-setTimeout(autoNext, 5000)
-function autoNext() {
-  next()
-  setTimeout(autoNext, 5000)
-}

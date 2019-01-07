@@ -16,12 +16,17 @@
 
         {% if page.collection.count %}
           <section class="collection">
-            <h1>{{ types }}: <span class="count">{{ page.collection.count() }}</span></h1>
-
+            <header>
+              <h1>{{ types }}: <span class="count">{{ page.collection.count() }}</span></h1>
+              <nav>
+                <a id="modal" href="javascript:toggleModal();">[ ]</a>
+              </nav>
+            </header>
             {% for article in page.collection %}
-              {% if not (article.url == page.url) and article.routable == true and article.visible == true %}
+              {{ dump(article) }}
+              {# % if not (article.url == page.url) and article.routable == true and article.visible == true % #}
                 {% include ["_articles/#{ article.template }-excerpt.html.twig", "_articles/article-excerpt.html.twig"] with { 'article': article } %}
-              {% endif %}
+              {# % endif % #}
             {% endfor %}
 
             {% include '_sections/pagination.html.twig'   %}

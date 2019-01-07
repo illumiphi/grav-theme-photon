@@ -44,6 +44,8 @@ body {
     display: flex;
     flex-flow: column;
 
+    position: relative;
+
     > * {
       margin: var(--fitz);
       padding: var(--fitz);
@@ -69,14 +71,26 @@ body {
 
 
       justify-content: center;
+      transition: position .5s;
 
+      &.modal {
+        position: fixed;
+        background: black;
+        z-index: 10;
+
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
       > * {
         margin: var(--fitz);
         padding: var(--fitz);
       }
 
-      > h1 {
+      > header {
         color: var(--color-fg);
+        background: var(--color-bg);
         padding: 0;
         text-align: center;
         // color: var(--color-bg);
