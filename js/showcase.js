@@ -24,6 +24,9 @@ if ( slides ) {
 
   // show first slide
   showSlide(currentSlide);
+
+  setTimeout(autoNext, 10000)
+
 }
 
 
@@ -49,10 +52,9 @@ function next() {
 }
 
 
-// setTimeout(autoNext, 5000)
 function autoNext() {
   next()
-  setTimeout(autoNext, 5000)
+  setTimeout(autoNext, 10000)
 }
 
 
