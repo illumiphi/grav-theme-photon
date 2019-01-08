@@ -4,7 +4,7 @@
 
 article {
 
-  padding: var(--fitz);
+  padding: var(--fitz-2);
 
   color: var(--color-fg);
   background: var(--color-bg);
@@ -15,7 +15,7 @@ article {
   justify-content: flex-start;
 
   > * {
-    margin: var(--fitz);
+    margin-bottom: var(--fitz);
     // padding: var(--fitz);
 
   }
