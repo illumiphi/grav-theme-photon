@@ -374,7 +374,6 @@ body > main > .collection .excerpt > footer > aside ul, body > main > .collectio
 body > main > .collection .excerpt > footer > nav { text-align: right; padding: 0; align-self: flex-end; justify-content: right; }
 body > main > .collection .excerpt > footer .more { margin: 0 auto; text-align: center; display: block; }
 body > main > .collection .excerpt > figure { background: none; }
-body > main > .collection .excerpt .article-tags { display: none; }
 body > main > section.form { background: var(--color-bg); flex-flow: column; }
 body > main > section.form form { width: 100%; }
 body > .asides { color: var(--color-fg); background: var(--color-bg); }
