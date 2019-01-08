@@ -3,7 +3,7 @@
     {% for p in pages.children %}
       {%- if p.visible %}
         {%- set active_class = (p.active or p.activeChild) ? ' class="active"' : '' %}
-  <a href="{{ p.url }}"{{ active_class }}>{{ p.menu }}</a>
+  <a href="{{ p.url }}"{{ active_class }} title="{{ p.header.subtitle }}">{{ p.menu }}</a>
       {% endif -%}
     {% endfor %}
 </nav>
