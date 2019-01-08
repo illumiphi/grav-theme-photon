@@ -14,25 +14,31 @@
       {% include ["_articles/#{ page.template }.html.twig", "_articles/article.html.twig"] with { 'article': page } %}
       {% block collection %}
 
-        {% if page.collection.count %}
-          <section class="collection">
-            <header>
-              <h1>{{ types }}: <span class="count">{{ page.collection.count() }}</span></h1>
-              <nav>
-                <a id="category-client" href="{{ page.url }}{{ page.url ends with '/' ? '' : '/' }}category:client">client</a>
-                <a id="modal" href="javascript:toggleModal();">[ ]</a>
-              </nav>
-            </header>
-            {% for article in page.collection %}
-              {{ dump(article) }}
-              {# % if not (article.url == page.url) and article.routable == true and article.visible == true % #}
-                {% include ["_articles/#{ article.template }-excerpt.html.twig", "_articles/article-excerpt.html.twig"] with { 'article': article } %}
-              {# % endif % #}
-            {% endfor %}
+        <section class="collection">
+          <header>
+            <h1>{{ types }}: <span class="count">{{ page.collection.count() }}</span></h1>
+            <nav>
+              {# placeholder functions for filter taxonomy items in current collection #}
+              {%- set active_class = (page.active or page.activeChild) ? ' class="active"' : '' %}
+              {% for tag in page.taxonomy.tag %}
+                  <!-- <a href="search/tag:{{ tag }}">{{ tag }}</a> -->
+              {% endfor %}
 
-            {% include '_sections/pagination.html.twig'   %}
-          </section>
-        {% endif %}
+              <a id="all" href="{{ page.url }}">all</a>
+              <a id="tag-featured" href="{{ page.url }}{{ page.url ends with '/' ? '' : '/' }}tag:featured">featured</a>
+              <a id="tag-showcase" href="{{ page.url }}{{ page.url ends with '/' ? '' : '/' }}tag:showcase">showcase</a>
+              <a id="modal" href="javascript:toggleModal();">[ ]</a>
+            </nav>
+          </header>
+          {% for article in page.collection %}
+            {{ dump(article) }}
+            {# % if not (article.url == page.url) and article.routable == true and article.visible == true % #}
+              {% include ["_articles/#{ article.template }-excerpt.html.twig", "_articles/article-excerpt.html.twig"] with { 'article': article } %}
+            {# % endif % #}
+          {% endfor %}
+
+          {% include '_sections/pagination.html.twig'   %}
+        </section>
 
       {% endblock collection %}
     {% endblock content %}
