@@ -191,8 +191,8 @@ button { border: 0 none; border-radius: .5em; color: var(--color-key-lighter); b
 button:hover { background: var(--color-key-light); text-decoration: none; }
 
 /* articles/article *****************************/
-article { padding: var(--fitz); color: var(--color-fg); background: var(--color-bg); display: flex; flex-flow: column; align-content: flex-start; justify-content: flex-start; }
-article > * { margin: var(--fitz); }
+article { padding: var(--fitz-2); color: var(--color-fg); background: var(--color-bg); display: flex; flex-flow: column; align-content: flex-start; justify-content: flex-start; }
+article > * { margin-bottom: var(--fitz); }
 article > figure { grid-area: figure; max-height: 70vh; padding: 0; background: radial-gradient(ellipse at bottom, var(--color-2-dark) 0%, var(--color-2-darker) 100%); overflow: hidden; text-align: center; }
 article > figure > img { width: 100%; height: 100%; margin: 0 auto; object-fit: cover; object-position: center; }
 article > figure > figcaption { text-align: center; }
@@ -357,10 +357,10 @@ body { --bg: var(--color-2-darker); background: var(--bg); padding: var(--fitz);
 body > header, body > main, body > .asides, body > footer, body.home > .showcase, body.home > .welcome { margin: var(--fitz); }
 body > header { color: var(--color-fg); background: var(--color-bg); height: var(--header-height); padding: var(--fitz-2); overflow: hidden; justify-content: space-around; }
 body > main { width: 100%; margin: 0; display: flex; flex-flow: column; position: relative; }
-body > main > * { margin: var(--fitz); padding: var(--fitz); }
+body > main > * { margin: var(--fitz); }
 body > main > .collection { flex-flow: row; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(22em, 1fr)); justify-content: center; transition: position .5s; }
 body > main > .collection.modal { position: fixed; background: black; z-index: 10; top: 0; left: 0; right: 0; bottom: 0; }
-body > main > .collection > * { margin: var(--fitz); padding: var(--fitz); }
+body > main > .collection > * { margin: var(--fitz); }
 body > main > .collection > header { color: var(--color-fg); background: var(--color-bg); padding: 0; text-align: center; grid-column: 1 / -1; }
 body > main > .collection .excerpt { /* article-card */ display: flex; /* extends article.banner */ }
 body > main > .collection .excerpt > figure > img { width: 100%; height: 100%; height: calc(var(--col) - 2em); }

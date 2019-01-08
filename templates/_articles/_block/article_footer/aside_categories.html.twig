@@ -3,7 +3,7 @@
   <aside class="article-categories">
     <h2>Categories</h2>
     {% for category in article.taxonomy.category %}
-      <a href="/search/category{{ config.system.param_sep }}{{ category }}">{{ category }}</a>
+      <a href="/search/taxonomy/category{{ config.system.param_sep }}{{ category }}">{{ category }}</a>
     {% endfor %}
   </aside>
 {% endif %}

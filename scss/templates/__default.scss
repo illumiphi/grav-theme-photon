@@ -48,7 +48,7 @@ body {
 
     > * {
       margin: var(--fitz);
-      padding: var(--fitz);
+      // padding: var(--fitz);
     }
 
     > header {
@@ -86,7 +86,7 @@ body {
       }
       > * {
         margin: var(--fitz);
-        padding: var(--fitz);
+        // padding: var(--fitz);
       }
 
       > header {
@@ -110,6 +110,7 @@ body {
 
       }
     }
+    
 
     > section.form {
 

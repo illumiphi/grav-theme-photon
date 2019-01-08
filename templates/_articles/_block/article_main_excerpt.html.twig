@@ -1,5 +1,7 @@
   <div class="content">
-    <div  class="summary">
+    {% if article.summary %}
+    <div class="summary">
       {{ article.summary }}
-    </div>
+    </div
+    {% endif %}
   </div>

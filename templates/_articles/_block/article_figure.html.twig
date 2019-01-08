@@ -1,21 +1,25 @@
   {% set figure = article.header.figure %}
   <figure>
-    {% set fig_img = figure.image %}
+    {{ dump(figure) }}
+    {% if figure %}
+      {% set fig_img = figure.image %}
+    {% endif %}
     {% if not fig_img %}
       {% set img = article.media.images | first %}
       {% set fig_img = img.url %}
     {% endif %}
 
-    {% if '.svg' in fig_img %}
+    {% if fig_img ends with '.svg'  %}
       {% set img = article.media.files[fig_img] %}
        {{ img.html(figure.title, figure.alt, 'svg') }}
       <!-- <object type="image/svg+xml" data="{{ img.url }}" title="{{ figure.title }}" alt="{{ figure.alt }}">
         {{ figure.title }}
       </object> -->
     {% else %}
-      {% set img = article.media.images[fig_img] %}
+      {% set filename = fig_img|split('/')|last %}
+      {% set img = article.media.images[filename] %}
       {%- if excerpt == true %}
-        {{ img.derivatives([300]).sizes('10em').html(figure.title, figure.alt, 'excerpt') }}
+        {{ img.derivatives([300]).html(figure.title, figure.alt, 'excerpt') }}
       {%- else %}
         {% if figure.youtube and showcase != 1 %}
           <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ figure.youtube }}"
@@ -31,6 +35,5 @@
         {% endif %}
       {% endif %}
     {% endif %}
-
 
   </figure>
