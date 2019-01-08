@@ -1,6 +1,8 @@
   <div class="content">
+    {% if article.summary %}
     <div class="summary">
       {{ article.summary }}
-    </div>
+    </div      
+    {% endif %}
     {{ article.content | slice(article.summary | length) }}
   </div>
