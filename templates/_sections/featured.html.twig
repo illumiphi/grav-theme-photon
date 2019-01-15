@@ -1,4 +1,4 @@
-{% set options = { items: {'@taxonomy.tag': 'featured' }, 'limit': 5, 'order': {'by': 'date', 'dir': 'desc'}, 'pagination': true } %}
+  {% set options = { items: {'@taxonomy.tag': 'featured' }, 'limit': 5, 'order': {'by': 'date', 'dir': 'desc'}, 'pagination': true } %}
 {% set featured_collection = page.collection(options) %}
 <section class="featured">
   {% for article in featured_collection %}
