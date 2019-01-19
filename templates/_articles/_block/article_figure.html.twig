@@ -23,7 +23,7 @@
       {%- else %}
         {% if figure.youtube and showcase != 1 %}
           <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ figure.youtube }}"
-          frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen></iframe>
         {% else %}
           {{ img.derivatives([600, 1200, 1920]).html(figure.title, figure.alt, '') }}
