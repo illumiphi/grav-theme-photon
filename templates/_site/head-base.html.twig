@@ -47,12 +47,15 @@
 
 {% block stylesheets %}
 {% do assets.add('theme://css/photon.css', {priority:50, group:'photon'} ) %}
+{% do assets.add('theme://css/photon-print.css', {priority:50, group:'photon-print'} ) %}
 {% endblock %}
 
 <!-- CSS photon -->
 {{ assets.css('photon') }}
 <!-- CSS photon-plugins -->
 {{ assets.css('photon-plugins') }}
+<!-- CSS photon-print -->
+{{ assets.css('photon-print') }}
 <!-- CSS  -->
 {{ assets.css() }}
 
