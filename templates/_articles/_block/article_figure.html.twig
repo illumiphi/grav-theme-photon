@@ -12,9 +12,6 @@
     {% if fig_img ends with '.svg'  %}
       {% set img = article.media.files[fig_img] %}
        {{ img.html(figure.title, figure.alt, 'svg') }}
-      <!-- <object type="image/svg+xml" data="{{ img.url }}" title="{{ figure.title }}" alt="{{ figure.alt }}">
-        {{ figure.title }}
-      </object> -->
     {% else %}
       {% set filename = fig_img|split('/')|last %}
       {% set img = article.media.images[filename] %}
