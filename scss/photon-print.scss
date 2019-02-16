@@ -1,6 +1,6 @@
 @page {
-  size: 8.5in 11in;
-  margin: .75in;
+  // size: 8.5in 11in;
+  // margin: .75in;
 
   // @top-center {
   //  content: "photon";
@@ -13,16 +13,16 @@
 
 @media print {
   html {
-    font-size: 12pt;
-    width: 8.5in;
-    display: block;
-    background: transparent;
+    // font-size: 12pt;
+    // width: 8.5in;
+    // display: block;
+    // background: transparent;
   }
 
   body {
     background: transparent;
 
-    width: 8.5in;
+    // width: 8.5in;
 //     height: 11in;
 
     grid-template-columns: 1fr;

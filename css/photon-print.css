@@ -1,6 +1,5 @@
-@page { size: 8.5in 11in; margin: .75in; }
-@media print { html { font-size: 12pt; width: 8.5in; display: block; background: transparent; }
-  body { background: transparent; width: 8.5in; grid-template-columns: 1fr; display: block; }
+@page {}
+@media print { body { background: transparent; grid-template-columns: 1fr; display: block; }
   body > header { width: 100%; flex-direction: row; align-content: center; }
   body > header > h1 { font-size: 1.1em; }
   body > header > nav { display: none; }
