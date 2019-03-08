@@ -1,38 +1,38 @@
 <script type="application/ld+json">
 {
   "@context": "http://schema.org",
-  "@type": "Restaurant",
-  "@id": "<%- config.organization.id %>",
-  "url": "<%- config.organization.url %>",
-  "name": "<%- config.organization.name %>",
+  "@type": "Organization",
+  "@id": "{{ config.organization.id }}",
+  "url": "{{ config.organization.url }}",
+  "name": "{{ config.organization.name }}",
   "logo": {
     "@type": "ImageObject",
-    "url": "<%- config.url %><%- url_for(config.organization.logo) %>"
+    "url": "{{ config.url }}{{ url_for(config.organization.logo) }}"
   },
   "image": [
-    "<%- config.url %><%- url_for(config.organization.image) %>"
+    "{{ config.url }}{{ url_for(config.organization.image) }}"
    ],
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "<%- config.organization.address.streetAddress %>",
-    "addressLocality": "<%- config.organization.address.addressLocality %>",
-    "addressRegion": "<%- config.organization.address.addressRegion %>",
-    "postalCode": "<%- config.organization.address.postalCode %>",
-    "addressCountry": "<%- config.organization.address.addressCountry %>"
+    "streetAddress": "{{ config.organization.address.streetAddress }}",
+    "addressLocality": "{{ config.organization.address.addressLocality }}",
+    "addressRegion": "{{ config.organization.address.addressRegion }}",
+    "postalCode": "{{ config.organization.address.postalCode }}",
+    "addressCountry": "{{ config.organization.address.addressCountry }}"
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": <%- config.organization.geo.lat %>,
-    "longitude": <%- config.organization.geo.long %>
+    "latitude": {{ config.organization.geo.lat }},
+    "longitude": {{ config.organization.geo.long }}
   },
-  "telephone": "<%- config.organization.telephone %>",
-  "servesCuisine": "<%- config.organization.servesCuisine %>",
-  "priceRange": "<%- config.organization.priceRange %>",
+  "telephone": "{{ config.organization.telephone }}",
+  "servesCuisine": "{{ config.organization.servesCuisine }}",
+  "priceRange": "{{ config.organization.priceRange }}",
   "potentialAction": {
     "@type": "ReserveAction",
     "target": {
       "@type": "EntryPoint",
-      "urlTemplate": "<%- config.organization.reservationURL %>",
+      "urlTemplate": "{{ config.organization.reservationURL }}",
       "inLanguage": "en-US",
       "actionPlatform": [
         "http://schema.org/DesktopWebPlatform",
@@ -45,49 +45,49 @@
       "name": "Reserve table"
     }
   },
-  <%  var hours = config.organization.hours  -%>
+  <%  var hours = config.organization.hours  -}}
   "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": "http://schema.org/Monday",
-        "opens":  "<%- hours.Monday.opens %>",
-        "closes":  "<%- hours.Monday.closes %>"
+        "opens":  "{{ hours.Monday.opens }}",
+        "closes":  "{{ hours.Monday.closes }}"
       },
       {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": "http://schema.org/Tuesday",
-        "opens":  "<%- hours.Tuesday.opens %>",
-        "closes":  "<%- hours.Tuesday.closes %>"
+        "opens":  "{{ hours.Tuesday.opens }}",
+        "closes":  "{{ hours.Tuesday.closes }}"
       },
       {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": "http://schema.org/Wednesday",
-        "opens":  "<%- hours.Wednesday.opens %>",
-        "closes":  "<%- hours.Wednesday.closes %>"
+        "opens":  "{{ hours.Wednesday.opens }}",
+        "closes":  "{{ hours.Wednesday.closes }}"
       },
       {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": "http://schema.org/Thursday",
-        "opens":  "<%- hours.Thursday.opens %>",
-        "closes":  "<%- hours.Thursday.closes %>"
+        "opens":  "{{ hours.Thursday.opens }}",
+        "closes":  "{{ hours.Thursday.closes }}"
       },
       {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": "http://schema.org/Friday",
-        "opens":  "<%- hours.Friday.opens %>",
-        "closes":  "<%- hours.Friday.closes %>"
+        "opens":  "{{ hours.Friday.opens }}",
+        "closes":  "{{ hours.Friday.closes }}"
       },
       {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": "http://schema.org/Saturday",
-        "opens":  "<%- hours.Saturday.opens %>",
-        "closes":  "<%- hours.Saturday.closes %>"
+        "opens":  "{{ hours.Saturday.opens }}",
+        "closes":  "{{ hours.Saturday.closes }}"
       },
       {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": "http://schema.org/Sunday",
-        "opens":  "<%- hours.Sunday.opens %>",
-        "closes":  "<%- hours.Sunday.closes %>"
+        "opens":  "{{ hours.Sunday.opens }}",
+        "closes":  "{{ hours.Sunday.closes }}"
       }
   ]
 }
