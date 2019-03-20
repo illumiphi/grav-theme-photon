@@ -1,6 +1,9 @@
 {% extends 'article.html.twig' %}
+{% block labels %}
 {% set type = "taxonomy" %}
 {% set types = "taxonomies" %}
+{% endblock labels %}
+
 {% block template %}
 {{ parent() }}
 <!-- user/themes/photon/templates/taxonomy.html.twig -->

@@ -1,6 +1,6 @@
 {% set page_title = header.title ~ ' | ' ~ site.title %}
 {% set page_description = page.summary|striptags|rtrim|regex_replace( '/\n/', ' - ' ) %}
-{% set featured_image = base_url_absolute ~ page.url ~ '/' ~ page.header.featured_image %}
+{% set featured_image = base_url_absolute ~ page.url ~ '/' ~ page.header.figure.image %}
 {% block head %}
 
 <head>
@@ -42,7 +42,13 @@
 <meta property="og:description" content="{{ page_description }}">
 <meta property="og:image" content="{{ featured_image }}">
 <meta property="og:url" content="{{ page.url }}">
-<meta name="twitter:card" content="{{ featured_image }}">
+
+<meta name="twitter:card" content="summary_large_image">
+<!-- <meta name="twitter:site" content="@phi_architect"> -->
+<meta name="twitter:creator" content="@phi_architect">
+<meta name="twitter:title" content="{{ page_title }}">
+<meta name="twitter:description" content="{{ page_description }}">
+<meta name="twitter:image" content="{{ featured_image }}">
 {% endblock opengraph %}
 
 {% block stylesheets %}
