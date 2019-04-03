@@ -1,9 +1,0 @@
-{% set options = { items: {'@taxonomy.tag': 'showcase' }, 'limit': 5, 'order': {'by': 'date', 'dir': 'desc'}, 'pagination': true } %}
-{% set showcase_collection = page.collection(options) %}
-<section class="showcase">
-  <header></header>
-  {% for article in showcase_collection %}
-  {% include ["_articles/#{ article.template }-showcase.html.twig", "_articles/article-showcase.html.twig"] with { 'article': article } %}
-  {% endfor %}
-  <footer></footer>
-</section>

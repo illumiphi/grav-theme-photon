@@ -31,16 +31,16 @@
   <script type="application/ld+json">
   {
     "@context": "http://schema.org",
-    "@type": "{{ config.organization.org_type }}",
+    "@type": "Organization",
     "@id": "{{ config.organization.id }}",
     "url": "{{ config.organization.url }}",
     "name": "{{ config.organization.name }}",
     "logo": {
       "@type": "ImageObject",
-      "url": "{{ base_url_absolute }}/images/{{ config.organization.logo }}"
+      "url": "{{ config.url }}{{ config.organization.logo }}"
     },
     "image": [
-      "{{ base_url_absolute }}/images/{{ config.organization.image }}"
+      "{{ config.url }}{{ config.organization.image }}"
      ],
     "address": {
       "@type": "PostalAddress",
@@ -51,8 +51,28 @@
       "addressCountry": "{{ config.organization.address.addressCountry }}"
     },
     "telephone": "{{ config.organization.telephone }}",
+    "servesCuisine": "{{ config.organization.servesCuisine }}",
+    "priceRange": "{{ config.organization.priceRange }}",
+    "potentialAction": {
+      "@type": "ReserveAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "{{ config.organization.reservationURL }}",
+        "inLanguage": "en-US",
+        "actionPlatform": [
+          "http://schema.org/DesktopWebPlatform",
+          "http://schema.org/IOSPlatform",
+          "http://schema.org/AndroidPlatform"
+        ]
+      },
+      "result": {
+        "@type": "FoodEstablishmentReservation",
+        "name": "Reserve table"
+      }
+    },
 
-    "openingHours": [ "Mo,Tu,We,Th 16:00-20:30" ]
+    "openingHours": [ "Mo,Tu,We,Th 16:00-20:30" ],
 
+    ]
   }
   </script>

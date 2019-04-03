@@ -1,6 +1,6 @@
 {% set page_title = header.title ~ ' | ' ~ site.title %}
 {% set page_description = page.summary|striptags|rtrim|regex_replace( '/\n/', ' - ' ) %}
-{% set featured_image = base_url_absolute ~ page.url ~ '/' ~ page.header.featured_image %}
+{% set featured_image = base_url_absolute ~ page.url ~ '/' ~ page.header.figure.image %}
 {% block head %}
 
 <head>
@@ -20,28 +20,8 @@
 <meta name="google-site-verification" content="{{ config.organization.google_search }}" />
 {% endif %}
 
-{% if config.organization.owa_siteid %}
-
-<!-- Start Open Web Analytics Tracker -->
-<script type="text/javascript">
-//<![CDATA[
-var owa_baseUrl = 'https://logs.photon-platform.net/';
-var owa_cmds = owa_cmds || [];
-owa_cmds.push(['setSiteId', '{{ config.organization.owa_siteid }}']);
-owa_cmds.push(['trackPageView']);
-owa_cmds.push(['trackClicks']);
-
-(function() {
-var _owa = document.createElement('script'); _owa.type = 'text/javascript'; _owa.async = true;
-owa_baseUrl = ('https:' == document.location.protocol ? window.owa_baseSecUrl || owa_baseUrl.replace(/http:/, 'https:') : owa_baseUrl );
-_owa.src = owa_baseUrl + 'modules/base/js/owa.tracker-combined-min.js';
-var _owa_s = document.getElementsByTagName('script')[0]; _owa_s.parentNode.insertBefore(_owa, _owa_s);
-}());
-//]]>
-</script>
-<!-- End Open Web Analytics Code -->
-
-{% endif %}
+<!-- analytics -->
+{% include '_site/analytics.html.twig'  %}
 
 <!-- rss -->
 {% block rss %}
@@ -62,17 +42,26 @@ var _owa_s = document.getElementsByTagName('script')[0]; _owa_s.parentNode.inser
 <meta property="og:description" content="{{ page_description }}">
 <meta property="og:image" content="{{ featured_image }}">
 <meta property="og:url" content="{{ page.url }}">
-<meta name="twitter:card" content="{{ featured_image }}">
+
+<meta name="twitter:card" content="summary_large_image">
+<!-- <meta name="twitter:site" content="@phi_architect"> -->
+<meta name="twitter:creator" content="@phi_architect">
+<meta name="twitter:title" content="{{ page_title }}">
+<meta name="twitter:description" content="{{ page_description }}">
+<meta name="twitter:image" content="{{ featured_image }}">
 {% endblock opengraph %}
 
 {% block stylesheets %}
 {% do assets.add('theme://css/photon.css', {priority:50, group:'photon'} ) %}
+{% do assets.add('theme://css/photon-print.css', {priority:50, group:'photon-print'} ) %}
 {% endblock %}
 
 <!-- CSS photon -->
 {{ assets.css('photon') }}
 <!-- CSS photon-plugins -->
 {{ assets.css('photon-plugins') }}
+<!-- CSS photon-print -->
+{{ assets.css('photon-print') }}
 <!-- CSS  -->
 {{ assets.css() }}
 
