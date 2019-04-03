@@ -2,7 +2,10 @@
     {% if article.summary %}
     <div class="summary">
       {{ article.summary }}
-    </div      
+    </div>
     {% endif %}
     {{ article.content | slice(article.summary | length) }}
+    {% for module in page.collection('modules') %}
+      {{ module.content }}
+    {% endfor %}
   </div>
