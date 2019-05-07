@@ -1,6 +1,7 @@
 {% extends 'default.html.twig' %}
 {% set type = "article" %}
 {% set types = "articles" %}
+
 {% block template %}
 {{ parent() }}
 <!-- user/themes/photon/templates/article.html.twig -->
@@ -24,9 +25,9 @@
                   <!-- <a href="search/tag:{{ tag }}">{{ tag }}</a> -->
               {% endfor %}
 
-              <a id="all" href="{{ page.url }}">all</a>
+              <!-- <a id="all" href="{{ page.url }}">all</a>
               <a id="tag-featured" href="{{ page.url }}{{ page.url ends with '/' ? '' : '/' }}tag:featured">featured</a>
-              <a id="tag-showcase" href="{{ page.url }}{{ page.url ends with '/' ? '' : '/' }}tag:showcase">showcase</a>
+              <a id="tag-showcase" href="{{ page.url }}{{ page.url ends with '/' ? '' : '/' }}tag:showcase">showcase</a> -->
               <a id="modal" href="javascript:toggleModal();">[ ]</a>
             </nav>
           </header>
