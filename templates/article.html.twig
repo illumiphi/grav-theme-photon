@@ -32,9 +32,11 @@
             </nav>
           </header>
           {% for article in page.collection %}
-            {# % if not (article.url == page.url) and article.routable == true and article.visible == true % #}
+            {# and not (article.routable == false) #}
+            {# % if not (article.url == page.url) and not (article.routable == false)  and not (article.visible == false) % #}
+            {% if article.url != page.url  %}
               {% include ["_articles/#{ article.template }-excerpt.html.twig", "_articles/article-excerpt.html.twig"] with { 'article': article } %}
-            {# % endif % #}
+            {% endif %}
           {% endfor %}
 
           {% include '_sections/pagination.html.twig'   %}

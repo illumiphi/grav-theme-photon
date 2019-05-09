@@ -184,8 +184,6 @@ article .sibling > a.prev:before { content: "‹"; height: 100%; padding-right: 
 article .sibling > a.next { justify-content: flex-end; }
 article .sibling > a.next:after { content: "›"; height: 100%; padding-left: .5em; }
 article .breadcrumbs a { flex-flow: row; }
-@media (min-width: 126em) { @supports (display: grid) { article { display: grid; grid-template-areas: ' figure footer ' ' header footer' ' content data' ' gallery   gallery'; grid-template-columns: 1fr var(--col); }
-    article > footer { flex-flow: column; } } }
 
 article.excerpt { cursor: pointer; transition: box-shadow .5s, background .5s; }
 article.excerpt > header > h1 { text-align: left; }

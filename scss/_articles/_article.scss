@@ -326,25 +326,24 @@ article {
 
   @include media-bp(6) {
 
-
-    @supports (display: grid) {
-
-      display: grid;
-      grid-template-areas:
-        ' figure footer '
-        ' header footer'
-        ' content data'
-        ' gallery   gallery';
-      grid-template-columns: 1fr var(--col);
-      // grid-template-rows: 60vh;
-
-      > * {
-        // margin: 0;
-      }
-      > footer {
-        flex-flow: column;
-        // align-self: flex-start;
-      }
-    }
+    // @supports (display: grid) {
+    //
+    //   display: grid;
+    //   grid-template-areas:
+    //     ' figure footer '
+    //     ' header footer'
+    //     ' content data'
+    //     ' gallery   gallery';
+    //   grid-template-columns: 1fr var(--col);
+    //   // grid-template-rows: 60vh;
+    //
+    //   > * {
+    //     // margin: 0;
+    //   }
+    //   > footer {
+    //     flex-flow: column;
+    //     // align-self: flex-start;
+    //   }
+    // }
   }
 }
