@@ -111,9 +111,25 @@ form:
                           show_modular: false
                           show_root: false
 
+                        header.collection.name:
+                          type: text
+                          label: Collection name
+                          default: Articles
+
+                        header.collection.showCount:
+                          type: toggle
+                          label: Show collection count
+                          default: false
+
+                        header.collection.showMenu:
+                          type: toggle
+                          label: Show collection menu
+
+                          default: false
+
                         header.content.items:
                           type: text
-                          label: Collection
+                          label: Collection source
                           default: '@self.children'
                           # toggleable: true
 
