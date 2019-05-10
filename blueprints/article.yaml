@@ -119,14 +119,23 @@ form:
                         header.collection.showCount:
                           type: toggle
                           label: Show collection count
-                          default: false
+                          options:
+                            1: PLUGIN_ADMIN.YES
+                            0: PLUGIN_ADMIN.NO
+                          default: 0
+                          validate:
+                            type: bool
 
                         header.collection.showMenu:
                           type: toggle
                           label: Show collection menu
-
-                          default: false
-
+                          options:
+                            1: PLUGIN_ADMIN.YES
+                            0: PLUGIN_ADMIN.NO
+                          default: 0
+                          validate:
+                            type: bool
+                            
                         header.content.items:
                           type: text
                           label: Collection source
