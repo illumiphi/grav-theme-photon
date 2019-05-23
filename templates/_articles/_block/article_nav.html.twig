@@ -10,6 +10,8 @@
            title="{{ prevPage.title }}" >Prev</a>
         {% endif %}
 
+        {% include '_articles/_block/breadcrumbs.html.twig' with { 'article': article } %}
+
         {% if nextPage.url %}
           <a href="{{ nextPage.url }}" class="next"
             data-tooltip="{{ nextPage.title }}"

@@ -139,8 +139,8 @@ button:hover { background: var(--color-key-light); text-decoration: none; }
 /* articles/article *****************************/
 article { padding: var(--fitz-2); color: var(--color-fg); background: var(--color-bg); display: flex; flex-flow: column; align-content: flex-start; justify-content: flex-start; }
 article > * { margin-bottom: var(--fitz); }
-article > figure { grid-area: figure; max-height: 70vh; padding: 0; background: radial-gradient(ellipse at bottom, var(--color-2-dark) 0%, var(--color-2-darker) 100%); overflow: hidden; text-align: center; }
-article > figure > img { width: 100%; height: 100%; margin: 0 auto; object-fit: cover; object-position: center; }
+article > figure { grid-area: figure; max-height: 70vh; padding: 0; background: radial-gradient(ellipse at bottom, var(--color-2-dark) 0%, var(--color-2-darker) 100%); overflow: hidden; text-align: center; display: flex; align-content: stretch; align-items: stretch; }
+article > figure > img { width: 100%; height: 100%; margin: 0 auto; object-fit: cover; object-position: center; flex: 1; }
 article > figure > figcaption { text-align: center; }
 article > figure:empty { display: none; }
 article > header { grid-area: header; display: flex; flex-flow: column; align-items: center; }
@@ -177,7 +177,7 @@ article > .gallery > figure { padding: var(--fitz); overflow: hidden; text-align
 article > .gallery > figure a { display: block; }
 article > .gallery > figure a > img { object-fit: contain; object-position: center; }
 article > .gallery > figure a > figcaption { text-align: center; }
-article .sibling { grid-area: sibling; position: relative; font-size: 1em; display: flex; flex-flow: row nowrap; justify-content: space-between; }
+article .sibling { grid-area: sibling; position: relative; font-size: 1em; width: 100%; max-width: var(--col-3); display: flex; flex-flow: row nowrap; justify-content: space-between; }
 article .sibling > a { width: 100%; display: flex; flex-flow: row; }
 article .sibling > a.prev { justify-content: flex-start; }
 article .sibling > a.prev:before { content: "‹"; height: 100%; padding-right: .5em; }

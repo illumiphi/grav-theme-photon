@@ -285,6 +285,9 @@ article {
 
     font-size: 1em;
 
+    width: 100%;
+    max-width: var(--col-3);
+
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
