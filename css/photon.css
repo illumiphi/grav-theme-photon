@@ -35,7 +35,7 @@ h2 { font-size: 1.3em; }
 p, div, dd, dt, details, summary { display: block; font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1; }
 
 /* elements/lists *****************************/
-ul, ol, li { margin-left: .5em; }
+ul, ol, li { margin-left: 1em; }
 
 ul { list-style: disc outside; }
 
@@ -156,7 +156,7 @@ article > .content > * { margin: var(--fitz); widows: 2; orphans: 2; }
 article > .content > *:last-child { margin-bottom: 0; }
 article > .content > .summary { background: var(--color-2-light); color: var(--color-bg); padding: var(--fitz); }
 article > .content a { display: inline; }
-article > .content > ul { margin: 2em; }
+article > .content > ul, article > .content ol { margin: 2em; }
 article > .content blockquote { padding: var(--fitz-2); border-left: var(--fitz-2) solid var(--color-1-light); line-height: 1.7; }
 article > .content blockquote > ul { font-style: italic; list-style-type: square; padding-top: .5em; font-size: .9em; }
 article > footer { grid-area: footer; padding: 0; padding-top: var(--fitz-2); display: flex; flex-flow: row wrap; justify-content: space-around; }
