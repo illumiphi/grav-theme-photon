@@ -111,9 +111,34 @@ form:
                           show_modular: false
                           show_root: false
 
+                        header.collection.name:
+                          type: text
+                          label: Collection name
+                          default: Articles
+
+                        header.collection.showCount:
+                          type: toggle
+                          label: Show collection count
+                          options:
+                            1: PLUGIN_ADMIN.YES
+                            0: PLUGIN_ADMIN.NO
+                          default: 0
+                          validate:
+                            type: bool
+
+                        header.collection.showMenu:
+                          type: toggle
+                          label: Show collection menu
+                          options:
+                            1: PLUGIN_ADMIN.YES
+                            0: PLUGIN_ADMIN.NO
+                          default: 0
+                          validate:
+                            type: bool
+                            
                         header.content.items:
                           type: text
-                          label: Collection
+                          label: Collection source
                           default: '@self.children'
                           # toggleable: true
 
