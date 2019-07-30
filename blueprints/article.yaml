@@ -40,195 +40,107 @@ form:
                       type: pagemedia
                       label: PLUGIN_ADMIN.PAGE_MEDIA
 
-                    _ordering:
-                      type: fieldset
-                      title: ✴ Ordering
-                      help: select how this document is ordered amongst its siblings
-                      info: manual or by date (or other default)
-                      # text: Numeric prefixes
-                      # icon: asterisk
-                      collapsed: false     # Initial state of fieldset (see collapsible option)
-                      collapsible: true    # Whether one can expand the fieldset or not
-                      fields:
-
-                        ordering:
-                          type: toggle
-                          label: PLUGIN_ADMIN.FOLDER_NUMERIC_PREFIX
-                          help: PLUGIN_ADMIN.FOLDER_NUMERIC_PREFIX_HELP
-                          highlight: 1
-                          options:
-                            1: PLUGIN_ADMIN.ENABLED
-                            0: PLUGIN_ADMIN.DISABLED
-                          validate:
-                            type: bool
-
-                        order:
-                          type: order
-                          label: PLUGIN_ADMIN.SORTABLE_PAGES
-                          sitemap:
 
                 _meta:
                   type: column
                   fields:
 
-                    _main:
-                      type: fieldset
-                      title: ✴ Main
-                      help: page attributes
-                      info: general info on this page
-                      # text: use meta data to help organize your info. use `featured` and `showcase` tags
-                      # icon: asterisk
-                      collapsed: false     # Initial state of fieldset (see collapsible option)
-                      collapsible: true    # Whether one can expand the fieldset or not
+                    _metaTabs:
+                      type: tabs
                       fields:
-
-                        folder:
-                          type: text
-                          label: PLUGIN_ADMIN.FOLDER_NAME
-                          validate:
-                            rule: slug
-
-                        route:
-                          type: parents
-                          label: PLUGIN_ADMIN.PARENT
-                          classes: fancy
-
-                        name:
-                          type: select
-                          classes: fancy
-                          label: PLUGIN_ADMIN.PAGE_FILE
-                          help: PLUGIN_ADMIN.PAGE_FILE_HELP
-                          default: default
-                          data-options@: '\Grav\Common\Page\Pages::pageTypes'
-
-                        header.author:
-                          type: pages
-                          label: Page Author
-                          help: select the author of this article
-                          size: medium
-                          classes: fancy
-                          show_all: false
-                          show_modular: false
-                          show_root: false
-
-                        header.collection.name:
-                          type: text
-                          label: Collection name
-                          default: Articles
-
-                        header.collection.showCount:
-                          type: toggle
-                          label: Show collection count
-                          options:
-                            1: PLUGIN_ADMIN.YES
-                            0: PLUGIN_ADMIN.NO
-                          default: 0
-                          validate:
-                            type: bool
-
-                        header.collection.showMenu:
-                          type: toggle
-                          label: Show collection menu
-                          options:
-                            1: PLUGIN_ADMIN.YES
-                            0: PLUGIN_ADMIN.NO
-                          default: 0
-                          validate:
-                            type: bool
-                            
-                        header.content.items:
-                          type: text
-                          label: Collection source
-                          default: '@self.children'
-                          # toggleable: true
-
-                        header.child_type:
-                          type: select
-                          label: PLUGIN_ADMIN.DEFAULT_CHILD_TYPE
-                          default: Article
-                          # toggleable: true
-                          data-options@: '\Grav\Common\Page\Pages::types'
-
-                    _figure:
-                      type: fieldset
-                      title: ✴ Figure
-                      help: main figure of the article
-                      info: main figure and gallery images
-                      # text: use meta data to help organize your info. use `featured` and `showcase` tags
-                      # icon: asterisk
-                      collapsed: false     # Initial state of fieldset (see collapsible option)
-                      collapsible: true    # Whether one can expand the fieldset or not
-                      fields:
-
-                        header.figure.image:
-                          type: filepicker
-                          label: Featured Image
-                          help: Select of featured image from the items in the folder
-                          folder: 'self@'
-                          preview_images: true
-                          acccept:
-                            - .png
-                            - .jpg
-                            - .gif
-                            - .svg
-
-                        header.figure.title:
-                          type: text
-                          label: Image Title
-                          help: used in title attribute of image tag
-
-                        header.figure.alt:
-                          type: text
-                          label: Image Alt Text
-                          help: used in alt attribute of image tag for screen readers - describes the image
-
-                        header.figure.caption:
-                          type: markdown
-                          validate:
-                            type: textarea
-                          label: Image Caption
-                          help: can contain full text markdown
-
-                        header.figure.youtube:
-                          type: text
-                          label: link to Youtube Video
-                          help: input just the video code
-
-
-                    _gallery:
-                      type: fieldset
-                      title: ✴ Gallery
-                      help: collection of images at end of article
-                      info: image collection
-                      # text: use meta data to help organize your info. use `featured` and `showcase` tags
-                      # icon: asterisk
-                      collapsed: true     # Initial state of fieldset (see collapsible option)
-                      collapsible: true    # Whether one can expand the fieldset or not
-                      fields:
-
-                        header.gallery.show:
-                          type: toggle
-                          toggleable: true
-                          label: Show Gallery
-                          help: show the gallery panel
-                          highlight: 1
-                          options:
-                            1: yes
-                            0: no
-                          default: 1
-                          validate:
-                            type: bool
-
-                        header.gallery.images:
-                          type: list
-                          style: vertical
-                          label: gallery collection
+                        _main:
+                          type: tab
+                          title: Main
+                          help: page attributes
+                          info: general info on this page
+                          # text: use meta data to help organize your info. use `featured` and `showcase` tags
+                          # icon: asterisk
+                          # collapsed: false     # Initial state of fieldset (see collapsible option)
+                          # collapsible: true    # Whether one can expand the fieldset or not
                           fields:
 
-                            .image:
+                            folder:
+                              type: text
+                              label: PLUGIN_ADMIN.FOLDER_NAME
+                              validate:
+                                rule: slug
+
+                            route:
+                              type: parents
+                              label: PLUGIN_ADMIN.PARENT
+                              classes: fancy
+
+                            name:
+                              type: select
+                              classes: fancy
+                              label: PLUGIN_ADMIN.PAGE_FILE
+                              help: PLUGIN_ADMIN.PAGE_FILE_HELP
+                              default: default
+                              data-options@: '\Grav\Common\Page\Pages::pageTypes'
+
+                            header.author:
+                              type: pages
+                              label: Page Author
+                              help: select the author of this article
+                              size: medium
+                              classes: fancy
+                              show_all: false
+                              show_modular: false
+                              show_root: false
+
+                            header.collection.name:
+                              type: text
+                              label: Collection name
+                              default: Articles
+
+                            header.collection.showCount:
+                              type: toggle
+                              label: Show collection count
+                              options:
+                                1: PLUGIN_ADMIN.YES
+                                0: PLUGIN_ADMIN.NO
+                              default: 0
+                              validate:
+                                type: bool
+
+                            header.collection.showMenu:
+                              type: toggle
+                              label: Show collection menu
+                              options:
+                                1: PLUGIN_ADMIN.YES
+                                0: PLUGIN_ADMIN.NO
+                              default: 0
+                              validate:
+                                type: bool
+
+                            header.content.items:
+                              type: text
+                              label: Collection source
+                              default: '@self.children'
+                              # toggleable: true
+
+                            header.child_type:
+                              type: select
+                              label: PLUGIN_ADMIN.DEFAULT_CHILD_TYPE
+                              default: Article
+                              # toggleable: true
+                              data-options@: '\Grav\Common\Page\Pages::types'
+
+                        _figure:
+                          type: tab
+                          title: Figure
+                          help: main figure of the article
+                          info: main figure and gallery images
+                          # text: use meta data to help organize your info. use `featured` and `showcase` tags
+                          # icon: asterisk
+                          # collapsed: false     # Initial state of fieldset (see collapsible option)
+                          # collapsible: true    # Whether one can expand the fieldset or not
+                          fields:
+
+                            header.figure.image:
                               type: filepicker
-                              label: Image
-                              help: select image
+                              label: Featured Image
+                              help: Select of featured image from the items in the folder
                               folder: 'self@'
                               preview_images: true
                               acccept:
@@ -237,63 +149,150 @@ form:
                                 - .gif
                                 - .svg
 
-                            .title:
+                            header.figure.title:
                               type: text
-                              label: title
+                              label: Image Title
+                              help: used in title attribute of image tag
 
+                            header.figure.alt:
+                              type: text
+                              label: Image Alt Text
+                              help: used in alt attribute of image tag for screen readers - describes the image
 
+                            header.figure.caption:
+                              type: markdown
+                              validate:
+                                type: textarea
+                              label: Image Caption
+                              help: can contain full text markdown
 
-                    _attachments:
-                      type: fieldset
-                      title: ✴ Attachments
-                      help: select files
-                      info: select files
-                      # text: use meta data to help organize your info. use `featured` and `showcase` tags
-                      # icon: asterisk
-                      collapsed: true     # Initial state of fieldset (see collapsible option)
-                      collapsible: true    # Whether one can expand the fieldset or not
-                      fields:
+                            header.figure.youtube:
+                              type: text
+                              label: link to Youtube Video
+                              help: input just the video code
 
-                        header.attachments:
-                          type: list
-                          style: vertical
-                          label: Attachments
+                        _gallery:
+                          type: tab
+                          title: Gallery
+                          help: collection of images at end of article
+                          info: image collection
+                          # text: use meta data to help organize your info. use `featured` and `showcase` tags
+                          # icon: asterisk
+                          # collapsed: true     # Initial state of fieldset (see collapsible option)
+                          # collapsible: true    # Whether one can expand the fieldset or not
                           fields:
 
-                            .file:
-                              type: filepicker
-                              label: document
-                              help: upload documents to page media first
-                              folder: 'self@'
-                              preview_images: true
+                            header.gallery.show:
+                              type: toggle
+                              toggleable: true
+                              label: Show Gallery
+                              help: show the gallery panel
+                              highlight: 1
+                              options:
+                                1: yes
+                                0: no
+                              default: 1
+                              validate:
+                                type: bool
 
-                            .title:
+                            header.gallery.images:
+                              type: list
+                              style: vertical
+                              label: gallery collection
+                              fields:
+
+                                .image:
+                                  type: filepicker
+                                  label: Image
+                                  help: select image
+                                  folder: 'self@'
+                                  preview_images: true
+                                  acccept:
+                                    - .png
+                                    - .jpg
+                                    - .gif
+                                    - .svg
+
+                                .title:
+                                  type: text
+                                  label: title
+
+                        _attachments:
+                          type: tab
+                          title: Attachments
+                          help: select files
+                          info: select files
+                          # text: use meta data to help organize your info. use `featured` and `showcase` tags
+                          # icon: asterisk
+                          # collapsed: true     # Initial state of fieldset (see collapsible option)
+                          # collapsible: true    # Whether one can expand the fieldset or not
+                          fields:
+
+                            header.attachments:
+                              type: list
+                              style: vertical
+                              label: Attachments
+                              fields:
+
+                                .file:
+                                  type: filepicker
+                                  label: document
+                                  help: upload documents to page media first
+                                  folder: 'self@'
+                                  preview_images: true
+
+                                .title:
+                                  type: text
+                                  label: title
+                        _ordering:
+                          type: tab
+                          title: Ordering
+                          help: select how this document is ordered amongst its siblings
+                          info: manual or by date (or other default)
+                          # text: Numeric prefixes
+                          # icon: asterisk
+                          collapsed: false     # Initial state of fieldset (see collapsible option)
+                          collapsible: true    # Whether one can expand the fieldset or not
+                          fields:
+
+                            ordering:
+                              type: toggle
+                              label: PLUGIN_ADMIN.FOLDER_NUMERIC_PREFIX
+                              help: PLUGIN_ADMIN.FOLDER_NUMERIC_PREFIX_HELP
+                              highlight: 1
+                              options:
+                                1: PLUGIN_ADMIN.ENABLED
+                                0: PLUGIN_ADMIN.DISABLED
+                              validate:
+                                type: bool
+
+                            order:
+                              type: order
+                              label: PLUGIN_ADMIN.SORTABLE_PAGES
+                              sitemap:
+
+                        _taxonomy:
+                          type: tab
+                          title: Taxonomy
+                          help: meta data you relate to an article, primarily categories and tags
+                          info: categories, tags, etc
+                          # text: use meta data to help organize your info. use `featured` and `showcase` tags
+                          # icon: asterisk
+                          # collapsed: false     # Initial state of fieldset (see collapsible option)
+                          # collapsible: true    # Whether one can expand the fieldset or not
+                          fields:
+
+                            header.taxonomy:
+                              type: taxonomy
+                              label: PLUGIN_ADMIN.TAXONOMY
+                              multiple: true
+                              validate:
+                                type: array
+
+                            header.body_classes:
                               type: text
-                              label: title
-
-
-                    _taxonomy:
-                      type: fieldset
-                      title: ✴ Taxonomy
-                      help: meta data you relate to an article, primarily categories and tags
-                      info: categories, tags, etc
-                      # text: use meta data to help organize your info. use `featured` and `showcase` tags
-                      # icon: asterisk
-                      collapsed: false     # Initial state of fieldset (see collapsible option)
-                      collapsible: true    # Whether one can expand the fieldset or not
-                      fields:
-
-                        header.taxonomy:
-                          type: taxonomy
-                          label: PLUGIN_ADMIN.TAXONOMY
-                          multiple: true
-                          validate:
-                            type: array
-
-                        header.body_classes:
-                          type: text
-                          size: small
-                          label: PLUGIN_ADMIN.BODY_CLASSES
+                              size: small
+                              label: PLUGIN_ADMIN.BODY_CLASSES
 
 
 
