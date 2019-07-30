@@ -35,7 +35,7 @@ h2 { font-size: 1.3em; }
 p, div, dd, dt, details, summary { display: block; font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1; }
 
 /* elements/lists *****************************/
-ul, ol, li { margin-left: .5em; }
+ul, ol, li { margin-left: 1em; }
 
 ul { list-style: disc outside; }
 
@@ -156,7 +156,7 @@ article > .content > * { margin: var(--fitz); widows: 2; orphans: 2; }
 article > .content > *:last-child { margin-bottom: 0; }
 article > .content > .summary { background: var(--color-2-light); color: var(--color-bg); padding: var(--fitz); }
 article > .content a { display: inline; }
-article > .content > ul { margin: 2em; }
+article > .content > ul, article > .content ol { margin: 2em; }
 article > .content blockquote { padding: var(--fitz-2); border-left: var(--fitz-2) solid var(--color-1-light); line-height: 1.7; }
 article > .content blockquote > ul { font-style: italic; list-style-type: square; padding-top: .5em; font-size: .9em; }
 article > footer { grid-area: footer; padding: 0; padding-top: var(--fitz-2); display: flex; flex-flow: row wrap; justify-content: space-around; }
@@ -172,11 +172,12 @@ article > .data h1 { text-decoration: underline; }
 article > .data th, article > .data td { text-align: center; width: auto; vertical-align: middle; padding-right: 1em; padding-left: 1em; margin: 0; }
 article > .data th { font-size: .7em; letter-spacing: .25em; padding-right: .5em; text-transform: uppercase; text-align: right; }
 article > .data td { text-align: left; }
-article > .gallery { grid-area: gallery; display: flex; flex-flow: row wrap; display: grid; grid-template-columns: repeat(auto-fit, calc( var(--col)/2 )); grid-auto-flow: row; justify-content: center; align-items: flex-start; }
+article > .gallery { grid-area: gallery; display: flex; flex-flow: row wrap; display: grid; grid-template-columns: repeat(auto-fit, calc( var(--col)/2 )); grid-auto-flow: row; justify-content: center; align-items: flex-start; background-position: center; background-size: contain; }
 article > .gallery > figure { padding: var(--fitz); overflow: hidden; text-align: center; }
 article > .gallery > figure a { display: block; }
 article > .gallery > figure a > img { object-fit: contain; object-position: center; }
 article > .gallery > figure a > figcaption { text-align: center; }
+article > .gallery.modal { position: fixed; background: black; z-index: 10; top: 0; left: 0; right: 0; bottom: 0; }
 article .sibling { grid-area: sibling; position: relative; font-size: 1em; width: 100%; max-width: var(--col-3); display: flex; flex-flow: row nowrap; justify-content: space-between; }
 article .sibling > a { width: 100%; display: flex; flex-flow: row; }
 article .sibling > a.prev { justify-content: flex-start; }

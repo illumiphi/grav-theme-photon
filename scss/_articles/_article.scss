@@ -148,7 +148,7 @@ article {
       display: inline;
     }
 
-    > ul {
+    > ul, ol {
       margin: 2em;
     }
     blockquote {
@@ -257,6 +257,10 @@ article {
     justify-content: center;
     align-items: flex-start;
 
+    background-position: center;
+    background-size: contain;
+
+
 
     > figure {
       padding:var(--fitz);
@@ -276,6 +280,18 @@ article {
         }
       }
     }
+
+    &.modal {
+      position: fixed;
+      background: black;
+      z-index: 10;
+
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
   }
 
   .sibling {
