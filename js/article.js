@@ -12,12 +12,32 @@ articles.forEach( article => {
   }
 })
 
+var header = document.querySelector("body > header");
 function toggleMenu() {
-    var header = document.querySelector("body > header");
     header.classList.toggle("expand");
 }
 
 var collection = document.querySelector(".collection")
-function toggleModal() {
+function toggleCollection() {
   collection.classList.toggle("modal");
 }
+
+var gallery = document.querySelector(".gallery")
+function toggleGallery() {
+  gallery.classList.toggle("modal");
+}
+
+function mouseoverGalleryFigure(e) {
+  gallery.style.background = 'rgba(0,0,0,.5) url(' + e.target.dataset.image + ')';
+  gallery.style.backgroundSize = 'contain';
+  gallery.style.backgroundRepeat = 'no-repeat';
+  gallery.style.backgroundPosition = 'center';
+}
+
+var galleryFigures = document.querySelectorAll(".gallery > figure");
+galleryFigures.forEach( figure => {
+  // if (figure.dataset.url) {
+    figure.addEventListener("click", toggleGallery );
+    figure.addEventListener("mouseenter", mouseoverGalleryFigure );
+  // }
+})

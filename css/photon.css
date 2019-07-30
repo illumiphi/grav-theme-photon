@@ -172,11 +172,12 @@ article > .data h1 { text-decoration: underline; }
 article > .data th, article > .data td { text-align: center; width: auto; vertical-align: middle; padding-right: 1em; padding-left: 1em; margin: 0; }
 article > .data th { font-size: .7em; letter-spacing: .25em; padding-right: .5em; text-transform: uppercase; text-align: right; }
 article > .data td { text-align: left; }
-article > .gallery { grid-area: gallery; display: flex; flex-flow: row wrap; display: grid; grid-template-columns: repeat(auto-fit, calc( var(--col)/2 )); grid-auto-flow: row; justify-content: center; align-items: flex-start; }
+article > .gallery { grid-area: gallery; display: flex; flex-flow: row wrap; display: grid; grid-template-columns: repeat(auto-fit, calc( var(--col)/2 )); grid-auto-flow: row; justify-content: center; align-items: flex-start; background-position: center; background-size: contain; }
 article > .gallery > figure { padding: var(--fitz); overflow: hidden; text-align: center; }
 article > .gallery > figure a { display: block; }
 article > .gallery > figure a > img { object-fit: contain; object-position: center; }
 article > .gallery > figure a > figcaption { text-align: center; }
+article > .gallery.modal { position: fixed; background: black; z-index: 10; top: 0; left: 0; right: 0; bottom: 0; }
 article .sibling { grid-area: sibling; position: relative; font-size: 1em; width: 100%; max-width: var(--col-3); display: flex; flex-flow: row nowrap; justify-content: space-between; }
 article .sibling > a { width: 100%; display: flex; flex-flow: row; }
 article .sibling > a.prev { justify-content: flex-start; }
