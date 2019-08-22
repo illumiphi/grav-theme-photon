@@ -4,7 +4,6 @@
       <div class="logo">
         <a href="{{ home_url }}" >
           {% if config.site.logo -%}
-          <!-- <img src="image://{{ config.site.logo }}" alt="logo"> -->
           {{ media['image://' ~  config.site.logo ].resize(300).html() }}
           {% endif -%}
           <h1>{{ site.title }}</h1>
