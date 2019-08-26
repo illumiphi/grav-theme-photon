@@ -2,8 +2,11 @@
 
   <aside class="article-tags">
     <h2>Tags</h2>
-    {% for tag in article.taxonomy.tag %}
-      <a href="/search/taxonomy/tag{{ config.system.param_sep }}{{ tag }}">{{ tag }}</a>
-    {% endfor %}
+    <ul>
+      {% for tag in article.taxonomy.tag %}
+      <li><a href="/search/taxonomy/tag{{ config.system.param_sep }}{{ tag }}">{{ tag }}</a></li>
+      {% endfor %}
+    </ul>
+
   </aside>
 {% endif %}

@@ -588,13 +588,15 @@ article > footer > aside ul, article > footer > aside li {
 article > footer > aside ul h3, article > footer > aside li h3 {
   font-size: 1em;
 }
+article > footer > aside.article-categories a {
+  text-transform: uppercase;
+}
+article > footer > aside.article-tags a {
+  font-style: italic;
+}
 article > footer > nav {
   align-content: flex-end;
   flex-flow: row;
-}
-article > footer a {
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
 }
 article > .data {
   grid-area: data;
@@ -630,39 +632,78 @@ article > .data td {
 }
 article > .gallery {
   grid-area: gallery;
-  display: flex;
-  flex-flow: row wrap;
+  background: #000;
+  display: grid;
+  grid-template-areas: " list ";
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 0.5em;
+  padding: 0.5em;
+}
+article > .gallery > .panel {
+  grid-area: panel;
+  display: none;
+  background: white;
+  background-position: center;
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+}
+article > .gallery > .list {
+  grid-area: list;
   display: grid;
   grid-template-columns: repeat(auto-fit, calc( var(--col)/2 ));
   grid-auto-flow: row;
+  grid-gap: 0.5em;
+  height: 100%;
+  min-height: 5em;
   justify-content: center;
   align-items: flex-start;
-  background-position: center;
-  background-size: contain;
 }
-article > .gallery > figure {
+article > .gallery > .list > figure {
+  background: white;
   padding: var(--fitz);
   overflow: hidden;
   text-align: center;
+  height: 100%;
+  min-height: 5em;
 }
-article > .gallery > figure a {
-  display: block;
-}
-article > .gallery > figure a > img {
-  object-fit: contain;
+article > .gallery > .list > figure > img {
+  height: 100%;
+  min-height: 5em;
+  object-fit: cover;
   object-position: center;
 }
-article > .gallery > figure a > figcaption {
+article > .gallery > .list > figure > figcaption {
   text-align: center;
 }
 article > .gallery.modal {
   position: fixed;
-  background: black;
   z-index: 10;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  grid-template-areas: " panel " " list ";
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 10em;
+}
+article > .gallery.modal > .panel {
+  display: block;
+}
+article > .gallery.modal > .list {
+  width: 100%;
+  height: 100%;
+  min-height: 5em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(1em, 1fr));
+}
+article > .gallery.modal > .list > figure {
+  width: 100%;
+  height: 100%;
+}
+article > .gallery.modal > .list > figure > img {
+  width: 100%;
 }
 article .sibling {
   grid-area: sibling;
@@ -780,12 +821,12 @@ aside ul > li > span {
   background: var(--color-1);
   border-radius: 20% 20%;
 }
-aside p {
-  padding-bottom: 0.2em;
-}
 aside > a {
   display: list-item;
   list-style: none;
+}
+aside p {
+  padding-bottom: 0.2em;
 }
 aside.org {
   font-size: 0.7em;

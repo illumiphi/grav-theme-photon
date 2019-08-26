@@ -23,18 +23,20 @@ function toggleCollection() {
 }
 
 var gallery = document.querySelector(".gallery")
+var galleryPanel = gallery.querySelector(".panel")
+
 function toggleGallery() {
   gallery.classList.toggle("modal");
 }
 
 function mouseoverGalleryFigure(e) {
-  gallery.style.background = 'rgba(0,0,0,.5) url(' + e.target.dataset.image + ')';
-  gallery.style.backgroundSize = 'contain';
-  gallery.style.backgroundRepeat = 'no-repeat';
-  gallery.style.backgroundPosition = 'center';
+  galleryPanel.style.background = 'white url(' + e.target.dataset.image + ')';
+  galleryPanel.style.backgroundSize = 'contain';
+  galleryPanel.style.backgroundRepeat = 'no-repeat';
+  galleryPanel.style.backgroundPosition = 'center';
 }
 
-var galleryFigures = document.querySelectorAll(".gallery > figure");
+var galleryFigures = document.querySelectorAll(".gallery > .list > figure");
 galleryFigures.forEach( figure => {
   // if (figure.dataset.url) {
     figure.addEventListener("click", toggleGallery );

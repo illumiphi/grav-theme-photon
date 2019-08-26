@@ -1,4 +1,5 @@
   {# reverse  -#}
+  {{ dump(article.parent.children.pages )}}
   {% set prevPage = article.nextSibling %}
   {% set nextPage = article.prevSibling %}
   {% if nextPage.url or prevPage.url %}

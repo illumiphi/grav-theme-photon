@@ -23,6 +23,7 @@ aside {
     > li {
       margin: .4em;
       width: 100%;
+      // for count
       > span {
         font-size: .75em;
         font-weight: bold;
@@ -36,16 +37,17 @@ aside {
     }
   }
 
-  p {
-    padding-bottom: .2em;
-  }
-
   > a {
     display: list-item;
     // list-style: square outside;
     list-style: none;
     // margin-left: var(--fitz-2);
   }
+
+  p {
+    padding-bottom: .2em;
+  }
+
 
   // *****************************************
   &.org {
