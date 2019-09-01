@@ -1103,6 +1103,8 @@ body > main > .collection > header {
 body > main > .collection .excerpt {
   /* article-card */
   display: flex;
+  flex: column nowrap;
+  justify-content: space-between;
   /* extends article.banner */
 }
 body > main > .collection .excerpt > figure > img {
@@ -1125,7 +1127,7 @@ body > main > .collection .excerpt > footer {
 body > main > .collection .excerpt > footer > aside {
   padding: 0;
 }
-body > main > .collection .excerpt > footer > aside > h1 {
+body > main > .collection .excerpt > footer > aside > h1, body > main > .collection .excerpt > footer > aside h2 {
   display: none;
 }
 body > main > .collection .excerpt > footer > aside ul, body > main > .collection .excerpt > footer > aside li {
