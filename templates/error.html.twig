@@ -1,7 +1,7 @@
 {% extends 'article.html.twig' %}
 {% block template %}
 {{ parent() }}
-<!-- user/themes/photon/templates/form.html.twig -->
+<!-- user/themes/photon/templates/error.html.twig -->
 {% endblock template %}
 
 {% block body_template_classes %}{{ parent() }} error{% endblock body_template_classes %}
@@ -13,6 +13,6 @@
   <h1>{{ 'PLUGIN_ERROR.ERROR'|t }} {{ header.http_response_code }}</h1>
 
   <p>{{ page.content|raw }}</p>
-  
+
 </article>
 {% endblock %}
