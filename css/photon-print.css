@@ -1,12 +1,37 @@
 @page {}
-@media print { body { background: transparent; grid-template-columns: 1fr; display: block; }
-  body > header { width: 100%; flex-direction: row; align-content: center; }
-  body > header > h1 { font-size: 1.1em; }
-  body > header > nav { display: none; }
-  body > header img { width: 5em; }
-  body > footer, body > .asides { display: none; }
-  body article > footer > .article-share { display: none; }
-  body article > footer > nav.sibling { display: none; }
-  body article > nav { display: none; } }
+@media print {
+  body {
+    background: transparent;
+    grid-template-columns: 1fr;
+    display: block;
+  }
+  body > header {
+    width: 100%;
+    flex-direction: row;
+    align-content: center;
+  }
+  body > header > h1 {
+    font-size: 1.1em;
+  }
+  body > header > nav {
+    display: none;
+  }
+  body > header img {
+    width: 5em;
+  }
+  body > footer,
+body > .asides {
+    display: none;
+  }
+  body article > footer > .article-share {
+    display: none;
+  }
+  body article > footer > nav.sibling {
+    display: none;
+  }
+  body article > nav {
+    display: none;
+  }
+}
 
 /*# sourceMappingURL=photon-print.css.map */

@@ -1,0 +1,11 @@
+{% extends 'article.html.twig' %}
+{% block template %}
+{{ parent() }}
+<!-- user/themes/photon/templates/post.html.twig -->
+{% endblock template %}
+
+{% block body_template_classes %}{{ parent() }} post{% endblock body_template_classes %}
+
+{% block content %}
+  {{ parent() }}
+{% endblock %}
