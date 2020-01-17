@@ -598,6 +598,15 @@ article > footer > nav {
   align-content: flex-end;
   flex-flow: row;
 }
+article > aside {
+  flex-flow: row wrap;
+}
+article > aside > h2 {
+  display: none;
+}
+article > aside > a {
+  padding: 0.2em;
+}
 article > .data {
   grid-area: data;
 }

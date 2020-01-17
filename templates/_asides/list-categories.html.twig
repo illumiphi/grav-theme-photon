@@ -2,14 +2,13 @@
 {% if config.plugins.taxonomylist.enabled %}
       <aside class="categories">
         <h2>Categories</h2>
-        {% set taxonomy = "category" %}
+        {% set taxtype = "category" %}
         {% set taxlist = taxonomylist.get() %}
         {% if taxlist %}
-          {% for tax, value in taxlist[taxonomy] %}
-            {% set active = uri.param(taxonomy) == tax
-              ? ' active'
-              : '' %}
-            <a class="{{ active }}" href="/search//taxonomy/{{ taxonomy }}{{ config.system.param_sep }}{{ tax|e('url') }}">{{ tax }}</a>
+          {% for tax, value in taxlist[taxtype] %}
+            {% set count = taxonomy.findTaxonomy({'category':tax})|length %}
+            {% set active = uri.param(taxtype) == tax ? ' active' : '' %}
+            <a class="{{ active }}" href="/search//taxonomy/{{ taxtype }}{{ config.system.param_sep }}{{ tax|e('url') }}">{{ tax }} [{{ count }}]</a>
           {% endfor %}
         {% endif %}
 

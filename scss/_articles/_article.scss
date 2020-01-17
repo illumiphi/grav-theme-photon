@@ -204,10 +204,17 @@ article {
       align-content: flex-end;
       flex-flow: row;
     }
-
-
   }
 
+  > aside {
+    flex-flow: row wrap;
+    > h2 {
+      display: none;
+    }
+    > a {
+      padding: .2em;
+    }
+  }
   > .data {
     grid-area: data;
 
