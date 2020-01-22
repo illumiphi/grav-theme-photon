@@ -17,7 +17,7 @@
       {% set img = article.media.images[filename] %}
       {{ dump(img) }}
       {%- if excerpt == true %}
-        {{ img.derivatives([300]).html(img.meta.title, img.meta.description, 'excerpt') }}
+        {{ img.derivatives([300, 600, 1200]).html(img.meta.title, img.meta.description, 'excerpt') }}
       {%- else %}
         {% if figure.youtube and showcase != 1 %}
           <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ figure.youtube }}"
