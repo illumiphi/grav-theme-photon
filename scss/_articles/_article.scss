@@ -149,10 +149,17 @@ article {
     > ul, ol {
       margin: 2em;
     }
-    blockquote {
+
+    > blockquote {
       padding: var(--fitz-2);
       border-left: var(--fitz-2) solid var(--color-1-light);
       line-height: 1.7;
+      > blockquote {
+        font-style: italic;
+        list-style-type: square;
+        padding-top: .5em;
+        font-size: .9em;
+      }
       > ul {
         font-style: italic;
         list-style-type: square;

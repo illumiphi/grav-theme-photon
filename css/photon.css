@@ -560,12 +560,18 @@ article > .content a {
 article > .content > ul, article > .content ol {
   margin: 2em;
 }
-article > .content blockquote {
+article > .content > blockquote {
   padding: var(--fitz-2);
   border-left: var(--fitz-2) solid var(--color-1-light);
   line-height: 1.7;
 }
-article > .content blockquote > ul {
+article > .content > blockquote > blockquote {
+  font-style: italic;
+  list-style-type: square;
+  padding-top: 0.5em;
+  font-size: 0.9em;
+}
+article > .content > blockquote > ul {
   font-style: italic;
   list-style-type: square;
   padding-top: 0.5em;
