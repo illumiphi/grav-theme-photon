@@ -9,6 +9,8 @@
          <a href="{{ prevPage.url }}" class="prev"
            data-tooltip="{{ prevPage.title }}"
            title="{{ prevPage.title }}" >Prev</a>
+        {% else %}
+          <div class="prev"></div>
         {% endif %}
 
         {% include '_articles/_block/breadcrumbs.html.twig' with { 'article': article } %}
@@ -17,6 +19,8 @@
           <a href="{{ nextPage.url }}" class="next"
             data-tooltip="{{ nextPage.title }}"
             title="{{ nextPage.title }}" >Next</a>
+        {% else %}
+          <div class="next"></div>
         {% endif %}
 
       </nav>

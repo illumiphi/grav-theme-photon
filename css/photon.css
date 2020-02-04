@@ -730,8 +730,33 @@ article .sibling {
   flex-flow: row nowrap;
   justify-content: space-between;
 }
-article .sibling > a {
+article .sibling > * {
   width: 100%;
+}
+article .sibling > div {
+  display: flex;
+  flex-flow: row;
+}
+article .sibling > div.prev {
+  justify-content: flex-start;
+}
+article .sibling > div.prev:before {
+  content: "·";
+  height: 100%;
+  padding-right: 0.5em;
+}
+article .sibling > div.prev:after {
+  content: "";
+}
+article .sibling > div.next {
+  justify-content: flex-end;
+}
+article .sibling > div.next:after {
+  content: "·";
+  height: 100%;
+  padding-left: 0.5em;
+}
+article .sibling > a {
   display: flex;
   flex-flow: row;
 }
@@ -742,6 +767,9 @@ article .sibling > a.prev:before {
   content: "‹";
   height: 100%;
   padding-right: 0.5em;
+}
+article .sibling > a.prev:after {
+  content: "";
 }
 article .sibling > a.next {
   justify-content: flex-end;

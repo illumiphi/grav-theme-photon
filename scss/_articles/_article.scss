@@ -378,33 +378,63 @@ article {
     flex-flow: row nowrap;
     justify-content: space-between;
 
-    > a {
-
+    > * {
       width: 100%;
+    }
+    
+    > div {
+      
+      display: flex;
+      flex-flow: row;
+
+      &.prev {
+        justify-content: flex-start;
+
+        &:before {
+          content: "·";
+          height:100%;
+          padding-right: .5em;
+        }
+        &:after {
+          content: "";
+        }
+      }
+
+      &.next {
+        justify-content: flex-end;
+
+        &:after {
+          content: "·";
+          height:100%;
+          padding-left: .5em;
+        }
+      }
+    }
+
+    > a {
 
       display: flex;
       flex-flow: row;
 
       &.prev {
-
         justify-content: flex-start;
 
         &:before {
           content: "‹";
           height:100%;
-
           padding-right: .5em;
+        }
+        &:after {
+          content: "";
         }
       }
 
       &.next {
-
         justify-content: flex-end;
 
         &:after {
           content: "›";
           height:100%;
-
           padding-left: .5em;
         }
       }
