@@ -10,12 +10,13 @@ samp {
 
   padding: .1em .25em;
 
-  color:  var(--color-bg);
-  background: var(--color-fg);
+  // color:  var(--color-bg);
+  // background: var(--color-fg);
 
   font-family: var(--font-code);
   font-size: 1em;
   line-height: 1.5;
+  font-weight: bold;
 
   border-radius: 0;
 }
