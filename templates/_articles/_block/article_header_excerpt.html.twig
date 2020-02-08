@@ -1,8 +1,8 @@
 
   <header>
-    {% if not excerpt %}
+    {# {% if not excerpt %} #}
     {% include '_articles/_block/breadcrumbs.html.twig' with { 'article': article } %}
-    {% endif %}
+    {# {% endif %} #}
     <h1>
       {%- if article.active %}
         {{ article.title }}
