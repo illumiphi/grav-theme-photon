@@ -1,9 +1,12 @@
+% name: Article
+% def: author="/about"
+% def: collection_name="Articles"
 ---
 title: ${title}
 subtitle: ${subtitle}
-author: ${author:-/about}
+author: ${author}
 collection:
-    name: ${collection_name:-Articles}
+    name: ${collection_name}
     showCount: true
     showMenu: true
 content:

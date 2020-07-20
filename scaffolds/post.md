@@ -1,9 +1,14 @@
+% name: Post
+% folder: date
+% def: author='/about'
+% def: post_date=$(date +%Y-%m-%d)
+% def: collection_name='Articles'
 ---
 title: ${title}
 subtitle: ${subtitle}
-author: ${author:-/about}
+author: ${author}
 collection:
-    name: ${collection_name:-Articles}
+    name: ${collection_name}
     showCount: true
     showMenu: true
 content:
@@ -12,6 +17,7 @@ taxonomy:
     category: [ ${categories} ]
     tag: [ ${tags} ]
 show_gallery: true
+date: ${post_date}
 ---
 
 ${summary}

@@ -272,28 +272,28 @@ form:
                               label: title
 
 
-                    _taxonomy:
-                      type: fieldset
-                      title: ✴ Taxonomy
-                      help: meta data you relate to an article, primarily categories and tags
-                      info: categories, tags, etc
-                      # text: use meta data to help organize your info. use `featured` and `showcase` tags
-                      # icon: asterisk
-                      collapsed: false     # Initial state of fieldset (see collapsible option)
-                      collapsible: true    # Whether one can expand the fieldset or not
-                      fields:
+                    # _taxonomy:
+                      # type: fieldset
+                      # title: ✴ Taxonomy
+                      # help: meta data you relate to an article, primarily categories and tags
+                      # info: categories, tags, etc
+                      # # text: use meta data to help organize your info. use `featured` and `showcase` tags
+                      # # icon: asterisk
+                      # collapsed: false     # Initial state of fieldset (see collapsible option)
+                      # collapsible: true    # Whether one can expand the fieldset or not
+                      # fields:
 
-                        header.taxonomy:
-                          type: taxonomy
-                          label: PLUGIN_ADMIN.TAXONOMY
-                          multiple: true
-                          validate:
-                            type: array
+                        # header.taxonomy:
+                          # type: taxonomy
+                          # label: PLUGIN_ADMIN.TAXONOMY
+                          # multiple: true
+                          # validate:
+                            # type: array
 
-                        header.body_classes:
-                          type: text
-                          size: small
-                          label: PLUGIN_ADMIN.BODY_CLASSES
+                        # header.body_classes:
+                          # type: text
+                          # size: small
+                          # label: PLUGIN_ADMIN.BODY_CLASSES
 
 
 
