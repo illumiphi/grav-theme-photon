@@ -2,7 +2,7 @@
 % folder: date
 % def: author='/about'
 % def: post_date=$(date +%Y-%m-%d)
-% def: collection_name='Articles'
+% def: collection_name='Attachments'
 ---
 title: ${title}
 subtitle: ${subtitle}
@@ -14,8 +14,10 @@ collection:
 content:
     items: '@self.children'
 taxonomy:
-    category: [ ${categories} ]
-    tag: [ ${tags} ]
+    category: 
+        - ${category}
+    tag: 
+        - ${tag}
 show_gallery: true
 date: ${post_date}
 ---
@@ -23,5 +25,4 @@ date: ${post_date}
 ${summary}
 
 ===
-
 

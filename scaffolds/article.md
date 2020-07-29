@@ -13,8 +13,10 @@ content:
     items: '@self.children'
 child_type: article
 taxonomy:
-    category: [ ${categories} ]
-    tag: [ ${tags} ]
+    category: 
+        - ${category}
+    tag: 
+        - ${tag}
 show_gallery: true
 ---
 

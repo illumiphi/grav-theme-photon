@@ -17,7 +17,6 @@ article {
   > * {
     margin-bottom: var(--fitz);
     // padding: var(--fitz);
-
   }
 
   > figure {
@@ -45,7 +44,6 @@ article {
       object-position: center;
       flex: 1;
     }
-
 
     > figcaption {
       text-align: center;
@@ -222,6 +220,7 @@ article {
       padding: .2em;
     }
   }
+
   > .data {
     grid-area: data;
 
@@ -258,7 +257,6 @@ article {
     td {
       text-align: left;
     }
-
   }
 
   > .gallery {
@@ -360,9 +358,7 @@ article {
         }
       }
     }
-
   }
-
 
   .sibling {
     grid-area: sibling;
@@ -381,9 +377,9 @@ article {
     > * {
       width: 100%;
     }
-    
+
     > div {
-      
+
       display: flex;
       flex-flow: row;
 
@@ -447,9 +443,7 @@ article {
     }
   }
 
-
   @include media-bp(6) {
-
     // @supports (display: grid) {
     //
     //   display: grid;
