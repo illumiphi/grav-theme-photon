@@ -1,7 +1,19 @@
   {# reverse  -#}
-  {{ dump(article.parent.children.pages )}}
-  {% set prevPage = article.nextSibling %}
-  {% set nextPage = article.prevSibling %}
+  {# {{ dump(article.parent.children.pages )}} #}
+  {{  dump(page.path) }}
+  {% if article.nextSibling.url or article.prevSibling.url %}
+    {{ dump(article.nextSibling(page.path).url) }}
+    {{ dump(article.prevSibling(page.path)) }}
+    {% set prevPage = article.nextSibling %}
+    {% set nextPage = article.prevSibling %}
+  {% else %}
+    {# {% set siblings = article.parent.children %} #}
+    {% set siblings = pages.children %}
+    {{ dump( siblings.nextSibling(page.path).url )}}
+    {{ dump( siblings.prevSibling(page.path).url )}}
+    {% set prevPage = siblings.nextSibling(page.path) %}
+    {% set nextPage = siblings.prevSibling(page.path) %}
+  {% endif %}
   {% if nextPage.url or prevPage.url %}
       <nav class="sibling">
 

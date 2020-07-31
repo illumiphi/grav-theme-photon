@@ -2,7 +2,7 @@
 {% set self_descendents = page.collection(options) %}
 {% set featured_pages = [] %}
 {% for p in self_descendents %}
-  {% for tag in p.taxonomy.tag %}
+  {% for tag in p.taxonomy.photon %}
     {% if tag == 'featured' %}
       {% set featured_pages = featured_pages|merge( [ p ] ) %}
     {% endif %}

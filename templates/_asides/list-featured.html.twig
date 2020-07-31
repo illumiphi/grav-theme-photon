@@ -1,6 +1,6 @@
-{% set options = { items: {'@self.descendants': p.url, '@taxonomy.tag': 'featured' }, 'limit': 5, 'order': {'by': 'date', 'dir': 'desc'}, 'pagination': true } %}
+{% set options = { items: {'@self.descendants': p.url, '@taxonomy.photon': 'featured' }, 'limit': 5, 'order': {'by': 'date', 'dir': 'desc'}, 'pagination': true } %}
 {% set self_featured = page.collection(options) %}
-{% set self_featured = page.evaluate([{'@page.children': p.url, '@taxonomy.tag':'featured'}]) %}
+{% set self_featured = page.evaluate([{'@page.children': p.url, '@taxonomy.photon':'featured'}]) %}
       <aside class="featured-list">
         <h2>Featured</h2>
         {% for p in self_featured %}
