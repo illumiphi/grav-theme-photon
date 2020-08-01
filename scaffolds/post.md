@@ -1,16 +1,18 @@
 % name: Post
 % folder: date
-% def: author='/about'
 % def: post_date=$(date +%Y-%m-%d)
+% def: author='/about'
 % def: collection_name='Attachments'
 ---
 title: ${title}
 subtitle: ${subtitle}
+date: ${post_date}
 author: ${author}
-collection:
-    name: ${collection_name}
-    showCount: true
-    showMenu: true
+sets:
+    default:
+        name: ${collection_name}
+        showCount: true
+        showMenu: true
 content:
     items: '@self.children'
 taxonomy:
@@ -19,7 +21,6 @@ taxonomy:
     tag: 
         - ${tag}
 show_gallery: true
-date: ${post_date}
 ---
 
 ${summary}
