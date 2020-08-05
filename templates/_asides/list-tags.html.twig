@@ -1,16 +1,13 @@
 {% if config.plugins.taxonomylist.enabled %}
+{%   set taxonomy = "tag" %}
+{%   set taxlist = taxonomylist.get() %}
       <aside class="tags">
         <h2>Tags</h2>
-        {% set taxonomy = "tag" %}
-        {% set taxlist = taxonomylist.get() %}
-        {% if taxlist %}
-          {% for tax, value in taxlist[taxonomy] %}
-            {% set active = uri.param(taxonomy) == tax
-              ? ' active'
-              : '' %}
-              <a class="{{ active }}" href="/search/taxonomy/{{ taxonomy }}{{ config.system.param_sep }}{{ tax|e('url') }}">{{ tax }}</a>
-          {% endfor %}
-        {% endif %}
-
+{%   if taxlist %}
+{%     for tax, value in taxlist[taxonomy] %}
+{%       set active = uri.param(taxonomy) == tax ? ' active' : '' %}
+        <a class="{{ active }}" href="/search/taxonomy/{{ taxonomy }}{{ config.system.param_sep }}{{ tax|e('url') }}">{{ tax }}</a>
+{%     endfor %}
+{%   endif %}
       </aside>
 {% endif %}

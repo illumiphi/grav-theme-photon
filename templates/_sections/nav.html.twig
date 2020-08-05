@@ -1,10 +1,8 @@
-{% block navbar %}
-<nav class="main">
-    {% for p in pages.children %}
-      {%- if p.visible %}
-        {%- set active_class = (p.active or p.activeChild) ? ' class="active"' : '' %}
-  <a href="{{ p.url }}"{{ active_class }} title="{{ p.header.subtitle }}">{{ p.menu }}</a>
-      {% endif -%}
-    {% endfor %}
-</nav>
-{% endblock navbar %}
+      <nav class="main">
+{% for p in pages.children %}
+{%   if p.visible %}
+{%     set active_class = (p.active or p.activeChild) ? ' class="active"' : '' %}
+        <a href="{{ p.url }}"{{ active_class }} title="{{ p.header.subtitle }}">{{ p.menu }}</a>
+{%   endif %}
+{% endfor %}
+      </nav>

@@ -1,5 +1,5 @@
 % name: Article
-% def: post_date=$(date +%Y-%m-%d)
+% def: post_date=$(date +%m/%d/%Y)
 % def: author="/about"
 % def: collection_name="Articles"
 ---

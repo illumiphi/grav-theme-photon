@@ -2,7 +2,7 @@
 {% set recent_pages = page.collection(options) %}
       <aside class="recent">
         <h2>Recent</h2>
-        {% for p in recent_pages %}
-          <a  href="{{ p.url }}">{{ p.title }}</a>
-        {% endfor %}
+{% for p in recent_pages %}
+        <a  href="{{ p.url }}">{{ p.title }}</a>
+{% endfor %}
       </aside>

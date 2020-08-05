@@ -2,18 +2,17 @@
 {% set self_descendents = page.collection(options) %}
 {% set featured_pages = [] %}
 {% for p in self_descendents %}
-  {% for tag in p.taxonomy.photon %}
-    {% if tag == 'featured' %}
-      {% set featured_pages = featured_pages|merge( [ p ] ) %}
-    {% endif %}
-  {% endfor %}
+{%   for tag in p.taxonomy.photon %}
+{%     if tag == 'featured' %}
+{%       set featured_pages = featured_pages|merge( [ p ] ) %}
+{%     endif %}
+{%   endfor %}
 {% endfor %}
 {% if featured_pages %}
-
-  <aside class="featured-list">
-    <h2>Featured Pages</h2>
-    {% for p in featured_pages %}
-      <a  href="{{ p.url }}">{{ p.title }}</a>
-    {% endfor %}
-  </aside>
+          <aside class="featured-list">
+            <h2>Featured Pages</h2>
+{%   for p in featured_pages %}
+              <a  href="{{ p.url }}">{{ p.title }}</a>
+{%   endfor %}
+          </aside>
 {% endif %}

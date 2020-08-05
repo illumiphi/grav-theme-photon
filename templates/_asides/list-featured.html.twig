@@ -3,7 +3,7 @@
 {% set self_featured = page.evaluate([{'@page.children': p.url, '@taxonomy.photon':'featured'}]) %}
       <aside class="featured-list">
         <h2>Featured</h2>
-        {% for p in self_featured %}
+{% for p in self_featured %}
           <a  href="{{ p.url }}">{{ p.title }}</a>
-        {% endfor %}
+{% endfor %}
       </aside>

@@ -1,10 +1,9 @@
 {% if article.header.members %}
-
-  <aside class="members">
-    <h2>Members</h2>
-    {% for member in article.header.members %}
-      {% set person = article.find(member.person) %}
-      <a href="{{ member.person }}">{{ person.title }}</a>
-    {% endfor %}
-  </aside>
+          <aside class="members">
+            <h2>Members</h2>
+{%   for member in article.header.members %}
+{%     set person = article.find(member.person) %}
+              <a href="{{ member.person }}">{{ person.title }}</a>
+{%   endfor %}
+          </aside>
 {% endif %}

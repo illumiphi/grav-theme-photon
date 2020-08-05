@@ -1,0 +1,33 @@
+{% macro render(article, name) %}
+{% if name=='default' %}
+{%    set articles=article.collection %}
+{% else %}
+{%    set articles=article.collection(name) %}
+{% endif %}
+      <section class="collection">
+        <header>
+          <h1>{{ article.header.sets[ name ].name }}{% if article.header.sets[ name ].showCount %} : <span class="count">{{ article.collection.count() }}</span>{% endif %}</h1>
+{% if article.header.sets[ name ].showMenu %}
+          <nav>
+{# placeholder functions for filter taxonomy items in current collection #}
+{%   set active_class = (article.active or article.activeChild) ? ' class="active"' : '' %}
+{# {% for tag in article.taxonomy.tag %} #}
+                {# <!-- <a href="search/tag:{{ tag }}">{{ tag }}</a> --> #}
+{# {% endfor %} #}
+            <!-- <a id="all" href="{{ article.url }}">all</a>
+            <a id="tag-featured" href="{{ article.url }}{{ article.url ends with '/' ? '' : '/' }}tag:featured">featured</a>
+            <a id="tag-showcase" href="{{ article.url }}{{ article.url ends with '/' ? '' : '/' }}tag:showcase">showcase</a> -->
+            <a id="modal" href="javascript:toggleModal();">[ ]</a>
+          </nav>
+{% endif %}
+        </header>
+{% for item in articles %}
+{# and not (item.routable == false) #}
+{# % if not (item.url == item.url) and not (item.routable == false)  and not (item.visible == false) % #}
+{%   if item.url != article.url  %}
+{%     include ["_articles/#{ article.template }-excerpt.html.twig", "_articles/article-excerpt.html.twig"] with { 'article': item } %}
+{%   endif %}
+{% endfor %}
+{% include '_sections/pagination.html.twig'   %}
+      </section>
+{% endmacro %}}

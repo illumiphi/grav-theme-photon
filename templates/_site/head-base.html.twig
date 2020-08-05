@@ -2,33 +2,29 @@
 {% set page_description = page.summary|striptags|rtrim|regex_replace( '/\n/', ' - ' ) %}
 {% set featured_image = base_url_absolute ~ page.url ~ '/' ~ page.header.figure.image %}
 {% block head %}
+  <head>
 
-<head>
+    <title>{{ page_title }}</title>
 
-<title>{{ page_title }}</title>
-
-<!-- meta -->
 {% include '_site/meta.html.twig'  %}
 
-<!-- favicon -->
 {% block favicon %}
-  {#- TODO put favicon in config #}
-  <link rel="icon"  href="/user/images/favicon.png">
+{#   TODO put favicon in config #}
+    <!-- favicon -->
+    <link rel="icon"  href="/user/images/favicon.png">
 {% endblock favicon %}
 
 {% if config.organization.google_search %}
-<meta name="google-site-verification" content="{{ config.organization.google_search }}" />
+    <meta name="google-site-verification" content="{{ config.organization.google_search }}" />
 {% endif %}
 
-<!-- analytics -->
 {% include '_site/analytics.html.twig'  %}
 
-<!-- rss -->
 {% block rss %}
-  <link rel="alternate" href="{{ page.url ~ '.rss' }}" title="{{ page_title }}" type="application/atom+xml">
+    <!-- rss -->
+    <link rel="alternate" href="{{ page.url ~ '.rss' }}" title="{{ page_title }}" type="application/atom+xml">
 {% endblock rss %}
 
-<!-- schema -->
 {% block schema %}
 {% include '_json-ld/article.html.twig'  %}
 {% if page.template != "article" %}
@@ -36,19 +32,20 @@
 {% endif %}
 {% endblock schema %}
 
-<!-- opengraph -->
 {% block opengraph %}
-<meta property="og:title" content="{{ page_title }}">
-<meta property="og:description" content="{{ page_description }}">
-<meta property="og:image" content="{{ featured_image }}">
-<meta property="og:url" content="{{ page.url }}">
+    <!-- opengraph -->
+    <meta property="og:title" content="{{ page_title }}">
+    <meta property="og:description" content="{{ page_description }}">
+    <meta property="og:image" content="{{ featured_image }}">
+    <meta property="og:url" content="{{ page.url }}">
 
-<meta name="twitter:card" content="summary_large_image">
-<!-- <meta name="twitter:site" content="@phi_architect"> -->
-<meta name="twitter:creator" content="@phi_architect">
-<meta name="twitter:title" content="{{ page_title }}">
-<meta name="twitter:description" content="{{ page_description }}">
-<meta name="twitter:image" content="{{ featured_image }}">
+    <!-- twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- <meta name="twitter:site" content="@phi_architect"> -->
+    <meta name="twitter:creator" content="@phi_architect">
+    <meta name="twitter:title" content="{{ page_title }}">
+    <meta name="twitter:description" content="{{ page_description }}">
+    <meta name="twitter:image" content="{{ featured_image }}">
 {% endblock opengraph %}
 
 {% block stylesheets %}
@@ -56,21 +53,19 @@
 {% do assets.add('theme://css/photon-print.css', {priority:50, group:'photon-print'} ) %}
 {% endblock %}
 
-<!-- CSS photon -->
-{{ assets.css('photon') }}
-<!-- CSS photon-plugins -->
-{{ assets.css('photon-plugins') }}
-<!-- CSS photon-print -->
-{{ assets.css('photon-print') }}
-<!-- CSS  -->
-{{ assets.css() }}
+    <!-- CSS photon -->
+    {{ assets.css('photon') }}
+    <!-- CSS photon-plugins -->
+    {{ assets.css('photon-plugins') }}
+    <!-- CSS photon-print -->
+    {{ assets.css('photon-print') }}
+    <!-- CSS  -->
+    {{ assets.css() }}
 
-<!-- CSS fonts -->
 {% block css_fonts %}
 {% include '_site/fonts.html.twig'  %}
 {% endblock css_fonts %}
 
-<!-- CSS vars -->
 {% block css_vars %}
 {% include '_site/css_vars.html.twig'   %}
 {% endblock css_vars %}
@@ -84,21 +79,18 @@
   {'priority':101, 'loading':'defer'} ) %}
 {% endif %}
 
-{# {%- do assets.add('https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js',   {'priority':101, 'loading':'defer'} ) %} #}
-
 {%- do assets.addJs('theme://js/article.js',
   {'priority':200, 'pipeline':false, 'loading':'defer', 'group':'photon' }) %}
 {%- do assets.addJs('theme://js/showcase.js',
   {'priority':300, 'pipeline':false, 'loading':'defer', 'group':'photon' }) %}
 {% endblock javascripts %}
 
-<!-- JS -->
-{{ assets.js() }}
-<!-- JS photon -->
-{{ assets.js('photon') }}
-<!-- JS photon-plugins -->
-{{ assets.js('photon-plugins') }}
+    <!-- JS -->
+    {{ assets.js() }}
+    <!-- JS photon -->
+    {{ assets.js('photon') }}
+    <!-- JS photon-plugins -->
+    {{ assets.js('photon-plugins') }}
 
-
-</head>
+  </head>
 {% endblock head %}
