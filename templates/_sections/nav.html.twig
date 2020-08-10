@@ -1,8 +1,12 @@
       <nav class="main">
 {% for p in pages.children %}
 {%   if p.visible %}
-{%     set active_class = (p.active or p.activeChild) ? ' class="active"' : '' %}
-        <a href="{{ p.url }}"{{ active_class }} title="{{ p.header.subtitle }}">{{ p.menu }}</a>
+{%     if p.active or p.activeChild %}
+{%       set active_class = (p.active or p.activeChild) ? ' class="active"' : '' %}
+        <a href="{{ p.url }}" class="active" title="{{ p.header.subtitle }}" aria-current="page">{{ p.menu }}</a>
+{%     else %}
+        <a href="{{ p.url }}" title="{{ p.header.subtitle }}">{{ p.menu }}</a>
+{%     endif %}
 {%   endif %}
 {% endfor %}
       </nav>

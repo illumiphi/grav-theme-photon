@@ -12,9 +12,13 @@ articles.forEach( article => {
   }
 })
 
-var header = document.querySelector("body > header");
 function toggleMenu() {
-    header.classList.toggle("expand");
+  var menu = document.querySelector("body > header > nav.main");
+  if (menu.style.display === "none") {
+    menu.style.display = "block";
+  } else {
+    menu.style.display = "none";
+  }
 }
 
 var collection = document.querySelector(".collection")

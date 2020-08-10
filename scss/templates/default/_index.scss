@@ -1,0 +1,279 @@
+/* templates/_default *****************************/
+
+body {
+  --bg: #ccc;
+  background: var(--bg);
+  padding: var(--fitz);
+
+  %body-section-default {
+    --bg: hsla(255,100%,100%,.3);
+    background: var(--bg);
+    // margin: var(--fitz);
+    // padding: var(--fitz);
+  }
+
+  > header {
+    @extend %body-section-default;
+
+    .logo {
+      a {
+        display: block;
+        padding: var(--fitz);
+
+        img {
+          height: 3em;
+          margin: .5em auto;
+        }
+
+        h1 {
+          font-size: 1.1em;
+          letter-spacing: .1em;
+          padding-left: .5em;
+          text-align: center;
+        }
+      }
+    }
+
+    nav.main {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .contact {
+      padding: var(--fitz);
+
+      p {
+        font-size: .8em;
+        text-align: center;
+      }
+
+    }
+
+    .toggle {
+      width: 3.5em;
+      height: 3em;
+      font-size: 2.5em;
+    }
+
+    &.expand {
+      height: calc(100vh - calc( var(--fitz-2) * 2 ));
+
+      .logo {
+        order: 1;
+      }
+
+      .toggle {
+        order: 2;
+      }
+
+      nav {
+        width: 100%;
+      }
+
+      .contact {
+        order: 4;
+      }
+    }
+  }
+
+  > main {
+    @extend %body-section-default;
+    position: relative;
+
+    > * {
+      background: var(--bg);
+      margin: var(--fitz);
+      padding: var(--fitz);
+    }
+
+    > header {
+    }
+
+    > article {
+      > figure {
+        // max-height: 60vh;
+      }
+    }
+
+    > .collection {
+      // display: grid;
+      // grid-template-columns: repeat( auto-fit, minmax( 22em, 1fr ) );
+      transition: position .5s;
+
+      &.modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+        background: black;
+      }
+
+      > * {
+        background: var(--bg);
+        margin: var(--fitz);
+        padding: var(--fitz);
+      }
+
+      > header {
+        grid-column: 1 / -1;
+      }
+
+      .excerpt {
+        @include article-card;
+
+        > figure {
+        }
+
+        .article-tags {
+        }
+      }
+    }
+
+    > section.form {
+      form {
+        width: 100%;
+      }
+    }
+  }
+
+  > .asides {
+    @extend %body-section-default;
+  }
+
+  > footer {
+    @extend %body-section-default;
+  }
+
+  @include media-bp(1) {
+    > header {
+      .logo {
+        img {
+          height: 5em;
+        }
+
+        > a > h1 {
+          font-size: 1em;
+        }
+      }
+    }
+  }
+
+  @include media-bp(2) {
+    > header{
+      .logo {
+        padding: var(--fitz);
+
+        a {
+          img {
+            // width: auto; //calc( var(--header-height) - 2em);
+            height: 5em;
+          }
+
+          h1 {
+            font-size: 1em;
+            letter-spacing: .1em;
+            padding-left: .1em;
+          }
+        }
+      }
+
+      .toggle {
+        display: none;
+      }
+
+      .contact {
+        // display: flex;
+        // width: auto; //var(--header-height);
+        // height: auto; //var(--header-height);
+      }
+
+      nav.main {
+        > * {
+          display: block;
+        }
+      }
+    }
+  }
+
+  @include media-bp(3) {
+    @supports (display: grid) {
+      display: grid;
+      grid-template-areas:
+          " header main "
+          " asides main "
+          " asides footer ";
+      grid-template-columns: var(--col)   1fr;
+      grid-template-rows: auto 1fr auto;
+
+      > header {
+        grid-area: header;
+        height: auto; 
+        //remove initial fixed height
+
+        > .logo {
+          img {
+            height:8em;
+          }
+        }
+
+        > nav {
+          padding: 1em 0;
+
+          a {
+          }
+        }
+      }
+
+      > main {
+        grid-area: main;
+      }
+
+      > .asides {
+        grid-area: asides;
+        // justify-content: flex-start;
+      }
+
+      > footer {
+        grid-area: footer;
+      }
+    }
+  }
+
+  @include media-bp(4) {
+    @supports (display: grid) {
+      > main {
+        display: grid;
+        grid-template-areas:
+          " article collection "
+          ;
+        grid-template-columns: 48em   1fr;
+
+        > article {
+          grid-area: article;
+
+          // height: 100%;
+        }
+
+        > .collection {
+          grid-area: collection;
+
+          > .excerpt {
+            // @include article-banner;
+          }
+        }
+      }
+    }
+  }
+
+  @include media-bp(6) {
+    > main {
+      > .collection {
+        > .excerpt {
+          // @include article-banner;
+        }
+      }
+    }
+  }
+}

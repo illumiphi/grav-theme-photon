@@ -1,23 +1,8 @@
 .asides {
-
   @extend %section-default;
 
-  padding: var(--fitz-2);
-
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
-
   > aside {
-    margin-bottom: var(--fitz-2);
-
-  }
-
-  @include media-bp(3) {
-    flex-direction: column;
-    align-items: center;
-
-    > aside {
-    }
+    padding: var(--fitz);
+    margin: var(--fitz);
   }
 }

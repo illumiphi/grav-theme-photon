@@ -5,9 +5,9 @@ Original Code from breadcrumbs.plugin
 {% set breadcrumbs_config = config.plugins['photon-breadcrumbs'] %}
 {% set crumbs = breadcrumbs.getFromArticle( article ) %}
 {% if breadcrumbs_config.enabled %}
-            <nav class="breadcrumbs">
+            <div class="breadcrumbs">
 {%   for crumb in crumbs %}
               <a href="{{ crumb.url }}">{{ crumb.menu }}</a>
 {%   endfor %}
-            </nav>
+            </div>
 {% endif %}

@@ -8,16 +8,6 @@
   font-weight: normal;
   font-style: normal;
 }
-/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
-/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
-/*
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-  @font-face {
-    font-family: 'photon-icon';
-    src: url('../font/photon-icon.svg?72950484#photon-icon') format('svg');
-  }
-}
-*/
 :root {
   --font: serif;
   --font-display: sans-serif;
@@ -49,17 +39,15 @@
 /* media *****************************/
 :root {
   --fitz: .5em;
-  --col: 18em;
-  --header-height: 6em;
   --fitz-2: calc(var(--fitz) * 2);
   --fitz-half: calc(var(--fitz) / 2);
+  --col: 18em;
   --col-2: calc( var(--col) * 2 );
   --col-3: calc( var(--col) * 3 );
 }
 
 /* base elements *****************************/
-/* photon ✴ Theme Elements*/
-/* elements/_index *****************************/
+/* elements/reset *****************************/
 * {
   margin: 0;
   padding: 0;
@@ -83,7 +71,6 @@ html {
 /* elements/headings *****************************/
 h4, h3, h2, h1 {
   font-family: var(--font-display);
-  font-feature-settings: "dlig" 1, "liga" 1, "lnum" 1, "kern" 1;
   font-weight: 700;
   font-size: 1.2em;
   line-height: 1.5;
@@ -125,19 +112,19 @@ li {
 
 /* elements/blockquotes *****************************/
 blockquote {
+  display: block;
   margin: var(--fitz-2) auto;
   font-size: 1.2em;
-  display: block;
 }
 blockquote::before {
   content: "";
   height: 100%;
   width: 0.1em;
+  display: block;
   position: absolute;
   left: 0;
   top: 0;
   background: var(--color-key-dark);
-  display: block;
 }
 blockquote > blockquote {
   margin: 0;
@@ -146,13 +133,13 @@ blockquote > blockquote {
 }
 blockquote > blockquote::before {
   content: var(--bullet);
+  display: inline;
   padding-top: var(--fitz-2);
   background: inherit;
-  display: inline;
 }
 blockquote p {
-  margin-bottom: 0;
   position: relative;
+  margin-bottom: 0;
   overflow: visible;
 }
 
@@ -191,9 +178,6 @@ a {
   color: var(--color);
   background: var(--bg);
   text-decoration: none;
-  display: flex;
-  flex-flow: row;
-  justify-content: center;
 }
 a:link {
   color: var(--color);
@@ -214,11 +198,6 @@ a.active {
 a.active::before, a.active::after {
   content: var(--bullet);
   padding: 0 var(--fitz);
-}
-@media (min-width: 72em) {
-  a {
-    flex-flow: column;
-  }
 }
 
 /* elements/inline *****************************/
@@ -276,7 +255,6 @@ img {
 }
 
 figure {
-  position: relative;
   height: auto;
   display: block;
 }
@@ -286,21 +264,8 @@ figure img {
   object-fit: cover;
 }
 figure figcaption {
-  position: absolute;
-  left: 0;
-  bottom: 0;
   width: 100%;
-  padding: 0.75em 1em;
-  z-index: 2;
-  color: var(--color-bg);
-  background: var(--color-fg);
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
 }
-figure:hover > figcaption {
-  opacity: 1;
-}
-
 /* elements/tables *****************************/
 table {
   --border-color: var(--color-fg);
@@ -456,26 +421,16 @@ button:hover {
 
 /* articles/article *****************************/
 article {
-  padding: var(--fitz-2);
-  color: var(--color-fg);
-  background: var(--color-bg);
-  display: flex;
-  flex-flow: column;
-  align-content: flex-start;
-  justify-content: flex-start;
+  padding: var(--fitz);
+  margin: var(--fitz);
 }
 article > * {
-  margin-bottom: var(--fitz);
+  padding: var(--fitz);
+  margin: var(--fitz);
 }
 article > figure {
   grid-area: figure;
-  max-height: 70vh;
-  padding: 0;
   overflow: hidden;
-  text-align: center;
-  display: flex;
-  align-content: stretch;
-  align-items: stretch;
 }
 article > figure > img {
   width: 100%;
@@ -483,27 +438,15 @@ article > figure > img {
   margin: 0 auto;
   object-fit: cover;
   object-position: center;
-  flex: 1;
-}
-article > figure > figcaption {
-  text-align: center;
 }
 article > figure:empty {
   display: none;
 }
 article > header {
   grid-area: header;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-}
-article > header > * {
-  margin: var(--fitz);
 }
 article > header > h1 {
-  text-align: left;
   line-height: 1;
-  text-align: center;
 }
 article > header > h2 {
   font-variant: normal;
@@ -511,13 +454,6 @@ article > header > h2 {
   font-weight: 700;
   font-size: 0.9em;
   letter-spacing: 0.1em;
-  text-align: center;
-}
-article > header > nav {
-  flex-flow: row wrap;
-  justify-content: center;
-  padding: 0;
-  text-align: left;
 }
 article > header > nav a {
   padding: 0;
@@ -526,32 +462,25 @@ article > header > nav a::after {
   content: "›";
   padding: 0 0.25em;
 }
-article > header > time {
-  font-size: 0.6em;
-  padding-top: 0.5em;
-}
 article > .content {
   grid-area: content;
-  display: block;
-  max-width: var(--col-3);
-  margin-left: auto;
-  margin-right: auto;
-  text-align: left;
-  widows: 2;
-  orphans: 2;
 }
 article > .content > * {
-  margin: var(--fitz);
   widows: 2;
   orphans: 2;
+  margin: var(--fitz);
 }
 article > .content > *:last-child {
   margin-bottom: 0;
 }
 article > .content > .summary {
-  background: var(--color-2-light);
-  color: var(--color-fg);
+  border-top: 1px solid var(--color-2-dark);
+  border-bottom: 1px solid var(--color-2-dark);
   padding: var(--fitz);
+  margin: var(--fitz);
+}
+article > .content > .summary ul, article > .content > .summary li {
+  margin: var(--fitz);
 }
 article > .content a {
   display: inline;
@@ -578,16 +507,17 @@ article > .content > blockquote > ul {
 }
 article > footer {
   grid-area: footer;
-  padding: 0;
-  padding-top: var(--fitz-2);
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 article > footer > aside {
   min-width: 10em;
 }
 article > footer > aside ul, article > footer > aside li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   margin: 0;
 }
 article > footer > aside ul h3, article > footer > aside li h3 {
@@ -598,10 +528,6 @@ article > footer > aside.article-categories a {
 }
 article > footer > aside.article-tags a {
   font-style: italic;
-}
-article > footer > nav {
-  align-content: flex-end;
-  flex-flow: row;
 }
 article > aside {
   flex-flow: row wrap;
@@ -616,15 +542,14 @@ article > .data {
   grid-area: data;
 }
 article > .data h1, article > .data table {
-  text-align: center;
   width: auto;
   margin: 0 auto;
 }
-article > .data table table {
-  border-left: 0.1em solid var(--color-fg);
-}
 article > .data h1 {
   text-decoration: underline;
+}
+article > .data table table {
+  border-left: 0.1em solid var(--color-fg);
 }
 article > .data th, article > .data td {
   text-align: center;
@@ -646,18 +571,11 @@ article > .data td {
 }
 article > .gallery {
   grid-area: gallery;
-  background: #000;
-  display: grid;
-  grid-template-areas: " list ";
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  grid-gap: 0.5em;
   padding: 0.5em;
 }
 article > .gallery > .panel {
   grid-area: panel;
   display: none;
-  background: white;
   background-position: center;
   background-size: contain;
   width: 100%;
@@ -671,14 +589,10 @@ article > .gallery > .list {
   grid-gap: 0.5em;
   height: 100%;
   min-height: 5em;
-  justify-content: center;
-  align-items: flex-start;
 }
 article > .gallery > .list > figure {
-  background: white;
   padding: var(--fitz);
   overflow: hidden;
-  text-align: center;
   height: 100%;
   min-height: 5em;
 }
@@ -724,40 +638,9 @@ article .sibling {
   position: relative;
   font-size: 1em;
   width: 100%;
-  max-width: var(--col-3);
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-}
-article .sibling > * {
-  width: 100%;
-}
-article .sibling > div {
-  display: flex;
-  flex-flow: row;
-}
-article .sibling > div.prev {
-  justify-content: flex-start;
-}
-article .sibling > div.prev:before {
-  content: "·";
-  height: 100%;
-  padding-right: 0.5em;
-}
-article .sibling > div.prev:after {
-  content: "";
-}
-article .sibling > div.next {
-  justify-content: flex-end;
-}
-article .sibling > div.next:after {
-  content: "·";
-  height: 100%;
-  padding-left: 0.5em;
-}
-article .sibling > a {
-  display: flex;
-  flex-flow: row;
 }
 article .sibling > a.prev {
   justify-content: flex-start;
@@ -778,27 +661,23 @@ article .sibling > a.next:after {
   height: 100%;
   padding-left: 0.5em;
 }
+article .breadcrumbs {
+  text-align: center;
+}
 article .breadcrumbs a {
-  flex-flow: row;
+  display: block;
 }
 article.excerpt {
   cursor: pointer;
   transition: box-shadow 0.5s, background 0.5s;
 }
-article.excerpt > header > h1 {
-  text-align: left;
-}
 article.excerpt .article-share {
   display: none;
 }
 article.excerpt:hover {
-  --color-bg: var(--color-key-lighter);
+  --bg: var(--color-key-lighter);
   box-shadow: 0.5em 0.5em 0.7em rgba(0, 0, 0, 0.4);
 }
-article.excerpt .more {
-  align-self: flex-end;
-}
-
 article.showcase {
   cursor: pointer;
   transition: box-shadow 0.5s, background 0.5s;
@@ -821,26 +700,16 @@ article.showcase > figure > img {
 article.showcase > figure:empty {
   display: none;
 }
-article.showcase > header > h1 {
-  text-align: center;
-}
 article.showcase .article-share {
   display: none;
 }
 article.showcase:hover {
   box-shadow: 0.5em 0.5em 0.7em rgba(0, 0, 0, 0.4);
 }
-article.showcase .more {
-  align-self: flex-end;
-}
-
+/* asides *****************************/
 /* asides/aside *****************************/
 aside {
   text-align: center;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-content: flex-start;
 }
 aside h1, aside h2 {
   font-variant: small-caps;
@@ -877,10 +746,6 @@ aside.org {
 aside.article-share ul, aside.follow ul {
   font-family: var(--font-icon);
   list-style: none;
-  display: flex;
-  flex-flow: row nowrap;
-  align-content: center;
-  justify-content: center;
 }
 aside.article-share ul li, aside.follow ul li {
   width: auto;
@@ -892,10 +757,6 @@ aside.article-share ul a, aside.follow ul a {
 }
 
 /* asides/search *****************************/
-aside.search > section {
-  flex-flow: column nowrap;
-}
-
 .search-result-title {
   font-weight: 700;
 }
@@ -909,262 +770,118 @@ aside.search > section {
   font-style: normal;
 }
 
-/* sections/_default *****************************/
-nav, main, header, footer, .asides, section {
-  display: flex;
+/* sections *****************************/
+main, header, footer, .asides, section {
+  padding: var(--fitz);
+  margin: var(--fitz);
 }
 
-/* sections/asides *****************************/
-.asides {
-  padding: var(--fitz-2);
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
-}
 .asides > aside {
-  margin-bottom: var(--fitz-2);
-}
-@media (min-width: 72em) {
-  .asides {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-/* sections/footer *****************************/
-footer {
-  padding: 1em;
-  flex-direction: column;
-}
-
-/* sections/header *****************************/
-header {
-  align-items: center;
-  align-content: flex-start;
-  justify-content: space-around;
-}
-header .logo {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-}
-header .logo a {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
   padding: var(--fitz);
-}
-header .logo a img {
-  height: 3em;
-  margin: 0.5em;
-}
-header .logo a h1 {
-  font-size: 1.2em;
-  letter-spacing: 0.1em;
-  padding-left: 0.5em;
-  text-align: center;
-}
-header nav.main {
-  display: none;
-}
-header .contact {
-  width: var(--header-height);
-  height: var(--header-height);
-  padding: var(--fitz);
-  justify-content: center;
-  display: none;
-}
-header .contact p {
-  font-size: 0.8em;
-  text-align: center;
-}
-header .toggle {
-  width: 3.5em;
-  height: 3em;
-  font-size: 2.5em;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-}
-header.expand {
-  height: calc(100vh - calc( var(--fitz-2) * 2 ));
-  flex-flow: row wrap;
-}
-header.expand .logo {
-  order: 1;
-  height: calc(var(--header-height)-var(--fitz-2));
-}
-header.expand .toggle {
-  order: 2;
-  height: calc(var(--header-height)-var(--fitz-2));
-}
-header.expand nav {
-  display: flex;
-  flex-flow: column;
-  order: 3;
-  width: 100%;
-}
-header.expand .contact {
-  display: flex;
-  order: 4;
-}
-@media (min-width: 36em) {
-  header .logo img {
-    height: 5em;
-  }
-  header .logo > a > h1 {
-    font-size: 1em;
-  }
-}
-@media (min-width: 54em) {
-  header .logo {
-    width: auto;
-    height: auto;
-    flex-flow: column;
-    padding: var(--fitz);
-  }
-  header .logo a {
-    flex-direction: column;
-  }
-  header .logo a img {
-    width: auto;
-    height: 5em;
-  }
-  header .logo a h1 {
-    font-size: 1em;
-    letter-spacing: 0.1em;
-    padding-left: 0.1em;
-    text-align: center;
-  }
-  header .toggle {
-    display: none;
-  }
-  header .contact {
-    display: flex;
-    width: auto;
-    height: auto;
-  }
-  header nav.main {
-    display: flex;
-  }
+  margin: var(--fitz);
 }
 
-/* on/main *****************************/
-main {
-  flex-flow: column nowrap;
-}
-
-/* sections/nav *****************************/
-nav {
-  flex-wrap: wrap;
-  align-content: space-around;
-  justify-content: center;
-}
+/* sections/main *****************************/
 nav a {
   padding: 0.25em 1em;
   margin-left: 0.1em;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  text-align: center;
 }
 nav.breadcrumbs {
   width: auto;
 }
-nav.tree {
-  background: var(--color-bg);
-}
-nav.tree ul {
-  text-align: left;
-}
-nav.tree ul a {
-  text-align: left;
-  display: block;
-}
 
 /* templates/_default *****************************/
 body {
-  --bg: var(--color-2-darker);
+  --bg: #ccc;
   background: var(--bg);
   padding: var(--fitz);
-  display: flex;
-  flex-flow: column;
-  align-content: center;
-  justify-content: flex-start;
 }
 body > footer, body > .asides, body > main, body > header {
-  margin: var(--fitz);
+  --bg: hsla(255,100%,100%,.3);
+  background: var(--bg);
 }
-body > header {
-  color: var(--color-fg);
-  background: var(--color-bg);
-  height: var(--header-height);
-  padding: var(--fitz-2);
-  overflow: hidden;
-  justify-content: space-around;
+body > header .logo a {
+  display: block;
+  padding: var(--fitz);
+}
+body > header .logo a img {
+  height: 3em;
+  margin: 0.5em auto;
+}
+body > header .logo a h1 {
+  font-size: 1.1em;
+  letter-spacing: 0.1em;
+  padding-left: 0.5em;
+  text-align: center;
+}
+body > header nav.main {
+  display: flex;
+  flex-wrap: wrap;
+}
+body > header .contact {
+  padding: var(--fitz);
+}
+body > header .contact p {
+  font-size: 0.8em;
+  text-align: center;
+}
+body > header .toggle {
+  width: 3.5em;
+  height: 3em;
+  font-size: 2.5em;
+}
+body > header.expand {
+  height: calc(100vh - calc( var(--fitz-2) * 2 ));
+}
+body > header.expand .logo {
+  order: 1;
+}
+body > header.expand .toggle {
+  order: 2;
+}
+body > header.expand nav {
+  width: 100%;
+}
+body > header.expand .contact {
+  order: 4;
 }
 body > main {
-  width: 100%;
-  margin: 0;
-  display: flex;
-  flex-flow: column;
   position: relative;
 }
 body > main > * {
+  background: var(--bg);
   margin: var(--fitz);
+  padding: var(--fitz);
 }
 body > main > .collection {
-  flex-flow: row;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(22em, 1fr));
-  justify-content: center;
   transition: position 0.5s;
 }
 body > main > .collection.modal {
   position: fixed;
-  background: black;
-  z-index: 10;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 10;
+  background: black;
 }
 body > main > .collection > * {
+  background: var(--bg);
   margin: var(--fitz);
+  padding: var(--fitz);
 }
 body > main > .collection > header {
-  color: var(--color-fg);
-  background: var(--color-bg);
-  padding: 0;
-  text-align: center;
   grid-column: 1/-1;
 }
 body > main > .collection .excerpt {
   /* article-card */
-  display: flex;
-  flex: column nowrap;
-  justify-content: space-between;
-  /* extends article.banner */
 }
 body > main > .collection .excerpt > figure > img {
   width: 100%;
   height: 100%;
   height: calc(var(--col) - 2em);
-}
-body > main > .collection .excerpt > header {
-  text-align: center;
-}
-body > main > .collection .excerpt > header > * {
-  text-align: center;
-}
-body > main > .collection .excerpt > .content {
-  align-content: flex-start;
-}
-body > main > .collection .excerpt > footer {
-  flex-flow: column nowrap;
 }
 body > main > .collection .excerpt > footer > aside {
   padding: 0;
@@ -1172,39 +889,45 @@ body > main > .collection .excerpt > footer > aside {
 body > main > .collection .excerpt > footer > aside > h1, body > main > .collection .excerpt > footer > aside h2 {
   display: none;
 }
-body > main > .collection .excerpt > footer > aside ul, body > main > .collection .excerpt > footer > aside li {
-  display: inline;
-}
 body > main > .collection .excerpt > footer > nav {
   text-align: right;
   padding: 0;
-  align-self: flex-end;
-  justify-content: right;
 }
 body > main > .collection .excerpt > footer .more {
   margin: 0 auto;
   text-align: center;
-  display: block;
-}
-body > main > .collection .excerpt > figure {
-  background: none;
-}
-body > main > section.form {
-  background: var(--color-bg);
-  flex-flow: column;
 }
 body > main > section.form form {
   width: 100%;
 }
-body > .asides {
-  color: var(--color-fg);
-  background: var(--color-bg);
-}
-body > footer {
-  color: var(--color-fg);
-  background: var(--color-bg);
+@media (min-width: 48em) {
+  body > header .logo img {
+    height: 5em;
+  }
+  body > header .logo > a > h1 {
+    font-size: 1em;
+  }
 }
 @media (min-width: 72em) {
+  body > header .logo {
+    padding: var(--fitz);
+  }
+  body > header .logo a img {
+    height: 5em;
+  }
+  body > header .logo a h1 {
+    font-size: 1em;
+    letter-spacing: 0.1em;
+    padding-left: 0.1em;
+  }
+  body > header .toggle {
+    display: none;
+  }
+  body > header nav.main > * {
+    display: block;
+  }
+}
+@media (min-width: 96em) {
   @supports (display: grid) {
     body {
       display: grid;
@@ -1215,34 +938,28 @@ body > footer {
     body > header {
       grid-area: header;
       height: auto;
-      flex-direction: column;
     }
     body > header > .logo img {
       height: 8em;
     }
     body > header > nav {
       padding: 1em 0;
-      flex-flow: column nowrap;
-      justify-content: center;
-    }
-    body > header > nav a {
-      text-align: center;
     }
     body > main {
       grid-area: main;
     }
     body > .asides {
       grid-area: asides;
-      justify-content: flex-start;
     }
     body > footer {
       grid-area: footer;
     }
   }
 }
-@media (min-width: 90em) {
+@media (min-width: 120em) {
   @supports (display: grid) {
     body > main {
+      display: grid;
       grid-template-areas: " article collection ";
       grid-template-columns: 48em 1fr;
     }

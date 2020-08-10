@@ -1,0 +1,21 @@
+/* templates/article *****************************/
+
+body.article {
+  > main {
+    > article {
+      // width: calc(50vw - var(--fitz-2));
+      &:only-child {
+        // width: calc(100% - var(--fitz-2));
+        figure {
+          // max-height: 50vh;
+        }
+      }
+    }
+
+    &[data-collection="0"] {
+      > .collection {
+        // width: calc(45vw - var(--fitz-2));
+      }
+    }
+  }
+}

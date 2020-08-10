@@ -1,0 +1,12 @@
+/* fonts *****************************/
+@import 'photon-icon';
+
+:root {
+  --font: serif;
+  --font-display: sans-serif;
+  --font-code: monospace;
+  --font-form: var(--font);
+  --font-icon: 'photon-icon';
+
+  --bullet: '✴';
+}

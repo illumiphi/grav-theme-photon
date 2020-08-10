@@ -1,0 +1,58 @@
+article.showcase {
+  cursor: pointer;
+  transition: 
+      box-shadow .5s,
+      background .5s;
+
+  height: 100%;
+
+  @supports (display: grid) {
+    display: grid;
+    grid-template-areas:
+      ' figure  '
+      ' header '
+      ' content '
+      ' footer  ';
+    grid-template-columns: 1fr;
+    // grid-template-rows: 60vh;
+  }
+
+  > * {
+  }
+
+  > figure {
+    width: auto;
+    height:100%;
+
+    > img {
+      object-fit: cover;
+    }
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  > header {
+    > h1 {
+    }
+  }
+
+  .article-share {
+    display: none;
+  }
+
+  &:hover {
+    box-shadow: .5em .5em .7em rgba(0,0,0,.4);
+
+    .more {
+    }
+
+    a:hover {
+    }
+  }
+
+  .more {
+    // align-self: flex-end;
+  }
+}

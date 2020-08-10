@@ -1,38 +1,13 @@
 nav {
 
-  @extend %section-default;
-
-  // position: relative;
-
-  flex-wrap: wrap;
-
-  align-content: space-around;
-  justify-content: center;
-
   a {
     padding: .25em 1em;
     margin-left: .1em;
-
-    // font-size: .9em;
     letter-spacing: .1em;
     text-transform: uppercase;
-    text-align: center;
-
   }
 
   &.breadcrumbs {
     width: auto;
   }
-
-  &.tree {
-    background: var(--color-bg);
-    ul {
-      text-align: left;
-      a {
-        text-align: left;
-        display: block;
-      }
-    }
-  }
-
 }

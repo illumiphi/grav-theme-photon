@@ -6,17 +6,17 @@
           <table>
 {%   for key, val in dataObj %}
 {%     if key != "@type" %}
-              <tr>
-                <th>{{ t('PHOTON.' ~ dataKey ~ '.' ~ key) }}</th>
-                <td>
+            <tr>
+              <th>{{ t('PHOTON.' ~ dataKey ~ '.' ~ key) }}</th>
+              <td>
 {%       if val is iterable %}
                     {{ val.count }}
                     {{ this.printData( dataKey ~ '.' ~ key, val ) }}
 {%       else %}
                     {{ val }}
 {%       endif %}
-                </td>
-              </tr>
+              </td>
+            </tr>
 {%     endif %}
 {%   endfor %}
           </table>

@@ -20,44 +20,48 @@
   }
 
   body {
+    --bg: transparent;
     background: transparent;
-
     // width: 8.5in;
-//     height: 11in;
+    // height: 11in;
 
-    grid-template-columns: 1fr;
     display: block;
 
     > header {
       width: 100%;
-      flex-direction: row;
+      // flex-direction: row;
       // justify-content: center;
-      align-content: center;
+      // align-content: center;
+
       > h1 {
         font-size: 1.1em;
       }
+
       > nav {
         display: none;
       }
+
       img {
         width: 5em;
       }
     }
+    
     > footer,
     > .asides {
       display: none;
-  	}
+    }
 
     article {
       > figure {
-//         width: 80%;
-//         padding: 5em;
+        // width: 80%;
+        // padding: 5em;
       }
 
       > footer {
         > .article-share {
           display: none;
         }
+
         > nav.sibling {
           display: none;
         }

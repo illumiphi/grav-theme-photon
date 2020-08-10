@@ -1,0 +1,34 @@
+article.excerpt {
+  cursor: pointer;
+  transition: 
+      box-shadow .5s, 
+      background .5s;
+
+  > * {
+  }
+
+  > header {
+    > h1 {
+    }
+  }
+
+  .article-share {
+    display: none;
+  }
+
+  .more {
+    // align-self: flex-end;
+  }
+
+  &:hover {
+    --bg: var(--color-key-lighter);
+    box-shadow: .5em .5em .7em rgba(0,0,0,.4);
+
+    .more {
+    }
+
+    a:hover {
+    }
+  }
+
+}

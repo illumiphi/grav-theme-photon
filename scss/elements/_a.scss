@@ -1,0 +1,40 @@
+// default anchor tag
+
+a {
+  --color: var(--color-key);
+  --bg: none;
+  --a-active-color: var(--color-2-dark);
+  // --a-active-bullet: '✴';
+  --hover-color: var(--color-bg);
+  --hover-bg: var(--color-key);
+  color: var(--color);
+  background: var(--bg);
+
+  text-decoration: none;
+
+  &:link {
+    color: var(--color);
+  }
+
+  &:visited {
+    color: var(--color);
+  }
+
+  &:hover {
+    --color: var(--hover-color);
+    --bg: var(--hover-bg);
+  }
+
+  &:active {
+    color: var(--a-active-color);
+  }
+
+  &.active {
+    font-weight: 700;
+
+    &::before, &::after {
+      content: var(--bullet);
+      padding: 0 var(--fitz);
+    }
+  }
+}

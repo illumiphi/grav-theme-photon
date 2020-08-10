@@ -1,0 +1,38 @@
+
+blockquote {
+  display: block;
+  margin: var(--fitz-2) auto;
+  font-size: 1.2em;
+
+  // left vertical rule
+  &::before {
+    content: '';
+    height: 100%;
+    width: .1em;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: var(--color-key-dark);
+  }
+
+  //nested blockquote
+  > blockquote {
+    margin: 0;
+    padding-bottom: 0;
+    font-style: italic;
+
+    &::before {
+      content: var(--bullet);
+      display: inline;
+      padding-top: var(--fitz-2);
+      background: inherit;
+    }
+  }
+
+  p {
+    position: relative;
+    margin-bottom: 0;
+    overflow: visible;
+  }
+}
