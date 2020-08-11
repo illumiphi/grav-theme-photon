@@ -7,7 +7,7 @@
 {%   set nextPage = siblings.prevSibling(page.path) %}
 {% endif %}
 {% if nextPage.url or prevPage.url %}
-          <nav class="sibling">
+          <nav class="context">
 {%   if prevPage.url %}
             <a href="{{ prevPage.url }}" class="prev" data-tooltip="{{ prevPage.title }}" title="{{ prevPage.title }}" >Prev</a>
 {%   else %}

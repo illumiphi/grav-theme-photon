@@ -1,0 +1,59 @@
+
+  > main {
+    @extend %body-section-default;
+    grid-area: main;
+    // position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+
+    > header {
+    }
+
+    > article {
+      > figure {
+        // max-height: 60vh;
+      }
+    }
+
+    > .collection {
+      // display: grid;
+      // grid-template-columns: repeat( auto-fit, minmax( 22em, 1fr ) );
+      transition: position .5s;
+
+      &.modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+        background: black;
+      }
+
+      > * {
+        background: var(--bg);
+        margin: var(--fitz);
+        padding: var(--fitz);
+      }
+
+      > header {
+        grid-column: 1 / -1;
+      }
+
+      .excerpt {
+        @include article-card;
+
+        > figure {
+        }
+
+        .article-tags {
+        }
+      }
+    }
+
+    > section.form {
+      form {
+        width: 100%;
+      }
+    }
+  }

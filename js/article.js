@@ -15,7 +15,7 @@ articles.forEach( article => {
 function toggleMenu() {
   var menu = document.querySelector("body > header > nav.main");
   if (menu.style.display === "none") {
-    menu.style.display = "block";
+    menu.style.display = "flex";
   } else {
     menu.style.display = "none";
   }

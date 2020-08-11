@@ -423,10 +423,51 @@ button:hover {
 article {
   padding: var(--fitz);
   margin: var(--fitz);
+  display: grid;
+  grid-template-areas: " context context " " header figure " " content figure " " data figure " " footer footer ";
 }
 article > * {
   padding: var(--fitz);
   margin: var(--fitz);
+}
+article > nav.context {
+  grid-area: context;
+  position: relative;
+  font-size: 1em;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+article > nav.context .breadcrumbs {
+  text-align: center;
+}
+article > nav.context .breadcrumbs a {
+  display: block;
+  padding: 0;
+}
+article > nav.context .breadcrumbs a::after {
+  content: "›";
+  padding: 0 0.25em;
+}
+article > nav.context > a.prev {
+  justify-content: flex-start;
+}
+article > nav.context > a.prev:before {
+  content: "‹";
+  height: 100%;
+  padding-right: 0.5em;
+}
+article > nav.context > a.prev:after {
+  content: "";
+}
+article > nav.context > a.next {
+  justify-content: flex-end;
+}
+article > nav.context > a.next:after {
+  content: "›";
+  height: 100%;
+  padding-left: 0.5em;
 }
 article > figure {
   grid-area: figure;
@@ -444,6 +485,7 @@ article > figure:empty {
 }
 article > header {
   grid-area: header;
+  width: 100%;
 }
 article > header > h1 {
   line-height: 1;
@@ -455,29 +497,15 @@ article > header > h2 {
   font-size: 0.9em;
   letter-spacing: 0.1em;
 }
-article > header > nav a {
-  padding: 0;
-}
-article > header > nav a::after {
-  content: "›";
-  padding: 0 0.25em;
-}
 article > .content {
   grid-area: content;
 }
-article > .content > * {
-  widows: 2;
-  orphans: 2;
-  margin: var(--fitz);
-}
-article > .content > *:last-child {
-  margin-bottom: 0;
+article > .content > * + * {
+  margin-top: var(--fitz);
 }
 article > .content > .summary {
   border-top: 1px solid var(--color-2-dark);
   border-bottom: 1px solid var(--color-2-dark);
-  padding: var(--fitz);
-  margin: var(--fitz);
 }
 article > .content > .summary ul, article > .content > .summary li {
   margin: var(--fitz);
@@ -633,43 +661,12 @@ article > .gallery.modal > .list > figure {
 article > .gallery.modal > .list > figure > img {
   width: 100%;
 }
-article .sibling {
-  grid-area: sibling;
-  position: relative;
-  font-size: 1em;
-  width: 100%;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-}
-article .sibling > a.prev {
-  justify-content: flex-start;
-}
-article .sibling > a.prev:before {
-  content: "‹";
-  height: 100%;
-  padding-right: 0.5em;
-}
-article .sibling > a.prev:after {
-  content: "";
-}
-article .sibling > a.next {
-  justify-content: flex-end;
-}
-article .sibling > a.next:after {
-  content: "›";
-  height: 100%;
-  padding-left: 0.5em;
-}
-article .breadcrumbs {
-  text-align: center;
-}
-article .breadcrumbs a {
-  display: block;
-}
 article.excerpt {
   cursor: pointer;
   transition: box-shadow 0.5s, background 0.5s;
+}
+article.excerpt > figure {
+  float: right;
 }
 article.excerpt .article-share {
   display: none;
@@ -797,10 +794,24 @@ body {
   --bg: #ccc;
   background: var(--bg);
   padding: var(--fitz);
+  display: flex;
+  flex-flow: column nowrap;
 }
 body > footer, body > .asides, body > main, body > header {
   --bg: hsla(255,100%,100%,.3);
   background: var(--bg);
+  margin: var(--fitz);
+  padding: var(--fitz);
+}
+body > footer > *, body > .asides > *, body > main > *, body > header > * {
+  background: var(--bg);
+  margin: var(--fitz);
+  padding: var(--fitz);
+}
+body > header {
+  grid-area: header;
+  display: flex;
+  flex-flow: row nowrap;
 }
 body > header .logo a {
   display: block;
@@ -818,7 +829,8 @@ body > header .logo a h1 {
 }
 body > header nav.main {
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content: center;
 }
 body > header .contact {
   padding: var(--fitz);
@@ -828,8 +840,6 @@ body > header .contact p {
   text-align: center;
 }
 body > header .toggle {
-  width: 3.5em;
-  height: 3em;
   font-size: 2.5em;
 }
 body > header.expand {
@@ -848,12 +858,9 @@ body > header.expand .contact {
   order: 4;
 }
 body > main {
-  position: relative;
-}
-body > main > * {
-  background: var(--bg);
-  margin: var(--fitz);
-  padding: var(--fitz);
+  grid-area: main;
+  display: flex;
+  flex-flow: column nowrap;
 }
 body > main > .collection {
   transition: position 0.5s;
@@ -900,75 +907,47 @@ body > main > .collection .excerpt > footer .more {
 body > main > section.form form {
   width: 100%;
 }
-@media (min-width: 48em) {
-  body > header .logo img {
-    height: 5em;
-  }
-  body > header .logo > a > h1 {
-    font-size: 1em;
-  }
+body > .asides {
+  grid-area: asides;
+  display: flex;
+  flex-flow: column nowrap;
 }
-@media (min-width: 72em) {
-  body > header .logo {
-    padding: var(--fitz);
-  }
-  body > header .logo a img {
-    height: 5em;
-  }
-  body > header .logo a h1 {
-    font-size: 1em;
-    letter-spacing: 0.1em;
-    padding-left: 0.1em;
-  }
-  body > header .toggle {
-    display: none;
-  }
-  body > header nav.main > * {
-    display: block;
-  }
+body > footer {
+  grid-area: footer;
+  display: flex;
+  flex-flow: row wrap;
 }
-@media (min-width: 96em) {
-  @supports (display: grid) {
-    body {
-      display: grid;
-      grid-template-areas: " header main " " asides main " " asides footer ";
-      grid-template-columns: var(--col) 1fr;
-      grid-template-rows: auto 1fr auto;
-    }
-    body > header {
-      grid-area: header;
-      height: auto;
-    }
-    body > header > .logo img {
-      height: 8em;
-    }
-    body > header > nav {
-      padding: 1em 0;
-    }
-    body > main {
-      grid-area: main;
-    }
-    body > .asides {
-      grid-area: asides;
-    }
-    body > footer {
-      grid-area: footer;
-    }
+@media (orientation: landscape) {
+  body {
+    display: grid;
+    grid-template-areas: " header main " " asides main " " asides footer ";
+    grid-template-columns: var(--col) 1fr;
+    grid-template-rows: auto 1fr auto;
   }
-}
-@media (min-width: 120em) {
-  @supports (display: grid) {
-    body > main {
-      display: grid;
-      grid-template-areas: " article collection ";
-      grid-template-columns: 48em 1fr;
-    }
-    body > main > article {
-      grid-area: article;
-    }
-    body > main > .collection {
-      grid-area: collection;
-    }
+  body > header {
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+  body > header > * {
+    width: 100%;
+  }
+  body > header > nav.main {
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+  body > .asides {
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+  body > .asides > * {
+    width: 100%;
+  }
+  body > footer {
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+  body > footer > * {
+    width: 100%;
   }
 }
 /* templates/article *****************************/
