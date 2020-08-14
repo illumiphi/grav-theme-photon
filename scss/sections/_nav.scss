@@ -1,13 +1,5 @@
 nav {
+  display: flex;
+  flex-flow: column nowrap;
 
-  a {
-    padding: .25em 1em;
-    margin-left: .1em;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-  }
-
-  &.breadcrumbs {
-    width: auto;
-  }
 }

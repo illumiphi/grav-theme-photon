@@ -1,14 +1,14 @@
 /* templates/_default *****************************/
 
 body {
-  --bg: #ccc;
-  background: var(--bg);
+  --body-bg: #ccc;
+  --bg: hsla(255,100%,100%,.3);
+  background: var(--body-bg);
   padding: var(--fitz);
   display: flex;
   flex-flow: column nowrap;
 
-  %body-section-default {
-    --bg: hsla(255,100%,100%,.3);
+  > * {
     background: var(--bg);
     margin: var(--fitz);
     padding: var(--fitz);
@@ -18,6 +18,9 @@ body {
       margin: var(--fitz);
       padding: var(--fitz);
     }
+  }
+  
+  %body-section-default {
   }
 
   @import 'header';
@@ -39,13 +42,13 @@ body {
 
     > header {
       flex-flow: column nowrap;
-      align-items: center;
+      align-items: stretch;
 
       > * {
-        width: 100%;
+        // width: 100%;
       }
 
-      > nav.main {
+      > nav {
         flex-flow: column nowrap;
         align-items: center;
       }
@@ -53,159 +56,37 @@ body {
 
     > .asides {
       flex-flow: column nowrap;
-      align-items: center;
+      align-items: stretch;
 
       > * {
-        width: 100%;
+        // width: 100%;
       }
     }
 
     > footer {
       flex-flow: column nowrap;
-      align-items: center;
+      align-items: stretch;
 
       > * {
-        width: 100%;
       }
     }
 
-    // > main {
-      // width: calc(100% - 30em);
-      // height: 100%;
-      // flex-basis: 100%;
-      // order: 4;
-    // }
-
-  }
-
-  @include media-bp(1) {
-    // > header {
-      // .logo {
-        // img {
-          // height: 5em;
-        // }
-
-        // > a > h1 {
-          // font-size: 1em;
-        // }
-      // }
-    // }
-  }
-
-  @include media-bp(2) {
-    // > header{
-      // .logo {
-        // padding: var(--fitz);
-
-        // a {
-          // img {
-            // // width: auto; //calc( var(--header-height) - 2em);
-            // height: 5em;
-          // }
-
-          // h1 {
-            // font-size: 1em;
-            // letter-spacing: .1em;
-            // padding-left: .1em;
-          // }
-        // }
-      // }
-
-      // .toggle {
-        // display: none;
-      // }
-
-      // .contact {
-        // // display: flex;
-        // // width: auto; //var(--header-height);
-        // // height: auto; //var(--header-height);
-      // }
-
-      // nav.main {
-        // > * {
-          // display: block;
-        // }
-      // }
-    // }
-  }
-
-  @include media-bp(3) {
-    // @supports (display: grid) {
-      // display: grid;
-      // grid-template-areas:
-          // " header main "
-          // " asides main "
-          // " asides footer ";
-      // grid-template-columns: var(--col)   1fr;
-      // grid-template-rows: auto 1fr auto;
-
-      // > header {
-        // grid-area: header;
-        // height: auto; 
-        // //remove initial fixed height
-
-        // > .logo {
-          // img {
-            // height:8em;
-          // }
-        // }
-
-        // > nav {
-          // padding: 1em 0;
-
-          // a {
-          // }
-        // }
-      // }
-
-      // > main {
-        // grid-area: main;
-      // }
-
-      // > .asides {
-        // grid-area: asides;
-        // // justify-content: flex-start;
-      // }
-
-      // > footer {
-        // grid-area: footer;
-      // }
-    // }
-  }
-
-  @include media-bp(4) {
-    // @supports (display: grid) {
-      // > main {
-        // display: grid;
-        // grid-template-areas:
-          // " article collection "
-          // ;
-        // grid-template-columns: 48em   1fr;
-
-        // > article {
-          // grid-area: article;
-
-          // // height: 100%;
-        // }
-
-        // > .collection {
-          // grid-area: collection;
-
-          // > .excerpt {
-            // // @include article-banner;
-          // }
-        // }
-      // }
-    // }
-  }
-
-  @include media-bp(6) {
     > main {
-      > .collection {
-        > .excerpt {
-          // @include article-banner;
-        }
-      }
+    }
+
+  }
+
+  @media (min-width: 48em) {
+  }
+
+  @media (min-width: 72em) {
+    @media (orientation: landscape) {
+      display: grid;
+      grid-template-areas:
+          " header main asides"
+          " footer main asides";
+      grid-template-columns: var(--col)  1fr  var(--col); 
+      // grid-template-rows: auto 1fr auto;
     }
   }
 }

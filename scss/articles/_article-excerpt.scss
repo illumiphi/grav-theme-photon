@@ -13,7 +13,6 @@ article.excerpt {
   }
 
   > figure {
-    float: right;
   }
 
   .article-share {
@@ -21,7 +20,7 @@ article.excerpt {
   }
 
   .more {
-    // align-self: flex-end;
+    align-self: flex-end;
   }
 
   &:hover {

@@ -425,6 +425,7 @@ article {
   margin: var(--fitz);
   display: grid;
   grid-template-areas: " context context " " header figure " " content figure " " data figure " " footer footer ";
+  grid-template-columns: 1fr minmax(auto, 50%);
 }
 article > * {
   padding: var(--fitz);
@@ -474,7 +475,6 @@ article > figure {
   overflow: hidden;
 }
 article > figure > img {
-  width: 100%;
   height: 100%;
   margin: 0 auto;
   object-fit: cover;
@@ -661,15 +661,16 @@ article > .gallery.modal > .list > figure {
 article > .gallery.modal > .list > figure > img {
   width: 100%;
 }
+
 article.excerpt {
   cursor: pointer;
   transition: box-shadow 0.5s, background 0.5s;
 }
-article.excerpt > figure {
-  float: right;
-}
 article.excerpt .article-share {
   display: none;
+}
+article.excerpt .more {
+  align-self: flex-end;
 }
 article.excerpt:hover {
   --bg: var(--color-key-lighter);
@@ -688,6 +689,7 @@ article.showcase {
   }
 }
 article.showcase > figure {
+  grid-area: figure;
   width: auto;
   height: 100%;
 }
@@ -697,6 +699,15 @@ article.showcase > figure > img {
 article.showcase > figure:empty {
   display: none;
 }
+article.showcase > header {
+  grid-area: header;
+}
+article.showcase .content {
+  grid-area: content;
+}
+article.showcase footer {
+  grid-area: footer;
+}
 article.showcase .article-share {
   display: none;
 }
@@ -705,23 +716,20 @@ article.showcase:hover {
 }
 /* asides *****************************/
 /* asides/aside *****************************/
-aside {
-  text-align: center;
-}
-aside h1, aside h2 {
+aside h1, aside h2, nav h1, nav h2 {
   font-variant: small-caps;
   text-decoration: underline;
   font-size: 1.1em;
 }
-aside ul {
+aside ul, nav ul {
   list-style: none;
   margin: 0 1em;
 }
-aside ul > li {
+aside ul > li, nav ul > li {
   margin: 0.4em;
   width: 100%;
 }
-aside ul > li > span {
+aside ul > li > span, nav ul > li > span {
   font-size: 0.75em;
   font-weight: bold;
   padding: 0.25em;
@@ -729,25 +737,21 @@ aside ul > li > span {
   background: var(--color-1);
   border-radius: 20% 20%;
 }
-aside > a {
+aside > a, nav > a {
   display: list-item;
   list-style: none;
 }
-aside p {
+aside p, nav p {
   padding-bottom: 0.2em;
 }
-aside.org {
-  font-size: 0.7em;
-  text-align: center;
-}
-aside.article-share ul, aside.follow ul {
+aside.article-share ul, aside.follow ul, nav.article-share ul, nav.follow ul {
   font-family: var(--font-icon);
   list-style: none;
 }
-aside.article-share ul li, aside.follow ul li {
+aside.article-share ul li, aside.follow ul li, nav.article-share ul li, nav.follow ul li {
   width: auto;
 }
-aside.article-share ul a, aside.follow ul a {
+aside.article-share ul a, aside.follow ul a, nav.article-share ul a, nav.follow ul a {
   text-transform: inherit;
   padding: 0.3em;
   font-size: 1.1em;
@@ -779,31 +783,26 @@ main, header, footer, .asides, section {
 }
 
 /* sections/main *****************************/
-nav a {
-  padding: 0.25em 1em;
-  margin-left: 0.1em;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-nav.breadcrumbs {
-  width: auto;
+nav {
+  display: flex;
+  flex-flow: column nowrap;
 }
 
 /* templates/_default *****************************/
 body {
-  --bg: #ccc;
-  background: var(--bg);
+  --body-bg: #ccc;
+  --bg: hsla(255,100%,100%,.3);
+  background: var(--body-bg);
   padding: var(--fitz);
   display: flex;
   flex-flow: column nowrap;
 }
-body > footer, body > .asides, body > main, body > header {
-  --bg: hsla(255,100%,100%,.3);
+body > * {
   background: var(--bg);
   margin: var(--fitz);
   padding: var(--fitz);
 }
-body > footer > *, body > .asides > *, body > main > *, body > header > * {
+body > * > * {
   background: var(--bg);
   margin: var(--fitz);
   padding: var(--fitz);
@@ -827,10 +826,16 @@ body > header .logo a h1 {
   padding-left: 0.5em;
   text-align: center;
 }
-body > header nav.main {
+body > header nav {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+}
+body > header nav a {
+  padding: 0.25em 1em;
+  margin-left: 0.1em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 body > header .contact {
   padding: var(--fitz);
@@ -926,30 +931,29 @@ body > footer {
   }
   body > header {
     flex-flow: column nowrap;
-    align-items: center;
+    align-items: stretch;
   }
-  body > header > * {
-    width: 100%;
-  }
-  body > header > nav.main {
+  body > header > nav {
     flex-flow: column nowrap;
     align-items: center;
   }
   body > .asides {
     flex-flow: column nowrap;
-    align-items: center;
-  }
-  body > .asides > * {
-    width: 100%;
+    align-items: stretch;
   }
   body > footer {
     flex-flow: column nowrap;
-    align-items: center;
-  }
-  body > footer > * {
-    width: 100%;
+    align-items: stretch;
   }
 }
+@media (min-width: 72em) and (orientation: landscape) {
+  body {
+    display: grid;
+    grid-template-areas: " header main asides" " footer main asides";
+    grid-template-columns: var(--col) 1fr var(--col);
+  }
+}
+
 /* templates/article *****************************/
 
 /*# sourceMappingURL=photon.css.map */

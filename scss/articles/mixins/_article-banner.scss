@@ -62,26 +62,4 @@
       // justify-content: flex-end;
     }
   }
-
-  @include media-bp(2) {
-    @supports (display: grid) {
-
-      display: grid;
-
-      grid-template-areas:
-        ' figure header '
-        ' figure content '
-        ' figure footer';
-
-      grid-template-columns:  calc(var(--col) / 2) 1fr;
-      grid-template-rows:  auto 1fr auto;
-
-      > footer {
-        // flex-flow: column;
-      }
-
-      &:nth-child(even) {
-      }
-    }
-  }
 }

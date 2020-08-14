@@ -1,7 +1,10 @@
-      <nav class="main">
+{# {% set coll = page.collection({'items':{'@taxonomy':{'photon': 'header'}},'order': {'by': 'default', 'dir': 'asc'}}) %} #}
+{# nav_list: collection of pages #}
+      <nav aria-label="{{ nav_title }}">
+        <h1>{{ nav_title }}</h1>
         <a href="javascript:void(0);" class="toggle" onclick="toggleMenu()">✴</a>
-{% for p in pages.children %}
-{%   if p.visible %}
+{% for p in nav_list %}
+{%   if p.published %}
 {%     if p.active or p.activeChild %}
 {%       set active_class = (p.active or p.activeChild) ? ' class="active"' : '' %}
         <a href="{{ p.url }}" class="active" title="{{ p.header.subtitle }}" aria-current="page">{{ p.menu }}</a>

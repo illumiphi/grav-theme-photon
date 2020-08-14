@@ -1,7 +1,7 @@
 /* asides/aside *****************************/
 
-aside {
-  text-align: center;
+aside, nav {
+  // text-align: center;
 
   // display: flex;
   // flex-flow: column nowrap;
@@ -43,12 +43,6 @@ aside {
 
   p {
     padding-bottom: .2em;
-  }
-
-  &.org {
-    font-size: .7em;
-    text-align: center;
-    // padding: 0 .5em;
   }
 
   &.article-share, &.follow {
