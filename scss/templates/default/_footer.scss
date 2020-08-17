@@ -1,8 +1,6 @@
 
   > footer {
     @extend %body-section-default;
-    grid-area: footer;
     display: flex;
     flex-flow: row wrap;
-
   }

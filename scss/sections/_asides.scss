@@ -1,5 +1,6 @@
 .asides {
   @extend %section-default;
+  grid-area: asides;
 
   > aside {
     padding: var(--fitz);

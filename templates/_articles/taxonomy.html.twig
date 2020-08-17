@@ -7,6 +7,9 @@
           <h1>{{ article.title }}</h1>
           <h2>{{ uri.param('category') }}</h2>
         </header>
-{% include "_asides/list-categories.html.twig" %}
+{% include '_asides/list-taxonomy.html.twig' 
+        with {'tax_type':'category', 'nav_title':'Categories'} %}
+{% include '_asides/list-taxonomy.html.twig' 
+        with {'tax_type':'tag', 'nav_title':'Tags'} %}
         <!-- user/themes/photon/templates/_articles/_block/taxonomy.html.twig -->
       </article>

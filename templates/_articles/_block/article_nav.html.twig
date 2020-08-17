@@ -2,7 +2,11 @@
 {%   set prevPage = article.nextSibling %}
 {%   set nextPage = article.prevSibling %}
 {% else %}
-{%   set siblings = pages.children %}
+{%   set siblings = page.collection(
+      {'items':{ '@taxonomy':{'photon': 'header'} },
+        'order': {'by': 'default', 'dir': 'asc'}}
+    ) %}
+{# {%   set siblings = pages.children %} #}
 {%   set prevPage = siblings.nextSibling(page.path) %}
 {%   set nextPage = siblings.prevSibling(page.path) %}
 {% endif %}

@@ -1,7 +1,6 @@
 
   > .asides {
     @extend %body-section-default;
-    grid-area: asides;
     display: flex;
     flex-flow: column nowrap;
   }

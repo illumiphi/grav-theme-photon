@@ -10,7 +10,10 @@
 {% endif %}
         </a>
       </div>
-{%  set menu_header = page.collection({'items':{'@taxonomy':{'photon': 'header'}},'order': {'by': 'default', 'dir': 'asc'}}) %}
-{% include '_sections/nav.html.twig' with {'nav_list':menu_header} %}
+{% set menu_header = page.collection(
+      {'items':{ '@taxonomy':{'photon': 'header'} },
+        'order': {'by': 'default', 'dir': 'asc'}}
+    ) %}
+{% include '_sections/nav.html.twig' with {'nav_list':menu_header, 'nav_title':'Header'} %}
 {% include '_asides/motto.html.twig' %}
     </header>

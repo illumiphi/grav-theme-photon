@@ -1,16 +1,17 @@
-{# {% set coll = page.collection({'items':{'@taxonomy':{'photon': 'header'}},'order': {'by': 'default', 'dir': 'asc'}}) %} #}
 {# nav_list: collection of pages #}
+{# nav_title: label for list #}
       <nav aria-label="{{ nav_title }}">
-        <h1>{{ nav_title }}</h1>
-        <a href="javascript:void(0);" class="toggle" onclick="toggleMenu()">✴</a>
+        <input type="checkbox" id="nav-{{ nav_title }}-toggle" role="none">
+        <label for="nav-{{ nav_title }}-toggle" role="none">
+          <h1>{{ nav_title }}</h1>
+        </label>
+        <ul>
 {% for p in nav_list %}
 {%   if p.published %}
-{%     if p.active or p.activeChild %}
-{%       set active_class = (p.active or p.activeChild) ? ' class="active"' : '' %}
-        <a href="{{ p.url }}" class="active" title="{{ p.header.subtitle }}" aria-current="page">{{ p.menu }}</a>
-{%     else %}
-        <a href="{{ p.url }}" title="{{ p.header.subtitle }}">{{ p.menu }}</a>
-{%     endif %}
+{%     set selected = (p.active or p.activeChild) ? ' aria-selected="true"' : '' %}
+{%     set current = (p.url == page.url) ? ' aria-current="true"' : '' %}
+          <li><a href="{{ p.url }}" title="{{ p.header.subtitle }}" {{ selected }} {{ current }}>{{ p.menu }}</a></li>
 {%   endif %}
 {% endfor %}
+        </ul>
       </nav>

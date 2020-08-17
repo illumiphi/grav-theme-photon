@@ -1,8 +1,6 @@
 
   > main {
     @extend %body-section-default;
-    grid-area: main;
-    // position: relative;
     display: flex;
     flex-flow: column nowrap;
 

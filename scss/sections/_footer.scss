@@ -1,3 +1,4 @@
 footer {
   @extend %section-default;
+  grid-area: footer;
 }

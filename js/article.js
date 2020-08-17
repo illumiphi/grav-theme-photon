@@ -1,6 +1,6 @@
 // collect listing articles
 // var articles = document.querySelectorAll(".showcase article, .welcome article, .featured article, .index main article, .archive main article")
-var articles = document.querySelectorAll(".excerpt, .showcase")
+var articles = document.querySelectorAll(".excerpt")
 
 // set click event for search
 
@@ -12,22 +12,11 @@ articles.forEach( article => {
   }
 })
 
-function toggleMenu() {
-  var menu = document.querySelector("body > header > nav.main");
-  if (menu.style.display === "none") {
-    menu.style.display = "flex";
-  } else {
-    menu.style.display = "none";
-  }
-}
-
 var collection = document.querySelector(".collection")
 function toggleCollection() {
   collection.classList.toggle("modal");
 }
 
-var gallery = document.querySelector(".gallery")
-var galleryPanel = gallery.querySelector(".panel")
 
 function toggleGallery() {
   gallery.classList.toggle("modal");
@@ -40,10 +29,12 @@ function mouseoverGalleryFigure(e) {
   galleryPanel.style.backgroundPosition = 'center';
 }
 
-var galleryFigures = document.querySelectorAll(".gallery > .list > figure");
-galleryFigures.forEach( figure => {
-  // if (figure.dataset.url) {
-    figure.addEventListener("click", toggleGallery );
-    figure.addEventListener("mouseenter", mouseoverGalleryFigure );
-  // }
-})
+// var gallery = document.querySelector(".gallery")
+// var galleryPanel = gallery.querySelector(".panel")
+// var galleryFigures = document.querySelectorAll(".gallery > .list > figure");
+// galleryFigures.forEach( figure => {
+  // // if (figure.dataset.url) {
+    // figure.addEventListener("click", toggleGallery );
+    // figure.addEventListener("mouseenter", mouseoverGalleryFigure );
+  // // }
+// })

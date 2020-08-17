@@ -1,10 +1,8 @@
 
   > header {
     @extend %body-section-default;
-    grid-area: header;
     display: flex;
     flex-flow: row nowrap;
-
     
     .logo {
       a {
@@ -30,9 +28,18 @@
       flex-flow: row wrap;
       justify-content: center;
 
+      h1 {
+        display: none;
+      }
+
+      label::after {
+        display: block;
+        width: 100%;
+      }
+
       a {
-        padding: .25em 1em;
-        margin-left: .1em;
+        // padding: .25em 1em;
+        // margin-left: .1em;
         letter-spacing: .1em;
         text-transform: uppercase;
       }
@@ -44,33 +51,6 @@
       p {
         font-size: .8em;
         text-align: center;
-      }
-
-    }
-
-    .toggle {
-      // width: 3.5em;
-      // height: 3em;
-      font-size: 2.5em;
-    }
-
-    &.expand {
-      height: calc(100vh - calc( var(--fitz-2) * 2 ));
-
-      .logo {
-        order: 1;
-      }
-
-      .toggle {
-        order: 2;
-      }
-
-      nav {
-        width: 100%;
-      }
-
-      .contact {
-        order: 4;
       }
     }
   }

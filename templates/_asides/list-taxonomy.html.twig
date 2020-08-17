@@ -1,12 +1,25 @@
-{% if taxonomy and config.plugins.taxonomylist.enabled %}
-{%   set taxlist = taxonomylist.get() %}
-      <aside class="categories">
-        <h2>Categories</h2>
-{%   if taxlist %}
-{%     for tax, value in taxlist[taxonomy] %}
-{%       set active = uri.param(taxonomy) == tax ? ' active' : '' %}
-        <a class="{{ active }}" href="/search/taxonomy/{{ taxonomy }}{{ config.system.param_sep }}{{ tax|e('url') }}">{{ tax }}</a>
-{%     endfor %}
-{%   endif %}
-      </aside>
+{# requires:
+      tax_type: tag or category or other
+      nav_title: display and aria name
+#}
+{% if config.plugins.taxonomylist.enabled %}
+{%   set tax_list = taxonomylist.get()[tax_type] %}
 {% endif %}
+      <nav aria-label="{{ nav_title }}">
+        <input type="checkbox" id="nav-{{ nav_title }}-toggle" role="none">
+        <label for="nav-{{ nav_title }}-toggle" role="none">
+          <h1>{{ nav_title }}</h1>
+        </label>
+{% if tax_list %}
+        <ul>
+{%   for tax, value in tax_list %}
+{#     tax_type is wrapped in () for eval in hash key #}
+{%     set count = taxonomy.findTaxonomy({(tax_type):tax})|length %}
+{%     set active = uri.param(tax_type) == tax ? ' active' : '' %}
+          <li>
+            <a class="{{ active }}" href="/search//taxonomy/{{ tax_type }}{{ config.system.param_sep }}{{ tax|e('url') }}">{{ tax }} [{{ count }}]</a>
+          </li>
+{%   endfor %}
+        </ul>
+{% endif %}
+      </nav>

@@ -1,17 +1,5 @@
 {% set nav_title = 'Featured'  %}
 {% set options = { items: {'@taxonomy.photon': 'featured' }, 'limit': 5, 'order': {'by': 'date', 'dir': 'desc'} } %}
 {% set nav_list = page.collection(options) %}
-{{ debug(nav_list.count) }}
 {% include '_sections/nav.html.twig' 
         with {'nav_list':nav_list, 'nav_title':nav_title} %}
-{# {% set options = { items: {'@self.descendants': p.url, '@taxonomy.photon': 'featured' }, 'limit': 5, 'order': {'by': 'date', 'dir': 'desc'}, 'pagination': true } %} #}
-{# {% set self_featured = page.collection(options) %} #}
-      {# <aside class="featured-list"> #}
-        {# <h2>Featured</h2> #}
-{# {% for p in self_featured %} #}
-          {# <a  href="{{ p.url }}">{{ p.title }}</a> #}
-{# {% endfor %} #}
-      {# </aside> #}
-{# {% set options = { items: {'@root.descendants': '/'}, 'limit': 5, 'order': {'by': 'date', 'dir': 'desc'} } %} #}
-{# {% set recent_pages = page.collection(options) %} #}
-{# {% set nav_list = page.evaluate([{'@page.children': page.url, '@taxonomy.photon':'featured'}]) %} #}
