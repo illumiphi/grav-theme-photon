@@ -26,15 +26,15 @@ nav {
         content: '^';
       }
       & ~ ul {
-        // display: block;
-        transform: scaleY(1);
+        display: block;
+        // transform: scaleY(1);
       }
     }
   }
 
   ul {
-    // display: none;
-    transform: scaleY(0);
+    display: none;
+    // transform: scaleY(0);
     transform-origin: top;
     width: 100%;
     margin: var(--fitz-half);
@@ -86,12 +86,14 @@ nav {
         }
         & ~ ul {
           display: none;
+          // transform: scaleY(0);
         }
       }
     }
 
     ul {
-      transform: scaleY(1);
+      display: block;
+      // transform: scaleY(1);
     }
   }
 }

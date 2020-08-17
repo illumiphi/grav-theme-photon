@@ -759,10 +759,10 @@ nav input:checked ~ label::after {
   content: "^";
 }
 nav input:checked ~ ul {
-  transform: scaleY(1);
+  display: block;
 }
 nav ul {
-  transform: scaleY(0);
+  display: none;
   transform-origin: top;
   width: 100%;
   margin: var(--fitz-half);
@@ -798,7 +798,7 @@ nav a[aria-current=true] {
     display: none;
   }
   nav ul {
-    transform: scaleY(1);
+    display: block;
   }
 }
 
