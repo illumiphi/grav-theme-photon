@@ -1,4 +1,10 @@
     <footer>
+{% set menu_footer = page.collection(
+      {'items':{ '@taxonomy':{'photon': 'footer'} },
+        'order': {'by': 'default', 'dir': 'asc'}}
+    ) %}
+{% include '_sections/nav.html.twig' 
+        with {'nav_list':menu_footer, 'nav_title':'Footer'} %}
 {% include '_asides/copyright.html.twig' %}
 {% include '_asides/follow.html.twig' %}
 {% include '_asides/contact.html.twig' %}
