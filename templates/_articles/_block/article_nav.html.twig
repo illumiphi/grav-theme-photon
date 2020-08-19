@@ -10,19 +10,19 @@
 {%   set prevPage = siblings.nextSibling(page.path) %}
 {%   set nextPage = siblings.prevSibling(page.path) %}
 {% endif %}
-{% if nextPage.url or prevPage.url %}
+{# {% if nextPage.url or prevPage.url %} #}
           <nav class="context">
-{%   if prevPage.url %}
+{% if prevPage.url %}
             <a href="{{ prevPage.url }}" class="prev" data-tooltip="{{ prevPage.title }}" title="{{ prevPage.title }}" >Prev</a>
-{%   else %}
+{% else %}
             <div class="prev"></div>
-{%   endif %}
-{%   include '_articles/_block/breadcrumbs.html.twig' 
-        with { 'article': article } %}
-{%   if nextPage.url %}
-            <a href="{{ nextPage.url }}" class="next" data-tooltip="{{ nextPage.title }}" title="{{ nextPage.title }}" >Next</a>
-{%   else %}
-            <div class="next"></div>
-{%   endif %}
-          </nav>
 {% endif %}
+{% include '_articles/_block/breadcrumbs.html.twig' 
+        with { 'article': article } %}
+{% if nextPage.url %}
+            <a href="{{ nextPage.url }}" class="next" data-tooltip="{{ nextPage.title }}" title="{{ nextPage.title }}" >Next</a>
+{% else %}
+            <div class="next"></div>
+{% endif %}
+          </nav>
+{# {% endif %} #}

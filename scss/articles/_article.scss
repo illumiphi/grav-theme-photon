@@ -127,10 +127,10 @@ article {
 
     > .summary {
       // background: var(--color-2-light);
-      border-top: 1px solid var(--color-2-dark);
-      border-bottom: 1px solid var(--color-2-dark);
-      // padding: var(--fitz);
-      // margin: var(--fitz);
+      border-top: 1px solid var(--color-key);
+      padding-top: var(--fitz);
+      border-bottom: 1px solid var(--color-key);
+      padding-bottom: var(--fitz);
       ul, li {
         margin: var(--fitz);
       }
@@ -141,24 +141,25 @@ article {
     }
 
     > ul, ol {
-      margin: 2em;
+      // margin: 2em;
     }
 
     > blockquote {
-      padding: var(--fitz-2);
-      border-left: var(--fitz-2) solid var(--color-1-light);
-      line-height: 1.7;
+      // padding: var(--fitz-2);
+      border-left: 1px solid var(--color-key);
+      padding-left: var(--fitz);
+      // line-height: 1.7;
       > blockquote {
         font-style: italic;
         list-style-type: square;
         padding-top: .5em;
-        font-size: .9em;
+        // font-size: .9em;
       }
       > ul {
         font-style: italic;
         list-style-type: square;
         padding-top: .5em;
-        font-size: .9em;
+        // font-size: .9em;
       }
     }
   }

@@ -1,4 +1,4 @@
-{% set options = { items: {'@self.descendants': article.url }, 'limit': 0, 'order': {'by': 'date', 'dir': 'desc'}, 'pagination': true } %}
+{% set options = { items: {'@page.descendants': article.url }, 'limit': 0, 'order': {'by': 'date', 'dir': 'desc'}, 'pagination': true } %}
 {% set self_descendents = page.collection(options) %}
 {% set featured_pages = [] %}
 {% for p in self_descendents %}
@@ -8,11 +8,11 @@
 {%     endif %}
 {%   endfor %}
 {% endfor %}
-{% if featured_pages %}
           <aside class="featured-list">
+{% if featured_pages %}
             <h2>Featured Pages</h2>
 {%   for p in featured_pages %}
               <a  href="{{ p.url }}">{{ p.title }}</a>
 {%   endfor %}
-          </aside>
 {% endif %}
+          </aside>
