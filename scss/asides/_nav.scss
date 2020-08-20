@@ -72,7 +72,6 @@ nav {
 
   @media (min-width: 48em) {
     label {
-
       &::after {
         font-family: var(--font-icon);
         content: '^';
@@ -84,6 +83,7 @@ nav {
         & ~ label::after {
           content: 'v';
         }
+
         & ~ ul {
           display: none;
           // transform: scaleY(0);

@@ -1,22 +1,22 @@
 @page {
-  // size: 8.5in 11in;
-  // margin: .75in;
+  size: 8.5in 11in;
+  margin: .25in;
 
-  // @top-center {
-  //  content: "photon";
-  // }
-  //
-  // @bottom-center {
-  //  content: counter(page);
-  // }
+  @top-center {
+   content: "photon";
+  }
+  
+  @bottom-center {
+   content: counter(page);
+  }
 }
 
 @media print {
   html {
-    // font-size: 12pt;
-    // width: 8.5in;
-    // display: block;
-    // background: transparent;
+    font-size: 12pt;
+    width: 7in;
+    display: block;
+    background: transparent;
   }
 
   body {
@@ -29,7 +29,7 @@
 
     > header {
       width: 100%;
-      // flex-direction: row;
+      flex-direction: row;
       // justify-content: center;
       // align-content: center;
 
@@ -42,35 +42,49 @@
       }
 
       img {
-        width: 5em;
+        // width: 5em;
       }
     }
     
-    > footer,
     > .asides {
       display: none;
     }
 
-    article {
-      > figure {
-        // width: 80%;
-        // padding: 5em;
-      }
+    > main {
+      display: block;
 
-      > footer {
-        > .article-share {
+      article {
+        > nav.context {
           display: none;
         }
 
-        > nav.sibling {
-          display: none;
+        > figure {
+          // width: 80%;
+          // padding: 5em;
+        }
+
+        > footer {
+          > nav, > aside {
+            display: none;
+          }
         }
       }
 
-      > nav {
+      .collection {
         display: none;
       }
     }
-  }
 
+
+    > footer {
+      > nav, > aside {
+        display: none;
+      }
+
+      > .contact {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
 }
