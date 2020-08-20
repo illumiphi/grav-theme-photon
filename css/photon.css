@@ -658,25 +658,17 @@ aside h1, aside h2, nav h1, nav h2 {
 }
 aside ul, nav ul {
   list-style: none;
-  margin: 0 1em;
 }
-aside ul > li, nav ul > li {
-  margin: 0.4em;
-}
-aside ul > li > span, nav ul > li > span {
-  font-size: 0.75em;
-  font-weight: bold;
-  padding: 0.25em;
-  margin-left: 0.5em;
-  background: var(--color-1);
-  border-radius: 20% 20%;
+aside ul li + li, nav ul li + li {
+  margin-top: 0.4em;
 }
 aside > a, nav > a {
   display: list-item;
   list-style: none;
 }
 aside p, nav p {
-  padding-bottom: 0.2em;
+  margin: var(--fitz-half);
+  padding: var(--fitz-half);
 }
 aside.article-share ul, aside.follow ul, nav.article-share ul, nav.follow ul {
   font-family: var(--font-icon);
@@ -689,47 +681,6 @@ aside.article-share ul a, aside.follow ul a, nav.article-share ul a, nav.follow 
   text-transform: inherit;
   padding: 0.3em;
   font-size: 1.1em;
-}
-
-/* asides/search *****************************/
-.search-result-title {
-  font-weight: 700;
-}
-
-.search-result {
-  font-weight: 300;
-}
-
-.search-keyword {
-  font-weight: 700;
-  font-style: normal;
-}
-
-/* sections *****************************/
-main, header, footer, .asides, section {
-  padding: var(--fitz);
-  margin: var(--fitz);
-}
-
-.asides {
-  grid-area: asides;
-}
-.asides > aside {
-  padding: var(--fitz);
-  margin: var(--fitz);
-}
-
-footer {
-  grid-area: footer;
-}
-
-header {
-  grid-area: header;
-}
-
-/* sections/main *****************************/
-main {
-  grid-area: main;
 }
 
 nav {
@@ -798,6 +749,33 @@ nav a[aria-current=true] {
   }
 }
 
+/* sections *****************************/
+main, header, footer, .asides, section {
+  padding: var(--fitz);
+  margin: var(--fitz);
+}
+
+.asides {
+  grid-area: asides;
+}
+.asides > aside {
+  padding: var(--fitz);
+  margin: var(--fitz);
+}
+
+footer {
+  grid-area: footer;
+}
+
+header {
+  grid-area: header;
+}
+
+/* sections/main *****************************/
+main {
+  grid-area: main;
+}
+
 /* templates/_default *****************************/
 body {
   --body-bg: #ccc;
@@ -861,6 +839,9 @@ body > header .contact p {
 body > main {
   display: flex;
   flex-flow: column nowrap;
+}
+body > main > article {
+  max-width: 48em;
 }
 body > main > .collection {
   transition: position 0.5s;
@@ -957,21 +938,6 @@ body.roman > main > article .content {
   counter-reset: h2;
   --indent: 2rem;
 }
-body.roman > main > article .content h1 {
-  font-size: 1.1em;
-  counter-reset: h2;
-  counter-increment: h1;
-  margin-left: var(--indent);
-}
-body.roman > main > article .content h1::before {
-  display: inline-block;
-  width: var(--indent);
-  margin-left: calc( -1 * var(--indent));
-  content: counter(h1, upper-roman) ".";
-}
-body.roman > main > article .content h1 ~ p, body.roman > main > article .content h1 ~ ol, body.roman > main > article .content h1 ~ ul {
-  margin-left: var(--indent);
-}
 body.roman > main > article .content h2 {
   font-size: 1.1em;
   counter-reset: h3;
@@ -986,6 +952,21 @@ body.roman > main > article .content h2::before {
 }
 body.roman > main > article .content h2 ~ p, body.roman > main > article .content h2 ~ ol, body.roman > main > article .content h2 ~ ul {
   margin-left: calc( 2 * var(--indent));
+}
+body.roman > main > article .content h1 {
+  font-size: 1.1em;
+  counter-reset: h2;
+  counter-increment: h1;
+  margin-left: var(--indent);
+}
+body.roman > main > article .content h1::before {
+  display: inline-block;
+  width: var(--indent);
+  margin-left: calc( -1 * var(--indent));
+  content: counter(h1, upper-roman) ".";
+}
+body.roman > main > article .content h1 ~ p, body.roman > main > article .content h1 ~ ol, body.roman > main > article .content h1 ~ ul {
+  margin-left: var(--indent);
 }
 
 /*# sourceMappingURL=photon.css.map */

@@ -1,5 +1,21 @@
-@page {}
+@page {
+  size: 8.5in 11in;
+  margin: 0.25in;
+  @top-center {
+    content: "photon";
+  }
+  @bottom-center {
+    content: counter(page);
+  }
+}
 @media print {
+  html {
+    font-size: 12pt;
+    width: 7in;
+    display: block;
+    background: transparent;
+  }
+
   body {
     --bg: transparent;
     background: transparent;
@@ -7,6 +23,7 @@
   }
   body > header {
     width: 100%;
+    flex-direction: row;
   }
   body > header > h1 {
     font-size: 1.1em;
@@ -14,21 +31,27 @@
   body > header > nav {
     display: none;
   }
-  body > header img {
-    width: 5em;
-  }
-  body > footer,
-body > .asides {
+  body > .asides {
     display: none;
   }
-  body article > footer > .article-share {
+  body > main {
+    display: block;
+  }
+  body > main article > nav.context {
     display: none;
   }
-  body article > footer > nav.sibling {
+  body > main article > footer > nav, body > main article > footer > aside {
     display: none;
   }
-  body article > nav {
+  body > main .collection {
     display: none;
+  }
+  body > footer > nav, body > footer > aside {
+    display: none;
+  }
+  body > footer > .contact {
+    display: flex;
+    align-items: center;
   }
 }
 
