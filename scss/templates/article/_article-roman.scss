@@ -3,8 +3,9 @@
 body.roman {
   > main {
     > article {
-      max-width: 48em;
-      .content {
+      // max-width: 48em;
+      
+      > .content {
         counter-reset: h1;
         counter-reset: h2;
         --indent: 2rem;

@@ -8,7 +8,7 @@
     }
 
     > article {
-      max-width: 48em;
+      // max-width: 48em;
 
       > figure {
         // max-height: 60vh;
@@ -16,9 +16,7 @@
     }
 
     > .collection {
-      // display: grid;
-      // grid-template-columns: repeat( auto-fit, minmax( 22em, 1fr ) );
-      transition: position .5s;
+      font-size: .8em;
 
       &.modal {
         position: fixed;

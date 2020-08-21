@@ -37,7 +37,8 @@ body {
         " header main "
         " asides main "
         " asides footer ";
-    grid-template-columns: var(--col)   1fr;
+    // grid-template-columns: var(--col)   1fr;
+    grid-template-columns: 14em   1fr;
     grid-template-rows: auto 1fr auto;
 
     > header {
@@ -49,6 +50,7 @@ body {
       }
 
       > nav {
+        order: 0;
         flex-flow: column nowrap;
         align-items: center;
       }
@@ -77,6 +79,14 @@ body {
   }
 
   @media (min-width: 48em) {
+    @media (orientation: portrait) {
+      > header {
+        > nav {
+          order: 0;
+          flex-basis: auto;
+        }
+      }
+    }
   }
 
   @media (min-width: 72em) {

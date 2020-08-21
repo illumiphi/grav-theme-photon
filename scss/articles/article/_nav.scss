@@ -1,0 +1,51 @@
+
+> nav.context {
+  grid-area: context;
+  // position: relative;
+  // font-size: 1em;
+  // width: 100%;
+  // max-width: var(--col-3);
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+
+  > * {
+    // width: 100%;
+  }
+
+  > a {
+    &.prev {
+      justify-content: flex-start;
+
+      &:before {
+        font-family: var(--font-icon);
+        content: "<";
+        padding-right: .5em;
+      }
+    }
+
+    &.next {
+      justify-content: flex-end;
+
+      &:after {
+        font-family: var(--font-icon);
+        content: ">";
+        padding-left: .5em;
+      }
+    }
+  }
+  .breadcrumbs {
+    text-align: center;
+    a {
+      display: block;
+      padding: 0;
+
+      &::before {
+        font-family: var(--font-icon);
+        content: "^";
+        padding: 0 .25em;
+      }
+    }
+  }
+}

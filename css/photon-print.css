@@ -25,6 +25,9 @@
     width: 100%;
     flex-direction: row;
   }
+  body > header > .logo {
+    flex: auto;
+  }
   body > header > h1 {
     font-size: 1.1em;
   }
@@ -35,6 +38,9 @@
     display: none;
   }
   body > main {
+    display: block;
+  }
+  body > main article {
     display: block;
   }
   body > main article > nav.context {

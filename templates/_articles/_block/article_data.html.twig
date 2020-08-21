@@ -3,31 +3,29 @@
     key value in header - page.header[ 'person' ]  #}
 {%- macro printData( dataKey, dataObj ) %}
 {%   import _self as this %}
-          <table>
+          <dl>
 {%   for key, val in dataObj %}
 {%     if key != "@type" %}
-            <tr>
-              <th>{{ t('PHOTON.' ~ dataKey ~ '.' ~ key) }}</th>
-              <td>
+              <dt>{{ t('PHOTON.' ~ dataKey ~ '.' ~ key) }}</dt>
+              <dd>
 {%       if val is iterable %}
                     {{ val.count }}
                     {{ this.printData( dataKey ~ '.' ~ key, val ) }}
 {%       else %}
                     {{ val }}
 {%       endif %}
-              </td>
-            </tr>
+              </dd>
 {%     endif %}
 {%   endfor %}
-          </table>
+          </dl>
 {% endmacro printData -%}
 
 {%- import _self as this %}
 {% if page.header.data[ article.template ] %}
-        <div class="data">
+        <aside class="data">
           <h1>{{ t('PHOTON.' ~ article.template) }}</h1>
           {{ this.printData( article.template, page.header.data[ article.template ] ) }}
-        </div>
+        </aside>
 {% else %}
         <!-- no data -->
 {% endif %}

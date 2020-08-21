@@ -1,7 +1,20 @@
 // Paragraphs. OpenType ligatures and oldstyle figures enabled if available.
 p, div,
-dd, dt,
+dl, dd, dt,
 details, summary {
   display: block;
   font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+}
+
+dl {
+  padding: var(--fitz-half);
+  margin: var(--fitz-half);
+
+  dt {
+    font-weight: 700;
+  }
+
+  dt ~ dt {
+    margin-top: var(--fitz-half);
+  }
 }

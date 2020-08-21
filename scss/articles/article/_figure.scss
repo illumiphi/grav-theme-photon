@@ -1,0 +1,22 @@
+
+> figure {
+  grid-area: figure;
+  overflow: hidden;
+  // max-width: 50%;
+
+  > img {
+    // width: 100%;
+    height: 100%;
+    margin: 0 auto;
+
+    object-fit: cover;
+    object-position: center;
+  }
+
+  > figcaption {
+  }
+
+  &:empty {
+    display: none;
+  }
+}

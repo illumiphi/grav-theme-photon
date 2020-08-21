@@ -2,9 +2,10 @@
   > header {
     @extend %body-section-default;
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     
-    .logo {
+    > .logo {
+      flex: 1;
       a {
         display: block;
         padding: var(--fitz);
@@ -23,7 +24,9 @@
       }
     }
 
-    nav {
+    > nav {
+      order: 3;
+      flex: 1 100%;
       display: flex;
       flex-flow: row wrap;
       justify-content: center;
@@ -37,6 +40,14 @@
         width: 100%;
       }
 
+      ul {
+        // display: flex;
+        // flex-flow: column wrap;
+        // li {
+          // flex-basis: auto;
+        // }
+      }
+
       a {
         // padding: .25em 1em;
         // margin-left: .1em;
@@ -45,7 +56,8 @@
       }
     }
 
-    .contact {
+    > .contact {
+      flex: 1;
       padding: var(--fitz);
 
       p {
