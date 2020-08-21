@@ -3,6 +3,8 @@
   grid-area: figure;
   overflow: hidden;
   // max-width: 50%;
+  display: flex;
+  flex-flow: column nowrap;
 
   > img {
     // width: 100%;
@@ -16,7 +18,7 @@
   > figcaption {
   }
 
-  &:empty {
-    display: none;
-  }
+  // &:empty {
+    // display: none;
+  // }
 }

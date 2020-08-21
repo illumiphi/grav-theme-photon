@@ -29,6 +29,19 @@ body {
   @import 'footer';
 
   @media (orientation: portrait) {
+    > header {
+      > nav {
+        // order: 0;
+        // flex-basis: auto;
+        > ul {
+          flex-flow: row wrap;
+          justify-content: center;
+          >li + li {
+            margin-top: 0;
+          }
+        }
+      }
+    }
   }
 
   @media (orientation: landscape) {
@@ -84,6 +97,12 @@ body {
         > nav {
           order: 0;
           flex-basis: auto;
+          > ul {
+            flex-flow: row wrap;
+            >li {
+              margin-top: 0;
+            }
+          }
         }
       }
     }

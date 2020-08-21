@@ -12,7 +12,7 @@ nav {
 
     &::after {
       display: block;
-      
+
       font-family: var(--font-icon);
       content: 'v';
     }
@@ -45,6 +45,10 @@ nav {
       padding: 0;
       margin-left: var(--fitz-2);
 
+      &:hover {
+        // background: var(--color-key);
+        // color: white;
+      }
       + li {
         margin-top: var(--fitz-half);
       }
@@ -60,7 +64,7 @@ nav {
       font-weight: 700;
       list-style: disc outside;
     }
-    
+
     &[aria-current="true"] {
       font-weight: 700;
       &::after {

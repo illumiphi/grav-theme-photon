@@ -21,8 +21,13 @@ a {
   }
 
   &:hover {
-    --color: var(--hover-color);
-    --bg: var(--hover-bg);
+    // --color: var(--hover-color);
+    // --bg: var(--hover-bg);
+    --bg: var(--color-key-light);
+    // box-shadow: .25em .25em .25em rgba(0,0,0,.4);
+    &::marker {
+      background: var(--color-key-light);
+    }
   }
 
   &:active {

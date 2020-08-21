@@ -196,8 +196,10 @@ a:visited {
   color: var(--color);
 }
 a:hover {
-  --color: var(--hover-color);
-  --bg: var(--hover-bg);
+  --bg: var(--color-key-light);
+}
+a:hover::marker {
+  background: var(--color-key-light);
 }
 a:active {
   color: var(--a-active-color);
@@ -472,15 +474,14 @@ article > nav.context .breadcrumbs a::before {
 article > figure {
   grid-area: figure;
   overflow: hidden;
+  display: flex;
+  flex-flow: column nowrap;
 }
 article > figure > img {
   height: 100%;
   margin: 0 auto;
   object-fit: cover;
   object-position: center;
-}
-article > figure:empty {
-  display: none;
 }
 article > header {
   grid-area: header;
@@ -616,7 +617,7 @@ article > .gallery.modal > .list > figure > img {
 }
 @media (min-width: 96em) {
   article {
-    grid-template-areas: " context context " " header figure " " content data " " content footer ";
+    grid-template-areas: " header context " " figure data " " content data " " content footer ";
     grid-template-columns: auto var(--col);
   }
   article > footer {
@@ -635,7 +636,7 @@ article > .gallery.modal > .list > figure > img {
 }
 @media (min-width: 120em) {
   article {
-    grid-template-areas: " header context context" " content figure footer " " content data footer ";
+    grid-template-areas: " header context context" " content figure figure " " content data footer ";
     grid-template-columns: auto var(--col) var(--col);
   }
 }
@@ -652,7 +653,7 @@ article.excerpt .more {
 }
 article.excerpt:hover {
   --bg: var(--color-key-lighter);
-  box-shadow: 0.5em 0.5em 0.7em rgba(0, 0, 0, 0.4);
+  box-shadow: 0.25em 0.25em 0.25em rgba(0, 0, 0, 0.4);
 }
 /* asides *****************************/
 /* asides/aside *****************************/
@@ -833,6 +834,9 @@ body > header > nav label::after {
   display: block;
   width: 100%;
 }
+body > header > nav ul {
+  flex-flow: row wrap;
+}
 body > header > nav a {
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -891,9 +895,6 @@ body > main > .collection .excerpt > footer .more {
   margin: 0 auto;
   text-align: center;
 }
-body > main > section.form form {
-  width: 100%;
-}
 body > .asides {
   display: flex;
   flex-flow: column nowrap;
@@ -901,6 +902,15 @@ body > .asides {
 body > footer {
   display: flex;
   flex-flow: row wrap;
+}
+@media (orientation: portrait) {
+  body > header > nav > ul {
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+  body > header > nav > ul > li + li {
+    margin-top: 0;
+  }
 }
 @media (orientation: landscape) {
   body {
@@ -931,6 +941,12 @@ body > footer {
   body > header > nav {
     order: 0;
     flex-basis: auto;
+  }
+  body > header > nav > ul {
+    flex-flow: row wrap;
+  }
+  body > header > nav > ul > li {
+    margin-top: 0;
   }
 }
 @media (min-width: 72em) and (orientation: landscape) {

@@ -29,8 +29,8 @@ article {
 
   @media (min-width: 96em) {
     grid-template-areas:
-        " context context "
-        " header figure "
+        " header context "
+        " figure data "
         " content data "
         " content footer ";
     grid-template-columns:auto var(--col);
@@ -56,7 +56,7 @@ article {
   @media (min-width: 120em) {
     grid-template-areas:
         " header context context"
-        " content figure footer "
+        " content figure figure "
         " content data footer ";
     grid-template-columns:auto var(--col) var(--col);
   }
