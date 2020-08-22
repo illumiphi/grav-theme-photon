@@ -15,9 +15,9 @@
 {%   for tax, value in tax_list %}
 {#     tax_type is wrapped in () for eval in hash key #}
 {%     set count = taxonomy.findTaxonomy({(tax_type):tax})|length %}
-{%     set active = uri.param(tax_type) == tax ? ' active' : '' %}
+{%     set selected = uri.param(tax_type) == tax ? ' aria-selected="true"' : '' %}
           <li>
-            <a class="{{ active }}" href="/search//taxonomy/{{ tax_type }}{{ config.system.param_sep }}{{ tax|e('url') }}">{{ tax }} [{{ count }}]</a>
+            <a href="/search//taxonomy/{{ tax_type }}{{ config.system.param_sep }}{{ tax|e('url') }}" {{ selected }}>{{ tax }} [{{ count }}]</a>
           </li>
 {%   endfor %}
         </ul>
