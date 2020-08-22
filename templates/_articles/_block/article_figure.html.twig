@@ -1,5 +1,4 @@
 {% set figure = article.header.figure %}
-        <figure>
 {% if figure %}
 {%   set fig_img = figure.image %}
 {% endif %}
@@ -9,31 +8,37 @@
 {% endif %}
 {% if fig_img ends with '.svg'  %}
 {%   set img = article.media.files[fig_img] %}
+        <figure>
           {{ img.html(figure.title, figure.alt, 'svg') }}
+        </figure>
+{% elseif figure.youtube and showcase != 1 %}
+        <figure>
+          <iframe width="560" height="315" 
+            src="https://www.youtube.com/embed/{{ figure.youtube }}"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+        </figure>
 {% else %}
 {%   set filename = fig_img|split('/')|last %}
 {%   set img = article.media.images[filename] %}
-{%   if excerpt == true %}
+{%   if img %}
+        <figure>
+{%     if excerpt == true %}
           {{ img.derivatives([440, 720, 1440]).sizes('50vw').html(img.meta.title, img.meta.description, 'excerpt') }}
-{%   else %}
-{% if figure.youtube and showcase != 1 %}
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ figure.youtube }}"
-           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
-{% else %}
+{%     else %}
           {{ img.derivatives([340, 720, 1440, 1920]).html(img.meta.title, img.meta.description, '') }}
-{% endif %}
-{% if figure.caption %}
+{%       if figure.caption %}
           <figcaption>
             {{ figure.caption|markdown }}
           </figcaption>
-{% endif %}
-{% if img.meta.description %}
+{%       endif %}
+{%       if img.meta.description %}
           <figcaption>
             {{ img.meta.description|markdown }}
             <cite>{{ img.meta.creator }} | {{img.meta.publisher }}</cite>
           </figcaption>
-{% endif %}
-{% endif %}
-{% endif %}
+{%       endif %}
+{%     endif %}
         </figure>
+{%   endif %}
+{% endif %}

@@ -35,30 +35,33 @@ article {
         " content data "
         " content footer ";
     grid-template-columns:auto var(--col);
+    grid-template-rows: auto auto auto 1fr;
 
     > footer {
       flex-flow: column nowrap;
       justify-content: flex-start;
     }
   }
-  @media (min-width: 120em) {
-    grid-template-areas:
-        " header context "
-        " content figure "
-        " content data "
-        " content footer ";
+  // @media (min-width: 72em) {
+    // grid-template-areas:
+        // " header context "
+        // " content figure "
+        // " content data "
+        // " content footer ";
+    // // grid-template-rows: auto auto auto 1fr;
 
-    > footer {
-      flex-flow: column nowrap;
-      justify-content: flex-start;
-    }
-  }
+    // > footer {
+      // flex-flow: column nowrap;
+      // justify-content: flex-start;
+    // }
+  // }
 
-  @media (min-width: 120em) {
+  @media (min-width: 108em) {
     grid-template-areas:
         " header context context"
         " content figure figure "
         " content data footer ";
     grid-template-columns:auto var(--col) var(--col);
+    grid-template-rows: auto auto 1fr;
   }
 }

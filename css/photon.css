@@ -497,7 +497,6 @@ article > nav.context .breadcrumbs a::before {
   padding: 0 0.25em;
 }
 article > figure {
-  grid-area: figure;
   overflow: hidden;
   display: flex;
   flex-flow: column nowrap;
@@ -507,9 +506,6 @@ article > figure > img {
   margin: 0 auto;
   object-fit: cover;
   object-position: center;
-}
-article > header {
-  grid-area: header;
 }
 article > header > h1 {
   line-height: 1;
@@ -644,25 +640,18 @@ article > .gallery.modal > .list > figure > img {
   article {
     grid-template-areas: " header context " " figure data " " content data " " content footer ";
     grid-template-columns: auto var(--col);
+    grid-template-rows: auto auto auto 1fr;
   }
   article > footer {
     flex-flow: column nowrap;
     justify-content: flex-start;
   }
 }
-@media (min-width: 120em) {
-  article {
-    grid-template-areas: " header context " " content figure " " content data " " content footer ";
-  }
-  article > footer {
-    flex-flow: column nowrap;
-    justify-content: flex-start;
-  }
-}
-@media (min-width: 120em) {
+@media (min-width: 108em) {
   article {
     grid-template-areas: " header context context" " content figure figure " " content data footer ";
     grid-template-columns: auto var(--col) var(--col);
+    grid-template-rows: auto auto 1fr;
   }
 }
 
@@ -950,7 +939,7 @@ body > footer {
   body {
     display: grid;
     grid-template-areas: " header main " " asides main " " asides footer ";
-    grid-template-columns: 14em 1fr;
+    grid-template-columns: 16em 1fr;
     grid-template-rows: auto 1fr auto;
   }
   body > header {
