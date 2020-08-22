@@ -8,11 +8,11 @@
 {%     endif %}
 {%   endfor %}
 {% endfor %}
-          <aside class="featured-list">
 {% if featured_pages %}
+          <aside class="featured-list">
             <h2>Featured Pages</h2>
 {%   for p in featured_pages %}
               <a  href="{{ p.url }}">{{ p.title }}</a>
 {%   endfor %}
-{% endif %}
           </aside>
+{% endif %}
