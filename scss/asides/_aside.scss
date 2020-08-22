@@ -10,14 +10,13 @@ aside, nav {
     // margin: 0 1em;
 
     li + li {
-      margin-top: .4em;
+      // margin-top: .4em;
     }
   }
 
   > a {
-    display: list-item;
+    display: block;
     // list-style: square outside;
-    list-style: none;
   }
 
   p {

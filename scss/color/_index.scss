@@ -2,6 +2,18 @@
 @import 'mixins';
 
 :root {
+  --hue-key: 215;
+  --hue-1: 44;
+  --hue-2: 111;
+
+  --sat: 40%;
+
+  --lighter: 90%;
+  --light:   70%;
+  --mid:     50%;
+  --dark:    30%;
+  --darker:  10%;
+  
   --color-key-lighter: #{"hsl( var(--hue-key), var(--sat), var(--lighter) )"};
   --color-key-light:   #{"hsl( var(--hue-key), var(--sat), var(--light) )"};
   --color-key:         #{"hsl( var(--hue-key), var(--sat), var(--mid) )"};

@@ -1,10 +1,11 @@
 /* templates/_default *****************************/
 
 body {
-  --body-bg: #ccc;
-  --bg: hsla(255,100%,100%,.3);
-  background: var(--body-bg);
+  color: var(--color);
+  background: var(--color-key-lighter);
+
   padding: var(--fitz);
+
   display: flex;
   flex-flow: column nowrap;
 
@@ -19,7 +20,7 @@ body {
       padding: var(--fitz);
     }
   }
-  
+
   %body-section-default {
   }
 
@@ -88,7 +89,6 @@ body {
 
     > main {
     }
-
   }
 
   @media (min-width: 48em) {
@@ -114,7 +114,7 @@ body {
       grid-template-areas:
           " header main asides"
           " footer main asides";
-      grid-template-columns: var(--col)  1fr  var(--col); 
+      grid-template-columns: var(--col)  1fr  var(--col);
       // grid-template-rows: auto 1fr auto;
     }
   }

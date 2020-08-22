@@ -12,6 +12,10 @@
   --col: 18em;
   --col-2: calc( var(--col) * 2 );
   --col-3: calc( var(--col) * 3 );
+
+  --color: #333;
+
+  --bg: hsla(255,100%,100%,.5);
 }
 
 @import 'elements';

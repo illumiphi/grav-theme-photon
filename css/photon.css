@@ -9,7 +9,7 @@
   font-style: normal;
 }
 :root {
-  --font: serif;
+  --font: sans-serif;
   --font-display: sans-serif;
   --font-code: monospace;
   --font-form: var(--font);
@@ -19,6 +19,15 @@
 
 /* color *****************************/
 :root {
+  --hue-key: 215;
+  --hue-1: 44;
+  --hue-2: 111;
+  --sat: 40%;
+  --lighter: 90%;
+  --light: 70%;
+  --mid: 50%;
+  --dark: 30%;
+  --darker: 10%;
   --color-key-lighter: hsl( var(--hue-key), var(--sat), var(--lighter) );
   --color-key-light: hsl( var(--hue-key), var(--sat), var(--light) );
   --color-key: hsl( var(--hue-key), var(--sat), var(--mid) );
@@ -43,6 +52,8 @@
   --col: 18em;
   --col-2: calc( var(--col) * 2 );
   --col-3: calc( var(--col) * 3 );
+  --color: #333;
+  --bg: hsla(255,100%,100%,.5);
 }
 
 /* base elements *****************************/
@@ -60,7 +71,7 @@ html {
   height: 100%;
   max-width: 100%;
   color: var(--color);
-  background: var(--bg);
+  background: var(--color-key-dark);
   font-family: var(--font);
   font-weight: 400;
   line-height: 1.35;
@@ -426,15 +437,15 @@ button:hover {
 
 /* articles/article *****************************/
 article {
-  padding: var(--fitz);
+  padding: var(--fitz-2);
   margin: var(--fitz);
   display: grid;
   grid-template-areas: " context  " " header " " figure " " content " " data " " footer ";
   grid-template-columns: auto;
 }
 article > * {
-  padding: var(--fitz);
-  margin: var(--fitz);
+  padding: var(--fitz-2);
+  margin: 0;
   background: var(--bg);
 }
 article > nav.context {
@@ -663,12 +674,8 @@ aside h1, aside h2, nav h1, nav h2 {
 aside ul, nav ul {
   list-style: none;
 }
-aside ul li + li, nav ul li + li {
-  margin-top: 0.4em;
-}
 aside > a, nav > a {
-  display: list-item;
-  list-style: none;
+  display: block;
 }
 aside p, nav p {
   margin: var(--fitz-half);
@@ -690,18 +697,24 @@ aside.article-share ul a, aside.follow ul a, nav.article-share ul a, nav.follow 
 nav {
   display: flex;
   flex-flow: column nowrap;
+  align-items: stretch;
 }
 nav label {
+  align-self: stretch;
   cursor: pointer;
   display: flex;
-  margin: var(--fitz-half);
-  padding: var(--fitz-half);
+  margin: 0;
+  padding: var(--fitz);
   justify-content: space-between;
 }
 nav label::after {
   display: block;
+  text-align: right;
   font-family: var(--font-icon);
   content: "v";
+}
+nav label:hover {
+  background: var(--color-key-lighter);
 }
 nav input {
   display: none;
@@ -716,23 +729,33 @@ nav ul {
   display: none;
   transform-origin: top;
   width: 100%;
-  margin: var(--fitz-half);
-  padding: var(--fitz-half);
+  margin: 0;
 }
 nav ul li {
   margin: 0;
   padding: 0;
-  margin-left: var(--fitz-2);
-}
-nav ul li + li {
-  margin-top: var(--fitz-half);
 }
 nav a {
-  display: list-item;
+  display: block;
+  --offset: 2em;
+  line-height: 1.1;
+  padding: var(--fitz);
+  padding-left: var(--offset);
+}
+nav a::before {
+  content: " ";
+  display: inline-block;
+  width: var(--offset);
+  margin-left: calc(var(--offset) * -1);
+  text-align: center;
 }
 nav a[aria-selected=true] {
   font-weight: 700;
-  list-style: disc outside;
+}
+nav a[aria-selected=true]::before {
+  content: ">";
+  display: inline-block;
+  width: var(--offset);
 }
 nav a[aria-current=true] {
   font-weight: 700;
@@ -754,11 +777,6 @@ nav a[aria-current=true] {
 }
 
 /* sections *****************************/
-main, header, footer, .asides, section {
-  padding: var(--fitz);
-  margin: var(--fitz);
-}
-
 .asides {
   grid-area: asides;
 }
@@ -782,9 +800,8 @@ main {
 
 /* templates/_default *****************************/
 body {
-  --body-bg: #ccc;
-  --bg: hsla(255,100%,100%,.3);
-  background: var(--body-bg);
+  color: var(--color);
+  background: var(--color-key-lighter);
   padding: var(--fitz);
   display: flex;
   flex-flow: column nowrap;
@@ -852,6 +869,9 @@ body > header > .contact p {
 body > main {
   display: flex;
   flex-flow: column nowrap;
+}
+body > main > article {
+  padding: var(--fitz-2);
 }
 body > main > .collection {
   font-size: 0.8em;
