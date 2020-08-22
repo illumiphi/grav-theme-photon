@@ -453,29 +453,43 @@ article > nav.context {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
+  align-items: flex-start;
 }
-article > nav.context > a.prev {
+article > nav.context div {
+  min-width: 4em;
+}
+article > nav.context a {
+  --offset: 1.2em;
+}
+article > nav.context a.prev {
   justify-content: flex-start;
 }
-article > nav.context > a.prev:before {
+article > nav.context a.prev::before {
   font-family: var(--font-icon);
   content: "<";
-  padding-right: 0.5em;
+  text-align: left;
 }
-article > nav.context > a.next {
+article > nav.context a.next {
   justify-content: flex-end;
+  padding-left: var(--fitz);
+  padding-right: var(--offset);
 }
-article > nav.context > a.next:after {
+article > nav.context a.next::before {
+  display: none;
+}
+article > nav.context a.next::after {
   font-family: var(--font-icon);
   content: ">";
-  padding-left: 0.5em;
+  width: var(--offset);
+  margin-right: calc(var(--offset) * -1);
+  display: inline-block;
+  text-align: right;
 }
 article > nav.context .breadcrumbs {
   text-align: center;
 }
 article > nav.context .breadcrumbs a {
   display: block;
-  padding: 0;
 }
 article > nav.context .breadcrumbs a::before {
   font-family: var(--font-icon);
