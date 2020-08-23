@@ -31,12 +31,12 @@
 
   > blockquote {
     // padding: var(--fitz-2);
-    border-left: 1px solid var(--color-key);
-    padding-left: var(--fitz);
+    // border-left: 1px solid var(--color-key);
+    // padding-left: var(--fitz);
     // line-height: 1.7;
     > blockquote {
       font-style: italic;
-      list-style-type: square;
+      list-style-type: '~';
       padding-top: .5em;
       // font-size: .9em;
     }
