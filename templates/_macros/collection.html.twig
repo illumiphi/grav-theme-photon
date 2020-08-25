@@ -1,12 +1,14 @@
 {% macro render(article, name) %}
-{% if name=='default' %}
+{% if name=='' %}
 {%    set articles=article.collection %}
+{%    set articles_details=article.header.content %}
 {% else %}
 {%    set articles=article.collection(name) %}
+{%    set articles_details=article.header[name] %}
 {% endif %}
       <section class="collection">
         <header>
-          <h1>{{ article.header.sets[ name ].name }}{% if article.header.sets[ name ].showCount %} : <span class="count">{{ article.collection.count() }}</span>{% endif %}</h1>
+          <h1>{{ articles_details.title }}{{ article.header.sets[ name ].name }}{% if article.header.sets[ name ].showCount %} : <span class="count">{{ articles.count }}</span>{% endif %}</h1>
 {% if article.header.sets[ name ].showMenu %}
           <nav>
 {# placeholder functions for filter taxonomy items in current collection #}
