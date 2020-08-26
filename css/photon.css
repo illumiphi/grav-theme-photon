@@ -506,6 +506,9 @@ article > header > h2 {
   font-size: 0.9em;
   letter-spacing: 0.1em;
 }
+article > header > h2 ~ h2 {
+  margin-top: var(--fitz);
+}
 article > .content {
   grid-area: content;
 }
