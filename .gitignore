@@ -1,13 +1,5 @@
 # Grav Specific
 .sass-cache
 composer.lock
-user/data/tntsearch/grav.index
-
-
-# OS Generated
-.DS_Store*
-ehthumbs.db
-Icon?
-Thumbs.db
 *.swp
 tags
