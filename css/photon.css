@@ -106,14 +106,21 @@ details, summary {
 dl {
   padding: var(--fitz-half);
   margin: var(--fitz-half);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 dl dt {
   font-weight: 700;
+  grid-column: 1/2;
+  text-align: right;
+  padding-right: var(--fitz-half);
 }
-dl dt ~ dt {
-  margin-top: var(--fitz-half);
+dl dt::after {
+  content: ":";
 }
-
+dl dd {
+  grid-column: 2/3;
+}
 /* elements/lists *****************************/
 li, ol, ul {
   margin-left: 1em;
@@ -422,7 +429,7 @@ article {
   padding: var(--fitz-2);
   margin: var(--fitz);
   display: grid;
-  grid-template-areas: " context  " " header " " figure " " content " " data " " footer ";
+  grid-template-areas: " context  " " header " " figure " " content " " footer ";
   grid-template-columns: auto;
 }
 article > * {
@@ -547,9 +554,6 @@ article > footer > aside.article-tags a,
 article > footer > nav.article-tags a {
   font-style: italic;
 }
-article > .data {
-  grid-area: data;
-}
 article > .gallery {
   grid-area: gallery;
   padding: 0.5em;
@@ -616,7 +620,7 @@ article > .gallery.modal > .list > figure > img {
 }
 @media (min-width: 96em) {
   article {
-    grid-template-areas: " header context " " figure data " " content data " " content footer ";
+    grid-template-areas: " header context " " figure footer " " content footer ";
     grid-template-columns: auto var(--col);
     grid-template-rows: auto auto auto 1fr;
   }
@@ -627,8 +631,8 @@ article > .gallery.modal > .list > figure > img {
 }
 @media (min-width: 108em) {
   article {
-    grid-template-areas: " header context context" " content figure figure " " content data footer ";
-    grid-template-columns: auto var(--col) var(--col);
+    grid-template-areas: " header context" " content figure " " content footer ";
+    grid-template-columns: auto var(--col-2);
     grid-template-rows: auto auto 1fr;
   }
 }

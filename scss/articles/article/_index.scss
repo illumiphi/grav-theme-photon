@@ -9,7 +9,6 @@ article {
       " header "
       " figure "
       " content "
-      " data "
       " footer ";
   grid-template-columns:auto ;
 
@@ -25,14 +24,12 @@ article {
   @import 'header';
   @import 'content';
   @import 'footer';
-  @import 'data';
   @import 'gallery';
 
   @media (min-width: 96em) {
     grid-template-areas:
         " header context "
-        " figure data "
-        " content data "
+        " figure footer "
         " content footer ";
     grid-template-columns:auto var(--col);
     grid-template-rows: auto auto auto 1fr;
@@ -58,10 +55,10 @@ article {
 
   @media (min-width: 108em) {
     grid-template-areas:
-        " header context context"
-        " content figure figure "
-        " content data footer ";
-    grid-template-columns:auto var(--col) var(--col);
+        " header context"
+        " content figure "
+        " content footer ";
+    grid-template-columns:auto var(--col-2);
     grid-template-rows: auto auto 1fr;
   }
 }

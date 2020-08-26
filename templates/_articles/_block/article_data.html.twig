@@ -9,10 +9,14 @@
               <dt>{{ t('PHOTON.' ~ dataKey ~ '.' ~ key) }}</dt>
               <dd>
 {%       if val is iterable %}
-                    {{ val.count }}
-                    {{ this.printData( dataKey ~ '.' ~ key, val ) }}
+                {{ val.count }}
+                {{ this.printData( dataKey ~ '.' ~ key, val ) }}
 {%       else %}
-                    {{ val }}
+{%         if key ends with "Date" %}
+                {{ val|date("l, F d, Y @ g:i A") }}
+{%         else %}
+                {{ val }}
+{%         endif %}
 {%       endif %}
               </dd>
 {%     endif %}

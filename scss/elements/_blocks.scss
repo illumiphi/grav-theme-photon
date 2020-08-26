@@ -9,12 +9,25 @@ details, summary {
 dl {
   padding: var(--fitz-half);
   margin: var(--fitz-half);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
 
   dt {
     font-weight: 700;
+    grid-column: 1 / 2;
+    text-align: right;
+    padding-right: var(--fitz-half);
+    &::after {
+      content: ':';
+    }
+  }
+
+  dd {
+    grid-column: 2 / 3;
   }
 
   dt ~ dt {
-    margin-top: var(--fitz-half);
+    // margin-top: var(--fitz-half);
   }
 }
