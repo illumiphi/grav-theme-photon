@@ -107,7 +107,8 @@ dl {
   padding: var(--fitz-half);
   margin: var(--fitz-half);
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-gap: var(--fitz-half);
+  grid-template-columns: auto 1fr;
 }
 dl dt {
   font-weight: 700;
