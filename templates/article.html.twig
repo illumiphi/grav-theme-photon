@@ -10,12 +10,18 @@
 
 {% block main %}
     <main data-collection="{{ page.collection.count }}">
-{% block content %}
-{% include ["_articles/#{ page.template }.html.twig", "_articles/article.html.twig"] with { 'article': page } %}
-{% block collection %}
-{% include ["_articles/_block/#{ page.template }_collection.html.twig", "_articles/_block/article_collection.html.twig"] with { 'article': page } %}
-{% endblock collection %}
-{% endblock content %}
+{%   block content %}
+{%     include [
+            "_articles/#{ page.template }.html.twig", 
+            "_articles/article.html.twig"
+          ] with { 'article': page } %}
+{%     block collection %}
+{%       include [
+            "_articles/_block/#{ page.template }_collection.html.twig", 
+            "_articles/_block/article_collection.html.twig"
+          ] with { 'article': page } %}
+{%     endblock collection %}
+{%   endblock content %}
     </main>
 {% endblock main %}
 
