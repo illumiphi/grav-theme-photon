@@ -1,7 +1,8 @@
 {% macro render(article, name) %}
 {% if name=='' %}
-{%    set articles=article.collection %}
-{%    set articles_details=article.header.content %}
+{%   set articles=article.collection %}
+{%   set articles_details=article.header.content %}
+{%   set name = "default" %}
 {% else %}
 {%    set articles=article.collection(name) %}
 {%    set articles_details=article.header[name] %}
@@ -9,8 +10,10 @@
       <section class="collection">
         <header>
           <h1>{{ articles_details.title }}{{ article.header.sets[ name ].name }}{% if article.header.sets[ name ].showCount %} : <span class="count">{{ articles.count }}</span>{% endif %}</h1>
-{% if article.header.sets[ name ].showMenu %}
           <nav>
+{% set toggle_id = name ~ '-expand-toggle' %}
+            <input class="expand" type="checkbox" id="{{ toggle_id }}" role="none">
+            <label for="{{ toggle_id }}" role="none"></label>
 {# placeholder functions for filter taxonomy items in current collection #}
 {# {% for tag in article.taxonomy.tag %} #}
             {# <a href="{{ article.url }}/tag:{{ tag }}">{{ tag }}</a> #}
@@ -20,11 +23,8 @@
             {# <a id="tag-showcase" href="{{ article.url }}{{ article.url ends with '/' ? '' : '/' }}tag:showcase">showcase</a>  #}
             {# <a id="modal" href="javascript:toggleModal();">[ ]</a> #}
           </nav>
-{% endif %}
         </header>
 {% for item in articles %}
-{# and not (item.routable == false) #}
-{# % if not (item.url == item.url) and not (item.routable == false)  and not (item.visible == false) % #}
 {%   if item.url != article.url  %}
 {%     include ["_articles/#{ article.template }-excerpt.html.twig", "_articles/article-excerpt.html.twig"] with { 'article': item } %}
 {%   endif %}

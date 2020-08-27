@@ -17,6 +17,42 @@
     > .collection {
       font-size: .8em;
 
+      > * {
+        background: var(--bg);
+        margin: var(--fitz);
+        padding: var(--fitz);
+      }
+
+      > header {
+        grid-column: 1 / -1;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      > article.excerpt {
+        @include article-card;
+
+        .content {
+          display: none;
+        }
+
+        footer {
+          display: none;
+        }
+      }
+
+      &.expand {
+        > article.excerpt {
+          .content {
+            display: block;
+          }
+
+          footer {
+            display: flex;
+          }
+        }
+      }
+
       &.modal {
         position: fixed;
         top: 0;
@@ -27,25 +63,7 @@
         background: black;
       }
 
-      > * {
-        background: var(--bg);
-        margin: var(--fitz);
-        padding: var(--fitz);
-      }
 
-      > header {
-        grid-column: 1 / -1;
-      }
-
-      .excerpt {
-        @include article-card;
-
-        > figure {
-        }
-
-        .article-tags {
-        }
-      }
     }
 
     > section.form {

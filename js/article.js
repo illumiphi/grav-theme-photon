@@ -38,3 +38,19 @@ function mouseoverGalleryFigure(e) {
     // figure.addEventListener("mouseenter", mouseoverGalleryFigure );
   // // }
 // })
+
+function collectionExpand(event) {
+  event.target.parentElement.parentElement.parentElement.classList.toggle("expand");
+  console.log(event.target.checked);
+  // if (event.target.checked) {
+    // alert('checked');
+  // } else {
+    // alert('not checked');
+  // }
+}
+
+var collections = document.querySelectorAll(".collection");
+collections.forEach( collection => {
+  var expand = collection.querySelector(".expand");
+  expand.addEventListener("change", collectionExpand );
+})

@@ -6,8 +6,14 @@ Original Code from breadcrumbs.plugin
 {% set crumbs = breadcrumbs.getFromArticle( article ) %}
 {% if breadcrumbs_config.enabled %}
             <div class="breadcrumbs">
-{%   for crumb in crumbs %}
+{%   if crumbs %}
+{%     for crumb in crumbs %}
               <a href="{{ crumb.url }}">{{ crumb.menu }}</a>
-{%   endfor %}
+{%     endfor %}
+{%   else %}
+{%     if page.url != "/" %}
+              <a href="/">Home</a>
+{%     endif %}
+{%   endif %}
             </div>
 {% endif %}
