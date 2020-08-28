@@ -868,9 +868,9 @@ body > main > article {
   padding: var(--fitz-2);
 }
 body > main > .collection {
-  font-size: 0.8em;
+  font-size: 0.9em;
   display: grid;
-  grid-template-columns: repeat(auto-fill, 48em);
+  grid-template-columns: repeat(auto-fit, minmax(24em, 1fr));
 }
 body > main > .collection > * {
   background: var(--bg);
@@ -885,6 +885,10 @@ body > main > .collection > header {
 }
 body > main > .collection > article.excerpt {
   display: flex;
+  justify-content: space-between;
+}
+body > main > .collection > article.excerpt figure {
+  max-width: 50%;
 }
 body > main > .collection > article.excerpt .content {
   display: none;
@@ -894,6 +898,9 @@ body > main > .collection > article.excerpt footer {
 }
 body > main > .collection.expand > article.excerpt {
   flex-flow: column nowrap;
+}
+body > main > .collection.expand > article.excerpt figure {
+  max-width: none;
 }
 body > main > .collection.expand > article.excerpt .content {
   display: block;

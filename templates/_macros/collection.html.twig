@@ -5,7 +5,9 @@
 {%   set name = "default" %}
 {% else %}
 {%    set articles=article.collection(name) %}
-{%    set articles_details=article.header[name] %}
+{%    set articles_details=attribute(article.header, name) %}
+{# {{ debug('name: ' ~ name) }} #}
+{# {{ dump(article['show_gallery']) }} #}
 {% endif %}
       <section class="collection">
         <header>
@@ -14,14 +16,6 @@
 {% set toggle_id = name ~ '-expand-toggle' %}
             <input class="expand" type="checkbox" id="{{ toggle_id }}" role="none">
             <label for="{{ toggle_id }}" role="none"></label>
-{# placeholder functions for filter taxonomy items in current collection #}
-{# {% for tag in article.taxonomy.tag %} #}
-            {# <a href="{{ article.url }}/tag:{{ tag }}">{{ tag }}</a> #}
-{# {% endfor %} #}
-            {# <a id="all" href="{{ article.url }}">all</a> #}
-            {# <a id="tag-featured" href="{{ article.url }}{{ article.url ends with '/' ? '' : '/' }}tag:featured">featured</a> #}
-            {# <a id="tag-showcase" href="{{ article.url }}{{ article.url ends with '/' ? '' : '/' }}tag:showcase">showcase</a>  #}
-            {# <a id="modal" href="javascript:toggleModal();">[ ]</a> #}
           </nav>
         </header>
 {% for item in articles %}
