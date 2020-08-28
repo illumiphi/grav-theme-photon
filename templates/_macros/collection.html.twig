@@ -9,7 +9,7 @@
 {% endif %}
       <section class="collection">
         <header>
-          <h1>{{ articles_details.title }}{{ article.header.sets[ name ].name }}{% if article.header.sets[ name ].showCount %} : <span class="count">{{ articles.count }}</span>{% endif %}</h1>
+          <h1>{{ articles_details.title }}{% if articles_details.showCount %} : <span class="count">{{ articles.count }}</span>{% endif %}</h1>
           <nav>
 {% set toggle_id = name ~ '-expand-toggle' %}
             <input class="expand" type="checkbox" id="{{ toggle_id }}" role="none">
