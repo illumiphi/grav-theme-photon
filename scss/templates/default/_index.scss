@@ -116,6 +116,11 @@ body {
           " footer main asides";
       grid-template-columns: var(--col)  1fr  var(--col);
       // grid-template-rows: auto 1fr auto;
+      > header {
+        > nav > label {
+          display: none;
+        }
+      }
     }
   }
 }

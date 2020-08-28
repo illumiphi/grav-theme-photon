@@ -983,6 +983,9 @@ body > footer {
     grid-template-areas: " header main asides" " footer main asides";
     grid-template-columns: var(--col) 1fr var(--col);
   }
+  body > header > nav > label {
+    display: none;
+  }
 }
 
 /* templates/article *****************************/
