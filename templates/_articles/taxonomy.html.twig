@@ -13,5 +13,7 @@
 {% include '_asides/list-taxonomy.html.twig' 
         with {'tax_type':'tag', 'nav_title':'Tags'} %}
         </footer>
+{% if config.system.debugger.enabled %}
         <!-- user/themes/photon/templates/_articles/_block/taxonomy.html.twig -->
+{% endif %}
       </article>

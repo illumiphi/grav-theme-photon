@@ -1,12 +1,14 @@
 {% extends 'default.html.twig' %}
-{% set type = "article" %}
-{% set types = "articles" %}
+{# {% set type = "article" %} #}
+{# {% set types = "articles" %} #}
 {% block template %}
 {{ parent() }}
+{% if config.system.debugger.enabled %}
 <!-- user/themes/photon/templates/article.html.twig -->
+{% endif %}
 {% endblock template %}
 
-{% block body_template_classes %}{{ parent() }} {{ type }}{% endblock body_template_classes %}
+{% block body_template_classes %}{{ parent() }} article{% endblock body_template_classes %}
 
 {% block main %}
     <main data-collection="{{ page.collection.count }}">

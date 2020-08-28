@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+{% block template %}
+{% if config.system.debugger.enabled %}
 <!-- params: {{ grav.uri.params() }} -->
 <!-- query: {{ grav.uri.query() }} -->
-{% block template %}
 <!-- user/themes/photon/templates/default.html.twig -->
+{% endif %}
 {% endblock %}
 {% include '_site/head.html.twig' %}
   <body class="{% block body_template_classes %}{% endblock body_template_classes %}{% if page.header.body_classes %} {{ page.header.body_classes }}{% endif %}">
