@@ -1,8 +1,8 @@
 @mixin article-card() {
   /* article-card */
 
-  // display: flex;
-  // flex: column nowrap;
+  display: flex;
+  flex: column nowrap;
   // justify-content: space-between;
 
   > figure {

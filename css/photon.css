@@ -869,6 +869,8 @@ body > main > article {
 }
 body > main > .collection {
   font-size: 0.8em;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 48em);
 }
 body > main > .collection > * {
   background: var(--bg);
@@ -876,37 +878,22 @@ body > main > .collection > * {
   padding: var(--fitz);
 }
 body > main > .collection > header {
+  grid-row: 1;
   grid-column: 1/-1;
   display: flex;
   justify-content: space-between;
 }
 body > main > .collection > article.excerpt {
-  /* article-card */
-}
-body > main > .collection > article.excerpt > figure > img {
-  width: 100%;
-  height: 100%;
-  height: calc(var(--col) - 2em);
-}
-body > main > .collection > article.excerpt > footer > aside {
-  padding: 0;
-}
-body > main > .collection > article.excerpt > footer > aside > h1, body > main > .collection > article.excerpt > footer > aside h2 {
-  display: none;
-}
-body > main > .collection > article.excerpt > footer > nav {
-  text-align: right;
-  padding: 0;
-}
-body > main > .collection > article.excerpt > footer .more {
-  margin: 0 auto;
-  text-align: center;
+  display: flex;
 }
 body > main > .collection > article.excerpt .content {
   display: none;
 }
 body > main > .collection > article.excerpt footer {
   display: none;
+}
+body > main > .collection.expand > article.excerpt {
+  flex-flow: column nowrap;
 }
 body > main > .collection.expand > article.excerpt .content {
   display: block;

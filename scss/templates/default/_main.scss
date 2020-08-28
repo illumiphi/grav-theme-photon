@@ -16,6 +16,9 @@
 
     > .collection {
       font-size: .8em;
+      display: grid;
+      // grid-auto-columns: minmax(auto, 24em);
+      grid-template-columns: repeat(auto-fill, 48em);
 
       > * {
         background: var(--bg);
@@ -24,13 +27,15 @@
       }
 
       > header {
+        grid-row: 1;
         grid-column: 1 / -1;
         display: flex;
         justify-content: space-between;
       }
 
       > article.excerpt {
-        @include article-card;
+        // @include article-card;
+        display: flex;
 
         .content {
           display: none;
@@ -43,6 +48,8 @@
 
       &.expand {
         > article.excerpt {
+          flex-flow: column nowrap;
+
           .content {
             display: block;
           }
