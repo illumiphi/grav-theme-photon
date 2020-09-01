@@ -4,12 +4,9 @@ a {
   --color: var(--color-key);
   --bg: none;
   --a-active-color: var(--color-2-dark);
-  // --a-active-bullet: '✴';
-  --hover-color: var(--color-bg);
-  --hover-bg: var(--color-key);
+
   color: var(--color);
   background: var(--bg);
-
   text-decoration: none;
 
   &:link {
@@ -21,12 +18,11 @@ a {
   }
 
   &:hover {
-    // --color: var(--hover-color);
-    // --bg: var(--hover-bg);
     --bg: var(--color-key-light);
+    --color: white;
     // box-shadow: .25em .25em .25em rgba(0,0,0,.4);
     &::marker {
-      background: var(--color-key-light);
+      background: var(--bg);
     }
   }
 

@@ -188,8 +188,6 @@ a {
   --color: var(--color-key);
   --bg: none;
   --a-active-color: var(--color-2-dark);
-  --hover-color: var(--color-bg);
-  --hover-bg: var(--color-key);
   color: var(--color);
   background: var(--bg);
   text-decoration: none;
@@ -202,9 +200,10 @@ a:visited {
 }
 a:hover {
   --bg: var(--color-key-light);
+  --color: white;
 }
 a:hover::marker {
-  background: var(--color-key-light);
+  background: var(--bg);
 }
 a:active {
   color: var(--a-active-color);
