@@ -271,7 +271,7 @@ figure {
 figure > img {
   max-width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 figure > figcaption {
   width: 100%;
@@ -499,7 +499,6 @@ article > figure > img {
   height: 100%;
   max-height: var(--col);
   margin: 0 auto;
-  object-fit: cover;
   object-position: center;
 }
 article > header > h1 {
