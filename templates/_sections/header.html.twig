@@ -11,10 +11,13 @@
         </a>
       </div>
 {% set menu_header = page.collection(
-      {'items':{ '@taxonomy':{'photon': 'header'} },
-        'order': {'by': 'default', 'dir': 'asc'}}
+      {
+        'items': { '@taxonomy': {'photon': 'header'} },
+        'order': {'by': 'default', 'dir': 'asc'},
+        'url_taxonomy_filters': false
+      }
     ) %}
-{% include '_sections/nav.html.twig' 
+{% include '_sections/nav.html.twig'
         with {'nav_list':menu_header, 'nav_title':'Header'} %}
 {% include '_asides/motto.html.twig' %}
     </header>
