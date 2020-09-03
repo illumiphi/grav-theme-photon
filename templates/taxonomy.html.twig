@@ -1,9 +1,0 @@
-{% extends 'article.html.twig' %}
-{% block template %}
-{{ parent() }}
-{% if config.system.debugger.enabled %}
-<!-- user/themes/photon/templates/taxonomy.html.twig -->
-{% endif %}
-{% endblock template %}
-
-{% block body_template_classes %}{{ parent() }} taxonomy{% endblock body_template_classes %}
