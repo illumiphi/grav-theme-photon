@@ -1,5 +1,0 @@
-title: Post
-@extends:
-    type: article
-    context: blueprints://pages
-
