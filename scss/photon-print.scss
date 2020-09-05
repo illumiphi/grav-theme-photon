@@ -20,7 +20,7 @@
   }
 
   body {
-    --bg: transparent;
+    --bg: white;
     background: transparent;
     // width: 8.5in;
     // height: 11in;
@@ -61,17 +61,14 @@
         display: block;
 
         > nav.context {
-          display: none;
         }
 
         > figure {
-          // width: 80%;
-          // padding: 5em;
         }
 
         > footer {
+          display: none;
           > nav, > aside {
-            display: none;
           }
         }
       }

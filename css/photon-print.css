@@ -17,7 +17,7 @@
   }
 
   body {
-    --bg: transparent;
+    --bg: white;
     background: transparent;
     display: block;
   }
@@ -43,10 +43,7 @@
   body > main article {
     display: block;
   }
-  body > main article > nav.context {
-    display: none;
-  }
-  body > main article > footer > nav, body > main article > footer > aside {
+  body > main article > footer {
     display: none;
   }
   body > main .collection {
