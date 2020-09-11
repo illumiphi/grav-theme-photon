@@ -1,20 +1,20 @@
 @page {
   size: 8.5in 11in;
-  margin: .25in;
+  margin: .75in;
 
   @top-center {
-   content: "photon";
+   // content: "photon";
   }
   
   @bottom-center {
-   content: counter(page);
+   // content: counter(page);
   }
 }
 
 @media print {
   html {
     font-size: 12pt;
-    width: 7in;
+    width: 100%;
     display: block;
     background: transparent;
   }
@@ -22,31 +22,34 @@
   body {
     --bg: white;
     background: transparent;
-    // width: 8.5in;
-    // height: 11in;
-
+    width: 100%;
     display: block;
 
+    font-size: 12pt;
+
+    margin: 0;
+    padding: 0;
+
+    > * {
+      margin: 0;
+      padding: 0;
+    }
+
     > header {
+      display: block;
       width: 100%;
-      flex-direction: row;
-      // justify-content: center;
-      // align-content: center;
 
       > .logo {
-        flex: auto;
+        padding: 0;
       }
 
       > h1 {
         font-size: 1.1em;
       }
 
-      > nav {
+      > nav,
+      > .motto {
         display: none;
-      }
-
-      img {
-        // width: 5em;
       }
     }
     
@@ -60,7 +63,19 @@
       article {
         display: block;
 
+        margin: 0;
+        padding: 0;
+
+        > * {
+          // margin: 0;
+          padding: 0;
+          + * {padding-top: var(--fitz-2);}
+        }
+
         > nav.context {
+          .breadcrumbs > a {
+            padding: 0;
+          }
         }
 
         > figure {
@@ -68,6 +83,13 @@
 
         > footer {
           display: none;
+          
+          > * {
+            // margin: 0;
+            padding: 0;
+            + * {padding-top: var(--fitz);}
+          }
+
           > nav, > aside {
           }
         }
@@ -77,7 +99,6 @@
         display: none;
       }
     }
-
 
     > footer {
       > nav, > aside {
