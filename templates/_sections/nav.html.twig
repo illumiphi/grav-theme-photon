@@ -10,7 +10,11 @@
 {%   if p.published %}
 {%     set selected = (p.active or p.activeChild) ? ' aria-selected="true"' : '' %}
 {%     set current = (p.url == page.url) ? ' aria-current="true"' : '' %}
-          <li><a href="{{ p.url }}" title="{{ p.header.subtitle }}" {{ selected }} {{ current }}>{{ p.menu }}</a></li>
+          <li>
+            <a href="{{ p.url }}" 
+              title="{{ p.header.subtitle }}" 
+              {{ selected }} {{ current }}>{{ p.menu }}</a>
+          </li>
 {%   endif %}
 {% endfor %}
         </ul>
