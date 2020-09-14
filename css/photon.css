@@ -852,11 +852,11 @@ body > header > nav a {
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
-body > header > .contact {
+body > header > .motto {
   flex: 1;
   padding: var(--fitz);
 }
-body > header > .contact p {
+body > header > .motto p {
   font-size: 0.8em;
   text-align: center;
 }
