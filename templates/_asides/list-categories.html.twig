@@ -17,7 +17,7 @@
 {%     set count = taxonomy.findTaxonomy({(tax_type):tax})|length %}
 {%     set selected = uri.param(tax_type) == tax ? ' aria-selected="true"' : '' %}
           <li>
-            <a href="/search/{{ nav_title|lower }}/{{ tax_type }}{{ config.system.param_sep }}{{ tax|e('url') }}" {{ selected }}>{{ tax }} [{{ count }}]</a>
+            <a href="/search/categories/{{ tax_type }}{{ config.system.param_sep }}{{ tax|e('url') }}" {{ selected }}>{{ tax }} [{{ count }}]</a>
           </li>
 {%   endfor %}
         </ul>
