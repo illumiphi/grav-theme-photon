@@ -9,8 +9,6 @@ date: ${post_date}
 author: ${author}
 content:
     title: ${collection_name}
-    showCount: true
-    showMenu: true
     items: '@self.children'
 taxonomy:
     category: 
