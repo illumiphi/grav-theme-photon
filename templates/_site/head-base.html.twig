@@ -1,4 +1,8 @@
-{% set page_title = header.title ~ ' | ' ~ site.title %}
+{% if page.url==home_url %}
+{%   set page_title = header.title ~ ' | ' ~ header.subtitle %}
+{% else %}
+{%   set page_title = header.title ~ ' | ' ~ site.title %}
+{% endif %}
 {% set page_description = page.summary|striptags|rtrim|regex_replace( '/\n/', ' - ' ) %}
 {% set featured_image = base_url_absolute ~ page.url ~ '/' ~ page.header.figure.image %}
 {% block head %}
