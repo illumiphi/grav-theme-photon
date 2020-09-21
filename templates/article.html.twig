@@ -18,10 +18,12 @@
             "_articles/article.html.twig"
           ] with { 'article': page } %}
 {%     block collection %}
-{%       include [
-            "_articles/_block/#{ page.template }_collection.html.twig", 
-            "_articles/_block/article_collection.html.twig"
-          ] with { 'article': page } %}
+{%       if page.header.content.items %}
+{%         include [
+              "_articles/_block/#{ page.template }_collection.html.twig", 
+              "_articles/_block/article_collection.html.twig"
+            ] with { 'article': page } %}
+{%       endif %}
 {%     endblock collection %}
 {%   endblock content %}
     </main>
