@@ -928,6 +928,11 @@ body > footer {
   display: flex;
   flex-flow: row wrap;
 }
+body > footer aside {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
 @media (orientation: portrait) {
   body > header > nav > ul {
     flex-flow: row wrap;
