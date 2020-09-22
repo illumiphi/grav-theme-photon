@@ -67,17 +67,19 @@ nav {
 
   a {
     // display: flex;
-    display: block;
+    display: flex;
     --offset: 2em;
     line-height: 1.1;
     padding:  var(--fitz);
-    padding-left: var(--offset);
+    // padding-left: var(--offset);
+    flex-basis: 100%;
 
-    &::before {
+    &::before, &::after {
       content: ' ';
       display: inline-block;
       width: var(--offset);
-      margin-left: calc(var(--offset) * -1);
+      // margin-left: calc(var(--offset) * -1);
+      font-family: var(--font-icon);
       text-align: center;
       
     }
@@ -86,9 +88,9 @@ nav {
       font-weight: 700;
       &::before {
         content: '>';
-        font-family: var(--font-icon);
-        display: inline-block;
-        width: var(--offset);
+      }
+      &::after {
+        content: '<';
       }
     }
 

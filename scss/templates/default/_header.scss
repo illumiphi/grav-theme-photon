@@ -36,8 +36,9 @@
       }
 
       label::after {
-        display: block;
+        // display: block;
         width: 100%;
+        text-align: center;
       }
 
       ul {
@@ -53,6 +54,7 @@
         // margin-left: .1em;
         letter-spacing: .1em;
         text-transform: uppercase;
+        justify-content: center;
       }
     }
 
