@@ -439,7 +439,6 @@ article {
 article > * {
   padding: var(--fitz-2);
   margin: 0;
-  background: var(--bg);
 }
 article > nav.context {
   grid-area: context;
@@ -510,6 +509,7 @@ article > header > h2 {
   font-weight: 700;
   font-size: 0.9em;
   letter-spacing: 0.1em;
+  margin-top: var(--fitz-half);
 }
 article > header > h2 ~ h2 {
   margin-top: var(--fitz);
@@ -731,17 +731,17 @@ nav ul li {
   padding: 0;
 }
 nav a {
-  display: block;
+  display: flex;
   --offset: 2em;
   line-height: 1.1;
   padding: var(--fitz);
-  padding-left: var(--offset);
+  flex-basis: 100%;
 }
-nav a::before {
+nav a::before, nav a::after {
   content: " ";
   display: inline-block;
   width: var(--offset);
-  margin-left: calc(var(--offset) * -1);
+  font-family: var(--font-icon);
   text-align: center;
 }
 nav a[aria-selected=true] {
@@ -749,9 +749,9 @@ nav a[aria-selected=true] {
 }
 nav a[aria-selected=true]::before {
   content: ">";
-  font-family: var(--font-icon);
-  display: inline-block;
-  width: var(--offset);
+}
+nav a[aria-selected=true]::after {
+  content: "<";
 }
 nav a[aria-current=true] {
   font-weight: 700;
@@ -844,8 +844,8 @@ body > header > nav h1 {
   display: none;
 }
 body > header > nav label::after {
-  display: block;
   width: 100%;
+  text-align: center;
 }
 body > header > nav ul {
   flex-flow: row wrap;
@@ -853,6 +853,7 @@ body > header > nav ul {
 body > header > nav a {
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  justify-content: center;
 }
 body > header > .motto {
   flex: 1;
