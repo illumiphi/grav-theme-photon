@@ -63,6 +63,12 @@ body {
         // width: 100%;
       }
 
+      > .logo {
+        a img {
+          height: 8em;
+        }
+      }
+
       > nav {
         order: 0;
         flex-flow: column nowrap;

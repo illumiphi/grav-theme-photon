@@ -953,6 +953,9 @@ body > footer aside {
     flex-flow: column nowrap;
     align-items: stretch;
   }
+  body > header > .logo a img {
+    height: 8em;
+  }
   body > header > nav {
     order: 0;
     flex-flow: column nowrap;
