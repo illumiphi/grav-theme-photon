@@ -78,6 +78,7 @@ nav {
       content: ' ';
       display: inline-block;
       width: var(--offset);
+      flex: 0 0 var(--offset);
       // margin-left: calc(var(--offset) * -1);
       font-family: var(--font-icon);
       text-align: center;

@@ -741,6 +741,7 @@ nav a::before, nav a::after {
   content: " ";
   display: inline-block;
   width: var(--offset);
+  flex: 0 0 var(--offset);
   font-family: var(--font-icon);
   text-align: center;
 }
