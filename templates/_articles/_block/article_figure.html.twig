@@ -20,13 +20,14 @@
         </figure>
 {% else %}
 {%   set filename = fig_img|split('/')|last %}
-{%   set img = article.media.images[filename] %}
+{%   set img = article.media[filename] %}
 {%   if img %}
         <figure>
 {%     if excerpt == true %}
-          {{ img.derivatives([440, 720, 1440]).sizes('50vw').html(img.meta.title, img.meta.description, 'excerpt') }}
+          {{ img.quality(50).derivatives(100, 600, 125).sizes('20vw').html(img.meta.title, img.meta.description, 'excerpt') }}
 {%     else %}
-          {{ img.derivatives([340, 720, 1440, 1920]).html(img.meta.title, img.meta.description, '') }}
+          {{ img.derivatives(500,1920,300).sizes('(max-width:26em) 100vw, 50vw').html() }}
+          {# {{ img.derivatives(500,1920,300).sizes('(max-width:26em) 100vw, 50vw').html(img.meta.title, img.meta.description, '') }} #}
 {%       if figure.caption %}
           <figcaption>
             {{ figure.caption|markdown }}
