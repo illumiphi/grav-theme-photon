@@ -971,6 +971,11 @@ body > footer aside {
     align-items: stretch;
   }
 }
+@media (orientation: landscape) and (min-height: 20em) {
+  body > .logo a img {
+    height: 2em;
+  }
+}
 @media (min-width: 48em) and (orientation: portrait) {
   body > header > nav {
     order: 0;
