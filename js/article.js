@@ -3,7 +3,6 @@
 var articles = document.querySelectorAll(".excerpt")
 
 // set click event for search
-
 articles.forEach( article => {
   if (article.dataset.url) {
     article.addEventListener("click", function(e) {
@@ -12,32 +11,46 @@ articles.forEach( article => {
   }
 })
 
-var collection = document.querySelector(".collection")
-function toggleCollection() {
-  collection.classList.toggle("modal");
+/////////////////////////////////////////////
+var figure = document.querySelector("body > main > article > figure")
+if(figure) {
+    figure.addEventListener("click", modalFigure );
+}
+function modalFigure(e) {
+  figure.classList.toggle("modal");
 }
 
 
-function toggleGallery() {
+/////////////////////////////////////////////
+var gallery = document.querySelector("body > main > article > .gallery")
+var galleryPanel = gallery.querySelector(".panel")
+var galleryFigures = gallery.querySelectorAll("figure");
+
+if(gallery) {
+  gallery.addEventListener("click", modalGallery );
+  // galleryPanel.addEventListener("click", modalGallery );
+  galleryFigures.forEach( figure => {
+      figure.addEventListener("mouseenter", mouseoverGalleryFigure );
+  })
+}
+
+function modalGallery() {
   gallery.classList.toggle("modal");
 }
 
 function mouseoverGalleryFigure(e) {
-  galleryPanel.style.background = 'white url(' + e.target.dataset.image + ')';
+  galleryPanel.style.background = 'black url(' + e.target.dataset.image + ')';
   galleryPanel.style.backgroundSize = 'contain';
   galleryPanel.style.backgroundRepeat = 'no-repeat';
   galleryPanel.style.backgroundPosition = 'center';
 }
 
-// var gallery = document.querySelector(".gallery")
-// var galleryPanel = gallery.querySelector(".panel")
-// var galleryFigures = document.querySelectorAll(".gallery > .list > figure");
-// galleryFigures.forEach( figure => {
-  // // if (figure.dataset.url) {
-    // figure.addEventListener("click", toggleGallery );
-    // figure.addEventListener("mouseenter", mouseoverGalleryFigure );
-  // // }
-// })
+
+/////////////////////////////////////////////
+var collection = document.querySelector(".collection")
+function toggleCollection() {
+  collection.classList.toggle("modal");
+}
 
 function collectionExpand(event) {
   event.target.parentElement.parentElement.parentElement.classList.toggle("expand");

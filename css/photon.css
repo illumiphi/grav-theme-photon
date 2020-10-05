@@ -433,7 +433,7 @@ article {
   padding: var(--fitz-2);
   margin: var(--fitz);
   display: grid;
-  grid-template-areas: " context  " " header " " figure " " content " " footer ";
+  grid-template-areas: " context  " " header " " figure " " content " " gallery " " footer ";
   grid-template-columns: auto;
 }
 article > * {
@@ -492,6 +492,7 @@ article > figure {
   overflow: hidden;
   display: flex;
   flex-flow: column nowrap;
+  cursor: pointer;
 }
 article > figure > img {
   width: 100%;
@@ -499,6 +500,18 @@ article > figure > img {
   max-height: var(--col);
   margin: 0 auto;
   object-position: center;
+}
+article > figure.modal {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: black;
+}
+article > figure.modal > img {
+  max-height: none;
 }
 article > header > h1 {
   line-height: 1;
@@ -578,14 +591,11 @@ article > .gallery > .panel {
 }
 article > .gallery > .list {
   grid-area: list;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, calc( var(--col)/2 ));
-  grid-auto-flow: row;
-  grid-gap: 0.5em;
-  height: 100%;
-  min-height: 5em;
+  display: flex;
+  flex-flow: row wrap;
 }
 article > .gallery > .list > figure {
+  flex-basis: 5em;
   padding: var(--fitz);
   overflow: hidden;
   height: 100%;
@@ -603,10 +613,12 @@ article > .gallery > .list > figure > figcaption {
 article > .gallery.modal {
   position: fixed;
   z-index: 10;
+  background: black;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  display: grid;
   grid-template-areas: " panel " " list ";
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 10em;
@@ -618,21 +630,14 @@ article > .gallery.modal > .list {
   width: 100%;
   height: 100%;
   min-height: 5em;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(1em, 1fr));
-}
-article > .gallery.modal > .list > figure {
-  width: 100%;
-  height: 100%;
 }
 article > .gallery.modal > .list > figure > img {
   width: 100%;
 }
 @media (min-width: 96em) {
   article {
-    grid-template-areas: " header context " " figure footer " " content footer ";
+    grid-template-areas: " header context " " content figure " " content gallery " " content footer ";
     grid-template-columns: auto var(--col);
-    grid-template-rows: auto auto auto 1fr;
   }
   article > footer {
     flex-flow: column nowrap;
@@ -641,9 +646,7 @@ article > .gallery.modal > .list > figure > img {
 }
 @media (min-width: 108em) {
   article {
-    grid-template-areas: " header context" " content figure " " content footer ";
     grid-template-columns: auto var(--col-2);
-    grid-template-rows: auto auto 1fr;
   }
 }
 

@@ -9,6 +9,7 @@ article {
       " header "
       " figure "
       " content "
+      " gallery "
       " footer ";
   grid-template-columns:auto ;
 
@@ -29,10 +30,11 @@ article {
   @media (min-width: 96em) {
     grid-template-areas:
         " header context "
-        " figure footer "
+        " content figure "
+        " content gallery "
         " content footer ";
     grid-template-columns:auto var(--col);
-    grid-template-rows: auto auto auto 1fr;
+    // grid-template-rows: auto auto auto 1fr;
 
     > footer {
       flex-flow: column nowrap;
@@ -54,11 +56,11 @@ article {
   // }
 
   @media (min-width: 108em) {
-    grid-template-areas:
-        " header context"
-        " content figure "
-        " content footer ";
+    // grid-template-areas:
+        // " header context"
+        // " content figure "
+        // " content footer ";
     grid-template-columns:auto var(--col-2);
-    grid-template-rows: auto auto 1fr;
+    // grid-templa;te-rows: auto auto 1fr;
   }
 }
