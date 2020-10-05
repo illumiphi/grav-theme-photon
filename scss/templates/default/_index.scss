@@ -95,6 +95,13 @@ body {
 
     > main {
     }
+    @media (min-height: 20em) {
+      > .logo {
+        a img {
+          height: 2em;
+        }
+      }
+    }
   }
 
   @media (min-width: 48em) {

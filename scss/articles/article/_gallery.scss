@@ -1,14 +1,7 @@
 
 > .gallery {
   grid-area: gallery;
-  padding: .5em;
-
-  // display: grid;
-  // grid-template-areas:
-    // " list ";
-  // grid-template-columns:   1fr;
-  // grid-template-rows:  1fr;
-  // grid-gap: .5em;
+  padding: var(--fitz);
 
   > .panel {
     grid-area: panel;

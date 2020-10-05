@@ -579,7 +579,7 @@ article > footer > nav.article-tags a {
 }
 article > .gallery {
   grid-area: gallery;
-  padding: 0.5em;
+  padding: var(--fitz);
 }
 article > .gallery > .panel {
   grid-area: panel;
@@ -972,6 +972,11 @@ body > footer aside {
   body > footer {
     flex-flow: column nowrap;
     align-items: stretch;
+  }
+}
+@media (orientation: landscape) and (min-height: 20em) {
+  body > .logo a img {
+    height: 2em;
   }
 }
 @media (min-width: 48em) and (orientation: portrait) {

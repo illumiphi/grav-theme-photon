@@ -1,6 +1,6 @@
 {% macro render(article, name) %}
 {% if name=='' %}
-{%   set articles=article.collection %}
+{%   set articles=article.collection('content') %}
 {%   set articles_details=article.header.content %}
 {%   set name = "default" %}
 {% else %}
