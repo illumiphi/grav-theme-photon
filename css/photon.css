@@ -627,12 +627,14 @@ article > .gallery.modal > .panel {
   display: block;
 }
 article > .gallery.modal > .list {
-  width: 100%;
-  height: 100%;
-  min-height: 5em;
+  flex-wrap: nowrap;
+}
+article > .gallery.modal > .list > figure {
+  flex-basis: auto;
 }
 article > .gallery.modal > .list > figure > img {
   width: 100%;
+  object-fit: contain;
 }
 @media (min-width: 96em) {
   article {
