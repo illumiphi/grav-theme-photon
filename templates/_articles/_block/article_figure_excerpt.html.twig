@@ -23,7 +23,7 @@
 {%   set img = article.media[filename] %}
 {%   if img %}
         <figure>
-          {{ img.derivatives(400,2000,400).sizes('(max-width:26em) 100vw, 50vw').html(img.meta.title, img.meta.description, '') }}
+          {{ img.quality(50).derivatives(400, 800, 400).sizes('(max-width:26em) 24em, 24em').html(img.meta.title, img.meta.description, 'excerpt') }}
 {%       if figure.caption %}
           <figcaption>
             {{ figure.caption|markdown }}
@@ -35,7 +35,6 @@
             <cite>{{ img.meta.creator }} | {{img.meta.publisher }}</cite>
           </figcaption>
 {%       endif %}
-{# {%     endif %} #}
         </figure>
 {%   endif %}
 {% endif %}
