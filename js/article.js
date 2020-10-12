@@ -23,10 +23,12 @@ function modalFigure(e) {
 
 /////////////////////////////////////////////
 var gallery = document.querySelector("body > main > article > .gallery")
-var galleryPanel = gallery.querySelector(".panel")
-var galleryFigures = gallery.querySelectorAll("figure");
+var galleryPanel
+var galleryFigures
 
 if(gallery) {
+  galleryPanel = gallery.querySelector(".panel")
+  galleryFigures = gallery.querySelectorAll("figure");
   gallery.addEventListener("click", modalGallery );
   // galleryPanel.addEventListener("click", modalGallery );
   galleryFigures.forEach( figure => {
