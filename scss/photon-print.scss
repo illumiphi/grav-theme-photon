@@ -1,6 +1,6 @@
 @page {
   size: 8.5in 11in;
-  margin: .75in;
+  margin: 1in;
 
   @top-center {
    // content: "photon";
@@ -73,6 +73,7 @@
         }
 
         > nav.context {
+          display: none;
           .breadcrumbs > a {
             padding: 0;
           }

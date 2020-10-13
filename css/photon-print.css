@@ -1,6 +1,6 @@
 @page {
   size: 8.5in 11in;
-  margin: 0.75in;
+  margin: 1in;
   @top-center {}
   @bottom-center {}
 }
@@ -55,6 +55,9 @@ body > header > .motto {
   }
   body > main article > * + * {
     padding-top: var(--fitz-2);
+  }
+  body > main article > nav.context {
+    display: none;
   }
   body > main article > nav.context .breadcrumbs > a {
     padding: 0;
