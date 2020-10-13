@@ -2,7 +2,7 @@
       <div class="logo">
         <a href="{{ home_url }}" >
 {% if config.site.logo %}
-          {{ media['image://' ~  config.site.logo ].resize(300).html() }}
+          {{ media['image://' ~  config.site.logo ].resize(128).html() }}
 {% endif %}
           <h1>{{ site.title }}</h1>
 {% if theme.subtitle  %}
