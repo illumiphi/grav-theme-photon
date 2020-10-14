@@ -14,7 +14,10 @@ articles.forEach( article => {
 /////////////////////////////////////////////
 var figure = document.querySelector("body > main > article > figure")
 if(figure) {
+  // console.log("set figure: " + figure.classList.contains("fc")  );
+  if(!document.querySelector("body.calendar")){
     figure.addEventListener("click", modalFigure );
+  }
 }
 function modalFigure(e) {
   figure.classList.toggle("modal");
