@@ -897,7 +897,7 @@ body > main > .collection > article.excerpt {
   justify-content: space-between;
 }
 body > main > .collection > article.excerpt figure {
-  max-width: 50%;
+  max-width: 12em;
 }
 body > main > .collection > article.excerpt .content {
   display: none;
