@@ -1,7 +1,9 @@
 {% if page.url==home_url %}
 {%   set page_title = header.title ~ ' | ' ~ header.subtitle %}
+{%   set og_type = 'website' %}
 {% else %}
 {%   set page_title = header.title ~ ' | ' ~ site.title %}
+{%   set og_type = 'article' %}
 {% endif %}
 {% set page_description = page.summary|striptags|rtrim|regex_replace( '/\n/', ' - ' ) %}
 {% set featured_image = base_url_absolute ~ page.url ~ '/' ~ page.header.figure.image %}
@@ -39,6 +41,7 @@
 {% block opengraph %}
     <!-- opengraph -->
     <meta property="og:title" content="{{ page_title }}">
+    <meta property="og:type" content="{{ og_type }}">
     <meta property="og:description" content="{{ page_description }}">
     <meta property="og:image" content="{{ featured_image }}">
     <meta property="og:url" content="{{ page.url }}">
