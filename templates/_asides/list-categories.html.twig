@@ -6,10 +6,8 @@
 {%   set tax_list = taxonomylist.get()[tax_type] %}
 {% endif %}
       <nav aria-label="{{ nav_title }}">
-        <input type="checkbox" id="nav-{{ nav_title }}-toggle" role="none">
-        <label for="nav-{{ nav_title }}-toggle" role="none">
-          <h1>{{ nav_title }}</h1>
-        </label>
+        <input type="checkbox" id="nav-{{ nav_title }}-toggle" >
+        <label for="nav-{{ nav_title }}-toggle" >{{ nav_title }}</label>
 {% if tax_list %}
         <ul>
 {%   for tax, value in tax_list %}

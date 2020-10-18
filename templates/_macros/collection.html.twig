@@ -14,8 +14,8 @@
           <h1>{{ articles_details.title }} : <span class="count">{{ articles.count }}</span></h1>
           <nav>
 {% set toggle_id = name ~ '-expand-toggle' %}
-            <input class="expand" type="checkbox" id="{{ toggle_id }}" role="none">
-            <label for="{{ toggle_id }}" role="none"></label>
+            <input class="expand" type="checkbox" id="{{ toggle_id }}" >
+            <label for="{{ toggle_id }}" ></label>
           </nav>
         </header>
 {% for item in articles %}
