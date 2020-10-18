@@ -6,7 +6,25 @@
 {%   set og_type = 'article' %}
 {% endif %}
 {% set page_description = page.summary|striptags|rtrim|regex_replace( '/\n/', ' - ' ) %}
-{% set featured_image = base_url_absolute ~ page.url ~ '/' ~ page.header.figure.image %}
+{# get featured image #}
+{% set fig_img = page.header.figure.image %}
+{% if not fig_img %}
+{%   set img = page.media.images | first %}
+{%   set fig_img = img.url %}
+{% endif %}
+{{ debug("fig_img: " ~ fig_img) }}
+{% set img = "" %}
+{% if fig_img ends with '.svg'  %}
+{%   set img = page.media.files[fig_img] %}
+{% else %}
+{%   set filename = fig_img|split('/')|last %}
+{%   set img = page.media[filename] %}
+{% endif %}
+{% if img %}
+{{   debug("img.url: " ~ img.url) }}
+{%   set featured_image = base_url_absolute ~ img.url %}
+{{   debug("featured_image: " ~ featured_image) }}
+{% endif %}
 {% block head %}
   <head>
 
