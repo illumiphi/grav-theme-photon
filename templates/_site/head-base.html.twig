@@ -12,7 +12,6 @@
 {%   set img = page.media.images | first %}
 {%   set fig_img = img.url %}
 {% endif %}
-{{ debug("fig_img: " ~ fig_img) }}
 {% set img = "" %}
 {% if fig_img ends with '.svg'  %}
 {%   set img = page.media.files[fig_img] %}
@@ -21,7 +20,6 @@
 {%   set img = page.media[filename] %}
 {% endif %}
 {% if img %}
-{{   debug("img.url: " ~ img.url) }}
 {%   set featured_image = base_url_absolute ~ img.url %}
 {{   debug("featured_image: " ~ featured_image) }}
 {% endif %}
