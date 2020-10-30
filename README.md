@@ -1,13 +1,10 @@
-photon PLATFORM
-
 <a href="https://photon-platform.net/">
-    <img src="https://photon-platform.net/user/images/photon-logo-banner.png" alt="photon" title="photon" />
+    <img src="https://photon-platform.net/user/images/photon-logo-banner.png" alt="photon" title="photon" align="right" height="120" />
 </a>
 
 
 ![GitHub release](https://img.shields.io/github/v/tag/photon-platform/grav-theme-photon)
 
-Foundation theme for the photon ✴ PLATFORM - within [Grav CMS](http://github.com/getgrav/grav).
 
 # photon ✴ THEME
 
@@ -26,11 +23,11 @@ blueprints.yaml
 fields:
  - columns
 
-Before configuring this plugin, you should copy the `user/plugins/photon/photon.yaml` to `user/config/plugins/photon.yaml` and only edit that copy.
+Before configuring this plugin, you should copy the `user/themes/photon/photon.yaml` to `user/config/themes/photon.yaml` and only edit that copy.
 
 Here is the default configuration and an explanation of available options:
 
-Note that if you use the admin plugin, a file with your configuration, and named photon.yaml will be saved in the `user/config/plugins/` folder once the configuration is saved in the admin.
+Note that if you use the admin plugin, a file with your configuration, and named photon.yaml will be saved in the `user/config/themes/` folder once the configuration is saved in the admin.
 
 
 # templates
@@ -283,11 +280,8 @@ languages
 
 ## Installation
 
-- all photon plugins are installed as git submodules. More on that later.
+- all photon themes are installed as git submodules. More on that later.
 
-
-
-## Configuration
 
 
 ## Usage
