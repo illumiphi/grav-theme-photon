@@ -1,7 +1,7 @@
 photon PLATFORM
 
 <a href="https://photon-platform.net/">
-    <img src="https://photon-platform.net/user/images/photon-logo-banner.png" alt="photon" title="photon" />
+    <img src="https://photon-platform.net/user/images/photon-logo-banner.png" alt="photon" title="photon" align="right" height="120" />
 </a>
 
 
@@ -208,6 +208,8 @@ scss
 │   │   ├── _index.scss
 │   │   └── _main.scss
 │   └── _index.scss
+├── _diagrams.scss
+├── highlight.css
 ├── photon-print.scss
 ├── photon.scss
 └── README.md
@@ -252,25 +254,24 @@ on photon SITE actions, type `s`
 
 ```sh
 assets
-├── fontello-6848bbf6
-│   ├── css
-│   │   ├── animation.css
-│   │   ├── photon-icon-codes.css
-│   │   ├── photon-icon.css
-│   │   ├── photon-icon-embedded.css
-│   │   ├── photon-icon-ie7-codes.css
-│   │   └── photon-icon-ie7.css
-│   ├── font
-│   │   ├── photon-icon.eot
-│   │   ├── photon-icon.svg
-│   │   ├── photon-icon.ttf
-│   │   ├── photon-icon.woff
-│   │   └── photon-icon.woff2
-│   ├── config.json
-│   ├── demo.html
-│   ├── LICENSE.txt
-│   └── README.txt
-└── highlight.css
+└── fontello-6848bbf6
+    ├── css
+    │   ├── animation.css
+    │   ├── photon-icon-codes.css
+    │   ├── photon-icon.css
+    │   ├── photon-icon-embedded.css
+    │   ├── photon-icon-ie7-codes.css
+    │   └── photon-icon-ie7.css
+    ├── font
+    │   ├── photon-icon.eot
+    │   ├── photon-icon.svg
+    │   ├── photon-icon.ttf
+    │   ├── photon-icon.woff
+    │   └── photon-icon.woff2
+    ├── config.json
+    ├── demo.html
+    ├── LICENSE.txt
+    └── README.txt
 ```
 
 # languages
