@@ -5,11 +5,6 @@
 
 ![GitHub release](https://img.shields.io/github/v/tag/photon-platform/grav-theme-photon)
 
-
-# photon ✴ THEME
-
-## 0.1.1
-> Foundation theme for the photon PLATFORM within Grav CMS
 - [configuration](#configuration)
 - [templates](#templates)
 - [scaffolds](#scaffolds)
@@ -17,18 +12,132 @@
 - [assets](#assets)
 - [languages](#languages)
 
+- [Getting Started](#getting-started)
+- [Articles in Pages](#articles-in-pages)
+- [License](#license)
+
+
 # configuration
+> 
+
+# photon ✴ THEME
+
+## 0.1.1
 blueprints.yaml
 
 fields:
- - columns
+- columns
+  - _color
+    - color.key.hue
+    - color.1.hueOffset
+    - color.2.hueOffset
+    - color.saturation
+    - color.lightness.lighter
+    - color.lightness.light
+    - color.lightness.mid
+    - color.lightness.dark
+    - color.lightness.darker
+  - _fonts
+    - font
+    - font_display
+    - font_code
 
-Before configuring this plugin, you should copy the `user/themes/photon/photon.yaml` to `user/config/themes/photon.yaml` and only edit that copy.
+Before configuring this theme, you should copy the `user/themes/photon/photon.yaml` to `user/config/themes/photon.yaml` and only edit that copy.
 
 Here is the default configuration and an explanation of available options:
 
-Note that if you use the admin plugin, a file with your configuration, and named photon.yaml will be saved in the `user/config/themes/` folder once the configuration is saved in the admin.
+```
+enabled: true
+dropdown:
+  enabled: true
+```
 
+Note that if you use the admin theme, a file with your configuration, and named photon.yaml will be saved in the `user/config/themes/` folder once the configuration is saved in the admin.
+
+
+# blueprints
+
+```sh
+blueprints
+├── asset
+│   └── file.yaml
+└── article.yaml
+```
+
+### Article
+article.yaml
+extends: default
+fields:
+- content
+  - columns
+    - _content
+      - header.title
+      - header.subtitle
+      - content
+      - header.media_order
+      - _ordering
+        - ordering
+        - order
+    - _meta
+      - _main
+        - folder
+        - route
+        - name
+        - header.author
+        - header.collection.name
+        - header.collection.showCount
+        - header.collection.showMenu
+        - header.content.items
+        - header.child_type
+      - _figure
+        - header.figure.image
+        - header.figure.title
+        - header.figure.alt
+        - header.figure.caption
+        - header.figure.youtube
+      - _gallery
+        - header.gallery.show
+        - header.gallery.images
+          - .image
+          - .title
+      - _attachments
+        - header.attachments
+          - .file
+          - .title
+- options
+  - _publishing
+    - header.published
+    - header.date
+    - header.publish_date
+    - header.unpublish_date
+    - header.metadata
+- advanced
+  - columns
+    - column1
+      - overrides
+        - header.dateformat
+        - header.menu
+        - header.slug
+        - header.redirect
+        - header.process
+        - header.twig_first
+        - header.never_cache_twig
+        - header.routable
+        - header.cache_enable
+        - header.visible
+        - header.debugger
+        - header.template
+        - header.append_url_extension
+    - column2
+      - routes_only
+        - header.routes.default
+        - header.routes.canonical
+        - header.routes.aliases
+      - admin_only
+        - header.admin.children_display_order
+        - header.order_by
+        - header.order_manual
+        - blueprint
 
 # templates
 
@@ -270,6 +379,32 @@ assets
 └── highlight.css
 ```
 
+# css
+
+```sh
+css
+├── photon.css
+├── photon.css.map
+├── photon-print.css
+└── photon-print.css.map
+```
+
+# js
+
+```sh
+js
+├── highlight
+│   ├── atom-one-dark.css
+│   ├── CHANGES.md
+│   ├── highlight.pack.js
+│   ├── LICENSE
+│   ├── README.md
+│   └── README.ru.md
+├── article.js
+├── jquery.min.js
+└── pan-zoom.js
+```
+
 # languages
 
 ```sh
@@ -277,12 +412,20 @@ languages
 └── en.yaml
 ```
 
+# font
+
+```sh
+font
+├── photon-icon.eot
+├── photon-icon.svg
+├── photon-icon.ttf
+├── photon-icon.woff
+└── photon-icon.woff2
+```
 
 ## Installation
 
 - all photon themes are installed as git submodules. More on that later.
-
-
 
 ## Usage
 
@@ -298,16 +441,10 @@ Select template type when creating a new page
 
 
 
-
 **TOC**
 <!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
 <!-- code_chunk_output -->
 
-* [Getting Started](#getting-started)
-* [Articles in Pages](#articles-in-pages)
-* [Templates](#templates)
-* [Styles](#styles)
-* [License](#license)
 
 <!-- /code_chunk_output -->
 
@@ -357,5 +494,6 @@ see README in scss folder for more on the stylesheet development:
 ## License
 
 See [LICENSE](LICENSE)
+
 
 copyright &copy; 2020
