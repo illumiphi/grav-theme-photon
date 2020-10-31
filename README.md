@@ -3,6 +3,13 @@
 </a>
 
 
+# photon ✴ THEME
+
+## 0.1.1
+> Foundation theme for the photon PLATFORM within Grav CMS
+
+---
+
 ![GitHub release](https://img.shields.io/github/v/tag/photon-platform/grav-theme-photon)
 
 - [configuration](#configuration)
@@ -18,11 +25,6 @@
 
 
 # configuration
-> 
-
-# photon ✴ THEME
-
-## 0.1.1
 blueprints.yaml
 
 fields:
