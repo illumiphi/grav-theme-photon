@@ -29,20 +29,6 @@ blueprints.yaml
 
 fields:
 - columns
-  - _color
-    - color.key.hue
-    - color.1.hueOffset
-    - color.2.hueOffset
-    - color.saturation
-    - color.lightness.lighter
-    - color.lightness.light
-    - color.lightness.mid
-    - color.lightness.dark
-    - color.lightness.darker
-  - _fonts
-    - font
-    - font_display
-    - font_code
 
 Before configuring this theme, you should copy the `user/themes/photon/photon.yaml` to `user/config/themes/photon.yaml` and only edit that copy.
 
