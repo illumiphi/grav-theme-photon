@@ -436,15 +436,7 @@ css
 
 ```sh
 js
-├── highlight
-│   ├── atom-one-dark.css
-│   ├── CHANGES.md
-│   ├── highlight.pack.js
-│   ├── LICENSE
-│   ├── README.md
-│   └── README.ru.md
 ├── article.js
-├── jquery.min.js
 └── pan-zoom.js
 ```
 
