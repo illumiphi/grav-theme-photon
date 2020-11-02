@@ -1,15 +1,14 @@
 name: photon ✴ THEME
 version: 0.1.1
 description: Foundation theme for the photon PLATFORM within Grav CMS
-icon: asterisk
 author:
   name: phi ARCHITECT
   email: phi@photon-platform.net
 homepage: https://github.com/photon-platform/grav-theme-photon
-demo: https://photon-platform.net
-keywords: photon, theme
+docs: https://github.com/photon-platform/grav-theme-photon/blob/master/README.md
 bugs: https://github.com/photon-platform/grav-theme-photon/issues
-readme: https://github.com/photon-platform/grav-theme-photon/blob/master/README.md
+keywords: photon, theme
+icon: asterisk
 license: MIT
 
 form:
