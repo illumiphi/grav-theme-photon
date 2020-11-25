@@ -684,9 +684,13 @@ aside p, nav p {
 aside.article-share ul, aside.follow ul, nav.article-share ul, nav.follow ul {
   font-family: var(--font-icon);
   list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  margin-left: 0;
 }
 aside.article-share ul li, aside.follow ul li, nav.article-share ul li, nav.follow ul li {
   width: auto;
+  margin-left: 0;
 }
 aside.article-share ul a, aside.follow ul a, nav.article-share ul a, nav.follow ul a {
   text-transform: inherit;
