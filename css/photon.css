@@ -200,7 +200,7 @@ a:visited {
 }
 a:hover {
   --bg: var(--color-key-light);
-  --color: white;
+  --color: #222;
 }
 a:hover::marker {
   background: var(--bg);
@@ -654,7 +654,7 @@ article > .gallery.modal > .list > figure > img {
 
 article.excerpt {
   cursor: pointer;
-  transition: box-shadow 0.5s, background 0.5s;
+  transition: box-shadow 0.5s, background 0.5s, color 0.5s;
 }
 article.excerpt .article-share {
   display: none;
@@ -664,6 +664,7 @@ article.excerpt .more {
 }
 article.excerpt:hover {
   --bg: var(--color-key-lighter);
+  color: black;
   box-shadow: 0.25em 0.25em 0.25em rgba(0, 0, 0, 0.4);
 }
 /* asides *****************************/

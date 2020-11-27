@@ -19,7 +19,7 @@ a {
 
   &:hover {
     --bg: var(--color-key-light);
-    --color: white;
+    --color: #222;
     // box-shadow: .25em .25em .25em rgba(0,0,0,.4);
     &::marker {
       background: var(--bg);

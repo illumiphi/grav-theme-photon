@@ -2,7 +2,8 @@ article.excerpt {
   cursor: pointer;
   transition: 
       box-shadow .5s, 
-      background .5s;
+      background .5s,
+      color .5s;
 
   > * {
   }
@@ -25,6 +26,7 @@ article.excerpt {
 
   &:hover {
     --bg: var(--color-key-lighter);
+    color: black;
     box-shadow: .25em .25em .25em rgba(0,0,0,.4);
 
     .more {
