@@ -11,7 +11,7 @@
 {% block body_template_classes %}{{ parent() }} article{% endblock body_template_classes %}
 
 {% block main %}
-    <main data-collection="{{ page.collection.count }}">
+    <main id="main" data-collection="{{ page.collection.count }}">
 {%   block content %}
 {%     include [
             "_articles/#{ page.template }.html.twig", 
