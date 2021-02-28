@@ -11,6 +11,7 @@ content:
     title: ${collection_name}
     items: '@self.children'
 taxonomy:
+    photon:
     category: 
     tag: 
 ---
