@@ -675,6 +675,7 @@ aside > a, nav > a {
   display: block;
 }
 aside p, nav p {
+  text-align: center;
   margin: var(--fitz-half);
   padding: var(--fitz-half);
 }
@@ -693,6 +694,9 @@ aside.article-share ul a, aside.follow ul a, nav.article-share ul a, nav.follow 
   text-transform: inherit;
   padding: 0.3em;
   font-size: 1.1em;
+}
+aside.copyright h2, nav.copyright h2 {
+  text-align: center;
 }
 
 nav {

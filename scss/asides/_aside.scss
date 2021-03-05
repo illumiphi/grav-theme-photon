@@ -20,6 +20,7 @@ aside, nav {
   }
 
   p {
+    text-align: center;
     margin: var(--fitz-half);
     padding:  var(--fitz-half);
     // padding-bottom: .2em;
@@ -41,6 +42,12 @@ aside, nav {
         padding: .3em;
         font-size: 1.1em;
       }
+    }
+  }
+
+  &.copyright {
+    h2 {
+      text-align: center;
     }
   }
 }
