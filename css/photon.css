@@ -695,7 +695,7 @@ aside.article-share ul a, aside.follow ul a, nav.article-share ul a, nav.follow 
   padding: 0.3em;
   font-size: 1.1em;
 }
-aside.copyright h2, nav.copyright h2 {
+aside.copyright h2, aside.copyright p, nav.copyright h2, nav.copyright p {
   text-align: center;
 }
 
