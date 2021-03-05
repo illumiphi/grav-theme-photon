@@ -3,7 +3,7 @@ version: 0.1.1
 description: Foundation theme for the photon PLATFORM within Grav CMS
 author:
   name: phi ARCHITECT
-  email: phi@photon-platform.net
+  email: info@photon-platform.net
 homepage: https://github.com/photon-platform/grav-theme-photon
 docs: https://photon-platform.github.io/grav-theme-photon/
 bugs: https://github.com/photon-platform/grav-theme-photon/issues
