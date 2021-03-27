@@ -442,9 +442,6 @@ article > nav.context {
 article > nav.context div {
   min-width: 4em;
 }
-article > nav.context a {
-  --offset: 1.2em;
-}
 article > nav.context a.prev {
   justify-content: flex-start;
 }
@@ -742,7 +739,6 @@ nav ul li {
 }
 nav a {
   display: flex;
-  --offset: 2em;
   line-height: 1.1;
   padding: var(--fitz);
   flex-basis: 100%;
