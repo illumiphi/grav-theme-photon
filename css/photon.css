@@ -442,10 +442,14 @@ article > nav.context {
 article > nav.context div {
   min-width: 4em;
 }
+article > nav.context a {
+  --offset: 1.2em;
+}
 article > nav.context a.prev {
   justify-content: flex-start;
 }
 article > nav.context a.prev::before {
+  padding-top: 0.1em;
   font-family: var(--font-icon);
   content: "<";
   text-align: left;
@@ -459,6 +463,7 @@ article > nav.context a.next::before {
   display: none;
 }
 article > nav.context a.next::after {
+  padding-top: 0.1em;
   font-family: var(--font-icon);
   content: ">";
   width: var(--offset);
@@ -739,11 +744,12 @@ nav ul li {
 }
 nav a {
   display: flex;
-  line-height: 1.1;
+  --offset: 1em;
   padding: var(--fitz);
   flex-basis: 100%;
 }
 nav a::before, nav a::after {
+  padding-top: 0.1em;
   content: " ";
   display: inline-block;
   width: var(--offset);

@@ -20,11 +20,12 @@
   }
 
   a {
-    // --offset: 1.2em;
+    --offset: 1.2em;
     &.prev {
       justify-content: flex-start;
 
       &::before {
+        padding-top: .1em;
         font-family: var(--font-icon);
         content: "<";
         text-align: left;
@@ -42,6 +43,7 @@
       }
 
       &::after {
+        padding-top: .1em;
         font-family: var(--font-icon);
         content: ">";
         width: var(--offset);
