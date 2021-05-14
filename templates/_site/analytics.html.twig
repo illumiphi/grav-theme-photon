@@ -3,7 +3,7 @@
     <!-- {{ base_url_absolute }} -->
     <script type="text/javascript">
     //<![CDATA[
-    var owa_baseUrl = 'https://logs.photon-platform.net/';
+    var owa_baseUrl = '{{ config.organization.owa.siteUrl|default('https://logs.photon-platform.net/') }};
     var owa_cmds = owa_cmds || [];
     owa_cmds.push(['setSiteId', '{{ config.organization.owa.siteId }}']);
 {% if config.organization.owa.trackPageView %}
