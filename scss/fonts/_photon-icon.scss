@@ -1,11 +1,7 @@
 @font-face {
   font-family: 'photon-icon';
-  src: url('../font/photon-icon.eot?72950484');
-  src: url('../font/photon-icon.eot?72950484#iefix') format('embedded-opentype'),
-       url('../font/photon-icon.woff2?72950484') format('woff2'),
-       url('../font/photon-icon.woff?72950484') format('woff'),
-       url('../font/photon-icon.ttf?72950484') format('truetype'),
-       url('../font/photon-icon.svg?72950484#photon-icon') format('svg');
+  src: url('../fonts/photon-icon/photon-icon.woff2') format('woff2'),
+       url('../fonts/photon-icon/photon-icon.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
