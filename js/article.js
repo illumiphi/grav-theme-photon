@@ -44,7 +44,7 @@ function modalGallery() {
 }
 
 function mouseoverGalleryFigure(e) {
-  galleryPanel.style.background = 'black url(' + e.target.dataset.image + ')';
+  galleryPanel.style.background = 'white url(' + e.target.dataset.image + ')';
   galleryPanel.style.backgroundSize = 'contain';
   galleryPanel.style.backgroundRepeat = 'no-repeat';
   galleryPanel.style.backgroundPosition = 'center';
